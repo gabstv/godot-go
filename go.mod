@@ -1,4 +1,4 @@
-module github.com/shadowapex/godot-go
+module github.com/soupstoregames/godot-go
 
 go 1.13
 
