@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newVisualInstanceFromPointer(ptr gdnative.Pointer) VisualInstance {
 }
 
 /*
-The VisualInstance is used to connect a resource to a visual representation. All visual 3D nodes inherit from the VisualInstance. In general, you should not access the VisualInstance properties directly as they are accessed and managed by the nodes that inherit from VisualInstance. VisualInstance is the node representation of the [VisualServer] instance.
+Undocumented
 */
 type VisualInstance struct {
 	Spatial
@@ -58,7 +58,7 @@ func (o *VisualInstance) X_GetVisualInstanceRid() gdnative.Rid {
 }
 
 /*
-        Returns the [AABB] (also known as the bounding box) for this VisualInstance.
+        Undocumented
 	Args: [], Returns: AABB
 */
 func (o *VisualInstance) GetAabb() gdnative.Aabb {
@@ -81,7 +81,7 @@ func (o *VisualInstance) GetAabb() gdnative.Aabb {
 }
 
 /*
-        Returns the RID of the resource associated with this VisualInstance. For example, if the Node is a [MeshInstance], this will return the RID of the associated [Mesh].
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *VisualInstance) GetBase() gdnative.Rid {
@@ -104,7 +104,7 @@ func (o *VisualInstance) GetBase() gdnative.Rid {
 }
 
 /*
-        Returns the RID of this instance. This RID is the same as the RID returned by [method VisualServer.instance_create]. This RID is needed if you want to call [VisualServer] functions directly on this VisualInstance.
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *VisualInstance) GetInstance() gdnative.Rid {
@@ -150,7 +150,7 @@ func (o *VisualInstance) GetLayerMask() gdnative.Int {
 }
 
 /*
-        Returns [code]true[/code] when the specified layer is enabled in [member layers] and [code]false[/code] otherwise.
+        Undocumented
 	Args: [{ false layer int}], Returns: bool
 */
 func (o *VisualInstance) GetLayerMaskBit(layer gdnative.Int) gdnative.Bool {
@@ -174,7 +174,7 @@ func (o *VisualInstance) GetLayerMaskBit(layer gdnative.Int) gdnative.Bool {
 }
 
 /*
-        Returns the transformed [AABB] (also known as the bounding box) for this VisualInstance. Transformed in this case means the [AABB] plus the position, rotation, and scale of the [Spatial]s [Transform]
+        Undocumented
 	Args: [], Returns: AABB
 */
 func (o *VisualInstance) GetTransformedAabb() gdnative.Aabb {
@@ -197,7 +197,7 @@ func (o *VisualInstance) GetTransformedAabb() gdnative.Aabb {
 }
 
 /*
-        Sets the resource that is instantiated by this VisualInstance, which changes how the engine handles the VisualInstance under the hood. Equivalent to [method VisualServer.instance_set_base].
+        Undocumented
 	Args: [{ false base RID}], Returns: void
 */
 func (o *VisualInstance) SetBase(base gdnative.Rid) {
@@ -239,7 +239,7 @@ func (o *VisualInstance) SetLayerMask(mask gdnative.Int) {
 }
 
 /*
-        Enables a particular layer in [member layers].
+        Undocumented
 	Args: [{ false layer int} { false enabled bool}], Returns: void
 */
 func (o *VisualInstance) SetLayerMaskBit(layer gdnative.Int, enabled gdnative.Bool) {

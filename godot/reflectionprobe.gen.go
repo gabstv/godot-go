@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ func newReflectionProbeFromPointer(ptr gdnative.Pointer) ReflectionProbe {
 }
 
 /*
-Capture its surroundings as a dual parabolid image, and stores versions of it with increasing levels of blur to simulate different material roughnesses.
+Captures its surroundings as a cubemap, and stores versions of it with increasing levels of blur to simulate different material roughnesses. The [ReflectionProbe] is used to create high-quality reflections at the cost of performance. It can be combined with [GIProbe]s and Screen Space Reflections to achieve high quality reflections. [ReflectionProbe]s render all objects within their [member cull_mask], so updating them can be quite expensive. It is best to update them once with the important static objects and then leave them.
 */
 type ReflectionProbe struct {
 	VisualInstance

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ func newViewportFromPointer(ptr gdnative.Pointer) Viewport {
 }
 
 /*
-A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera 3D nodes will render on it too. Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports. If a viewport is a child of a [ViewportContainer], it will automatically take up its size, otherwise it must be set manually. Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it. Also, viewports can be assigned to different screens in case the devices have multiple screens. Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
+A Viewport creates a different view into the screen, or a sub-view inside another viewport. Children 2D Nodes will display on it, and children Camera3D 3D nodes will render on it too. Optionally, a viewport can have its own 2D or 3D world, so they don't share what they draw with other viewports. If a viewport is a child of a [SubViewportContainer], it will automatically take up its size, otherwise it must be set manually. Viewports can also choose to be audio listeners, so they generate positional audio depending on a 2D or 3D camera child of it. Also, viewports can be assigned to different screens in case the devices have multiple screens. Finally, viewports can also behave as render targets, in which case they will not be visible unless the associated texture is used to draw.
 */
 type Viewport struct {
 	Node
@@ -547,7 +547,7 @@ func (o *Viewport) GetKeep3DLinear() gdnative.Bool {
 }
 
 /*
-        Returns the topmost modal in the stack.
+        Undocumented
 	Args: [], Returns: Control
 */
 func (o *Viewport) GetModalStackTop() ControlImplementer {
@@ -677,7 +677,7 @@ func (o *Viewport) GetRenderInfo(info gdnative.Int) gdnative.Int {
 }
 
 /*
-
+        Returns the [enum ShadowAtlasQuadrantSubdiv] of the specified quadrant.
 	Args: [{ false quadrant int}], Returns: enum.Viewport::ShadowAtlasQuadrantSubdiv
 */
 func (o *Viewport) GetShadowAtlasQuadrantSubdiv(quadrant gdnative.Int) ViewportShadowAtlasQuadrantSubdiv {
@@ -747,7 +747,7 @@ func (o *Viewport) GetSize() gdnative.Vector2 {
 }
 
 /*
-        Returns the size override set with [method set_size_override].
+        Undocumented
 	Args: [], Returns: Vector2
 */
 func (o *Viewport) GetSizeOverride() gdnative.Vector2 {
@@ -770,7 +770,7 @@ func (o *Viewport) GetSizeOverride() gdnative.Vector2 {
 }
 
 /*
-        Returns the viewport's texture. [b]Note:[/b] Due to the way OpenGL works, the resulting [ViewportTexture] is flipped vertically. You can use [method Image.flip_y] on the result of [method Texture.get_data] to flip it back, for example: [codeblock] var img = get_viewport().get_texture().get_data() img.flip_y() [/codeblock]
+        Returns the viewport's texture. [b]Note:[/b] Due to the way OpenGL works, the resulting [ViewportTexture] is flipped vertically. You can use [method Image.flip_y] on the result of [method Texture2D.get_data] to flip it back, for example: [codeblock] var img = get_viewport().get_texture().get_data() img.flip_y() [/codeblock]
 	Args: [], Returns: ViewportTexture
 */
 func (o *Viewport) GetTexture() ViewportTextureImplementer {
@@ -876,7 +876,7 @@ func (o *Viewport) GetVflip() gdnative.Bool {
 }
 
 /*
-        Returns the viewport's RID from the [VisualServer].
+        Returns the viewport's RID from the [RenderingServer].
 	Args: [], Returns: RID
 */
 func (o *Viewport) GetViewportRid() gdnative.Rid {
@@ -1019,7 +1019,7 @@ func (o *Viewport) GuiGetDragData() gdnative.Variant {
 }
 
 /*
-        Returns [code]true[/code] if there are visible modals on-screen.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *Viewport) GuiHasModalStack() gdnative.Bool {
@@ -1247,7 +1247,7 @@ func (o *Viewport) IsInputHandled() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the size override is enabled. See [method set_size_override].
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *Viewport) IsSizeOverrideEnabled() gdnative.Bool {
@@ -1404,7 +1404,7 @@ func (o *Viewport) SetAsAudioListener2D(enable gdnative.Bool) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false rect Rect2}], Returns: void
 */
 func (o *Viewport) SetAttachToScreenRect(rect gdnative.Rect2) {
@@ -1593,7 +1593,7 @@ func (o *Viewport) SetHdr(enable gdnative.Bool) {
 }
 
 /*
-
+        Stops the input from propagating further down the [SceneTree].
 	Args: [], Returns: void
 */
 func (o *Viewport) SetInputAsHandled() {
@@ -1676,7 +1676,7 @@ func (o *Viewport) SetPhysicsObjectPicking(enable gdnative.Bool) {
 }
 
 /*
-
+        Sets the number of subdivisions to use in the specified quadrant. A higher number of subdivisions allows you to have more shadows in the scene at once, but reduces the quality of the shadows. A good practice is to have quadrants with a varying number of subdivisions and to have as few subdivisions as possible.
 	Args: [{ false quadrant int} { false subdiv int}], Returns: void
 */
 func (o *Viewport) SetShadowAtlasQuadrantSubdiv(quadrant gdnative.Int, subdiv gdnative.Int) {
@@ -1740,7 +1740,7 @@ func (o *Viewport) SetSize(size gdnative.Vector2) {
 }
 
 /*
-        Sets the size override of the viewport. If the [code]enable[/code] parameter is [code]true[/code] the override is used, otherwise it uses the default size. If the size parameter is [code](-1, -1)[/code], it won't update the size.
+        Undocumented
 	Args: [{ false enable bool} {(-1, -1) true size Vector2} {(0, 0) true margin Vector2}], Returns: void
 */
 func (o *Viewport) SetSizeOverride(enable gdnative.Bool, size gdnative.Vector2, margin gdnative.Vector2) {

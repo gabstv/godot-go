@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -1719,7 +1719,7 @@ func (o *TextEdit) RemoveBreakpoints() {
 }
 
 /*
-        Perform a search inside the text. Search flags can be specified in the [enum SearchFlags] enum. Returns an empty [code]PoolIntArray[/code] if no result was found. Otherwise, the result line and column can be accessed at indices specified in the [enum SearchResult] enum, e.g: [codeblock] var result = search(key, flags, line, column) if result.size() > 0: # result found var res_line = result[TextEdit.SEARCH_RESULT_LINE] var res_column = result[TextEdit.SEARCH_RESULT_COLUMN] [/codeblock]
+        Perform a search inside the text. Search flags can be specified in the [enum SearchFlags] enum. Returns an empty [code]PackedInt32Array[/code] if no result was found. Otherwise, the result line and column can be accessed at indices specified in the [enum SearchResult] enum, e.g: [codeblock] var result = search(key, flags, line, column) if result.size() > 0: # Result found. var res_line = result[TextEdit.SEARCH_RESULT_LINE] var res_column = result[TextEdit.SEARCH_RESULT_COLUMN] [/codeblock]
 	Args: [{ false key String} { false flags int} { false from_line int} { false from_column int}], Returns: PoolIntArray
 */
 func (o *TextEdit) Search(key gdnative.String, flags gdnative.Int, fromLine gdnative.Int, fromColumn gdnative.Int) gdnative.PoolIntArray {

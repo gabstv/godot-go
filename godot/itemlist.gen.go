@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -1210,7 +1210,7 @@ func (o *ItemList) SetItemDisabled(idx gdnative.Int, disabled gdnative.Bool) {
 }
 
 /*
-        Sets (or replaces) the icon's [Texture] associated with the specified index.
+        Sets (or replaces) the icon's [Texture2D] associated with the specified index.
 	Args: [{ false idx int} { false icon Texture}], Returns: void
 */
 func (o *ItemList) SetItemIcon(idx gdnative.Int, icon TextureImplementer) {

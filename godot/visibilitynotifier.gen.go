@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newVisibilityNotifierFromPointer(ptr gdnative.Pointer) VisibilityNotifier {
 }
 
 /*
-The VisibilityNotifier detects when it is visible on the screen. It also notifies when its bounding rectangle enters or exits the screen or a [Camera]'s view.
+Undocumented
 */
 type VisibilityNotifier struct {
 	Spatial
@@ -58,7 +58,7 @@ func (o *VisibilityNotifier) GetAabb() gdnative.Aabb {
 }
 
 /*
-        If [code]true[/code], the bounding box is on the screen. [b]Note:[/b] It takes one frame for the node's visibility to be assessed once added to the scene tree, so this method will return [code]false[/code] right after it is instantiated, even if it will be on screen in the draw pass.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *VisibilityNotifier) IsOnScreen() gdnative.Bool {

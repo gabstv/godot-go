@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newRemoteTransformFromPointer(ptr gdnative.Pointer) RemoteTransform {
 }
 
 /*
-RemoteTransform pushes its own [Transform] to another [Spatial] derived Node (called the remote node) in the scene. It can be set to update another Node's position, rotation and/or scale. It can use either global or local coordinates.
+Undocumented
 */
 type RemoteTransform struct {
 	Spatial
@@ -35,7 +35,7 @@ func (o *RemoteTransform) BaseClass() string {
 }
 
 /*
-        [RemoteTransform] caches the remote node. It may not notice if the remote node disappears; [method force_update_cache] forces it to update the cache again.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *RemoteTransform) ForceUpdateCache() {

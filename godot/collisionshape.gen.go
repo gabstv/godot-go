@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newCollisionShapeFromPointer(ptr gdnative.Pointer) CollisionShape {
 }
 
 /*
-Editor facility for creating and editing collision shapes in 3D space. You can use this node to represent all sorts of collision shapes, for example, add this to an [Area] to give it a detection shape, or add it to a [PhysicsBody] to create a solid object. [b]IMPORTANT[/b]: this is an Editor-only helper to create shapes, use [method CollisionObject.shape_owner_get_shape] to get the actual shape.
+Undocumented
 */
 type CollisionShape struct {
 	Spatial
@@ -135,7 +135,7 @@ func (o *CollisionShape) IsDisabled() gdnative.Bool {
 }
 
 /*
-        Sets the collision shape's shape to the addition of all its convexed [MeshInstance] siblings geometry.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *CollisionShape) MakeConvexFromBrothers() {
@@ -155,7 +155,7 @@ func (o *CollisionShape) MakeConvexFromBrothers() {
 }
 
 /*
-        If this method exists within a script it will be called whenever the shape resource has been modified.
+        Undocumented
 	Args: [{ false resource Resource}], Returns: void
 */
 func (o *CollisionShape) ResourceChanged(resource ResourceImplementer) {

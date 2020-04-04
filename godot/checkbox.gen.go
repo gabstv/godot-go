@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newCheckBoxFromPointer(ptr gdnative.Pointer) CheckBox {
 }
 
 /*
-A checkbox allows the user to make a binary choice (choosing only one of two possible options).
+A checkbox allows the user to make a binary choice (choosing only one of two possible options). It's similar to [CheckButton] in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use CheckBox when toggling it has [b]no[/b] immediate effect on something. For instance, it should be used when toggling it will only do something once a confirmation button is pressed.
 */
 type CheckBox struct {
 	Button

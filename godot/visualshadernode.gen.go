@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -47,17 +47,17 @@ func (o *VisualShaderNode) BaseClass() string {
 }
 
 /*
-        Undocumented
+        Returns an [Array] containing default values for all of the input ports of the node in the form [code][index0, value0, index1, value1, ...][/code].
 	Args: [], Returns: Array
 */
-func (o *VisualShaderNode) X_GetDefaultInputValues() gdnative.Array {
-	//log.Println("Calling VisualShaderNode.X_GetDefaultInputValues()")
+func (o *VisualShaderNode) GetDefaultInputValues() gdnative.Array {
+	//log.Println("Calling VisualShaderNode.GetDefaultInputValues()")
 
 	// Build out the method's arguments
 	ptrArguments := make([]gdnative.Pointer, 0, 0)
 
 	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNode", "_get_default_input_values")
+	methodBind := gdnative.NewMethodBind("VisualShaderNode", "get_default_input_values")
 
 	// Call the parent method.
 	// Array
@@ -70,28 +70,7 @@ func (o *VisualShaderNode) X_GetDefaultInputValues() gdnative.Array {
 }
 
 /*
-        Undocumented
-	Args: [{ false values Array}], Returns: void
-*/
-func (o *VisualShaderNode) X_SetDefaultInputValues(values gdnative.Array) {
-	//log.Println("Calling VisualShaderNode.X_SetDefaultInputValues()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 1, 1)
-	ptrArguments[0] = gdnative.NewPointerFromArray(values)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNode", "_set_default_input_values")
-
-	// Call the parent method.
-	// void
-	retPtr := gdnative.NewEmptyVoid()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-}
-
-/*
-
+        Returns the default value of the input [code]port[/code].
 	Args: [{ false port int}], Returns: Variant
 */
 func (o *VisualShaderNode) GetInputPortDefaultValue(port gdnative.Int) gdnative.Variant {
@@ -138,7 +117,28 @@ func (o *VisualShaderNode) GetOutputPortForPreview() gdnative.Int {
 }
 
 /*
+        Sets the default input ports values using an [Array] of the form [code][index0, value0, index1, value1, ...][/code]. For example: [code][0, Vector3(0, 0, 0), 1, Vector3(0, 0, 0)][/code].
+	Args: [{ false values Array}], Returns: void
+*/
+func (o *VisualShaderNode) SetDefaultInputValues(values gdnative.Array) {
+	//log.Println("Calling VisualShaderNode.SetDefaultInputValues()")
 
+	// Build out the method's arguments
+	ptrArguments := make([]gdnative.Pointer, 1, 1)
+	ptrArguments[0] = gdnative.NewPointerFromArray(values)
+
+	// Get the method bind
+	methodBind := gdnative.NewMethodBind("VisualShaderNode", "set_default_input_values")
+
+	// Call the parent method.
+	// void
+	retPtr := gdnative.NewEmptyVoid()
+	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
+
+}
+
+/*
+        Sets the default value for the selected input [code]port[/code].
 	Args: [{ false port int} { false value Variant}], Returns: void
 */
 func (o *VisualShaderNode) SetInputPortDefaultValue(port gdnative.Int, value gdnative.Variant) {
@@ -184,10 +184,10 @@ func (o *VisualShaderNode) SetOutputPortForPreview(port gdnative.Int) {
 // of the VisualShaderNode class.
 type VisualShaderNodeImplementer interface {
 	ResourceImplementer
-	X_GetDefaultInputValues() gdnative.Array
-	X_SetDefaultInputValues(values gdnative.Array)
+	GetDefaultInputValues() gdnative.Array
 	GetInputPortDefaultValue(port gdnative.Int) gdnative.Variant
 	GetOutputPortForPreview() gdnative.Int
+	SetDefaultInputValues(values gdnative.Array)
 	SetInputPortDefaultValue(port gdnative.Int, value gdnative.Variant)
 	SetOutputPortForPreview(port gdnative.Int)
 }

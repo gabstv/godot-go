@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeBooleanUniformFromPointer(ptr gdnative.Pointer) VisualSh
 }
 
 /*
-
- */
+Translated to [code]uniform bool[/code] in the shader language.
+*/
 type VisualShaderNodeBooleanUniform struct {
 	VisualShaderNodeUniform
 	owner gdnative.Object

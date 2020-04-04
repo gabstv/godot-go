@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -37,7 +37,7 @@ func newSkyFromPointer(ptr gdnative.Pointer) Sky {
 }
 
 /*
-The base class for [PanoramaSky] and [ProceduralSky].
+The [Sky] class uses a [Material] to draw the background and update the reflection/radiance cubemaps.
 */
 type Sky struct {
 	Resource

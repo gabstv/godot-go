@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -173,7 +173,7 @@ func (o *EditorPlugin) AddControlToDock(slot gdnative.Int, control ControlImplem
 }
 
 /*
-        Adds a custom type, which will appear in the list of nodes or resources. An icon can be optionally passed. When given node or resource is selected, the base type will be instanced (ie, "Spatial", "Control", "Resource"), then the script will be loaded and set to this object. You can use the virtual method [method handles] to check if your custom object is being edited by checking the script or using the [code]is[/code] keyword. During run-time, this will be a simple object with a script so this function does not need to be called then.
+        Adds a custom type, which will appear in the list of nodes or resources. An icon can be optionally passed. When given node or resource is selected, the base type will be instanced (e.g. "Node3D", "Control", "Resource"), then the script will be loaded and set to this object. You can use the virtual method [method handles] to check if your custom object is being edited by checking the script or using the [code]is[/code] keyword. During run-time, this will be a simple object with a script so this function does not need to be called then.
 	Args: [{ false type String} { false base String} { false script Script} { false icon Texture}], Returns: void
 */
 func (o *EditorPlugin) AddCustomType(aType gdnative.String, base gdnative.String, script ScriptImplementer, icon TextureImplementer) {
@@ -623,7 +623,7 @@ func (o *EditorPlugin) GetEditorInterface() EditorInterfaceImplementer {
 }
 
 /*
-
+        Override this method in your plugin to return a [Texture2D] in order to give it an icon. For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons. Ideally, the plugin icon should be white with a transparent background and 16x16 pixels in size. [codeblock] func get_plugin_icon(): # You can use a custom icon: return preload("res://addons/my_plugin/my_plugin_icon.svg") # Or use a built-in icon: return get_editor_interface().get_base_control().get_icon("Node", "EditorIcons") [/codeblock]
 	Args: [], Returns: Object
 */
 func (o *EditorPlugin) GetPluginIcon() ObjectImplementer {
@@ -660,7 +660,7 @@ func (o *EditorPlugin) GetPluginIcon() ObjectImplementer {
 }
 
 /*
-
+        Override this method in your plugin to provide the name of the plugin when displayed in the Godot editor. For main screen plugins, this appears at the top of the screen, to the right of the "2D", "3D", "Script", and "AssetLib" buttons.
 	Args: [], Returns: String
 */
 func (o *EditorPlugin) GetPluginName() gdnative.String {

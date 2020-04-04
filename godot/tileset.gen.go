@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -20,6 +20,7 @@ const (
 	TileSetBindBottom      TileSetAutotileBindings = 128
 	TileSetBindBottomleft  TileSetAutotileBindings = 64
 	TileSetBindBottomright TileSetAutotileBindings = 256
+	TileSetBindCenter      TileSetAutotileBindings = 16
 	TileSetBindLeft        TileSetAutotileBindings = 8
 	TileSetBindRight       TileSetAutotileBindings = 32
 	TileSetBindTop         TileSetAutotileBindings = 2

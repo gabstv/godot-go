@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -313,7 +313,7 @@ func (o *Object) CanTranslateMessages() gdnative.Bool {
 }
 
 /*
-        Connects a [code]signal[/code] to a [code]method[/code] on a [code]target[/code] object. Pass optional [code]binds[/code] to the call as an [Array] of parameters. These parameters will be passed to the method after any parameter used in the call to [method emit_signal]. Use [code]flags[/code] to set deferred or one-shot connections. See [enum ConnectFlags] constants. A [code]signal[/code] can only be connected once to a [code]method[/code]. It will throw an error if already connected, unless the signal was connected with [constant CONNECT_REFERENCE_COUNTED]. To avoid this, first, use [method is_connected] to check for existing connections. If the [code]target[/code] is destroyed in the game's lifecycle, the connection will be lost. Examples: [codeblock] connect("pressed", self, "_on_Button_pressed") # BaseButton signal connect("text_entered", self, "_on_LineEdit_text_entered") # LineEdit signal connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # User-defined signal [/codeblock] An example of the relationship between [code]binds[/code] passed to [method connect] and parameters used when calling [method emit_signal]: [codeblock] connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # weapon_type and damage are passed last emit_signal("hit", "Dark lord", 5) # "Dark lord" and 5 are passed first func _on_Player_hit(hit_by, level, weapon_type, damage): print("Hit by %s (lvl %d) with weapon %s for %d damage" % [hit_by, level, weapon_type, damage]) [/codeblock]
+        [b]FIXME:[/b] The syntax changed with the addition of [Callable], this should be updated. Connects a [code]signal[/code] to a [code]method[/code] on a [code]target[/code] object. Pass optional [code]binds[/code] to the call as an [Array] of parameters. These parameters will be passed to the method after any parameter used in the call to [method emit_signal]. Use [code]flags[/code] to set deferred or one-shot connections. See [enum ConnectFlags] constants. A [code]signal[/code] can only be connected once to a [code]method[/code]. It will throw an error if already connected, unless the signal was connected with [constant CONNECT_REFERENCE_COUNTED]. To avoid this, first, use [method is_connected] to check for existing connections. If the [code]target[/code] is destroyed in the game's lifecycle, the connection will be lost. Examples: [codeblock] connect("pressed", self, "_on_Button_pressed") # BaseButton signal connect("text_entered", self, "_on_LineEdit_text_entered") # LineEdit signal connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # User-defined signal [/codeblock] An example of the relationship between [code]binds[/code] passed to [method connect] and parameters used when calling [method emit_signal]: [codeblock] connect("hit", self, "_on_Player_hit", [ weapon_type, damage ]) # weapon_type and damage are passed last emit_signal("hit", "Dark lord", 5) # "Dark lord" and 5 are passed first func _on_Player_hit(hit_by, level, weapon_type, damage): print("Hit by %s (lvl %d) with weapon %s for %d damage" % [hit_by, level, weapon_type, damage]) [/codeblock]
 	Args: [{ false signal String} { false target Object} { false method String} {[] true binds Array} {0 true flags int}], Returns: enum.Error
 */
 func (o *Object) Connect(signal gdnative.String, target ObjectImplementer, method gdnative.String, binds gdnative.Array, flags gdnative.Int) gdnative.Error {
@@ -341,7 +341,7 @@ func (o *Object) Connect(signal gdnative.String, target ObjectImplementer, metho
 }
 
 /*
-        Disconnects a [code]signal[/code] from a [code]method[/code] on the given [code]target[/code]. If you try to disconnect a connection that does not exist, the method will throw an error. Use [method is_connected] to ensure that the connection exists.
+        [b]FIXME:[/b] The syntax changed with the addition of [Callable], this should be updated. Disconnects a [code]signal[/code] from a [code]method[/code] on the given [code]target[/code]. If you try to disconnect a connection that does not exist, the method will throw an error. Use [method is_connected] to ensure that the connection exists.
 	Args: [{ false signal String} { false target Object} { false method String}], Returns: void
 */
 func (o *Object) Disconnect(signal gdnative.String, target ObjectImplementer, method gdnative.String) {
@@ -550,7 +550,7 @@ func (o *Object) GetMeta(name gdnative.String) gdnative.Variant {
 }
 
 /*
-        Returns the object's metadata as a [PoolStringArray].
+        Returns the object's metadata as a [PackedStringArray].
 	Args: [], Returns: PoolStringArray
 */
 func (o *Object) GetMetaList() gdnative.PoolStringArray {
@@ -751,7 +751,7 @@ func (o *Object) HasMethod(method gdnative.String) gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the given user-defined [code]signal[/code] exists.
+        Returns [code]true[/code] if the given user-defined [code]signal[/code] exists. Only signals added using [method add_user_signal] are taken into account.
 	Args: [{ false signal String}], Returns: bool
 */
 func (o *Object) HasUserSignal(signal gdnative.String) gdnative.Bool {
@@ -822,7 +822,7 @@ func (o *Object) IsClass(class gdnative.String) gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if a connection exists for a given [code]signal[/code], [code]target[/code], and [code]method[/code].
+        [b]FIXME:[/b] The syntax changed with the addition of [Callable], this should be updated. Returns [code]true[/code] if a connection exists for a given [code]signal[/code], [code]target[/code], and [code]method[/code].
 	Args: [{ false signal String} { false target Object} { false method String}], Returns: bool
 */
 func (o *Object) IsConnected(signal gdnative.String, target ObjectImplementer, method gdnative.String) gdnative.Bool {

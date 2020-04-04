@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newInputDefaultFromPointer(ptr gdnative.Pointer) InputDefault {
 }
 
 /*
-Default implementation of the [Input] class, used internally by the editor and games for default input management.
+Undocumented
 */
 type InputDefault struct {
 	input

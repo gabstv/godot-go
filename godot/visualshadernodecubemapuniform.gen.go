@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeCubeMapUniformFromPointer(ptr gdnative.Pointer) VisualSh
 }
 
 /*
-
- */
+Undocumented
+*/
 type VisualShaderNodeCubeMapUniform struct {
 	VisualShaderNodeTextureUniform
 	owner gdnative.Object

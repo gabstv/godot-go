@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ func newImageTextureFromPointer(ptr gdnative.Pointer) ImageTexture {
 }
 
 /*
-A [Texture] based on an [Image]. Can be created from an [Image] with [method create_from_image].
+A [Texture2D] based on an [Image]. Can be created from an [Image] with [method create_from_image].
 */
 type ImageTexture struct {
 	Texture
@@ -65,7 +65,7 @@ func (o *ImageTexture) X_ReloadHook(rid gdnative.Rid) {
 }
 
 /*
-        Create a new [ImageTexture] with [code]width[/code] and [code]height[/code]. [code]format[/code] is a value from [enum Image.Format], [code]flags[/code] is any combination of [enum Texture.Flags].
+        Undocumented
 	Args: [{ false width int} { false height int} { false format int} {7 true flags int}], Returns: void
 */
 func (o *ImageTexture) Create(width gdnative.Int, height gdnative.Int, format gdnative.Int, flags gdnative.Int) {
@@ -89,7 +89,7 @@ func (o *ImageTexture) Create(width gdnative.Int, height gdnative.Int, format gd
 }
 
 /*
-        Create a new [ImageTexture] from an [Image] with [code]flags[/code] from [enum Texture.Flags]. An sRGB to linear color space conversion can take place, according to [enum Image.Format].
+        Create a new [ImageTexture] from an [Image].
 	Args: [{ false image Image} {7 true flags int}], Returns: void
 */
 func (o *ImageTexture) CreateFromImage(image ImageImplementer, flags gdnative.Int) {
@@ -180,7 +180,7 @@ func (o *ImageTexture) GetStorage() ImageTextureStorage {
 }
 
 /*
-        Load an [ImageTexture] from a file path.
+        Undocumented
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *ImageTexture) Load(path gdnative.String) gdnative.Error {
@@ -204,7 +204,7 @@ func (o *ImageTexture) Load(path gdnative.String) gdnative.Error {
 }
 
 /*
-        Sets the [Image] of this [ImageTexture].
+        Undocumented
 	Args: [{ false image Image}], Returns: void
 */
 func (o *ImageTexture) SetData(image ImageImplementer) {

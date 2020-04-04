@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newAnimationNodeStateMachineFromPointer(ptr gdnative.Pointer) AnimationNode
 }
 
 /*
-Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the AnimationNodeStateMachinePlayback object from the [AnimationTree] node to control it programmatically. [b]Example:[/b] [codeblock] var state_machine = $AnimationTree.get("parameters/playback") state_machine.travel("some_state") [/codeblock]
+Contains multiple nodes representing animation states, connected in a graph. Node transitions can be configured to happen automatically or via code, using a shortest-path algorithm. Retrieve the [AnimationNodeStateMachinePlayback] object from the [AnimationTree] node to control it programmatically. [b]Example:[/b] [codeblock] var state_machine = $AnimationTree.get("parameters/playback") state_machine.travel("some_state") [/codeblock]
 */
 type AnimationNodeStateMachine struct {
 	AnimationRootNode
@@ -435,7 +435,7 @@ func (o *AnimationNodeStateMachine) RemoveNode(name gdnative.String) {
 }
 
 /*
-        Deletes the given transition.
+        Deletes the transition between the two specified nodes.
 	Args: [{ false from String} { false to String}], Returns: void
 */
 func (o *AnimationNodeStateMachine) RemoveTransition(from gdnative.String, to gdnative.String) {
@@ -457,7 +457,7 @@ func (o *AnimationNodeStateMachine) RemoveTransition(from gdnative.String, to gd
 }
 
 /*
-        Deletes the given transition.
+        Deletes the given transition by index.
 	Args: [{ false idx int}], Returns: void
 */
 func (o *AnimationNodeStateMachine) RemoveTransitionByIndex(idx gdnative.Int) {

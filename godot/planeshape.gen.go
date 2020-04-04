@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPlaneShapeFromPointer(ptr gdnative.Pointer) PlaneShape {
 }
 
 /*
-An infinite plane shape for 3D collisions. Note that the [Plane]'s normal matters; anything "below" the plane will collide with it. If the [PlaneShape] is used in a [PhysicsBody], it will cause colliding objects placed "below" it to teleport "above" the plane.
+Undocumented
 */
 type PlaneShape struct {
 	Shape

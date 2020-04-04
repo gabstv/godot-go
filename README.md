@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/ShadowApex/godot-go.svg?branch=master)](https://travis-ci.org/ShadowApex/godot-go)
-[![Go Report Card](https://goreportcard.com/badge/github.com/shadowapex/godot-go)](https://goreportcard.com/report/github.com/shadowapex/godot-go)
-[![GoDoc](https://godoc.org/github.com/ShadowApex/goquery?status.png)](https://godoc.org/github.com/ShadowApex/godot-go/godot)
+[![Go Report Card](https://goreportcard.com/badge/github.com/gabstv/godot-go)](https://goreportcard.com/report/github.com/gabstv/godot-go)
+[![GoDoc](https://godoc.org/github.com/ShadowApex/goquery?status.png)](https://godoc.org/github.com/gabstv/godot-go/godot)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/ShadowApex/godot-go/master/LICENSE)
 
 ![Godot-Go logo](/logo.png)
@@ -26,7 +26,7 @@ the available Godot Engine classes and their methods, so you can call Godot
 functions from your Go code.
 
 # Setup
-`go get github.com/shadowapex/godot-go/godot`
+`go get github.com/gabstv/godot-go/godot`
 
 # Build
 When you're ready to build your code as a dynamic library that can be imported into
@@ -193,7 +193,7 @@ MIT - <https://opensource.org/licenses/MIT>
 
 Links
 -----
-GitHub repository - <https://github.com/shadowapex/godot-go>  
+GitHub repository - <https://github.com/gabstv/godot-go>  
 GDNative repository - <https://github.com/GodotNativeTools/godot_headers>  
 
 Godot Engine - <https://godotengine.org>  

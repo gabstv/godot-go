@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ func (o *Crypto) BaseClass() string {
 }
 
 /*
-        Generates a [PoolByteArray] of cryptographically secure random bytes with given [code]size[/code].
+        Generates a [PackedByteArray] of cryptographically secure random bytes with given [code]size[/code].
 	Args: [{ false size int}], Returns: PoolByteArray
 */
 func (o *Crypto) GenerateRandomBytes(size gdnative.Int) gdnative.PoolByteArray {

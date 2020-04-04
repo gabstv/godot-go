@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPhysics2DDirectBodyStateFromPointer(ptr gdnative.Pointer) Physics2DDirec
 }
 
 /*
-Provides direct access to a physics body in the [Physics2DServer], allowing safe changes to physics properties. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body. See [method RigidBody2D._integrate_forces].
+Undocumented
 */
 type Physics2DDirectBodyState struct {
 	Object
@@ -35,7 +35,7 @@ func (o *Physics2DDirectBodyState) BaseClass() string {
 }
 
 /*
-        Adds a constant directional force without affecting rotation.
+        Undocumented
 	Args: [{ false force Vector2}], Returns: void
 */
 func (o *Physics2DDirectBodyState) AddCentralForce(force gdnative.Vector2) {
@@ -56,7 +56,7 @@ func (o *Physics2DDirectBodyState) AddCentralForce(force gdnative.Vector2) {
 }
 
 /*
-        Adds a positioned force to the body. Both the force and the offset from the body origin are in global coordinates.
+        Undocumented
 	Args: [{ false offset Vector2} { false force Vector2}], Returns: void
 */
 func (o *Physics2DDirectBodyState) AddForce(offset gdnative.Vector2, force gdnative.Vector2) {
@@ -78,7 +78,7 @@ func (o *Physics2DDirectBodyState) AddForce(offset gdnative.Vector2, force gdnat
 }
 
 /*
-        Adds a constant rotational force.
+        Undocumented
 	Args: [{ false torque float}], Returns: void
 */
 func (o *Physics2DDirectBodyState) AddTorque(torque gdnative.Real) {
@@ -99,7 +99,7 @@ func (o *Physics2DDirectBodyState) AddTorque(torque gdnative.Real) {
 }
 
 /*
-        Applies a directional impulse without affecting rotation.
+        Undocumented
 	Args: [{ false impulse Vector2}], Returns: void
 */
 func (o *Physics2DDirectBodyState) ApplyCentralImpulse(impulse gdnative.Vector2) {
@@ -120,7 +120,7 @@ func (o *Physics2DDirectBodyState) ApplyCentralImpulse(impulse gdnative.Vector2)
 }
 
 /*
-        Applies a positioned impulse to the body. An impulse is time-independent! Applying an impulse every frame would result in a framerate-dependent force. For this reason, it should only be used when simulating one-time impacts (use the "_force" functions otherwise). The offset uses the rotation of the global coordinate system, but is centered at the object's origin.
+        Undocumented
 	Args: [{ false offset Vector2} { false impulse Vector2}], Returns: void
 */
 func (o *Physics2DDirectBodyState) ApplyImpulse(offset gdnative.Vector2, impulse gdnative.Vector2) {
@@ -142,7 +142,7 @@ func (o *Physics2DDirectBodyState) ApplyImpulse(offset gdnative.Vector2, impulse
 }
 
 /*
-        Applies a rotational impulse to the body.
+        Undocumented
 	Args: [{ false impulse float}], Returns: void
 */
 func (o *Physics2DDirectBodyState) ApplyTorqueImpulse(impulse gdnative.Real) {
@@ -186,7 +186,7 @@ func (o *Physics2DDirectBodyState) GetAngularVelocity() gdnative.Real {
 }
 
 /*
-        Returns the collider's [RID].
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: RID
 */
 func (o *Physics2DDirectBodyState) GetContactCollider(contactIdx gdnative.Int) gdnative.Rid {
@@ -210,7 +210,7 @@ func (o *Physics2DDirectBodyState) GetContactCollider(contactIdx gdnative.Int) g
 }
 
 /*
-        Returns the collider's object id.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: int
 */
 func (o *Physics2DDirectBodyState) GetContactColliderId(contactIdx gdnative.Int) gdnative.Int {
@@ -234,7 +234,7 @@ func (o *Physics2DDirectBodyState) GetContactColliderId(contactIdx gdnative.Int)
 }
 
 /*
-        Returns the collider object. This depends on how it was created (will return a scene node if such was used to create it).
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: Object
 */
 func (o *Physics2DDirectBodyState) GetContactColliderObject(contactIdx gdnative.Int) ObjectImplementer {
@@ -272,7 +272,7 @@ func (o *Physics2DDirectBodyState) GetContactColliderObject(contactIdx gdnative.
 }
 
 /*
-        Returns the contact position in the collider.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: Vector2
 */
 func (o *Physics2DDirectBodyState) GetContactColliderPosition(contactIdx gdnative.Int) gdnative.Vector2 {
@@ -296,7 +296,7 @@ func (o *Physics2DDirectBodyState) GetContactColliderPosition(contactIdx gdnativ
 }
 
 /*
-        Returns the collider's shape index.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: int
 */
 func (o *Physics2DDirectBodyState) GetContactColliderShape(contactIdx gdnative.Int) gdnative.Int {
@@ -320,7 +320,7 @@ func (o *Physics2DDirectBodyState) GetContactColliderShape(contactIdx gdnative.I
 }
 
 /*
-        Returns the collided shape's metadata. This metadata is different from [method Object.get_meta], and is set with [method Physics2DServer.shape_set_data].
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: Variant
 */
 func (o *Physics2DDirectBodyState) GetContactColliderShapeMetadata(contactIdx gdnative.Int) gdnative.Variant {
@@ -344,7 +344,7 @@ func (o *Physics2DDirectBodyState) GetContactColliderShapeMetadata(contactIdx gd
 }
 
 /*
-        Returns the linear velocity vector at the collider's contact point.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: Vector2
 */
 func (o *Physics2DDirectBodyState) GetContactColliderVelocityAtPosition(contactIdx gdnative.Int) gdnative.Vector2 {
@@ -368,7 +368,7 @@ func (o *Physics2DDirectBodyState) GetContactColliderVelocityAtPosition(contactI
 }
 
 /*
-        Returns the number of contacts this body has with other bodies. [b]Note:[/b] By default, this returns 0 unless bodies are configured to monitor contacts. See [member RigidBody2D.contact_monitor].
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *Physics2DDirectBodyState) GetContactCount() gdnative.Int {
@@ -391,7 +391,7 @@ func (o *Physics2DDirectBodyState) GetContactCount() gdnative.Int {
 }
 
 /*
-        Returns the local normal at the contact point.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: Vector2
 */
 func (o *Physics2DDirectBodyState) GetContactLocalNormal(contactIdx gdnative.Int) gdnative.Vector2 {
@@ -415,7 +415,7 @@ func (o *Physics2DDirectBodyState) GetContactLocalNormal(contactIdx gdnative.Int
 }
 
 /*
-        Returns the local position of the contact point.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: Vector2
 */
 func (o *Physics2DDirectBodyState) GetContactLocalPosition(contactIdx gdnative.Int) gdnative.Vector2 {
@@ -439,7 +439,7 @@ func (o *Physics2DDirectBodyState) GetContactLocalPosition(contactIdx gdnative.I
 }
 
 /*
-        Returns the local shape index of the collision.
+        Undocumented
 	Args: [{ false contact_idx int}], Returns: int
 */
 func (o *Physics2DDirectBodyState) GetContactLocalShape(contactIdx gdnative.Int) gdnative.Int {
@@ -532,7 +532,7 @@ func (o *Physics2DDirectBodyState) GetLinearVelocity() gdnative.Vector2 {
 }
 
 /*
-        Returns the current state of the space, useful for queries.
+        Undocumented
 	Args: [], Returns: Physics2DDirectSpaceState
 */
 func (o *Physics2DDirectBodyState) GetSpaceState() Physics2DDirectSpaceStateImplementer {
@@ -684,7 +684,7 @@ func (o *Physics2DDirectBodyState) GetTransform() gdnative.Transform2D {
 }
 
 /*
-        Calls the built-in force integration code.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Physics2DDirectBodyState) IntegrateForces() {

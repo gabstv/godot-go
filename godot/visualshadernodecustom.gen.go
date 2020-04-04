@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ func (o *VisualShaderNodeCustom) BaseClass() string {
 }
 
 /*
-        Override this method to define the category of the associated custom node in the Visual Shader Editor's members dialog. Defining this method is [b]optional[/b]. If not overridden, the node will be filed under the "Custom" category.
+        Override this method to define the path to the associated custom node in the Visual Shader Editor's members dialog. The path may looks like [code]"MyGame/MyFunctions/Noise"[/code]. Defining this method is [b]optional[/b]. If not overridden, the node will be filed under the "Addons" category.
 	Args: [], Returns: String
 */
 func (o *VisualShaderNodeCustom) X_GetCategory() gdnative.String {
@@ -320,7 +320,7 @@ func (o *VisualShaderNodeCustom) X_GetReturnIconType() gdnative.Int {
 }
 
 /*
-        Override this method to define the subcategory of the associated custom node in the Visual Shader Editor's members dialog. Defining this method is [b]optional[/b]. If not overridden, the node will be filed under the root of the main category (see [method _get_category]).
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *VisualShaderNodeCustom) X_GetSubcategory() gdnative.String {

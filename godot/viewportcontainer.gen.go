@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newViewportContainerFromPointer(ptr gdnative.Pointer) ViewportContainer {
 }
 
 /*
-A [Container] node that holds a [Viewport], automatically setting its size.
+Undocumented
 */
 type ViewportContainer struct {
 	Container

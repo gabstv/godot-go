@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newTextureArrayFromPointer(ptr gdnative.Pointer) TextureArray {
 }
 
 /*
-
- */
+Undocumented
+*/
 type TextureArray struct {
 	TextureLayered
 	owner gdnative.Object

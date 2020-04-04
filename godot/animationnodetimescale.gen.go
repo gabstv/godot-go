@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newAnimationNodeTimeScaleFromPointer(ptr gdnative.Pointer) AnimationNodeTim
 }
 
 /*
-
- */
+Allows scaling the speed of the animation (or reversing it) in any children nodes. Setting it to 0 will pause the animation.
+*/
 type AnimationNodeTimeScale struct {
 	AnimationNode
 	owner gdnative.Object

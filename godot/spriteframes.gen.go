@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newSpriteFramesFromPointer(ptr gdnative.Pointer) SpriteFrames {
 }
 
 /*
-Sprite frame library for [AnimatedSprite]. Contains frames and animation data for playback.
+Sprite frame library for [AnimatedSprite2D]. Contains frames and animation data for playback.
 */
 type SpriteFrames struct {
 	Resource

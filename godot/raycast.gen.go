@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newRayCastFromPointer(ptr gdnative.Pointer) RayCast {
 }
 
 /*
-A RayCast represents a line from its origin to its destination position, [code]cast_to[/code]. It is used to query the 3D space in order to find the closest object along the path of the ray. RayCast can ignore some objects by adding them to the exception list via [code]add_exception[/code] or by setting proper filtering with collision layers and masks. RayCast can be configured to report collisions with [Area]s ([member collide_with_areas]) and/or [PhysicsBody]s ([member collide_with_bodies]). Only enabled raycasts will be able to query the space and report collisions. RayCast calculates intersection every physics frame (see [Node]), and the result is cached so it can be used later until the next frame. If multiple queries are required between physics frames (or during the same frame), use [method force_raycast_update] after adjusting the raycast.
+Undocumented
 */
 type RayCast struct {
 	Spatial
@@ -35,7 +35,7 @@ func (o *RayCast) BaseClass() string {
 }
 
 /*
-        Adds a collision exception so the ray does not report collisions with the specified node.
+        Undocumented
 	Args: [{ false node Object}], Returns: void
 */
 func (o *RayCast) AddException(node ObjectImplementer) {
@@ -56,7 +56,7 @@ func (o *RayCast) AddException(node ObjectImplementer) {
 }
 
 /*
-        Adds a collision exception so the ray does not report collisions with the specified [RID].
+        Undocumented
 	Args: [{ false rid RID}], Returns: void
 */
 func (o *RayCast) AddExceptionRid(rid gdnative.Rid) {
@@ -77,7 +77,7 @@ func (o *RayCast) AddExceptionRid(rid gdnative.Rid) {
 }
 
 /*
-        Removes all collision exceptions for this ray.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *RayCast) ClearExceptions() {
@@ -97,7 +97,7 @@ func (o *RayCast) ClearExceptions() {
 }
 
 /*
-        Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next [code]_physics_process[/code] call, for example if the ray or its parent has changed state. [b]Note:[/b] [code]enabled == true[/code] is not required for this to work.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *RayCast) ForceRaycastUpdate() {
@@ -140,7 +140,7 @@ func (o *RayCast) GetCastTo() gdnative.Vector3 {
 }
 
 /*
-        Returns the first object that the ray intersects, or [code]null[/code] if no object is intersecting the ray (i.e. [method is_colliding] returns [code]false[/code]).
+        Undocumented
 	Args: [], Returns: Object
 */
 func (o *RayCast) GetCollider() ObjectImplementer {
@@ -177,7 +177,7 @@ func (o *RayCast) GetCollider() ObjectImplementer {
 }
 
 /*
-        Returns the shape ID of the first object that the ray intersects, or [code]0[/code] if no object is intersecting the ray (i.e. [method is_colliding] returns [code]false[/code]).
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *RayCast) GetColliderShape() gdnative.Int {
@@ -223,7 +223,7 @@ func (o *RayCast) GetCollisionMask() gdnative.Int {
 }
 
 /*
-        Returns [code]true[/code] if the bit index passed is turned on. [b]Note:[/b] Bit indices range from 0-19.
+        Undocumented
 	Args: [{ false bit int}], Returns: bool
 */
 func (o *RayCast) GetCollisionMaskBit(bit gdnative.Int) gdnative.Bool {
@@ -247,7 +247,7 @@ func (o *RayCast) GetCollisionMaskBit(bit gdnative.Int) gdnative.Bool {
 }
 
 /*
-        Returns the normal of the intersecting object's shape at the collision point.
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *RayCast) GetCollisionNormal() gdnative.Vector3 {
@@ -270,7 +270,7 @@ func (o *RayCast) GetCollisionNormal() gdnative.Vector3 {
 }
 
 /*
-        Returns the collision point at which the ray intersects the closest object. [b]Note:[/b] This point is in the [b]global[/b] coordinate system.
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *RayCast) GetCollisionPoint() gdnative.Vector3 {
@@ -362,7 +362,7 @@ func (o *RayCast) IsCollideWithBodiesEnabled() gdnative.Bool {
 }
 
 /*
-        Returns whether any object is intersecting with the ray's vector (considering the vector length).
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *RayCast) IsColliding() gdnative.Bool {
@@ -408,7 +408,7 @@ func (o *RayCast) IsEnabled() gdnative.Bool {
 }
 
 /*
-        Removes a collision exception so the ray does report collisions with the specified node.
+        Undocumented
 	Args: [{ false node Object}], Returns: void
 */
 func (o *RayCast) RemoveException(node ObjectImplementer) {
@@ -429,7 +429,7 @@ func (o *RayCast) RemoveException(node ObjectImplementer) {
 }
 
 /*
-        Removes a collision exception so the ray does report collisions with the specified [RID].
+        Undocumented
 	Args: [{ false rid RID}], Returns: void
 */
 func (o *RayCast) RemoveExceptionRid(rid gdnative.Rid) {
@@ -534,7 +534,7 @@ func (o *RayCast) SetCollisionMask(mask gdnative.Int) {
 }
 
 /*
-        Sets the bit index passed to the [code]value[/code] passed. [b]Note:[/b] Bit indexes range from 0-19.
+        Undocumented
 	Args: [{ false bit int} { false value bool}], Returns: void
 */
 func (o *RayCast) SetCollisionMaskBit(bit gdnative.Int, value gdnative.Bool) {

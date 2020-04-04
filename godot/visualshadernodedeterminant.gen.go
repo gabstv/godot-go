@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeDeterminantFromPointer(ptr gdnative.Pointer) VisualShade
 }
 
 /*
-
- */
+Translates to [code]deteminant(x)[/code] in the shader language.
+*/
 type VisualShaderNodeDeterminant struct {
 	VisualShaderNode
 	owner gdnative.Object

@@ -3,7 +3,7 @@
 package methods
 
 import (
-	"github.com/shadowapex/godot-go/cmd/generate/gdnative"
+	"github.com/gabstv/godot-go/cmd/generate/gdnative"
 )
 
 // Parse will parse the GDNative headers. Takes a list of headers/structs to ignore.

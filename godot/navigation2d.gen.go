@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newNavigation2DFromPointer(ptr gdnative.Pointer) Navigation2D {
 }
 
 /*
-Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of [NavigationPolygon] resources. By default, these are automatically collected from child [NavigationPolygonInstance] nodes, but they can also be added on the fly with [method navpoly_add].
+Navigation2D provides navigation and pathfinding within a 2D area, specified as a collection of [NavigationPolygon] resources. These are automatically collected from child [NavigationRegion2D] nodes.
 */
 type Navigation2D struct {
 	Node2D
@@ -35,7 +35,7 @@ func (o *Navigation2D) BaseClass() string {
 }
 
 /*
-        Returns the navigation point closest to the point given. Points are in local coordinate space.
+        Returns the point closest to the provided [code]to_point[/code] on the navigation mesh surface.
 	Args: [{ false to_point Vector2}], Returns: Vector2
 */
 func (o *Navigation2D) GetClosestPoint(toPoint gdnative.Vector2) gdnative.Vector2 {
@@ -59,7 +59,7 @@ func (o *Navigation2D) GetClosestPoint(toPoint gdnative.Vector2) gdnative.Vector
 }
 
 /*
-        Returns the owner of the [NavigationPolygon] which contains the navigation point closest to the point given. This is usually a [NavigationPolygonInstance]. For polygons added via [method navpoly_add], returns the owner that was given (or [code]null[/code] if the [code]owner[/code] parameter was omitted).
+        Returns the owner region RID for the point returned by [method get_closest_point].
 	Args: [{ false to_point Vector2}], Returns: Object
 */
 func (o *Navigation2D) GetClosestPointOwner(toPoint gdnative.Vector2) ObjectImplementer {
@@ -123,7 +123,7 @@ func (o *Navigation2D) GetSimplePath(start gdnative.Vector2, end gdnative.Vector
 }
 
 /*
-        Adds a [NavigationPolygon]. Returns an ID for use with [method navpoly_remove] or [method navpoly_set_transform]. If given, a [Transform2D] is applied to the polygon. The optional [code]owner[/code] is used as return value for [method get_closest_point_owner].
+        Undocumented
 	Args: [{ false mesh NavigationPolygon} { false xform Transform2D} {Null true owner Object}], Returns: int
 */
 func (o *Navigation2D) NavpolyAdd(mesh NavigationPolygonImplementer, xform gdnative.Transform2D, owner ObjectImplementer) gdnative.Int {
@@ -149,7 +149,7 @@ func (o *Navigation2D) NavpolyAdd(mesh NavigationPolygonImplementer, xform gdnat
 }
 
 /*
-        Removes the [NavigationPolygon] with the given ID.
+        Undocumented
 	Args: [{ false id int}], Returns: void
 */
 func (o *Navigation2D) NavpolyRemove(id gdnative.Int) {
@@ -170,7 +170,7 @@ func (o *Navigation2D) NavpolyRemove(id gdnative.Int) {
 }
 
 /*
-        Sets the transform applied to the [NavigationPolygon] with the given ID.
+        Undocumented
 	Args: [{ false id int} { false xform Transform2D}], Returns: void
 */
 func (o *Navigation2D) NavpolySetTransform(id gdnative.Int, xform gdnative.Transform2D) {

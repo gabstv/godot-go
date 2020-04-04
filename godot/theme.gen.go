@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -251,7 +251,7 @@ func (o *Theme) GetColor(name gdnative.String, aType gdnative.String) gdnative.C
 }
 
 /*
-        Returns all the [Color]s as a [PoolStringArray] filled with each [Color]'s name, for use in [method get_color], if the theme has [code]type[/code].
+        Returns all the [Color]s as a [PackedStringArray] filled with each [Color]'s name, for use in [method get_color], if the theme has [code]type[/code].
 	Args: [{ false type String}], Returns: PoolStringArray
 */
 func (o *Theme) GetColorList(aType gdnative.String) gdnative.PoolStringArray {
@@ -300,7 +300,7 @@ func (o *Theme) GetConstant(name gdnative.String, aType gdnative.String) gdnativ
 }
 
 /*
-        Returns all the constants as a [PoolStringArray] filled with each constant's name, for use in [method get_constant], if the theme has [code]type[/code].
+        Returns all the constants as a [PackedStringArray] filled with each constant's name, for use in [method get_constant], if the theme has [code]type[/code].
 	Args: [{ false type String}], Returns: PoolStringArray
 */
 func (o *Theme) GetConstantList(aType gdnative.String) gdnative.PoolStringArray {
@@ -400,7 +400,7 @@ func (o *Theme) GetFont(name gdnative.String, aType gdnative.String) FontImpleme
 }
 
 /*
-        Returns all the [Font]s as a [PoolStringArray] filled with each [Font]'s name, for use in [method get_font], if the theme has [code]type[/code].
+        Returns all the [Font]s as a [PackedStringArray] filled with each [Font]'s name, for use in [method get_font], if the theme has [code]type[/code].
 	Args: [{ false type String}], Returns: PoolStringArray
 */
 func (o *Theme) GetFontList(aType gdnative.String) gdnative.PoolStringArray {
@@ -424,7 +424,7 @@ func (o *Theme) GetFontList(aType gdnative.String) gdnative.PoolStringArray {
 }
 
 /*
-        Returns the icon [Texture] at [code]name[/code] if the theme has [code]type[/code].
+        Returns the icon [Texture2D] at [code]name[/code] if the theme has [code]type[/code].
 	Args: [{ false name String} { false type String}], Returns: Texture
 */
 func (o *Theme) GetIcon(name gdnative.String, aType gdnative.String) TextureImplementer {
@@ -463,7 +463,7 @@ func (o *Theme) GetIcon(name gdnative.String, aType gdnative.String) TextureImpl
 }
 
 /*
-        Returns all the icons as a [PoolStringArray] filled with each [Texture]'s name, for use in [method get_icon], if the theme has [code]type[/code].
+        Returns all the icons as a [PackedStringArray] filled with each [Texture2D]'s name, for use in [method get_icon], if the theme has [code]type[/code].
 	Args: [{ false type String}], Returns: PoolStringArray
 */
 func (o *Theme) GetIconList(aType gdnative.String) gdnative.PoolStringArray {
@@ -526,7 +526,7 @@ func (o *Theme) GetStylebox(name gdnative.String, aType gdnative.String) StyleBo
 }
 
 /*
-        Returns all the [StyleBox]s as a [PoolStringArray] filled with each [StyleBox]'s name, for use in [method get_stylebox], if the theme has [code]type[/code].
+        Returns all the [StyleBox]s as a [PackedStringArray] filled with each [StyleBox]'s name, for use in [method get_stylebox], if the theme has [code]type[/code].
 	Args: [{ false type String}], Returns: PoolStringArray
 */
 func (o *Theme) GetStyleboxList(aType gdnative.String) gdnative.PoolStringArray {
@@ -550,7 +550,7 @@ func (o *Theme) GetStyleboxList(aType gdnative.String) gdnative.PoolStringArray 
 }
 
 /*
-        Returns all the [StyleBox] types as a [PoolStringArray] filled with each [StyleBox]'s type, for use in [method get_stylebox] and/or [method get_stylebox_list], if the theme has [code]type[/code].
+        Returns all the [StyleBox] types as a [PackedStringArray] filled with each [StyleBox]'s type, for use in [method get_stylebox] and/or [method get_stylebox_list], if the theme has [code]type[/code].
 	Args: [], Returns: PoolStringArray
 */
 func (o *Theme) GetStyleboxTypes() gdnative.PoolStringArray {
@@ -573,7 +573,7 @@ func (o *Theme) GetStyleboxTypes() gdnative.PoolStringArray {
 }
 
 /*
-        Returns all the types in [code]type[/code] as a [PoolStringArray] for use in any of the [code]get_*[/code] functions, if the theme has [code]type[/code].
+        Returns all the types in [code]type[/code] as a [PackedStringArray] for use in any of the [code]get_*[/code] functions, if the theme has [code]type[/code].
 	Args: [{ false type String}], Returns: PoolStringArray
 */
 func (o *Theme) GetTypeList(aType gdnative.String) gdnative.PoolStringArray {
@@ -672,7 +672,7 @@ func (o *Theme) HasFont(name gdnative.String, aType gdnative.String) gdnative.Bo
 }
 
 /*
-        Returns [code]true[/code] if icon [Texture] with [code]name[/code] is in [code]type[/code]. Returns [code]false[/code] if the theme does not have [code]type[/code].
+        Returns [code]true[/code] if icon [Texture2D] with [code]name[/code] is in [code]type[/code]. Returns [code]false[/code] if the theme does not have [code]type[/code].
 	Args: [{ false name String} { false type String}], Returns: bool
 */
 func (o *Theme) HasIcon(name gdnative.String, aType gdnative.String) gdnative.Bool {
@@ -812,7 +812,7 @@ func (o *Theme) SetFont(name gdnative.String, aType gdnative.String, font FontIm
 }
 
 /*
-        Sets the theme's icon [Texture] to [code]texture[/code] at [code]name[/code] in [code]type[/code]. Does nothing if the theme does not have [code]type[/code].
+        Sets the theme's icon [Texture2D] to [code]texture[/code] at [code]name[/code] in [code]type[/code]. Does nothing if the theme does not have [code]type[/code].
 	Args: [{ false name String} { false type String} { false texture Texture}], Returns: void
 */
 func (o *Theme) SetIcon(name gdnative.String, aType gdnative.String, texture TextureImplementer) {

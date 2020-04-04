@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPhysicsShapeQueryResultFromPointer(ptr gdnative.Pointer) PhysicsShapeQue
 }
 
 /*
-The result of a 3D shape query in [PhysicsServer]. See also [PhysicsShapeQueryParameters].
+Undocumented
 */
 type PhysicsShapeQueryResult struct {
 	Reference
@@ -35,7 +35,7 @@ func (o *PhysicsShapeQueryResult) BaseClass() string {
 }
 
 /*
-        Returns the number of objects that intersected with the shape.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *PhysicsShapeQueryResult) GetResultCount() gdnative.Int {
@@ -58,7 +58,7 @@ func (o *PhysicsShapeQueryResult) GetResultCount() gdnative.Int {
 }
 
 /*
-        Returns the [Object] that intersected with the shape at index [code]idx[/code].
+        Undocumented
 	Args: [{ false idx int}], Returns: Object
 */
 func (o *PhysicsShapeQueryResult) GetResultObject(idx gdnative.Int) ObjectImplementer {
@@ -96,7 +96,7 @@ func (o *PhysicsShapeQueryResult) GetResultObject(idx gdnative.Int) ObjectImplem
 }
 
 /*
-        Returns the instance ID of the [Object] that intersected with the shape at index [code]idx[/code].
+        Undocumented
 	Args: [{ false idx int}], Returns: int
 */
 func (o *PhysicsShapeQueryResult) GetResultObjectId(idx gdnative.Int) gdnative.Int {
@@ -120,7 +120,7 @@ func (o *PhysicsShapeQueryResult) GetResultObjectId(idx gdnative.Int) gdnative.I
 }
 
 /*
-        Returns the child index of the object's [Shape] that intersected with the shape at index [code]idx[/code].
+        Undocumented
 	Args: [{ false idx int}], Returns: int
 */
 func (o *PhysicsShapeQueryResult) GetResultObjectShape(idx gdnative.Int) gdnative.Int {
@@ -144,7 +144,7 @@ func (o *PhysicsShapeQueryResult) GetResultObjectShape(idx gdnative.Int) gdnativ
 }
 
 /*
-        Returns the [RID] of the object that intersected with the shape at index [code]idx[/code].
+        Undocumented
 	Args: [{ false idx int}], Returns: RID
 */
 func (o *PhysicsShapeQueryResult) GetResultRid(idx gdnative.Int) gdnative.Rid {

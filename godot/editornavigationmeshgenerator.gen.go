@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newEditorNavigationMeshGeneratorFromPointer(ptr gdnative.Pointer) EditorNav
 }
 
 /*
-
- */
+Undocumented
+*/
 type EditorNavigationMeshGenerator struct {
 	Object
 	owner gdnative.Object
@@ -35,7 +35,7 @@ func (o *EditorNavigationMeshGenerator) BaseClass() string {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false nav_mesh NavigationMesh} { false root_node Node}], Returns: void
 */
 func (o *EditorNavigationMeshGenerator) Bake(navMesh NavigationMeshImplementer, rootNode NodeImplementer) {
@@ -57,7 +57,7 @@ func (o *EditorNavigationMeshGenerator) Bake(navMesh NavigationMeshImplementer, 
 }
 
 /*
-
+        Undocumented
 	Args: [{ false nav_mesh NavigationMesh}], Returns: void
 */
 func (o *EditorNavigationMeshGenerator) Clear(navMesh NavigationMeshImplementer) {

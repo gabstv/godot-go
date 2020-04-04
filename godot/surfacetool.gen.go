@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -374,7 +374,7 @@ func (o *SurfaceTool) Commit(existing ArrayMeshImplementer, flags gdnative.Int) 
 }
 
 /*
-
+        Commits the data to the same format used by [method ArrayMesh.add_surface_from_arrays]. This way you can further process the mesh data using the [ArrayMesh] API.
 	Args: [], Returns: Array
 */
 func (o *SurfaceTool) CommitToArrays() gdnative.Array {
@@ -419,7 +419,7 @@ func (o *SurfaceTool) CreateFrom(existing MeshImplementer, surface gdnative.Int)
 }
 
 /*
-
+        Creates a vertex array from the specified blend shape of an existing [Mesh]. This can be used to extract a specific pose from a blend shape.
 	Args: [{ false existing Mesh} { false surface int} { false blend_shape String}], Returns: void
 */
 func (o *SurfaceTool) CreateFromBlendShape(existing MeshImplementer, surface gdnative.Int, blendShape gdnative.String) {

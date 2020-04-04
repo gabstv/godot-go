@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -200,7 +200,7 @@ func (o *SpriteBase3D) GetBillboardMode() SpatialMaterialBillboardMode {
 }
 
 /*
-
+        Returns the value of the specified flag.
 	Args: [{ false flag int}], Returns: bool
 */
 func (o *SpriteBase3D) GetDrawFlag(flag gdnative.Int) gdnative.Bool {
@@ -224,7 +224,7 @@ func (o *SpriteBase3D) GetDrawFlag(flag gdnative.Int) gdnative.Bool {
 }
 
 /*
-
+        Returns the rectangle representing this sprite.
 	Args: [], Returns: Rect2
 */
 func (o *SpriteBase3D) GetItemRect() gdnative.Rect2 {
@@ -492,7 +492,7 @@ func (o *SpriteBase3D) SetCentered(centered gdnative.Bool) {
 }
 
 /*
-
+        If [code]true[/code], the specified flag will be enabled.
 	Args: [{ false flag int} { false enabled bool}], Returns: void
 */
 func (o *SpriteBase3D) SetDrawFlag(flag gdnative.Int, enabled gdnative.Bool) {

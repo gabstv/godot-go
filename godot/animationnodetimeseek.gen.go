@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newAnimationNodeTimeSeekFromPointer(ptr gdnative.Pointer) AnimationNodeTime
 }
 
 /*
-
- */
+This node can be used to cause a seek command to happen to any sub-children of the graph. After setting the time, this value returns to -1.
+*/
 type AnimationNodeTimeSeek struct {
 	AnimationNode
 	owner gdnative.Object

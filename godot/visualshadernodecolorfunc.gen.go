@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -31,8 +31,8 @@ func newVisualShaderNodeColorFuncFromPointer(ptr gdnative.Pointer) VisualShaderN
 }
 
 /*
-
- */
+Accept a [Color] to the input port and transform it according to [member function].
+*/
 type VisualShaderNodeColorFunc struct {
 	VisualShaderNode
 	owner gdnative.Object

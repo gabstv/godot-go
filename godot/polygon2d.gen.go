@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ func (o *Polygon2D) X_SkeletonBoneSetupChanged() {
 }
 
 /*
-
+        Adds a bone with the specified [code]path[/code] and [code]weights[/code].
 	Args: [{ false path NodePath} { false weights PoolRealArray}], Returns: void
 */
 func (o *Polygon2D) AddBone(path gdnative.NodePath, weights gdnative.PoolRealArray) {
@@ -121,7 +121,7 @@ func (o *Polygon2D) AddBone(path gdnative.NodePath, weights gdnative.PoolRealArr
 }
 
 /*
-
+        Removes all bones from this [Polygon2D].
 	Args: [], Returns: void
 */
 func (o *Polygon2D) ClearBones() {
@@ -141,7 +141,7 @@ func (o *Polygon2D) ClearBones() {
 }
 
 /*
-
+        Removes the specified bone from this [Polygon2D].
 	Args: [{ false index int}], Returns: void
 */
 func (o *Polygon2D) EraseBone(index gdnative.Int) {
@@ -185,7 +185,7 @@ func (o *Polygon2D) GetAntialiased() gdnative.Bool {
 }
 
 /*
-
+        Returns the number of bones in this [Polygon2D].
 	Args: [], Returns: int
 */
 func (o *Polygon2D) GetBoneCount() gdnative.Int {
@@ -208,7 +208,7 @@ func (o *Polygon2D) GetBoneCount() gdnative.Int {
 }
 
 /*
-
+        Returns the path to the node associated with the specified bone.
 	Args: [{ false index int}], Returns: NodePath
 */
 func (o *Polygon2D) GetBonePath(index gdnative.Int) gdnative.NodePath {
@@ -232,7 +232,7 @@ func (o *Polygon2D) GetBonePath(index gdnative.Int) gdnative.NodePath {
 }
 
 /*
-
+        Returns the height values of the specified bone.
 	Args: [{ false index int}], Returns: PoolRealArray
 */
 func (o *Polygon2D) GetBoneWeights(index gdnative.Int) gdnative.PoolRealArray {
@@ -636,7 +636,7 @@ func (o *Polygon2D) SetAntialiased(antialiased gdnative.Bool) {
 }
 
 /*
-
+        Sets the path to the node associated with the specified bone.
 	Args: [{ false index int} { false path NodePath}], Returns: void
 */
 func (o *Polygon2D) SetBonePath(index gdnative.Int, path gdnative.NodePath) {
@@ -658,7 +658,7 @@ func (o *Polygon2D) SetBonePath(index gdnative.Int, path gdnative.NodePath) {
 }
 
 /*
-
+        Sets the weight values for the specified bone.
 	Args: [{ false index int} { false weights PoolRealArray}], Returns: void
 */
 func (o *Polygon2D) SetBoneWeights(index gdnative.Int, weights gdnative.PoolRealArray) {

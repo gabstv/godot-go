@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newMultiMeshInstanceFromPointer(ptr gdnative.Pointer) MultiMeshInstance {
 }
 
 /*
-[MultiMeshInstance] is a specialized node to instance [GeometryInstance]s based on a [MultiMesh] resource. This is useful to optimize the rendering of a high amount of instances of a given mesh (for example trees in a forest or grass strands).
+Undocumented
 */
 type MultiMeshInstance struct {
 	GeometryInstance

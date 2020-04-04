@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newCollisionObjectFromPointer(ptr gdnative.Pointer) CollisionObject {
 }
 
 /*
-CollisionObject is the base class for physics objects. It can hold any number of collision [Shape]s. Each shape must be assigned to a [i]shape owner[/i]. The CollisionObject can have any number of shape owners. Shape owners are not nodes and do not appear in the editor, but are accessible through code using the [code]shape_owner_*[/code] methods.
+Undocumented
 */
 type CollisionObject struct {
 	Spatial
@@ -35,7 +35,7 @@ func (o *CollisionObject) BaseClass() string {
 }
 
 /*
-        Accepts unhandled [InputEvent]s. [code]click_position[/code] is the clicked location in world space and [code]click_normal[/code] is the normal vector extending from the clicked surface of the [Shape] at [code]shape_idx[/code]. Connect to the [code]input_event[/code] signal to easily pick up these events.
+        Undocumented
 	Args: [{ false camera Object} { false event InputEvent} { false click_position Vector3} { false click_normal Vector3} { false shape_idx int}], Returns: void
 */
 func (o *CollisionObject) X_InputEvent(camera ObjectImplementer, event InputEventImplementer, clickPosition gdnative.Vector3, clickNormal gdnative.Vector3, shapeIdx gdnative.Int) {
@@ -60,7 +60,7 @@ func (o *CollisionObject) X_InputEvent(camera ObjectImplementer, event InputEven
 }
 
 /*
-        Creates a new shape owner for the given object. Returns [code]owner_id[/code] of the new owner for future reference.
+        Undocumented
 	Args: [{ false owner Object}], Returns: int
 */
 func (o *CollisionObject) CreateShapeOwner(owner ObjectImplementer) gdnative.Int {
@@ -107,7 +107,7 @@ func (o *CollisionObject) GetCaptureInputOnDrag() gdnative.Bool {
 }
 
 /*
-        Returns the object's [RID].
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *CollisionObject) GetRid() gdnative.Rid {
@@ -130,7 +130,7 @@ func (o *CollisionObject) GetRid() gdnative.Rid {
 }
 
 /*
-        Returns an [Array] of [code]owner_id[/code] identifiers. You can use these ids in other methods that take [code]owner_id[/code] as an argument.
+        Undocumented
 	Args: [], Returns: Array
 */
 func (o *CollisionObject) GetShapeOwners() gdnative.Array {
@@ -176,7 +176,7 @@ func (o *CollisionObject) IsRayPickable() gdnative.Bool {
 }
 
 /*
-        If [code]true[/code], the shape owner and its shapes are disabled.
+        Undocumented
 	Args: [{ false owner_id int}], Returns: bool
 */
 func (o *CollisionObject) IsShapeOwnerDisabled(ownerId gdnative.Int) gdnative.Bool {
@@ -200,7 +200,7 @@ func (o *CollisionObject) IsShapeOwnerDisabled(ownerId gdnative.Int) gdnative.Bo
 }
 
 /*
-        Removes the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int}], Returns: void
 */
 func (o *CollisionObject) RemoveShapeOwner(ownerId gdnative.Int) {
@@ -263,7 +263,7 @@ func (o *CollisionObject) SetRayPickable(rayPickable gdnative.Bool) {
 }
 
 /*
-        Returns the [code]owner_id[/code] of the given shape.
+        Undocumented
 	Args: [{ false shape_index int}], Returns: int
 */
 func (o *CollisionObject) ShapeFindOwner(shapeIndex gdnative.Int) gdnative.Int {
@@ -287,7 +287,7 @@ func (o *CollisionObject) ShapeFindOwner(shapeIndex gdnative.Int) gdnative.Int {
 }
 
 /*
-        Adds a [Shape] to the shape owner.
+        Undocumented
 	Args: [{ false owner_id int} { false shape Shape}], Returns: void
 */
 func (o *CollisionObject) ShapeOwnerAddShape(ownerId gdnative.Int, shape ShapeImplementer) {
@@ -309,7 +309,7 @@ func (o *CollisionObject) ShapeOwnerAddShape(ownerId gdnative.Int, shape ShapeIm
 }
 
 /*
-        Removes all shapes from the shape owner.
+        Undocumented
 	Args: [{ false owner_id int}], Returns: void
 */
 func (o *CollisionObject) ShapeOwnerClearShapes(ownerId gdnative.Int) {
@@ -330,7 +330,7 @@ func (o *CollisionObject) ShapeOwnerClearShapes(ownerId gdnative.Int) {
 }
 
 /*
-        Returns the parent object of the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int}], Returns: Object
 */
 func (o *CollisionObject) ShapeOwnerGetOwner(ownerId gdnative.Int) ObjectImplementer {
@@ -368,7 +368,7 @@ func (o *CollisionObject) ShapeOwnerGetOwner(ownerId gdnative.Int) ObjectImpleme
 }
 
 /*
-        Returns the [Shape] with the given id from the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int} { false shape_id int}], Returns: Shape
 */
 func (o *CollisionObject) ShapeOwnerGetShape(ownerId gdnative.Int, shapeId gdnative.Int) ShapeImplementer {
@@ -407,7 +407,7 @@ func (o *CollisionObject) ShapeOwnerGetShape(ownerId gdnative.Int, shapeId gdnat
 }
 
 /*
-        Returns the number of shapes the given shape owner contains.
+        Undocumented
 	Args: [{ false owner_id int}], Returns: int
 */
 func (o *CollisionObject) ShapeOwnerGetShapeCount(ownerId gdnative.Int) gdnative.Int {
@@ -431,7 +431,7 @@ func (o *CollisionObject) ShapeOwnerGetShapeCount(ownerId gdnative.Int) gdnative
 }
 
 /*
-        Returns the child index of the [Shape] with the given id from the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int} { false shape_id int}], Returns: int
 */
 func (o *CollisionObject) ShapeOwnerGetShapeIndex(ownerId gdnative.Int, shapeId gdnative.Int) gdnative.Int {
@@ -456,7 +456,7 @@ func (o *CollisionObject) ShapeOwnerGetShapeIndex(ownerId gdnative.Int, shapeId 
 }
 
 /*
-        Returns the shape owner's [Transform].
+        Undocumented
 	Args: [{ false owner_id int}], Returns: Transform
 */
 func (o *CollisionObject) ShapeOwnerGetTransform(ownerId gdnative.Int) gdnative.Transform {
@@ -480,7 +480,7 @@ func (o *CollisionObject) ShapeOwnerGetTransform(ownerId gdnative.Int) gdnative.
 }
 
 /*
-        Removes a shape from the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int} { false shape_id int}], Returns: void
 */
 func (o *CollisionObject) ShapeOwnerRemoveShape(ownerId gdnative.Int, shapeId gdnative.Int) {
@@ -502,7 +502,7 @@ func (o *CollisionObject) ShapeOwnerRemoveShape(ownerId gdnative.Int, shapeId gd
 }
 
 /*
-        If [code]true[/code], disables the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int} { false disabled bool}], Returns: void
 */
 func (o *CollisionObject) ShapeOwnerSetDisabled(ownerId gdnative.Int, disabled gdnative.Bool) {
@@ -524,7 +524,7 @@ func (o *CollisionObject) ShapeOwnerSetDisabled(ownerId gdnative.Int, disabled g
 }
 
 /*
-        Sets the [Transform] of the given shape owner.
+        Undocumented
 	Args: [{ false owner_id int} { false transform Transform}], Returns: void
 */
 func (o *CollisionObject) ShapeOwnerSetTransform(ownerId gdnative.Int, transform gdnative.Transform) {

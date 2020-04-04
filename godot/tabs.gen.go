@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -367,7 +367,7 @@ func (o *Tabs) GetTabDisabled(tabIdx gdnative.Int) gdnative.Bool {
 }
 
 /*
-        Returns the [Texture] for the tab at index [code]tab_idx[/code] or [code]null[/code] if the tab has no [Texture].
+        Returns the [Texture2D] for the tab at index [code]tab_idx[/code] or [code]null[/code] if the tab has no [Texture2D].
 	Args: [{ false tab_idx int}], Returns: Texture
 */
 func (o *Tabs) GetTabIcon(tabIdx gdnative.Int) TextureImplementer {

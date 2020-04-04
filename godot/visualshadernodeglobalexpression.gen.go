@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeGlobalExpressionFromPointer(ptr gdnative.Pointer) Visual
 }
 
 /*
-
- */
+Custom Godot Shader Language expression, which is placed on top of the generated shader. You can place various function definitions inside to call later in [VisualShaderNodeExpression]s (which are injected in the main shader functions). You can also declare varyings, uniforms and global constants.
+*/
 type VisualShaderNodeGlobalExpression struct {
 	VisualShaderNodeExpression
 	owner gdnative.Object

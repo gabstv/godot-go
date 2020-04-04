@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -37,12 +37,12 @@ func newSingletonAudioServer() *audioServer {
 }
 
 /*
-   AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+   [AudioServer] is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
 */
 var AudioServer = newSingletonAudioServer()
 
 /*
-AudioServer is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
+[AudioServer] is a low-level server interface for audio access. It is in charge of creating sample data (playable audio) as well as its playback via a voice interface.
 */
 type audioServer struct {
 	Object
@@ -113,7 +113,7 @@ func (o *audioServer) AddBusEffect(busIdx gdnative.Int, effect AudioEffectImplem
 }
 
 /*
-        Undocumented
+        Name of the current device for audio input (see [method capture_get_device_list]).
 	Args: [], Returns: String
 */
 func (o *audioServer) CaptureGetDevice() gdnative.String {
@@ -161,7 +161,7 @@ func (o *audioServer) CaptureGetDeviceList() gdnative.Array {
 }
 
 /*
-        Undocumented
+        Sets which audio input device is used for audio capture.
 	Args: [{ false name String}], Returns: void
 */
 func (o *audioServer) CaptureSetDevice(name gdnative.String) {
@@ -180,54 +180,6 @@ func (o *audioServer) CaptureSetDevice(name gdnative.String) {
 	retPtr := gdnative.NewEmptyVoid()
 	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
 
-}
-
-/*
-        Attempts to start recording from the audio driver's capture device. On success, the return value is [constant OK].
-	Args: [], Returns: enum.Error
-*/
-func (o *audioServer) CaptureStart() gdnative.Error {
-	o.ensureSingleton()
-	//log.Println("Calling AudioServer.CaptureStart()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("AudioServer", "capture_start")
-
-	// Call the parent method.
-	// enum.Error
-	retPtr := gdnative.NewEmptyInt()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewIntFromPointer(retPtr)
-	return gdnative.Error(ret)
-}
-
-/*
-        Attempts to stop recording from the audio driver's capture device. On success, the return value is [constant OK].
-	Args: [], Returns: enum.Error
-*/
-func (o *audioServer) CaptureStop() gdnative.Error {
-	o.ensureSingleton()
-	//log.Println("Calling AudioServer.CaptureStop()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("AudioServer", "capture_stop")
-
-	// Call the parent method.
-	// enum.Error
-	retPtr := gdnative.NewEmptyInt()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewIntFromPointer(retPtr)
-	return gdnative.Error(ret)
 }
 
 /*
@@ -383,7 +335,7 @@ func (o *audioServer) GetBusEffectCount(busIdx gdnative.Int) gdnative.Int {
 }
 
 /*
-
+        Returns the [AudioEffectInstance] assigned to the given bus and effect indices (and optionally channel).
 	Args: [{ false bus_idx int} { false effect_idx int} {0 true channel int}], Returns: AudioEffectInstance
 */
 func (o *audioServer) GetBusEffectInstance(busIdx gdnative.Int, effectIdx gdnative.Int, channel gdnative.Int) AudioEffectInstanceImplementer {
@@ -576,78 +528,6 @@ func (o *audioServer) GetBusVolumeDb(busIdx gdnative.Int) gdnative.Real {
 }
 
 /*
-        Returns an [PoolIntArray] containing audio frames from the capture device.
-	Args: [], Returns: PoolIntArray
-*/
-func (o *audioServer) GetCaptureBuffer() gdnative.PoolIntArray {
-	o.ensureSingleton()
-	//log.Println("Calling AudioServer.GetCaptureBuffer()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("AudioServer", "get_capture_buffer")
-
-	// Call the parent method.
-	// PoolIntArray
-	retPtr := gdnative.NewEmptyPoolIntArray()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewPoolIntArrayFromPointer(retPtr)
-	return ret
-}
-
-/*
-        Returns the write position of the capture device buffer.
-	Args: [], Returns: int
-*/
-func (o *audioServer) GetCapturePosition() gdnative.Int {
-	o.ensureSingleton()
-	//log.Println("Calling AudioServer.GetCapturePosition()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("AudioServer", "get_capture_position")
-
-	// Call the parent method.
-	// int
-	retPtr := gdnative.NewEmptyInt()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewIntFromPointer(retPtr)
-	return ret
-}
-
-/*
-        Returns the size of the capture device buffer.
-	Args: [], Returns: int
-*/
-func (o *audioServer) GetCaptureSize() gdnative.Int {
-	o.ensureSingleton()
-	//log.Println("Calling AudioServer.GetCaptureSize()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("AudioServer", "get_capture_size")
-
-	// Call the parent method.
-	// int
-	retPtr := gdnative.NewEmptyInt()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewIntFromPointer(retPtr)
-	return ret
-}
-
-/*
         Undocumented
 	Args: [], Returns: String
 */
@@ -672,7 +552,7 @@ func (o *audioServer) GetDevice() gdnative.String {
 }
 
 /*
-        Returns the names of all audio output devices detected on the system.
+        Returns the names of all audio devices detected on the system.
 	Args: [], Returns: Array
 */
 func (o *audioServer) GetDeviceList() gdnative.Array {
@@ -792,7 +672,7 @@ func (o *audioServer) GetSpeakerMode() AudioServerSpeakerMode {
 }
 
 /*
-
+        Returns the relative time since the last mix occurred.
 	Args: [], Returns: float
 */
 func (o *audioServer) GetTimeSinceLastMix() gdnative.Real {
@@ -816,7 +696,7 @@ func (o *audioServer) GetTimeSinceLastMix() gdnative.Real {
 }
 
 /*
-
+        Returns the relative time until the next mix occurs.
 	Args: [], Returns: float
 */
 func (o *audioServer) GetTimeToNextMix() gdnative.Real {
@@ -941,7 +821,7 @@ func (o *audioServer) IsBusSolo(busIdx gdnative.Int) gdnative.Bool {
 }
 
 /*
-        Locks the audio driver's main loop. Remember to unlock it afterwards.
+        Locks the audio driver's main loop. [b]Note:[/b] Remember to unlock it afterwards.
 	Args: [], Returns: void
 */
 func (o *audioServer) Lock() {
@@ -1345,9 +1225,6 @@ type AudioServerImplementer interface {
 	GetBusPeakVolumeRightDb(busIdx gdnative.Int, channel gdnative.Int) gdnative.Real
 	GetBusSend(busIdx gdnative.Int) gdnative.String
 	GetBusVolumeDb(busIdx gdnative.Int) gdnative.Real
-	GetCaptureBuffer() gdnative.PoolIntArray
-	GetCapturePosition() gdnative.Int
-	GetCaptureSize() gdnative.Int
 	GetDevice() gdnative.String
 	GetDeviceList() gdnative.Array
 	GetGlobalRateScale() gdnative.Real

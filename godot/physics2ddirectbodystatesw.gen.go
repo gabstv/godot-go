@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPhysics2DDirectBodyStateSWFromPointer(ptr gdnative.Pointer) Physics2DDir
 }
 
 /*
-Software implementation of [Physics2DDirectBodyState]. This object exposes no new methods or properties and should not be used, as [Physics2DDirectBodyState] selects the best implementation available.
+Undocumented
 */
 type Physics2DDirectBodyStateSW struct {
 	Physics2DDirectBodyState

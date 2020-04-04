@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newImmediateGeometryFromPointer(ptr gdnative.Pointer) ImmediateGeometry {
 }
 
 /*
-Draws simple geometry from code. Uses a drawing mode similar to OpenGL 1.x.
+Undocumented
 */
 type ImmediateGeometry struct {
 	GeometryInstance
@@ -35,7 +35,7 @@ func (o *ImmediateGeometry) BaseClass() string {
 }
 
 /*
-        Simple helper to draw an UV sphere with given latitude, longitude and radius.
+        Undocumented
 	Args: [{ false lats int} { false lons int} { false radius float} {True true add_uv bool}], Returns: void
 */
 func (o *ImmediateGeometry) AddSphere(lats gdnative.Int, lons gdnative.Int, radius gdnative.Real, addUv gdnative.Bool) {
@@ -59,7 +59,7 @@ func (o *ImmediateGeometry) AddSphere(lats gdnative.Int, lons gdnative.Int, radi
 }
 
 /*
-        Adds a vertex in local coordinate space with the currently set color/uv/etc.
+        Undocumented
 	Args: [{ false position Vector3}], Returns: void
 */
 func (o *ImmediateGeometry) AddVertex(position gdnative.Vector3) {
@@ -80,7 +80,7 @@ func (o *ImmediateGeometry) AddVertex(position gdnative.Vector3) {
 }
 
 /*
-        Begin drawing (and optionally pass a texture override). When done call [method end]. For more information on how this works, search for [code]glBegin()[/code] and [code]glEnd()[/code] references. For the type of primitive, see the [enum Mesh.PrimitiveType] enum.
+        Undocumented
 	Args: [{ false primitive int} {[Object:null] true texture Texture}], Returns: void
 */
 func (o *ImmediateGeometry) Begin(primitive gdnative.Int, texture TextureImplementer) {
@@ -102,7 +102,7 @@ func (o *ImmediateGeometry) Begin(primitive gdnative.Int, texture TextureImpleme
 }
 
 /*
-        Clears everything that was drawn using begin/end.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *ImmediateGeometry) Clear() {
@@ -122,7 +122,7 @@ func (o *ImmediateGeometry) Clear() {
 }
 
 /*
-        Ends a drawing context and displays the results.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *ImmediateGeometry) End() {
@@ -142,7 +142,7 @@ func (o *ImmediateGeometry) End() {
 }
 
 /*
-        The current drawing color.
+        Undocumented
 	Args: [{ false color Color}], Returns: void
 */
 func (o *ImmediateGeometry) SetColor(color gdnative.Color) {
@@ -163,7 +163,7 @@ func (o *ImmediateGeometry) SetColor(color gdnative.Color) {
 }
 
 /*
-        The next vertex's normal.
+        Undocumented
 	Args: [{ false normal Vector3}], Returns: void
 */
 func (o *ImmediateGeometry) SetNormal(normal gdnative.Vector3) {
@@ -184,7 +184,7 @@ func (o *ImmediateGeometry) SetNormal(normal gdnative.Vector3) {
 }
 
 /*
-        The next vertex's tangent (and binormal facing).
+        Undocumented
 	Args: [{ false tangent Plane}], Returns: void
 */
 func (o *ImmediateGeometry) SetTangent(tangent gdnative.Plane) {
@@ -205,7 +205,7 @@ func (o *ImmediateGeometry) SetTangent(tangent gdnative.Plane) {
 }
 
 /*
-        The next vertex's UV.
+        Undocumented
 	Args: [{ false uv Vector2}], Returns: void
 */
 func (o *ImmediateGeometry) SetUv(uv gdnative.Vector2) {
@@ -226,7 +226,7 @@ func (o *ImmediateGeometry) SetUv(uv gdnative.Vector2) {
 }
 
 /*
-        The next vertex's second layer UV.
+        Undocumented
 	Args: [{ false uv Vector2}], Returns: void
 */
 func (o *ImmediateGeometry) SetUv2(uv gdnative.Vector2) {

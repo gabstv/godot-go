@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeGroupBaseFromPointer(ptr gdnative.Pointer) VisualShaderN
 }
 
 /*
-
- */
+Currently, has no direct usage, use the derived classes instead.
+*/
 type VisualShaderNodeGroupBase struct {
 	VisualShaderNode
 	owner gdnative.Object
@@ -35,7 +35,7 @@ func (o *VisualShaderNodeGroupBase) BaseClass() string {
 }
 
 /*
-
+        Adds an input port with the specified [code]type[/code] (see [enum VisualShaderNode.PortType]) and [code]name[/code].
 	Args: [{ false id int} { false type int} { false name String}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) AddInputPort(id gdnative.Int, aType gdnative.Int, name gdnative.String) {
@@ -58,7 +58,7 @@ func (o *VisualShaderNodeGroupBase) AddInputPort(id gdnative.Int, aType gdnative
 }
 
 /*
-
+        Adds an output port with the specified [code]type[/code] (see [enum VisualShaderNode.PortType]) and [code]name[/code].
 	Args: [{ false id int} { false type int} { false name String}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) AddOutputPort(id gdnative.Int, aType gdnative.Int, name gdnative.String) {
@@ -81,7 +81,7 @@ func (o *VisualShaderNodeGroupBase) AddOutputPort(id gdnative.Int, aType gdnativ
 }
 
 /*
-
+        Removes all previously specified input ports.
 	Args: [], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) ClearInputPorts() {
@@ -101,7 +101,7 @@ func (o *VisualShaderNodeGroupBase) ClearInputPorts() {
 }
 
 /*
-
+        Removes all previously specified output ports.
 	Args: [], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) ClearOutputPorts() {
@@ -121,45 +121,7 @@ func (o *VisualShaderNodeGroupBase) ClearOutputPorts() {
 }
 
 /*
-
-	Args: [{ false index int}], Returns: Control
-*/
-func (o *VisualShaderNodeGroupBase) GetControl(index gdnative.Int) ControlImplementer {
-	//log.Println("Calling VisualShaderNodeGroupBase.GetControl()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 1, 1)
-	ptrArguments[0] = gdnative.NewPointerFromInt(index)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeGroupBase", "get_control")
-
-	// Call the parent method.
-	// Control
-	retPtr := gdnative.NewEmptyObject()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := newControlFromPointer(retPtr)
-
-	// Check to see if we already have an instance of this object in our Go instance registry.
-	if instance, ok := InstanceRegistry.Get(ret.GetBaseObject().ID()); ok {
-		return instance.(ControlImplementer)
-	}
-
-	// Check to see what kind of class this is and create it. This is generally used with
-	// GetNode().
-	className := ret.GetClass()
-	if className != "Control" {
-		actualRet := getActualClass(className, ret.GetBaseObject())
-		return actualRet.(ControlImplementer)
-	}
-
-	return &ret
-}
-
-/*
-
+        Returns a free input port ID which can be used in [method add_input_port].
 	Args: [], Returns: int
 */
 func (o *VisualShaderNodeGroupBase) GetFreeInputPortId() gdnative.Int {
@@ -182,7 +144,7 @@ func (o *VisualShaderNodeGroupBase) GetFreeInputPortId() gdnative.Int {
 }
 
 /*
-
+        Returns a free output port ID which can be used in [method add_output_port].
 	Args: [], Returns: int
 */
 func (o *VisualShaderNodeGroupBase) GetFreeOutputPortId() gdnative.Int {
@@ -205,7 +167,7 @@ func (o *VisualShaderNodeGroupBase) GetFreeOutputPortId() gdnative.Int {
 }
 
 /*
-
+        Returns the number of input ports in use. Alternative for [method get_free_input_port_id].
 	Args: [], Returns: int
 */
 func (o *VisualShaderNodeGroupBase) GetInputPortCount() gdnative.Int {
@@ -228,7 +190,7 @@ func (o *VisualShaderNodeGroupBase) GetInputPortCount() gdnative.Int {
 }
 
 /*
-
+        Returns a [String] description of the input ports as as colon-separated list using the format [code]id,type,name;[/code] (see [method add_input_port]).
 	Args: [], Returns: String
 */
 func (o *VisualShaderNodeGroupBase) GetInputs() gdnative.String {
@@ -251,7 +213,7 @@ func (o *VisualShaderNodeGroupBase) GetInputs() gdnative.String {
 }
 
 /*
-
+        Returns the number of output ports in use. Alternative for [method get_free_output_port_id].
 	Args: [], Returns: int
 */
 func (o *VisualShaderNodeGroupBase) GetOutputPortCount() gdnative.Int {
@@ -274,7 +236,7 @@ func (o *VisualShaderNodeGroupBase) GetOutputPortCount() gdnative.Int {
 }
 
 /*
-
+        Returns a [String] description of the output ports as as colon-separated list using the format [code]id,type,name;[/code] (see [method add_output_port]).
 	Args: [], Returns: String
 */
 func (o *VisualShaderNodeGroupBase) GetOutputs() gdnative.String {
@@ -297,7 +259,7 @@ func (o *VisualShaderNodeGroupBase) GetOutputs() gdnative.String {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: Vector2
 */
 func (o *VisualShaderNodeGroupBase) GetSize() gdnative.Vector2 {
@@ -320,7 +282,7 @@ func (o *VisualShaderNodeGroupBase) GetSize() gdnative.Vector2 {
 }
 
 /*
-
+        Returns [code]true[/code] if the specified input port exists.
 	Args: [{ false id int}], Returns: bool
 */
 func (o *VisualShaderNodeGroupBase) HasInputPort(id gdnative.Int) gdnative.Bool {
@@ -344,7 +306,7 @@ func (o *VisualShaderNodeGroupBase) HasInputPort(id gdnative.Int) gdnative.Bool 
 }
 
 /*
-
+        Returns [code]true[/code] if the specified output port exists.
 	Args: [{ false id int}], Returns: bool
 */
 func (o *VisualShaderNodeGroupBase) HasOutputPort(id gdnative.Int) gdnative.Bool {
@@ -368,30 +330,7 @@ func (o *VisualShaderNodeGroupBase) HasOutputPort(id gdnative.Int) gdnative.Bool
 }
 
 /*
-        Undocumented
-	Args: [], Returns: bool
-*/
-func (o *VisualShaderNodeGroupBase) IsEditable() gdnative.Bool {
-	//log.Println("Calling VisualShaderNodeGroupBase.IsEditable()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeGroupBase", "is_editable")
-
-	// Call the parent method.
-	// bool
-	retPtr := gdnative.NewEmptyBool()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewBoolFromPointer(retPtr)
-	return ret
-}
-
-/*
-
+        Returns [code]true[/code] if the specified port name does not override an existed port name and is valid within the shader.
 	Args: [{ false name String}], Returns: bool
 */
 func (o *VisualShaderNodeGroupBase) IsValidPortName(name gdnative.String) gdnative.Bool {
@@ -415,7 +354,7 @@ func (o *VisualShaderNodeGroupBase) IsValidPortName(name gdnative.String) gdnati
 }
 
 /*
-
+        Removes the specified input port.
 	Args: [{ false id int}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) RemoveInputPort(id gdnative.Int) {
@@ -436,7 +375,7 @@ func (o *VisualShaderNodeGroupBase) RemoveInputPort(id gdnative.Int) {
 }
 
 /*
-
+        Removes the specified output port.
 	Args: [{ false id int}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) RemoveOutputPort(id gdnative.Int) {
@@ -457,50 +396,7 @@ func (o *VisualShaderNodeGroupBase) RemoveOutputPort(id gdnative.Int) {
 }
 
 /*
-
-	Args: [{ false control Control} { false index int}], Returns: void
-*/
-func (o *VisualShaderNodeGroupBase) SetControl(control ControlImplementer, index gdnative.Int) {
-	//log.Println("Calling VisualShaderNodeGroupBase.SetControl()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 2, 2)
-	ptrArguments[0] = gdnative.NewPointerFromObject(control.GetBaseObject())
-	ptrArguments[1] = gdnative.NewPointerFromInt(index)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeGroupBase", "set_control")
-
-	// Call the parent method.
-	// void
-	retPtr := gdnative.NewEmptyVoid()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-}
-
-/*
-        Undocumented
-	Args: [{ false enabled bool}], Returns: void
-*/
-func (o *VisualShaderNodeGroupBase) SetEditable(enabled gdnative.Bool) {
-	//log.Println("Calling VisualShaderNodeGroupBase.SetEditable()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 1, 1)
-	ptrArguments[0] = gdnative.NewPointerFromBool(enabled)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeGroupBase", "set_editable")
-
-	// Call the parent method.
-	// void
-	retPtr := gdnative.NewEmptyVoid()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-}
-
-/*
-
+        Renames the specified input port.
 	Args: [{ false id int} { false name String}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetInputPortName(id gdnative.Int, name gdnative.String) {
@@ -522,7 +418,7 @@ func (o *VisualShaderNodeGroupBase) SetInputPortName(id gdnative.Int, name gdnat
 }
 
 /*
-
+        Sets the specified input port's type (see [enum VisualShaderNode.PortType]).
 	Args: [{ false id int} { false type int}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetInputPortType(id gdnative.Int, aType gdnative.Int) {
@@ -544,7 +440,7 @@ func (o *VisualShaderNodeGroupBase) SetInputPortType(id gdnative.Int, aType gdna
 }
 
 /*
-
+        Defines all input ports using a [String] formatted as a colon-separated list: [code]id,type,name;[/code] (see [method add_input_port]).
 	Args: [{ false inputs String}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetInputs(inputs gdnative.String) {
@@ -565,7 +461,7 @@ func (o *VisualShaderNodeGroupBase) SetInputs(inputs gdnative.String) {
 }
 
 /*
-
+        Renames the specified output port.
 	Args: [{ false id int} { false name String}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetOutputPortName(id gdnative.Int, name gdnative.String) {
@@ -587,7 +483,7 @@ func (o *VisualShaderNodeGroupBase) SetOutputPortName(id gdnative.Int, name gdna
 }
 
 /*
-
+        Sets the specified output port's type (see [enum VisualShaderNode.PortType]).
 	Args: [{ false id int} { false type int}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetOutputPortType(id gdnative.Int, aType gdnative.Int) {
@@ -609,7 +505,7 @@ func (o *VisualShaderNodeGroupBase) SetOutputPortType(id gdnative.Int, aType gdn
 }
 
 /*
-
+        Defines all output ports using a [String] formatted as a colon-separated list: [code]id,type,name;[/code] (see [method add_output_port]).
 	Args: [{ false outputs String}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetOutputs(outputs gdnative.String) {
@@ -630,7 +526,7 @@ func (o *VisualShaderNodeGroupBase) SetOutputs(outputs gdnative.String) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false size Vector2}], Returns: void
 */
 func (o *VisualShaderNodeGroupBase) SetSize(size gdnative.Vector2) {
@@ -658,7 +554,6 @@ type VisualShaderNodeGroupBaseImplementer interface {
 	AddOutputPort(id gdnative.Int, aType gdnative.Int, name gdnative.String)
 	ClearInputPorts()
 	ClearOutputPorts()
-	GetControl(index gdnative.Int) ControlImplementer
 	GetFreeInputPortId() gdnative.Int
 	GetFreeOutputPortId() gdnative.Int
 	GetInputPortCount() gdnative.Int
@@ -668,12 +563,9 @@ type VisualShaderNodeGroupBaseImplementer interface {
 	GetSize() gdnative.Vector2
 	HasInputPort(id gdnative.Int) gdnative.Bool
 	HasOutputPort(id gdnative.Int) gdnative.Bool
-	IsEditable() gdnative.Bool
 	IsValidPortName(name gdnative.String) gdnative.Bool
 	RemoveInputPort(id gdnative.Int)
 	RemoveOutputPort(id gdnative.Int)
-	SetControl(control ControlImplementer, index gdnative.Int)
-	SetEditable(enabled gdnative.Bool)
 	SetInputPortName(id gdnative.Int, name gdnative.String)
 	SetInputPortType(id gdnative.Int, aType gdnative.Int)
 	SetInputs(inputs gdnative.String)

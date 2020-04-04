@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -1224,7 +1224,7 @@ func (o *RigidBody2D) SetWeight(weight gdnative.Real) {
 }
 
 /*
-        Returns [code]true[/code] if a collision would result from moving in the given vector. [code]margin[/code] increases the size of the shapes involved in the collision detection, and [code]result[/code] is an object of type [Physics2DTestMotionResult], which contains additional information about the collision (should there be one).
+        Returns [code]true[/code] if a collision would result from moving in the given vector. [code]margin[/code] increases the size of the shapes involved in the collision detection, and [code]result[/code] is an object of type [PhysicsTestMotionResult2D], which contains additional information about the collision (should there be one).
 	Args: [{ false motion Vector2} {True true infinite_inertia bool} {0.08 true margin float} {Null true result Physics2DTestMotionResult}], Returns: bool
 */
 func (o *RigidBody2D) TestMotion(motion gdnative.Vector2, infiniteInertia gdnative.Bool, margin gdnative.Real, result Physics2DTestMotionResultImplementer) gdnative.Bool {

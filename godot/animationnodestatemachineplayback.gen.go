@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ func (o *AnimationNodeStateMachinePlayback) GetCurrentNode() gdnative.String {
 }
 
 /*
-
+        Returns the current travel path as computed internally by the A* algorithm.
 	Args: [], Returns: PoolStringArray
 */
 func (o *AnimationNodeStateMachinePlayback) GetTravelPath() gdnative.PoolStringArray {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeColorConstantFromPointer(ptr gdnative.Pointer) VisualSha
 }
 
 /*
-
- */
+Has two output ports representing RGB and alpha channels of [Color]. Translated to [code]vec3 rgb[/code] and [code]float alpha[/code] in the shader language.
+*/
 type VisualShaderNodeColorConstant struct {
 	VisualShaderNode
 	owner gdnative.Object

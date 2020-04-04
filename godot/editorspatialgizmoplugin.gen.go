@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newEditorSpatialGizmoPluginFromPointer(ptr gdnative.Pointer) EditorSpatialG
 }
 
 /*
-EditorSpatialGizmoPlugin allows you to define a new type of Gizmo. There are two main ways to do so: extending [EditorSpatialGizmoPlugin] for the simpler gizmos, or creating a new [EditorSpatialGizmo] type. See the tutorial in the documentation for more info.
+Undocumented
 */
 type EditorSpatialGizmoPlugin struct {
 	Resource
@@ -35,7 +35,7 @@ func (o *EditorSpatialGizmoPlugin) BaseClass() string {
 }
 
 /*
-        Adds a new material to the internal material list for the plugin. It can then be accessed with [method get_material]. Should not be overridden.
+        Undocumented
 	Args: [{ false name String} { false material SpatialMaterial}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) AddMaterial(name gdnative.String, material SpatialMaterialImplementer) {
@@ -57,7 +57,7 @@ func (o *EditorSpatialGizmoPlugin) AddMaterial(name gdnative.String, material Sp
 }
 
 /*
-        Override this method to define whether the gizmo can be hidden or not. Returns [code]true[/code] if not overridden.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *EditorSpatialGizmoPlugin) CanBeHidden() gdnative.Bool {
@@ -80,7 +80,7 @@ func (o *EditorSpatialGizmoPlugin) CanBeHidden() gdnative.Bool {
 }
 
 /*
-        Override this method to commit gizmo handles. Called for this plugin's active gizmos.
+        Undocumented
 	Args: [{ false gizmo EditorSpatialGizmo} { false index int} { false restore Variant} { false cancel bool}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) CommitHandle(gizmo EditorSpatialGizmoImplementer, index gdnative.Int, restore gdnative.Variant, cancel gdnative.Bool) {
@@ -104,7 +104,7 @@ func (o *EditorSpatialGizmoPlugin) CommitHandle(gizmo EditorSpatialGizmoImplemen
 }
 
 /*
-        Override this method to return a custom [EditorSpatialGizmo] for the spatial nodes of your choice, return [code]null[/code] for the rest of nodes. (See also [method has_gizmo])
+        Undocumented
 	Args: [{ false spatial Spatial}], Returns: EditorSpatialGizmo
 */
 func (o *EditorSpatialGizmoPlugin) CreateGizmo(spatial SpatialImplementer) EditorSpatialGizmoImplementer {
@@ -142,7 +142,7 @@ func (o *EditorSpatialGizmoPlugin) CreateGizmo(spatial SpatialImplementer) Edito
 }
 
 /*
-        Creates a handle material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with [method get_material] and used in [method EditorSpatialGizmo.add_handles]. Should not be overridden.
+        Undocumented
 	Args: [{ false name String} {False true billboard bool}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) CreateHandleMaterial(name gdnative.String, billboard gdnative.Bool) {
@@ -164,7 +164,7 @@ func (o *EditorSpatialGizmoPlugin) CreateHandleMaterial(name gdnative.String, bi
 }
 
 /*
-        Creates an icon material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with [method get_material] and used in [method EditorSpatialGizmo.add_unscaled_billboard]. Should not be overridden.
+        Undocumented
 	Args: [{ false name String} { false texture Texture} {False true on_top bool} {1,1,1,1 true color Color}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) CreateIconMaterial(name gdnative.String, texture TextureImplementer, onTop gdnative.Bool, color gdnative.Color) {
@@ -188,7 +188,7 @@ func (o *EditorSpatialGizmoPlugin) CreateIconMaterial(name gdnative.String, text
 }
 
 /*
-        Creates an unshaded material with its variants (selected and/or editable) and adds them to the internal material list. They can then be accessed with [method get_material] and used in [method EditorSpatialGizmo.add_mesh] and [method EditorSpatialGizmo.add_lines]. Should not be overridden.
+        Undocumented
 	Args: [{ false name String} { false color Color} {False true billboard bool} {False true on_top bool} {False true use_vertex_color bool}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) CreateMaterial(name gdnative.String, color gdnative.Color, billboard gdnative.Bool, onTop gdnative.Bool, useVertexColor gdnative.Bool) {
@@ -213,7 +213,7 @@ func (o *EditorSpatialGizmoPlugin) CreateMaterial(name gdnative.String, color gd
 }
 
 /*
-        Override this method to provide gizmo's handle names. Called for this plugin's active gizmos.
+        Undocumented
 	Args: [{ false gizmo EditorSpatialGizmo} { false index int}], Returns: String
 */
 func (o *EditorSpatialGizmoPlugin) GetHandleName(gizmo EditorSpatialGizmoImplementer, index gdnative.Int) gdnative.String {
@@ -238,7 +238,7 @@ func (o *EditorSpatialGizmoPlugin) GetHandleName(gizmo EditorSpatialGizmoImpleme
 }
 
 /*
-        Gets actual value of a handle from gizmo. Called for this plugin's active gizmos.
+        Undocumented
 	Args: [{ false gizmo EditorSpatialGizmo} { false index int}], Returns: Variant
 */
 func (o *EditorSpatialGizmoPlugin) GetHandleValue(gizmo EditorSpatialGizmoImplementer, index gdnative.Int) gdnative.Variant {
@@ -263,7 +263,7 @@ func (o *EditorSpatialGizmoPlugin) GetHandleValue(gizmo EditorSpatialGizmoImplem
 }
 
 /*
-        Gets material from the internal list of materials. If an [EditorSpatialGizmo] is provided, it will try to get the corresponding variant (selected and/or editable).
+        Undocumented
 	Args: [{ false name String} { false gizmo EditorSpatialGizmo}], Returns: SpatialMaterial
 */
 func (o *EditorSpatialGizmoPlugin) GetMaterial(name gdnative.String, gizmo EditorSpatialGizmoImplementer) SpatialMaterialImplementer {
@@ -302,7 +302,7 @@ func (o *EditorSpatialGizmoPlugin) GetMaterial(name gdnative.String, gizmo Edito
 }
 
 /*
-        Override this method to provide the name that will appear in the gizmo visibility menu.
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *EditorSpatialGizmoPlugin) GetName() gdnative.String {
@@ -325,7 +325,7 @@ func (o *EditorSpatialGizmoPlugin) GetName() gdnative.String {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *EditorSpatialGizmoPlugin) GetPriority() gdnative.String {
@@ -348,7 +348,7 @@ func (o *EditorSpatialGizmoPlugin) GetPriority() gdnative.String {
 }
 
 /*
-        Override this method to define which Spatial nodes have a gizmo from this plugin. Whenever a [Spatial] node is added to a scene this method is called, if it returns [code]true[/code] the node gets a generic [EditorSpatialGizmo] assigned and is added to this plugin's list of active gizmos.
+        Undocumented
 	Args: [{ false spatial Spatial}], Returns: bool
 */
 func (o *EditorSpatialGizmoPlugin) HasGizmo(spatial SpatialImplementer) gdnative.Bool {
@@ -372,7 +372,7 @@ func (o *EditorSpatialGizmoPlugin) HasGizmo(spatial SpatialImplementer) gdnative
 }
 
 /*
-        Gets whether a handle is highlighted or not. Called for this plugin's active gizmos.
+        Undocumented
 	Args: [{ false gizmo EditorSpatialGizmo} { false index int}], Returns: bool
 */
 func (o *EditorSpatialGizmoPlugin) IsHandleHighlighted(gizmo EditorSpatialGizmoImplementer, index gdnative.Int) gdnative.Bool {
@@ -397,7 +397,7 @@ func (o *EditorSpatialGizmoPlugin) IsHandleHighlighted(gizmo EditorSpatialGizmoI
 }
 
 /*
-        Override this method to define whether Spatial with this gizmo should be selecteble even when the gizmo is hidden.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *EditorSpatialGizmoPlugin) IsSelectableWhenHidden() gdnative.Bool {
@@ -420,7 +420,7 @@ func (o *EditorSpatialGizmoPlugin) IsSelectableWhenHidden() gdnative.Bool {
 }
 
 /*
-        Callback to redraw the provided gizmo. Called for this plugin's active gizmos.
+        Undocumented
 	Args: [{ false gizmo EditorSpatialGizmo}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) Redraw(gizmo EditorSpatialGizmoImplementer) {
@@ -441,7 +441,7 @@ func (o *EditorSpatialGizmoPlugin) Redraw(gizmo EditorSpatialGizmoImplementer) {
 }
 
 /*
-        Update the value of a handle after it has been updated. Called for this plugin's active gizmos.
+        Undocumented
 	Args: [{ false gizmo EditorSpatialGizmo} { false index int} { false camera Camera} { false point Vector2}], Returns: void
 */
 func (o *EditorSpatialGizmoPlugin) SetHandle(gizmo EditorSpatialGizmoImplementer, index gdnative.Int, camera CameraImplementer, point gdnative.Vector2) {

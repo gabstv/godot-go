@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -33,8 +33,8 @@ func newTextureLayeredFromPointer(ptr gdnative.Pointer) TextureLayered {
 }
 
 /*
-
- */
+Base class for [Texture2DArray], [Cubemap] and [CubemapArray]. Cannot be used directly, but contains all the functions necessary for accessing the derived resource types. Data is set on a per-layer basis. For [Texture2DArray]s, the layer specifies the array layer.
+*/
 type TextureLayered struct {
 	Resource
 	owner gdnative.Object
@@ -89,7 +89,7 @@ func (o *TextureLayered) X_SetData(data gdnative.Dictionary) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false width int} { false height int} { false depth int} { false format int} {4 true flags int}], Returns: void
 */
 func (o *TextureLayered) Create(width gdnative.Int, height gdnative.Int, depth gdnative.Int, format gdnative.Int, flags gdnative.Int) {
@@ -114,7 +114,7 @@ func (o *TextureLayered) Create(width gdnative.Int, height gdnative.Int, depth g
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *TextureLayered) GetDepth() gdnative.Int {
@@ -160,7 +160,7 @@ func (o *TextureLayered) GetFlags() gdnative.Int {
 }
 
 /*
-
+        Returns the current format being used by this texture. See [enum Image.Format] for details.
 	Args: [], Returns: enum.Image::Format
 */
 func (o *TextureLayered) GetFormat() ImageFormat {
@@ -183,7 +183,7 @@ func (o *TextureLayered) GetFormat() ImageFormat {
 }
 
 /*
-
+        Returns the height of the texture. Height is typically represented by the Y-axis.
 	Args: [], Returns: int
 */
 func (o *TextureLayered) GetHeight() gdnative.Int {
@@ -206,7 +206,7 @@ func (o *TextureLayered) GetHeight() gdnative.Int {
 }
 
 /*
-
+        Returns an [Image] resource with the data from specified [code]layer[/code].
 	Args: [{ false layer int}], Returns: Image
 */
 func (o *TextureLayered) GetLayerData(layer gdnative.Int) ImageImplementer {
@@ -244,7 +244,7 @@ func (o *TextureLayered) GetLayerData(layer gdnative.Int) ImageImplementer {
 }
 
 /*
-
+        Returns the width of the texture. Width is typically represented by the X-axis.
 	Args: [], Returns: int
 */
 func (o *TextureLayered) GetWidth() gdnative.Int {
@@ -267,7 +267,7 @@ func (o *TextureLayered) GetWidth() gdnative.Int {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false image Image} { false x_offset int} { false y_offset int} { false layer int} {0 true mipmap int}], Returns: void
 */
 func (o *TextureLayered) SetDataPartial(image ImageImplementer, xOffset gdnative.Int, yOffset gdnative.Int, layer gdnative.Int, mipmap gdnative.Int) {
@@ -313,7 +313,7 @@ func (o *TextureLayered) SetFlags(flags gdnative.Int) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false image Image} { false layer int}], Returns: void
 */
 func (o *TextureLayered) SetLayerData(image ImageImplementer, layer gdnative.Int) {

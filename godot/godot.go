@@ -2,13 +2,14 @@ package godot
 
 import (
 	"fmt"
-	"github.com/pinzolo/casee"
-	"github.com/shadowapex/godot-go/gdnative"
 	"log"
 	"reflect"
 	"runtime"
 	"strings"
 	"unicode"
+
+	"github.com/gabstv/godot-go/gdnative"
+	"github.com/pinzolo/casee"
 )
 
 var debug = false

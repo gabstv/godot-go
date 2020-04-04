@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ func newVisibilityEnablerFromPointer(ptr gdnative.Pointer) VisibilityEnabler {
 }
 
 /*
-The VisibilityEnabler will disable [RigidBody] and [AnimationPlayer] nodes when they are not visible. It will only affect other nodes within the same scene as the VisibilityEnabler itself.
+Undocumented
 */
 type VisibilityEnabler struct {
 	VisibilityNotifier
@@ -65,7 +65,7 @@ func (o *VisibilityEnabler) X_NodeRemoved(arg0 NodeImplementer) {
 }
 
 /*
-        Returns whether the enabler identified by given [enum Enabler] constant is active.
+        Undocumented
 	Args: [{ false enabler int}], Returns: bool
 */
 func (o *VisibilityEnabler) IsEnablerEnabled(enabler gdnative.Int) gdnative.Bool {
@@ -89,7 +89,7 @@ func (o *VisibilityEnabler) IsEnablerEnabled(enabler gdnative.Int) gdnative.Bool
 }
 
 /*
-        Sets active state of the enabler identified by given [enum Enabler] constant.
+        Undocumented
 	Args: [{ false enabler int} { false enabled bool}], Returns: void
 */
 func (o *VisibilityEnabler) SetEnabler(enabler gdnative.Int, enabled gdnative.Bool) {

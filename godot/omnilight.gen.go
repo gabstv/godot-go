@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -39,7 +39,7 @@ func newOmniLightFromPointer(ptr gdnative.Pointer) OmniLight {
 }
 
 /*
-An Omnidirectional light is a type of [Light] that emits light in all directions. The light is attenuated by distance and this attenuation can be configured by changing its energy, radius, and attenuation parameters.
+Undocumented
 */
 type OmniLight struct {
 	Light

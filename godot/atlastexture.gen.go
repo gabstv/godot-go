@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newAtlasTextureFromPointer(ptr gdnative.Pointer) AtlasTexture {
 }
 
 /*
-[Texture] resource aimed at managing big textures files that pack multiple smaller textures. Consists of a [Texture], a margin that defines the border width, and a region that defines the actual area of the AtlasTexture.
+[Texture2D] resource aimed at managing big textures files that pack multiple smaller textures. Consists of a [Texture2D], a margin that defines the border width, and a region that defines the actual area of the AtlasTexture.
 */
 type AtlasTexture struct {
 	Texture

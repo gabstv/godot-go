@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -164,7 +164,7 @@ func (o *ScrollContainer) GetHScroll() gdnative.Int {
 }
 
 /*
-
+        Returns the horizontal scrollbar [HScrollBar] of this [ScrollContainer].
 	Args: [], Returns: HScrollBar
 */
 func (o *ScrollContainer) GetHScrollbar() HScrollBarImplementer {
@@ -224,7 +224,7 @@ func (o *ScrollContainer) GetVScroll() gdnative.Int {
 }
 
 /*
-
+        Returns the vertical scrollbar [VScrollBar] of this [ScrollContainer].
 	Args: [], Returns: VScrollBar
 */
 func (o *ScrollContainer) GetVScrollbar() VScrollBarImplementer {

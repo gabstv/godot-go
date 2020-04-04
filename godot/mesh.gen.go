@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ func (o *Mesh) BaseClass() string {
 }
 
 /*
-        Calculate a [ConvexPolygonShape] from the mesh.
+        Calculate a [ConvexPolygonShape3D] from the mesh.
 	Args: [], Returns: Shape
 */
 func (o *Mesh) CreateConvexShape() ShapeImplementer {
@@ -175,7 +175,7 @@ func (o *Mesh) CreateOutline(margin gdnative.Real) MeshImplementer {
 }
 
 /*
-        Calculate a [ConcavePolygonShape] from the mesh.
+        Calculate a [ConcavePolygonShape3D] from the mesh.
 	Args: [], Returns: Shape
 */
 func (o *Mesh) CreateTrimeshShape() ShapeImplementer {

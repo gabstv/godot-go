@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newSpringArmFromPointer(ptr gdnative.Pointer) SpringArm {
 }
 
 /*
-The SpringArm node is a node that casts a ray (or collision shape) along its z axis and moves all its direct children to the collision point, minus a margin. The most common use case for this is to make a 3rd person camera that reacts to collisions in the environment. The SpringArm will either cast a ray, or if a shape is given, it will cast the shape in the direction of its z axis. If you use the SpringArm as a camera controller for your player, you might need to exclude the player's collider from the SpringArm's collision check.
+Undocumented
 */
 type SpringArm struct {
 	Spatial
@@ -35,7 +35,7 @@ func (o *SpringArm) BaseClass() string {
 }
 
 /*
-        Adds the object with the given [RID] to the list of objects excluded from the collision check.
+        Undocumented
 	Args: [{ false RID RID}], Returns: void
 */
 func (o *SpringArm) AddExcludedObject(rid gdnative.Rid) {
@@ -56,7 +56,7 @@ func (o *SpringArm) AddExcludedObject(rid gdnative.Rid) {
 }
 
 /*
-        Clears the list of objects excluded from the collision check.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *SpringArm) ClearExcludedObjects() {
@@ -99,7 +99,7 @@ func (o *SpringArm) GetCollisionMask() gdnative.Int {
 }
 
 /*
-        Returns the proportion between the current arm length (after checking for collisions) and the [member spring_length]. Ranges from 0 to 1.
+        Undocumented
 	Args: [], Returns: float
 */
 func (o *SpringArm) GetHitLength() gdnative.Real {
@@ -205,7 +205,7 @@ func (o *SpringArm) GetShape() ShapeImplementer {
 }
 
 /*
-        Removes the given [RID] from the list of objects excluded from the collision check.
+        Undocumented
 	Args: [{ false RID RID}], Returns: bool
 */
 func (o *SpringArm) RemoveExcludedObject(rid gdnative.Rid) gdnative.Bool {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -37,8 +37,8 @@ func newEditorFeatureProfileFromPointer(ptr gdnative.Pointer) EditorFeatureProfi
 }
 
 /*
-
- */
+An editor feature profile can be used to disable specific features of the Godot editor. When disabled, the features won't appear in the editor, which makes the editor less cluttered. This is useful in education settings to reduce confusion or when working in a team. For example, artists and level designers could use a feature profile that disables the script editor to avoid accidentally making changes to files they aren't supposed to edit. To manage editor feature profiles visually, use [b]Editor > Manage Feature Profiles...[/b] at the top of the editor window.
+*/
 type EditorFeatureProfile struct {
 	Reference
 	owner gdnative.Object
@@ -49,7 +49,7 @@ func (o *EditorFeatureProfile) BaseClass() string {
 }
 
 /*
-
+        Returns the specified [code]feature[/code]'s human-readable name.
 	Args: [{ false feature int}], Returns: String
 */
 func (o *EditorFeatureProfile) GetFeatureName(feature gdnative.Int) gdnative.String {
@@ -73,7 +73,7 @@ func (o *EditorFeatureProfile) GetFeatureName(feature gdnative.Int) gdnative.Str
 }
 
 /*
-
+        Returns [code]true[/code] if the class specified by [code]class_name[/code] is disabled. When disabled, the class won't appear in the Create New Node dialog.
 	Args: [{ false class_name String}], Returns: bool
 */
 func (o *EditorFeatureProfile) IsClassDisabled(className gdnative.String) gdnative.Bool {
@@ -97,7 +97,7 @@ func (o *EditorFeatureProfile) IsClassDisabled(className gdnative.String) gdnati
 }
 
 /*
-
+        Returns [code]true[/code] if editing for the class specified by [code]class_name[/code] is disabled. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
 	Args: [{ false class_name String}], Returns: bool
 */
 func (o *EditorFeatureProfile) IsClassEditorDisabled(className gdnative.String) gdnative.Bool {
@@ -121,7 +121,7 @@ func (o *EditorFeatureProfile) IsClassEditorDisabled(className gdnative.String) 
 }
 
 /*
-
+        Returns [code]true[/code] if [code]property[/code] is disabled in the class specified by [code]class_name[/code]. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by [code]class_name[/code].
 	Args: [{ false class_name String} { false property String}], Returns: bool
 */
 func (o *EditorFeatureProfile) IsClassPropertyDisabled(className gdnative.String, property gdnative.String) gdnative.Bool {
@@ -146,7 +146,7 @@ func (o *EditorFeatureProfile) IsClassPropertyDisabled(className gdnative.String
 }
 
 /*
-
+        Returns [code]true[/code] if the [code]feature[/code] is disabled. When a feature is disabled, it will disappear from the editor entirely.
 	Args: [{ false feature int}], Returns: bool
 */
 func (o *EditorFeatureProfile) IsFeatureDisabled(feature gdnative.Int) gdnative.Bool {
@@ -170,7 +170,7 @@ func (o *EditorFeatureProfile) IsFeatureDisabled(feature gdnative.Int) gdnative.
 }
 
 /*
-
+        Loads an editor feature profile from a file. The file must follow the JSON format obtained by using the feature profile manager's [b]Export[/b] button or the [method save_to_file] method.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *EditorFeatureProfile) LoadFromFile(path gdnative.String) gdnative.Error {
@@ -194,7 +194,7 @@ func (o *EditorFeatureProfile) LoadFromFile(path gdnative.String) gdnative.Error
 }
 
 /*
-
+        Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's [b]Import[/b] button or the [method load_from_file] button.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *EditorFeatureProfile) SaveToFile(path gdnative.String) gdnative.Error {
@@ -218,7 +218,7 @@ func (o *EditorFeatureProfile) SaveToFile(path gdnative.String) gdnative.Error {
 }
 
 /*
-
+        If [code]disable[/code] is [code]true[/code], disables the class specified by [code]class_name[/code]. When disabled, the class won't appear in the Create New Node dialog.
 	Args: [{ false class_name String} { false disable bool}], Returns: void
 */
 func (o *EditorFeatureProfile) SetDisableClass(className gdnative.String, disable gdnative.Bool) {
@@ -240,7 +240,7 @@ func (o *EditorFeatureProfile) SetDisableClass(className gdnative.String, disabl
 }
 
 /*
-
+        If [code]disable[/code] is [code]true[/code], disables editing for the class specified by [code]class_name[/code]. When disabled, the class will still appear in the Create New Node dialog but the inspector will be read-only when selecting a node that extends the class.
 	Args: [{ false class_name String} { false disable bool}], Returns: void
 */
 func (o *EditorFeatureProfile) SetDisableClassEditor(className gdnative.String, disable gdnative.Bool) {
@@ -262,7 +262,7 @@ func (o *EditorFeatureProfile) SetDisableClassEditor(className gdnative.String, 
 }
 
 /*
-
+        If [code]disable[/code] is [code]true[/code], disables editing for [code]property[/code] in the class specified by [code]class_name[/code]. When a property is disabled, it won't appear in the inspector when selecting a node that extends the class specified by [code]class_name[/code].
 	Args: [{ false class_name String} { false property String} { false disable bool}], Returns: void
 */
 func (o *EditorFeatureProfile) SetDisableClassProperty(className gdnative.String, property gdnative.String, disable gdnative.Bool) {
@@ -285,7 +285,7 @@ func (o *EditorFeatureProfile) SetDisableClassProperty(className gdnative.String
 }
 
 /*
-
+        If [code]disable[/code] is [code]true[/code], disables the editor feature specified in [code]feature[/code]. When a feature is disabled, it will disappear from the editor entirely.
 	Args: [{ false feature int} { false disable bool}], Returns: void
 */
 func (o *EditorFeatureProfile) SetDisableFeature(feature gdnative.Int, disable gdnative.Bool) {

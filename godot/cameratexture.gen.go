@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newCameraTextureFromPointer(ptr gdnative.Pointer) CameraTexture {
 }
 
 /*
-
- */
+This texture gives access to the camera texture provided by a [CameraFeed]. [b]Note:[/b] Many cameras supply YCbCr images which need to be converted in a shader.
+*/
 type CameraTexture struct {
 	Texture
 	owner gdnative.Object

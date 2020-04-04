@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPanoramaSkyFromPointer(ptr gdnative.Pointer) PanoramaSky {
 }
 
 /*
-A resource referenced in an [Environment] that is used to draw a background. The Panorama sky functions similar to skyboxes in other engines, except it uses an equirectangular sky map instead of a cube map.
+Undocumented
 */
 type PanoramaSky struct {
 	Sky

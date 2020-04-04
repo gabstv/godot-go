@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -150,7 +150,7 @@ func (o *AnimationNodeBlendSpace2D) X_UpdateTriangles() {
 }
 
 /*
-        Adds a new point that represents a [code]node[/code] at the position set by [code]pos[/code]. You can insert it at a specific index using the [code]at_index[/code] argument. If you use the default value for [code]at_index[/code] , the point is inserted at the end of the blend points array.
+        Adds a new point that represents a [code]node[/code] at the position set by [code]pos[/code]. You can insert it at a specific index using the [code]at_index[/code] argument. If you use the default value for [code]at_index[/code], the point is inserted at the end of the blend points array.
 	Args: [{ false node AnimationRootNode} { false pos Vector2} {-1 true at_index int}], Returns: void
 */
 func (o *AnimationNodeBlendSpace2D) AddBlendPoint(node AnimationRootNodeImplementer, pos gdnative.Vector2, atIndex gdnative.Int) {
@@ -173,7 +173,7 @@ func (o *AnimationNodeBlendSpace2D) AddBlendPoint(node AnimationRootNodeImplemen
 }
 
 /*
-        Creates a new triangle using three points [code]x[/code], [code]y[/code], and [code]z[/code]. Triangles can overlap. You can insert the triangle at a specific index using the [code]at_index[/code] argument. If you use the default value for [code]at_index[/code] , the point is inserted at the end of the blend points array.
+        Creates a new triangle using three points [code]x[/code], [code]y[/code], and [code]z[/code]. Triangles can overlap. You can insert the triangle at a specific index using the [code]at_index[/code] argument. If you use the default value for [code]at_index[/code], the point is inserted at the end of the blend points array.
 	Args: [{ false x int} { false y int} { false z int} {-1 true at_index int}], Returns: void
 */
 func (o *AnimationNodeBlendSpace2D) AddTriangle(x gdnative.Int, y gdnative.Int, z gdnative.Int, atIndex gdnative.Int) {
@@ -266,7 +266,7 @@ func (o *AnimationNodeBlendSpace2D) GetBlendPointCount() gdnative.Int {
 }
 
 /*
-        Returns the [code]AnimationRootNode[/code] referenced by the point at index [code]point[/code].
+        Returns the [AnimationRootNode] referenced by the point at index [code]point[/code].
 	Args: [{ false point int}], Returns: AnimationRootNode
 */
 func (o *AnimationNodeBlendSpace2D) GetBlendPointNode(point gdnative.Int) AnimationRootNodeImplementer {
@@ -575,7 +575,7 @@ func (o *AnimationNodeBlendSpace2D) SetBlendMode(mode gdnative.Int) {
 }
 
 /*
-        Changes the AnimationNode referenced by the point at index [code]point[/code].
+        Changes the [AnimationNode] referenced by the point at index [code]point[/code].
 	Args: [{ false point int} { false node AnimationRootNode}], Returns: void
 */
 func (o *AnimationNodeBlendSpace2D) SetBlendPointNode(point gdnative.Int, node AnimationRootNodeImplementer) {

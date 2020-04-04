@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newCollisionPolygonFromPointer(ptr gdnative.Pointer) CollisionPolygon {
 }
 
 /*
-Allows editing a collision polygon's vertices on a selected plane. Can also set a depth perpendicular to that plane. This class is only available in the editor. It will not appear in the scene tree at run-time. Creates a [Shape] for gameplay. Properties modified during gameplay will have no effect.
+Undocumented
 */
 type CollisionPolygon struct {
 	Spatial

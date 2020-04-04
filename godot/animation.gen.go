@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ func newAnimationFromPointer(ptr gdnative.Pointer) Animation {
 }
 
 /*
-An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track. [codeblock] # This creates an animation that makes the node "Enemy" move to the right by # 100 pixels in 1 second. var animation = Animation.new() var track_index = animation.add_track(Animation.TYPE_VALUE) animation.track_set_path(track_index, "Enemy:position.x") animation.track_insert_key(track_index, 0.0, 0) animation.track_insert_key(track_index, 0.5, 100) [/codeblock] Animations are just data containers, and must be added to nodes such as an [AnimationPlayer] or [AnimationTreePlayer] to be played back.
+An Animation resource contains data used to animate everything in the engine. Animations are divided into tracks, and each track must be linked to a node. The state of that node can be changed through time, by adding timed keys (events) to the track. [codeblock] # This creates an animation that makes the node "Enemy" move to the right by # 100 pixels in 1 second. var animation = Animation.new() var track_index = animation.add_track(Animation.TYPE_VALUE) animation.track_set_path(track_index, "Enemy:position.x") animation.track_insert_key(track_index, 0.0, 0) animation.track_insert_key(track_index, 0.5, 100) [/codeblock] Animations are just data containers, and must be added to nodes such as an [AnimationPlayer] to be played back. Animation tracks have different types, each with its own set of dedicated methods. Check [enum TrackType] to see available types.
 */
 type Animation struct {
 	Resource
@@ -91,7 +91,7 @@ func (o *Animation) AddTrack(aType gdnative.Int, atPosition gdnative.Int) gdnati
 }
 
 /*
-
+        Returns the animation name at the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of an Animation Track.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: String
 */
 func (o *Animation) AnimationTrackGetKeyAnimation(trackIdx gdnative.Int, keyIdx gdnative.Int) gdnative.String {
@@ -116,7 +116,7 @@ func (o *Animation) AnimationTrackGetKeyAnimation(trackIdx gdnative.Int, keyIdx 
 }
 
 /*
-
+        Inserts a key with value [code]animation[/code] at the given [code]time[/code] (in seconds). The [code]track_idx[/code] must be the index of an Animation Track.
 	Args: [{ false track_idx int} { false time float} { false animation String}], Returns: int
 */
 func (o *Animation) AnimationTrackInsertKey(trackIdx gdnative.Int, time gdnative.Real, animation gdnative.String) gdnative.Int {
@@ -142,7 +142,7 @@ func (o *Animation) AnimationTrackInsertKey(trackIdx gdnative.Int, time gdnative
 }
 
 /*
-
+        Sets the key identified by [code]key_idx[/code] to value [code]animation[/code]. The [code]track_idx[/code] must be the index of an Animation Track.
 	Args: [{ false track_idx int} { false key_idx int} { false animation String}], Returns: void
 */
 func (o *Animation) AnimationTrackSetKeyAnimation(trackIdx gdnative.Int, keyIdx gdnative.Int, animation gdnative.String) {
@@ -165,7 +165,7 @@ func (o *Animation) AnimationTrackSetKeyAnimation(trackIdx gdnative.Int, keyIdx 
 }
 
 /*
-
+        Returns the end offset of the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of an Audio Track. End offset is the number of seconds cut off at the ending of the audio stream.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: float
 */
 func (o *Animation) AudioTrackGetKeyEndOffset(trackIdx gdnative.Int, keyIdx gdnative.Int) gdnative.Real {
@@ -190,7 +190,7 @@ func (o *Animation) AudioTrackGetKeyEndOffset(trackIdx gdnative.Int, keyIdx gdna
 }
 
 /*
-
+        Returns the start offset of the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of an Audio Track. Start offset is the number of seconds cut off at the beginning of the audio stream.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: float
 */
 func (o *Animation) AudioTrackGetKeyStartOffset(trackIdx gdnative.Int, keyIdx gdnative.Int) gdnative.Real {
@@ -215,7 +215,7 @@ func (o *Animation) AudioTrackGetKeyStartOffset(trackIdx gdnative.Int, keyIdx gd
 }
 
 /*
-
+        Returns the audio stream of the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of an Audio Track.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: Resource
 */
 func (o *Animation) AudioTrackGetKeyStream(trackIdx gdnative.Int, keyIdx gdnative.Int) ResourceImplementer {
@@ -254,7 +254,7 @@ func (o *Animation) AudioTrackGetKeyStream(trackIdx gdnative.Int, keyIdx gdnativ
 }
 
 /*
-
+        Inserts an Audio Track key at the given [code]time[/code] in seconds. The [code]track_idx[/code] must be the index of an Audio Track. [code]stream[/code] is the [AudioStream] resource to play. [code]start_offset[/code] is the number of seconds cut off at the beginning of the audio stream, while [code]end_offset[/code] is at the ending.
 	Args: [{ false track_idx int} { false time float} { false stream Resource} {0 true start_offset float} {0 true end_offset float}], Returns: int
 */
 func (o *Animation) AudioTrackInsertKey(trackIdx gdnative.Int, time gdnative.Real, stream ResourceImplementer, startOffset gdnative.Real, endOffset gdnative.Real) gdnative.Int {
@@ -282,7 +282,7 @@ func (o *Animation) AudioTrackInsertKey(trackIdx gdnative.Int, time gdnative.Rea
 }
 
 /*
-
+        Sets the end offset of the key identified by [code]key_idx[/code] to value [code]offset[/code]. The [code]track_idx[/code] must be the index of an Audio Track.
 	Args: [{ false track_idx int} { false key_idx int} { false offset float}], Returns: void
 */
 func (o *Animation) AudioTrackSetKeyEndOffset(trackIdx gdnative.Int, keyIdx gdnative.Int, offset gdnative.Real) {
@@ -305,7 +305,7 @@ func (o *Animation) AudioTrackSetKeyEndOffset(trackIdx gdnative.Int, keyIdx gdna
 }
 
 /*
-
+        Sets the start offset of the key identified by [code]key_idx[/code] to value [code]offset[/code]. The [code]track_idx[/code] must be the index of an Audio Track.
 	Args: [{ false track_idx int} { false key_idx int} { false offset float}], Returns: void
 */
 func (o *Animation) AudioTrackSetKeyStartOffset(trackIdx gdnative.Int, keyIdx gdnative.Int, offset gdnative.Real) {
@@ -328,7 +328,7 @@ func (o *Animation) AudioTrackSetKeyStartOffset(trackIdx gdnative.Int, keyIdx gd
 }
 
 /*
-
+        Sets the stream of the key identified by [code]key_idx[/code] to value [code]offset[/code]. The [code]track_idx[/code] must be the index of an Audio Track.
 	Args: [{ false track_idx int} { false key_idx int} { false stream Resource}], Returns: void
 */
 func (o *Animation) AudioTrackSetKeyStream(trackIdx gdnative.Int, keyIdx gdnative.Int, stream ResourceImplementer) {
@@ -351,7 +351,7 @@ func (o *Animation) AudioTrackSetKeyStream(trackIdx gdnative.Int, keyIdx gdnativ
 }
 
 /*
-
+        Returns the in handle of the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: Vector2
 */
 func (o *Animation) BezierTrackGetKeyInHandle(trackIdx gdnative.Int, keyIdx gdnative.Int) gdnative.Vector2 {
@@ -376,7 +376,7 @@ func (o *Animation) BezierTrackGetKeyInHandle(trackIdx gdnative.Int, keyIdx gdna
 }
 
 /*
-
+        Returns the out handle of the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: Vector2
 */
 func (o *Animation) BezierTrackGetKeyOutHandle(trackIdx gdnative.Int, keyIdx gdnative.Int) gdnative.Vector2 {
@@ -401,7 +401,7 @@ func (o *Animation) BezierTrackGetKeyOutHandle(trackIdx gdnative.Int, keyIdx gdn
 }
 
 /*
-
+        Returns the value of the key identified by [code]key_idx[/code]. The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false key_idx int}], Returns: float
 */
 func (o *Animation) BezierTrackGetKeyValue(trackIdx gdnative.Int, keyIdx gdnative.Int) gdnative.Real {
@@ -426,7 +426,7 @@ func (o *Animation) BezierTrackGetKeyValue(trackIdx gdnative.Int, keyIdx gdnativ
 }
 
 /*
-
+        Inserts a Bezier Track key at the given [code]time[/code] in seconds. The [code]track_idx[/code] must be the index of a Bezier Track. [code]in_handle[/code] is the left-side weight of the added Bezier curve point, [code]out_handle[/code] is the right-side one, while [code]value[/code] is the actual value at this point.
 	Args: [{ false track_idx int} { false time float} { false value float} {(0, 0) true in_handle Vector2} {(0, 0) true out_handle Vector2}], Returns: int
 */
 func (o *Animation) BezierTrackInsertKey(trackIdx gdnative.Int, time gdnative.Real, value gdnative.Real, inHandle gdnative.Vector2, outHandle gdnative.Vector2) gdnative.Int {
@@ -454,7 +454,7 @@ func (o *Animation) BezierTrackInsertKey(trackIdx gdnative.Int, time gdnative.Re
 }
 
 /*
-
+        Returns the interpolated value at the given [code]time[/code] (in seconds). The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false time float}], Returns: float
 */
 func (o *Animation) BezierTrackInterpolate(trackIdx gdnative.Int, time gdnative.Real) gdnative.Real {
@@ -479,7 +479,7 @@ func (o *Animation) BezierTrackInterpolate(trackIdx gdnative.Int, time gdnative.
 }
 
 /*
-
+        Sets the in handle of the key identified by [code]key_idx[/code] to value [code]in_handle[/code]. The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false key_idx int} { false in_handle Vector2}], Returns: void
 */
 func (o *Animation) BezierTrackSetKeyInHandle(trackIdx gdnative.Int, keyIdx gdnative.Int, inHandle gdnative.Vector2) {
@@ -502,7 +502,7 @@ func (o *Animation) BezierTrackSetKeyInHandle(trackIdx gdnative.Int, keyIdx gdna
 }
 
 /*
-
+        Sets the out handle of the key identified by [code]key_idx[/code] to value [code]out_handle[/code]. The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false key_idx int} { false out_handle Vector2}], Returns: void
 */
 func (o *Animation) BezierTrackSetKeyOutHandle(trackIdx gdnative.Int, keyIdx gdnative.Int, outHandle gdnative.Vector2) {
@@ -525,7 +525,7 @@ func (o *Animation) BezierTrackSetKeyOutHandle(trackIdx gdnative.Int, keyIdx gdn
 }
 
 /*
-
+        Sets the value of the key identified by [code]key_idx[/code] to the given value. The [code]track_idx[/code] must be the index of a Bezier Track.
 	Args: [{ false track_idx int} { false key_idx int} { false value float}], Returns: void
 */
 func (o *Animation) BezierTrackSetKeyValue(trackIdx gdnative.Int, keyIdx gdnative.Int, value gdnative.Real) {

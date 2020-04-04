@@ -299,7 +299,7 @@
 			"KEY_MACRON": 175,
 			"KEY_MASCULINE": 186,
 			"KEY_MASK_ALT": 67108864,
-			"KEY_MASK_CMD": 268435456,
+			"KEY_MASK_CMD": 134217728,
 			"KEY_MASK_CTRL": 268435456,
 			"KEY_MASK_GROUP_SWITCH": 1073741824,
 			"KEY_MASK_KPAD": 536870912,
@@ -24509,13 +24509,6 @@
 				"index": -1
 			},
 			{
-				"name": "capture_device",
-				"type": "String",
-				"getter": "capture_get_device",
-				"setter": "capture_set_device",
-				"index": -1
-			},
-			{
 				"name": "device",
 				"type": "String",
 				"getter": "get_device",
@@ -24531,16 +24524,6 @@
 			}
 		],
 		"signals": [
-			{
-				"name": "audio_mix_callback",
-				"arguments": [
-				]
-			},
-			{
-				"name": "audio_update_callback",
-				"arguments": [
-				]
-			},
 			{
 				"name": "bus_layout_changed",
 				"arguments": [
@@ -24641,32 +24624,6 @@
 						"has_default_value": false,
 						"default_value": ""
 					}
-				]
-			},
-			{
-				"name": "capture_start",
-				"return_type": "enum.Error",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-				]
-			},
-			{
-				"name": "capture_stop",
-				"return_type": "enum.Error",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
 				]
 			},
 			{
@@ -24913,45 +24870,6 @@
 						"has_default_value": false,
 						"default_value": ""
 					}
-				]
-			},
-			{
-				"name": "get_capture_buffer",
-				"return_type": "PoolIntArray",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-				]
-			},
-			{
-				"name": "get_capture_position",
-				"return_type": "int",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-				]
-			},
-			{
-				"name": "get_capture_size",
-				"return_type": "int",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
 				]
 			},
 			{
@@ -33037,13 +32955,6 @@
 				"index": 0
 			},
 			{
-				"name": "flatness",
-				"type": "float",
-				"getter": "get_flatness",
-				"setter": "set_flatness",
-				"index": -1
-			},
-			{
 				"name": "fract_delta",
 				"type": "bool",
 				"getter": "get_fractional_delta",
@@ -33462,19 +33373,6 @@
 			{
 				"name": "get_fixed_fps",
 				"return_type": "int",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": true,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-				]
-			},
-			{
-				"name": "get_flatness",
-				"return_type": "float",
 				"is_editor": false,
 				"is_noscript": false,
 				"is_const": true,
@@ -34004,25 +33902,6 @@
 					{
 						"name": "fps",
 						"type": "int",
-						"has_default_value": false,
-						"default_value": ""
-					}
-				]
-			},
-			{
-				"name": "set_flatness",
-				"return_type": "void",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-					{
-						"name": "amount",
-						"type": "float",
 						"has_default_value": false,
 						"default_value": ""
 					}
@@ -150495,6 +150374,7 @@
 			"BIND_BOTTOM": 128,
 			"BIND_BOTTOMLEFT": 64,
 			"BIND_BOTTOMRIGHT": 256,
+			"BIND_CENTER": 16,
 			"BIND_LEFT": 8,
 			"BIND_RIGHT": 32,
 			"BIND_TOP": 2,
@@ -152149,6 +152029,7 @@
 					"BIND_TOP": 2,
 					"BIND_TOPRIGHT": 4,
 					"BIND_LEFT": 8,
+					"BIND_CENTER": 16,
 					"BIND_RIGHT": 32,
 					"BIND_BOTTOMLEFT": 64,
 					"BIND_BOTTOM": 128,
@@ -178420,8 +178301,8 @@
 			{
 				"name": "default_input_values",
 				"type": "Array",
-				"getter": "_get_default_input_values",
-				"setter": "_set_default_input_values",
+				"getter": "get_default_input_values",
+				"setter": "set_default_input_values",
 				"index": -1
 			},
 			{
@@ -178441,35 +178322,16 @@
 		],
 		"methods": [
 			{
-				"name": "_get_default_input_values",
+				"name": "get_default_input_values",
 				"return_type": "Array",
 				"is_editor": false,
 				"is_noscript": false,
 				"is_const": true,
 				"is_reverse": false,
-				"is_virtual": true,
+				"is_virtual": false,
 				"has_varargs": false,
 				"is_from_script": false,
 				"arguments": [
-				]
-			},
-			{
-				"name": "_set_default_input_values",
-				"return_type": "void",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": true,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-					{
-						"name": "values",
-						"type": "Array",
-						"has_default_value": false,
-						"default_value": ""
-					}
 				]
 			},
 			{
@@ -178502,6 +178364,25 @@
 				"has_varargs": false,
 				"is_from_script": false,
 				"arguments": [
+				]
+			},
+			{
+				"name": "set_default_input_values",
+				"return_type": "void",
+				"is_editor": false,
+				"is_noscript": false,
+				"is_const": false,
+				"is_reverse": false,
+				"is_virtual": false,
+				"has_varargs": false,
+				"is_from_script": false,
+				"arguments": [
+					{
+						"name": "values",
+						"type": "Array",
+						"has_default_value": false,
+						"default_value": ""
+					}
 				]
 			},
 			{
@@ -178905,8 +178786,8 @@
 			{
 				"name": "type",
 				"type": "int",
-				"getter": "get_comparsion_type",
-				"setter": "set_comparsion_type",
+				"getter": "get_comparison_type",
+				"setter": "set_comparison_type",
 				"index": -1
 			}
 		],
@@ -178914,8 +178795,8 @@
 		],
 		"methods": [
 			{
-				"name": "get_comparsion_type",
-				"return_type": "enum.VisualShaderNodeCompare::ComparsionType",
+				"name": "get_comparison_type",
+				"return_type": "enum.VisualShaderNodeCompare::ComparisonType",
 				"is_editor": false,
 				"is_noscript": false,
 				"is_const": true,
@@ -178953,7 +178834,7 @@
 				]
 			},
 			{
-				"name": "set_comparsion_type",
+				"name": "set_comparison_type",
 				"return_type": "void",
 				"is_editor": false,
 				"is_noscript": false,
@@ -179012,7 +178893,7 @@
 		],
 		"enums": [
 			{
-				"name": "ComparsionType",
+				"name": "ComparisonType",
 				"values": {
 					"CTYPE_SCALAR": 0,
 					"CTYPE_VECTOR": 1,
@@ -179518,19 +179399,6 @@
 		],
 		"methods": [
 			{
-				"name": "build",
-				"return_type": "void",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-				]
-			},
-			{
 				"name": "get_expression",
 				"return_type": "String",
 				"is_editor": false,
@@ -179635,10 +179503,10 @@
 		},
 		"properties": [
 			{
-				"name": "editable",
-				"type": "bool",
-				"getter": "is_editable",
-				"setter": "set_editable",
+				"name": "size",
+				"type": "Vector2",
+				"getter": "get_size",
+				"setter": "set_size",
 				"index": -1
 			}
 		],
@@ -179731,25 +179599,6 @@
 				"has_varargs": false,
 				"is_from_script": false,
 				"arguments": [
-				]
-			},
-			{
-				"name": "get_control",
-				"return_type": "Control",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-					{
-						"name": "index",
-						"type": "int",
-						"has_default_value": false,
-						"default_value": ""
-					}
 				]
 			},
 			{
@@ -179882,19 +179731,6 @@
 				]
 			},
 			{
-				"name": "is_editable",
-				"return_type": "bool",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": true,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-				]
-			},
-			{
 				"name": "is_valid_port_name",
 				"return_type": "bool",
 				"is_editor": false,
@@ -179946,50 +179782,6 @@
 					{
 						"name": "id",
 						"type": "int",
-						"has_default_value": false,
-						"default_value": ""
-					}
-				]
-			},
-			{
-				"name": "set_control",
-				"return_type": "void",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-					{
-						"name": "control",
-						"type": "Control",
-						"has_default_value": false,
-						"default_value": ""
-					},
-					{
-						"name": "index",
-						"type": "int",
-						"has_default_value": false,
-						"default_value": ""
-					}
-				]
-			},
-			{
-				"name": "set_editable",
-				"return_type": "void",
-				"is_editor": false,
-				"is_noscript": false,
-				"is_const": false,
-				"is_reverse": false,
-				"is_virtual": false,
-				"has_varargs": false,
-				"is_from_script": false,
-				"arguments": [
-					{
-						"name": "enabled",
-						"type": "bool",
 						"has_default_value": false,
 						"default_value": ""
 					}
@@ -183182,6 +182974,25 @@
 				"has_varargs": false,
 				"is_from_script": false,
 				"arguments": [
+				]
+			},
+			{
+				"name": "set_no_delay",
+				"return_type": "void",
+				"is_editor": false,
+				"is_noscript": false,
+				"is_const": false,
+				"is_reverse": false,
+				"is_virtual": false,
+				"has_varargs": false,
+				"is_from_script": false,
+				"arguments": [
+					{
+						"name": "enabled",
+						"type": "bool",
+						"has_default_value": false,
+						"default_value": ""
+					}
 				]
 			},
 			{
@@ -188313,8 +188124,8 @@
 					{
 						"name": "blocking",
 						"type": "bool",
-						"has_default_value": false,
-						"default_value": ""
+						"has_default_value": true,
+						"default_value": "True"
 					},
 					{
 						"name": "output",

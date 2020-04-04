@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -38,8 +38,8 @@ func newVisualShaderNodeColorOpFromPointer(ptr gdnative.Pointer) VisualShaderNod
 }
 
 /*
-
- */
+Applies [member operator] to two color inputs.
+*/
 type VisualShaderNodeColorOp struct {
 	VisualShaderNode
 	owner gdnative.Object

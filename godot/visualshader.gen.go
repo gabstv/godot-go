@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ func (o *VisualShader) X_UpdateShader() {
 }
 
 /*
-
+        Adds the specified node to the shader.
 	Args: [{ false type int} { false node VisualShaderNode} { false position Vector2} { false id int}], Returns: void
 */
 func (o *VisualShader) AddNode(aType gdnative.Int, node VisualShaderNodeImplementer, position gdnative.Vector2, id gdnative.Int) {
@@ -131,7 +131,7 @@ func (o *VisualShader) AddNode(aType gdnative.Int, node VisualShaderNodeImplemen
 }
 
 /*
-
+        Returns [code]true[/code] if the specified nodes and ports can be connected together.
 	Args: [{ false type int} { false from_node int} { false from_port int} { false to_node int} { false to_port int}], Returns: bool
 */
 func (o *VisualShader) CanConnectNodes(aType gdnative.Int, fromNode gdnative.Int, fromPort gdnative.Int, toNode gdnative.Int, toPort gdnative.Int) gdnative.Bool {
@@ -159,7 +159,7 @@ func (o *VisualShader) CanConnectNodes(aType gdnative.Int, fromNode gdnative.Int
 }
 
 /*
-
+        Connects the specified nodes and ports.
 	Args: [{ false type int} { false from_node int} { false from_port int} { false to_node int} { false to_port int}], Returns: enum.Error
 */
 func (o *VisualShader) ConnectNodes(aType gdnative.Int, fromNode gdnative.Int, fromPort gdnative.Int, toNode gdnative.Int, toPort gdnative.Int) gdnative.Error {
@@ -187,7 +187,7 @@ func (o *VisualShader) ConnectNodes(aType gdnative.Int, fromNode gdnative.Int, f
 }
 
 /*
-
+        Connects the specified nodes and ports, even if they can't be connected. Such connection is invalid and will not function properly.
 	Args: [{ false type int} { false from_node int} { false from_port int} { false to_node int} { false to_port int}], Returns: void
 */
 func (o *VisualShader) ConnectNodesForced(aType gdnative.Int, fromNode gdnative.Int, fromPort gdnative.Int, toNode gdnative.Int, toPort gdnative.Int) {
@@ -212,7 +212,7 @@ func (o *VisualShader) ConnectNodesForced(aType gdnative.Int, fromNode gdnative.
 }
 
 /*
-
+        Connects the specified nodes and ports.
 	Args: [{ false type int} { false from_node int} { false from_port int} { false to_node int} { false to_port int}], Returns: void
 */
 func (o *VisualShader) DisconnectNodes(aType gdnative.Int, fromNode gdnative.Int, fromPort gdnative.Int, toNode gdnative.Int, toPort gdnative.Int) {
@@ -260,7 +260,7 @@ func (o *VisualShader) GetGraphOffset() gdnative.Vector2 {
 }
 
 /*
-
+        Returns the shader node instance with specified [code]type[/code] and [code]id[/code].
 	Args: [{ false type int} { false id int}], Returns: VisualShaderNode
 */
 func (o *VisualShader) GetNode(aType gdnative.Int, id gdnative.Int) VisualShaderNodeImplementer {
@@ -299,7 +299,7 @@ func (o *VisualShader) GetNode(aType gdnative.Int, id gdnative.Int) VisualShader
 }
 
 /*
-
+        Returns the list of connected nodes with the specified type.
 	Args: [{ false type int}], Returns: Array
 */
 func (o *VisualShader) GetNodeConnections(aType gdnative.Int) gdnative.Array {
@@ -323,7 +323,7 @@ func (o *VisualShader) GetNodeConnections(aType gdnative.Int) gdnative.Array {
 }
 
 /*
-
+        Returns the list of all nodes in the shader with the specified type.
 	Args: [{ false type int}], Returns: PoolIntArray
 */
 func (o *VisualShader) GetNodeList(aType gdnative.Int) gdnative.PoolIntArray {
@@ -347,7 +347,7 @@ func (o *VisualShader) GetNodeList(aType gdnative.Int) gdnative.PoolIntArray {
 }
 
 /*
-
+        Returns the position of the specified node within the shader graph.
 	Args: [{ false type int} { false id int}], Returns: Vector2
 */
 func (o *VisualShader) GetNodePosition(aType gdnative.Int, id gdnative.Int) gdnative.Vector2 {
@@ -396,7 +396,7 @@ func (o *VisualShader) GetValidNodeId(aType gdnative.Int) gdnative.Int {
 }
 
 /*
-
+        Returns [code]true[/code] if the specified node and port connection exist.
 	Args: [{ false type int} { false from_node int} { false from_port int} { false to_node int} { false to_port int}], Returns: bool
 */
 func (o *VisualShader) IsNodeConnection(aType gdnative.Int, fromNode gdnative.Int, fromPort gdnative.Int, toNode gdnative.Int, toPort gdnative.Int) gdnative.Bool {
@@ -424,7 +424,7 @@ func (o *VisualShader) IsNodeConnection(aType gdnative.Int, fromNode gdnative.In
 }
 
 /*
-
+        Removes the specified node from the shader.
 	Args: [{ false type int} { false id int}], Returns: void
 */
 func (o *VisualShader) RemoveNode(aType gdnative.Int, id gdnative.Int) {
@@ -467,7 +467,7 @@ func (o *VisualShader) SetGraphOffset(offset gdnative.Vector2) {
 }
 
 /*
-
+        Sets the mode of this shader.
 	Args: [{ false mode int}], Returns: void
 */
 func (o *VisualShader) SetMode(mode gdnative.Int) {
@@ -488,7 +488,7 @@ func (o *VisualShader) SetMode(mode gdnative.Int) {
 }
 
 /*
-
+        Sets the position of the specified node.
 	Args: [{ false type int} { false id int} { false position Vector2}], Returns: void
 */
 func (o *VisualShader) SetNodePosition(aType gdnative.Int, id gdnative.Int, position gdnative.Vector2) {

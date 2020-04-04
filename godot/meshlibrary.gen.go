@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -247,7 +247,7 @@ func (o *MeshLibrary) GetItemNavmeshTransform(id gdnative.Int) gdnative.Transfor
 }
 
 /*
-        Returns a generated item preview (a 3D rendering in isometric perspective). [b]Note:[/b] Since item previews are only generated in an editor context, this function will return an empty [Texture] in a running project.
+        When running in the editor, returns a generated item preview (a 3D rendering in isometric perspective). When used in a running project, returns the manually-defined item preview which can be set using [method set_item_preview]. Returns an empty [Texture2D] if no preview was manually set in a running project.
 	Args: [{ false id int}], Returns: Texture
 */
 func (o *MeshLibrary) GetItemPreview(id gdnative.Int) TextureImplementer {
@@ -285,7 +285,7 @@ func (o *MeshLibrary) GetItemPreview(id gdnative.Int) TextureImplementer {
 }
 
 /*
-        Returns an item's collision shapes. The array consists of each [Shape] followed by its [Transform].
+        Returns an item's collision shapes. The array consists of each [Shape3D] followed by its [Transform].
 	Args: [{ false id int}], Returns: Array
 */
 func (o *MeshLibrary) GetItemShapes(id gdnative.Int) gdnative.Array {
@@ -463,7 +463,7 @@ func (o *MeshLibrary) SetItemPreview(id gdnative.Int, texture TextureImplementer
 }
 
 /*
-        Sets an item's collision shapes. The array should consist of [Shape] objects, each followed by a [Transform] that will be applied to it. For shapes that should not have a transform, use [constant Transform.IDENTITY].
+        Sets an item's collision shapes. The array should consist of [Shape3D] objects, each followed by a [Transform] that will be applied to it. For shapes that should not have a transform, use [constant Transform.IDENTITY].
 	Args: [{ false id int} { false shapes Array}], Returns: void
 */
 func (o *MeshLibrary) SetItemShapes(id gdnative.Int, shapes gdnative.Array) {

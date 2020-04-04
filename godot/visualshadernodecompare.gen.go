@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -13,14 +13,14 @@ import (
 //   code.
 //----------------------------------------------------------------------------*/
 
-// VisualShaderNodeCompareComparsionType is an enum for ComparsionType values.
-type VisualShaderNodeCompareComparsionType int
+// VisualShaderNodeCompareComparisonType is an enum for ComparisonType values.
+type VisualShaderNodeCompareComparisonType int
 
 const (
-	VisualShaderNodeCompareCtypeBoolean   VisualShaderNodeCompareComparsionType = 2
-	VisualShaderNodeCompareCtypeScalar    VisualShaderNodeCompareComparsionType = 0
-	VisualShaderNodeCompareCtypeTransform VisualShaderNodeCompareComparsionType = 3
-	VisualShaderNodeCompareCtypeVector    VisualShaderNodeCompareComparsionType = 1
+	VisualShaderNodeCompareCtypeBoolean   VisualShaderNodeCompareComparisonType = 2
+	VisualShaderNodeCompareCtypeScalar    VisualShaderNodeCompareComparisonType = 0
+	VisualShaderNodeCompareCtypeTransform VisualShaderNodeCompareComparisonType = 3
+	VisualShaderNodeCompareCtypeVector    VisualShaderNodeCompareComparisonType = 1
 )
 
 // VisualShaderNodeCompareCondition is an enum for Condition values.
@@ -53,8 +53,8 @@ func newVisualShaderNodeCompareFromPointer(ptr gdnative.Pointer) VisualShaderNod
 }
 
 /*
-
- */
+Compares [code]a[/code] and [code]b[/code] of [member type] by [member function]. Returns a boolean scalar. Translates to [code]if[/code] instruction in shader code.
+*/
 type VisualShaderNodeCompare struct {
 	VisualShaderNode
 	owner gdnative.Object
@@ -66,25 +66,25 @@ func (o *VisualShaderNodeCompare) BaseClass() string {
 
 /*
         Undocumented
-	Args: [], Returns: enum.VisualShaderNodeCompare::ComparsionType
+	Args: [], Returns: enum.VisualShaderNodeCompare::ComparisonType
 */
-func (o *VisualShaderNodeCompare) GetComparsionType() VisualShaderNodeCompareComparsionType {
-	//log.Println("Calling VisualShaderNodeCompare.GetComparsionType()")
+func (o *VisualShaderNodeCompare) GetComparisonType() VisualShaderNodeCompareComparisonType {
+	//log.Println("Calling VisualShaderNodeCompare.GetComparisonType()")
 
 	// Build out the method's arguments
 	ptrArguments := make([]gdnative.Pointer, 0, 0)
 
 	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeCompare", "get_comparsion_type")
+	methodBind := gdnative.NewMethodBind("VisualShaderNodeCompare", "get_comparison_type")
 
 	// Call the parent method.
-	// enum.VisualShaderNodeCompare::ComparsionType
+	// enum.VisualShaderNodeCompare::ComparisonType
 	retPtr := gdnative.NewEmptyInt()
 	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
 
 	// If we have a return type, convert it from a pointer into its actual object.
 	ret := gdnative.NewIntFromPointer(retPtr)
-	return VisualShaderNodeCompareComparsionType(ret)
+	return VisualShaderNodeCompareComparisonType(ret)
 }
 
 /*
@@ -137,15 +137,15 @@ func (o *VisualShaderNodeCompare) GetFunction() VisualShaderNodeCompareFunction 
         Undocumented
 	Args: [{ false type int}], Returns: void
 */
-func (o *VisualShaderNodeCompare) SetComparsionType(aType gdnative.Int) {
-	//log.Println("Calling VisualShaderNodeCompare.SetComparsionType()")
+func (o *VisualShaderNodeCompare) SetComparisonType(aType gdnative.Int) {
+	//log.Println("Calling VisualShaderNodeCompare.SetComparisonType()")
 
 	// Build out the method's arguments
 	ptrArguments := make([]gdnative.Pointer, 1, 1)
 	ptrArguments[0] = gdnative.NewPointerFromInt(aType)
 
 	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeCompare", "set_comparsion_type")
+	methodBind := gdnative.NewMethodBind("VisualShaderNodeCompare", "set_comparison_type")
 
 	// Call the parent method.
 	// void
@@ -200,7 +200,7 @@ func (o *VisualShaderNodeCompare) SetFunction(function gdnative.Int) {
 // of the VisualShaderNodeCompare class.
 type VisualShaderNodeCompareImplementer interface {
 	VisualShaderNodeImplementer
-	SetComparsionType(aType gdnative.Int)
+	SetComparisonType(aType gdnative.Int)
 	SetCondition(condition gdnative.Int)
 	SetFunction(function gdnative.Int)
 }

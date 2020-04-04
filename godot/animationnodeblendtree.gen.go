@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newAnimationNodeBlendTreeFromPointer(ptr gdnative.Pointer) AnimationNodeBle
 }
 
 /*
-
- */
+This node may contain a sub-tree of any other blend type nodes, such as mix, blend2, blend3, one shot, etc. This is one of the most commonly used roots.
+*/
 type AnimationNodeBlendTree struct {
 	AnimationRootNode
 	owner gdnative.Object
@@ -76,7 +76,7 @@ func (o *AnimationNodeBlendTree) X_TreeChanged() {
 }
 
 /*
-
+        Adds an [AnimationNode] at the given [code]position[/code]. The [code]name[/code] is used to identify the created sub-node later.
 	Args: [{ false name String} { false node AnimationNode} {(0, 0) true position Vector2}], Returns: void
 */
 func (o *AnimationNodeBlendTree) AddNode(name gdnative.String, node AnimationNodeImplementer, position gdnative.Vector2) {
@@ -99,7 +99,7 @@ func (o *AnimationNodeBlendTree) AddNode(name gdnative.String, node AnimationNod
 }
 
 /*
-
+        Connects the output of an [AnimationNode] as input for another [AnimationNode], at the input port specified by [code]input_index[/code].
 	Args: [{ false input_node String} { false input_index int} { false output_node String}], Returns: void
 */
 func (o *AnimationNodeBlendTree) ConnectNode(inputNode gdnative.String, inputIndex gdnative.Int, outputNode gdnative.String) {
@@ -122,7 +122,7 @@ func (o *AnimationNodeBlendTree) ConnectNode(inputNode gdnative.String, inputInd
 }
 
 /*
-
+        Disconnects the node connected to the specified input.
 	Args: [{ false input_node String} { false input_index int}], Returns: void
 */
 func (o *AnimationNodeBlendTree) DisconnectNode(inputNode gdnative.String, inputIndex gdnative.Int) {
@@ -167,7 +167,7 @@ func (o *AnimationNodeBlendTree) GetGraphOffset() gdnative.Vector2 {
 }
 
 /*
-
+        Returns the sub-node with the specified [code]name[/code].
 	Args: [{ false name String}], Returns: AnimationNode
 */
 func (o *AnimationNodeBlendTree) GetNode(name gdnative.String) AnimationNodeImplementer {
@@ -205,7 +205,7 @@ func (o *AnimationNodeBlendTree) GetNode(name gdnative.String) AnimationNodeImpl
 }
 
 /*
-
+        Returns the position of the sub-node with the specified [code]name[/code].
 	Args: [{ false name String}], Returns: Vector2
 */
 func (o *AnimationNodeBlendTree) GetNodePosition(name gdnative.String) gdnative.Vector2 {
@@ -229,7 +229,7 @@ func (o *AnimationNodeBlendTree) GetNodePosition(name gdnative.String) gdnative.
 }
 
 /*
-
+        Returns [code]true[/code] if a sub-node with specified [code]name[/code] exists.
 	Args: [{ false name String}], Returns: bool
 */
 func (o *AnimationNodeBlendTree) HasNode(name gdnative.String) gdnative.Bool {
@@ -253,7 +253,7 @@ func (o *AnimationNodeBlendTree) HasNode(name gdnative.String) gdnative.Bool {
 }
 
 /*
-
+        Removes a sub-node.
 	Args: [{ false name String}], Returns: void
 */
 func (o *AnimationNodeBlendTree) RemoveNode(name gdnative.String) {
@@ -274,7 +274,7 @@ func (o *AnimationNodeBlendTree) RemoveNode(name gdnative.String) {
 }
 
 /*
-
+        Changes the name of a sub-node.
 	Args: [{ false name String} { false new_name String}], Returns: void
 */
 func (o *AnimationNodeBlendTree) RenameNode(name gdnative.String, newName gdnative.String) {
@@ -317,7 +317,7 @@ func (o *AnimationNodeBlendTree) SetGraphOffset(offset gdnative.Vector2) {
 }
 
 /*
-
+        Modifies the position of a sub-node.
 	Args: [{ false name String} { false position Vector2}], Returns: void
 */
 func (o *AnimationNodeBlendTree) SetNodePosition(name gdnative.String, position gdnative.Vector2) {

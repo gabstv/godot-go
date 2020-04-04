@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/shadowapex/godot-go/cmd/generate/classes"
-	"github.com/shadowapex/godot-go/cmd/generate/gdnative"
-	"github.com/shadowapex/godot-go/cmd/generate/types"
-	"github.com/spf13/cobra"
 	"os"
 	"os/exec"
 	"path"
 	"path/filepath"
+
+	"github.com/gabstv/godot-go/cmd/generate/classes"
+	"github.com/gabstv/godot-go/cmd/generate/gdnative"
+	"github.com/gabstv/godot-go/cmd/generate/types"
+	"github.com/spf13/cobra"
 )
 
 var (

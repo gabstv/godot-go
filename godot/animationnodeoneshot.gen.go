@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -31,8 +31,8 @@ func newAnimationNodeOneShotFromPointer(ptr gdnative.Pointer) AnimationNodeOneSh
 }
 
 /*
-
- */
+A resource to add to an [AnimationNodeBlendTree]. This node will execute a sub-animation and return once it finishes. Blend times for fading in and out can be customized, as well as filters.
+*/
 type AnimationNodeOneShot struct {
 	AnimationNode
 	owner gdnative.Object

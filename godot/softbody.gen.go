@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newSoftBodyFromPointer(ptr gdnative.Pointer) SoftBody {
 }
 
 /*
-A deformable physics body. Used to create elastic or deformable objects such as cloth, rubber, or other flexible materials.
+Undocumented
 */
 type SoftBody struct {
 	MeshInstance
@@ -55,7 +55,7 @@ func (o *SoftBody) X_DrawSoftMesh() {
 }
 
 /*
-        Adds a body to the list of bodies that this body can't collide with.
+        Undocumented
 	Args: [{ false body Node}], Returns: void
 */
 func (o *SoftBody) AddCollisionExceptionWith(body NodeImplementer) {
@@ -99,7 +99,7 @@ func (o *SoftBody) GetAreaAngularStiffness() gdnative.Real {
 }
 
 /*
-        Returns an array of nodes that were added as collision exceptions for this body.
+        Undocumented
 	Args: [], Returns: Array
 */
 func (o *SoftBody) GetCollisionExceptions() gdnative.Array {
@@ -145,7 +145,7 @@ func (o *SoftBody) GetCollisionLayer() gdnative.Int {
 }
 
 /*
-        Returns an individual bit on the collision mask.
+        Undocumented
 	Args: [{ false bit int}], Returns: bool
 */
 func (o *SoftBody) GetCollisionLayerBit(bit gdnative.Int) gdnative.Bool {
@@ -192,7 +192,7 @@ func (o *SoftBody) GetCollisionMask() gdnative.Int {
 }
 
 /*
-        Returns an individual bit on the collision mask.
+        Undocumented
 	Args: [{ false bit int}], Returns: bool
 */
 func (o *SoftBody) GetCollisionMaskBit(bit gdnative.Int) gdnative.Bool {
@@ -446,7 +446,7 @@ func (o *SoftBody) IsRayPickable() gdnative.Bool {
 }
 
 /*
-        Removes a body from the list of bodies that this body can't collide with.
+        Undocumented
 	Args: [{ false body Node}], Returns: void
 */
 func (o *SoftBody) RemoveCollisionExceptionWith(body NodeImplementer) {
@@ -509,7 +509,7 @@ func (o *SoftBody) SetCollisionLayer(collisionLayer gdnative.Int) {
 }
 
 /*
-        Sets individual bits on the layer mask. Use this if you only need to change one layer's value.
+        Undocumented
 	Args: [{ false bit int} { false value bool}], Returns: void
 */
 func (o *SoftBody) SetCollisionLayerBit(bit gdnative.Int, value gdnative.Bool) {
@@ -552,7 +552,7 @@ func (o *SoftBody) SetCollisionMask(collisionMask gdnative.Int) {
 }
 
 /*
-        Sets individual bits on the collision mask. Use this if you only need to change one layer's value.
+        Undocumented
 	Args: [{ false bit int} { false value bool}], Returns: void
 */
 func (o *SoftBody) SetCollisionMaskBit(bit gdnative.Int, value gdnative.Bool) {

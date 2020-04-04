@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -34,7 +34,7 @@ func newAreaFromPointer(ptr gdnative.Pointer) Area {
 }
 
 /*
-3D area that detects [CollisionObject] nodes overlapping, entering, or exiting. Can also alter or override local physics parameters (gravity, damping).
+Undocumented
 */
 type Area struct {
 	CollisionObject
@@ -249,7 +249,7 @@ func (o *Area) GetCollisionLayer() gdnative.Int {
 }
 
 /*
-        Returns an individual bit on the layer mask.
+        Undocumented
 	Args: [{ false bit int}], Returns: bool
 */
 func (o *Area) GetCollisionLayerBit(bit gdnative.Int) gdnative.Bool {
@@ -296,7 +296,7 @@ func (o *Area) GetCollisionMask() gdnative.Int {
 }
 
 /*
-        Returns an individual bit on the collision mask.
+        Undocumented
 	Args: [{ false bit int}], Returns: bool
 */
 func (o *Area) GetCollisionMaskBit(bit gdnative.Int) gdnative.Bool {
@@ -412,7 +412,7 @@ func (o *Area) GetLinearDamp() gdnative.Real {
 }
 
 /*
-        Returns a list of intersecting [Area]s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+        Undocumented
 	Args: [], Returns: Array
 */
 func (o *Area) GetOverlappingAreas() gdnative.Array {
@@ -435,7 +435,7 @@ func (o *Area) GetOverlappingAreas() gdnative.Array {
 }
 
 /*
-        Returns a list of intersecting [PhysicsBody]s. For performance reasons (collisions are all processed at the same time) this list is modified once during the physics step, not immediately after objects are moved. Consider using signals instead.
+        Undocumented
 	Args: [], Returns: Array
 */
 func (o *Area) GetOverlappingBodies() gdnative.Array {
@@ -688,7 +688,7 @@ func (o *Area) IsUsingReverbBus() gdnative.Bool {
 }
 
 /*
-        If [code]true[/code], the given area overlaps the Area. [b]Note:[/b] The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead.
+        Undocumented
 	Args: [{ false area Node}], Returns: bool
 */
 func (o *Area) OverlapsArea(area NodeImplementer) gdnative.Bool {
@@ -712,7 +712,7 @@ func (o *Area) OverlapsArea(area NodeImplementer) gdnative.Bool {
 }
 
 /*
-        If [code]true[/code], the given physics body overlaps the Area. [b]Note:[/b] The result of this test is not immediate after moving objects. For performance, list of overlaps is updated once per frame and before the physics step. Consider using signals instead. The [code]body[/code] argument can either be a [PhysicsBody] or a [GridMap] instance (while GridMaps are not physics body themselves, they register their tiles with collision shapes as a virtual physics body).
+        Undocumented
 	Args: [{ false body Node}], Returns: bool
 */
 func (o *Area) OverlapsBody(body NodeImplementer) gdnative.Bool {
@@ -820,7 +820,7 @@ func (o *Area) SetCollisionLayer(collisionLayer gdnative.Int) {
 }
 
 /*
-        Set/clear individual bits on the layer mask. This simplifies editing this [Area]'s layers.
+        Undocumented
 	Args: [{ false bit int} { false value bool}], Returns: void
 */
 func (o *Area) SetCollisionLayerBit(bit gdnative.Int, value gdnative.Bool) {
@@ -863,7 +863,7 @@ func (o *Area) SetCollisionMask(collisionMask gdnative.Int) {
 }
 
 /*
-        Set/clear individual bits on the collision mask. This simplifies editing which [Area] layers this [Area] scans.
+        Undocumented
 	Args: [{ false bit int} { false value bool}], Returns: void
 */
 func (o *Area) SetCollisionMaskBit(bit gdnative.Int, value gdnative.Bool) {

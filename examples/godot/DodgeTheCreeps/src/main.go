@@ -1,8 +1,8 @@
 package main
 
 import (
-	gd "github.com/shadowapex/godot-go/gdnative"
-	"github.com/shadowapex/godot-go/godot"
+	gd "github.com/gabstv/godot-go/gdnative"
+	"github.com/gabstv/godot-go/godot"
 	"log"
 	"math/rand"
 )

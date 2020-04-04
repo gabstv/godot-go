@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newCheckButtonFromPointer(ptr gdnative.Pointer) CheckButton {
 }
 
 /*
-CheckButton is a toggle button displayed as a check field.
+CheckButton is a toggle button displayed as a check field. It's similar to [CheckBox] in functionality, but it has a different appearance. To follow established UX patterns, it's recommended to use CheckButton when toggling it has an [b]immediate[/b] effect on something. For instance, it should be used if toggling it enables/disables a setting without requiring the user to press a confirmation button.
 */
 type CheckButton struct {
 	Button

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeExpressionFromPointer(ptr gdnative.Pointer) VisualShader
 }
 
 /*
-
- */
+Custom Godot Shading Language expression, with a custom amount of input and output ports. The provided code is directly injected into the graph's matching shader function ([code]vertex[/code], [code]fragment[/code], or [code]light[/code]), so it cannot be used to to declare functions, varyings, uniforms, or global constants. See [VisualShaderNodeGlobalExpression] for such global definitions.
+*/
 type VisualShaderNodeExpression struct {
 	VisualShaderNodeGroupBase
 	owner gdnative.Object
@@ -32,26 +32,6 @@ type VisualShaderNodeExpression struct {
 
 func (o *VisualShaderNodeExpression) BaseClass() string {
 	return "VisualShaderNodeExpression"
-}
-
-/*
-
-	Args: [], Returns: void
-*/
-func (o *VisualShaderNodeExpression) Build() {
-	//log.Println("Calling VisualShaderNodeExpression.Build()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("VisualShaderNodeExpression", "build")
-
-	// Call the parent method.
-	// void
-	retPtr := gdnative.NewEmptyVoid()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
 }
 
 /*
@@ -102,7 +82,6 @@ func (o *VisualShaderNodeExpression) SetExpression(expression gdnative.String) {
 // of the VisualShaderNodeExpression class.
 type VisualShaderNodeExpressionImplementer interface {
 	VisualShaderNodeGroupBaseImplementer
-	Build()
 	GetExpression() gdnative.String
 	SetExpression(expression gdnative.String)
 }

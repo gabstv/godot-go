@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -74,7 +74,7 @@ func (o *Node) X_EnterTree() {
 }
 
 /*
-        Called when the node is about to leave the [SceneTree] (e.g. upon freeing, scene changing, or after calling [method remove_child] in a script). If the node has children, its [method _exit_tree] callback will be called last, after all its children have left the tree. Corresponds to the [constant NOTIFICATION_EXIT_TREE] notification in [method Object._notification] and signal [signal tree_exiting]. To get notified when the node has already left the active tree, connect to the [signal tree_exited]
+        Called when the node is about to leave the [SceneTree] (e.g. upon freeing, scene changing, or after calling [method remove_child] in a script). If the node has children, its [method _exit_tree] callback will be called last, after all its children have left the tree. Corresponds to the [constant NOTIFICATION_EXIT_TREE] notification in [method Object._notification] and signal [signal tree_exiting]. To get notified when the node has already left the active tree, connect to the [signal tree_exited].
 	Args: [], Returns: void
 */
 func (o *Node) X_ExitTree() {
@@ -163,7 +163,7 @@ func (o *Node) X_GetImportPath() gdnative.NodePath {
 }
 
 /*
-        Called when there is an input event. The input event propagates up through the node tree until a node consumes it. It is only called if input processing is enabled, which is done automatically if this method is overridden, and can be toggled with [method set_process_input]. To consume the input event and stop it propagating further to other nodes, [method SceneTree.set_input_as_handled] can be called. For gameplay input, [method _unhandled_input] and [method _unhandled_key_input] are usually a better fit as they allow the GUI to intercept the events first.
+        Called when there is an input event. The input event propagates up through the node tree until a node consumes it. It is only called if input processing is enabled, which is done automatically if this method is overridden, and can be toggled with [method set_process_input]. To consume the input event and stop it propagating further to other nodes, [method Viewport.set_input_as_handled] can be called. For gameplay input, [method _unhandled_input] and [method _unhandled_key_input] are usually a better fit as they allow the GUI to intercept the events first.
 	Args: [{ false event InputEvent}], Returns: void
 */
 func (o *Node) X_Input(event InputEventImplementer) {
@@ -288,7 +288,7 @@ func (o *Node) X_SetImportPath(importPath gdnative.NodePath) {
 }
 
 /*
-        Called when an [InputEvent] hasn't been consumed by [method _input] or any GUI. The input event propagates up through the node tree until a node consumes it. It is only called if unhandled input processing is enabled, which is done automatically if this method is overridden, and can be toggled with [method set_process_unhandled_input]. To consume the input event and stop it propagating further to other nodes, [method SceneTree.set_input_as_handled] can be called. For gameplay input, this and [method _unhandled_key_input] are usually a better fit than [method _input] as they allow the GUI to intercept the events first.
+        Called when an [InputEvent] hasn't been consumed by [method _input] or any GUI. The input event propagates up through the node tree until a node consumes it. It is only called if unhandled input processing is enabled, which is done automatically if this method is overridden, and can be toggled with [method set_process_unhandled_input]. To consume the input event and stop it propagating further to other nodes, [method Viewport.set_input_as_handled] can be called. For gameplay input, this and [method _unhandled_key_input] are usually a better fit than [method _input] as they allow the GUI to intercept the events first.
 	Args: [{ false event InputEvent}], Returns: void
 */
 func (o *Node) X_UnhandledInput(event InputEventImplementer) {
@@ -309,7 +309,7 @@ func (o *Node) X_UnhandledInput(event InputEventImplementer) {
 }
 
 /*
-        Called when an [InputEventKey] hasn't been consumed by [method _input] or any GUI. The input event propagates up through the node tree until a node consumes it. It is only called if unhandled key input processing is enabled, which is done automatically if this method is overridden, and can be toggled with [method set_process_unhandled_key_input]. To consume the input event and stop it propagating further to other nodes, [method SceneTree.set_input_as_handled] can be called. For gameplay input, this and [method _unhandled_input] are usually a better fit than [method _input] as they allow the GUI to intercept the events first.
+        Called when an [InputEventKey] hasn't been consumed by [method _input] or any GUI. The input event propagates up through the node tree until a node consumes it. It is only called if unhandled key input processing is enabled, which is done automatically if this method is overridden, and can be toggled with [method set_process_unhandled_key_input]. To consume the input event and stop it propagating further to other nodes, [method Viewport.set_input_as_handled] can be called. For gameplay input, this and [method _unhandled_input] are usually a better fit than [method _input] as they allow the GUI to intercept the events first.
 	Args: [{ false event InputEventKey}], Returns: void
 */
 func (o *Node) X_UnhandledKeyInput(event InputEventKeyImplementer) {
@@ -330,7 +330,7 @@ func (o *Node) X_UnhandledKeyInput(event InputEventKeyImplementer) {
 }
 
 /*
-        Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node. If [code]legible_unique_name[/code] is [code]true[/code], the child node will have an human-readable name based on the name of the node being instanced instead of its type. [b]Note:[/b] If the child node already has a parent, the function will fail. Use [method remove_child] first to remove the node from its current parent. For example: [codeblock] if child_node.get_parent(): child_node.get_parent().remove_child(child_node) add_child(child_node) [/codeblock] [b]Note:[/b] If you want a child to be persisted to a [PackedScene], you must set [member owner] in addition to calling [method add_child]. This is typically relevant for [url=https://godot.readthedocs.io/en/latest/tutorials/misc/running_code_in_the_editor.html]tool scripts[/url] and [url=https://godot.readthedocs.io/en/latest/tutorials/plugins/editor/index.html]editor plugins[/url]. If [method add_child] is called without setting [member owner], the newly added [Node] will not be visible in the scene tree, though it will be visible in the 2D/3D view.
+        Adds a child node. Nodes can have any number of children, but every child must have a unique name. Child nodes are automatically deleted when the parent node is deleted, so an entire scene can be removed by deleting its topmost node. If [code]legible_unique_name[/code] is [code]true[/code], the child node will have an human-readable name based on the name of the node being instanced instead of its type. [b]Note:[/b] If the child node already has a parent, the function will fail. Use [method remove_child] first to remove the node from its current parent. For example: [codeblock] if child_node.get_parent(): child_node.get_parent().remove_child(child_node) add_child(child_node) [/codeblock] If you need the child node to be added below a specific node in the list of children, use [method add_child_below_node] instead of this method. [b]Note:[/b] If you want a child to be persisted to a [PackedScene], you must set [member owner] in addition to calling [method add_child]. This is typically relevant for [url=https://godot.readthedocs.io/en/latest/tutorials/misc/running_code_in_the_editor.html]tool scripts[/url] and [url=https://godot.readthedocs.io/en/latest/tutorials/plugins/editor/index.html]editor plugins[/url]. If [method add_child] is called without setting [member owner], the newly added [Node] will not be visible in the scene tree, though it will be visible in the 2D/3D view.
 	Args: [{ false node Node} {False true legible_unique_name bool}], Returns: void
 */
 func (o *Node) AddChild(node NodeImplementer, legibleUniqueName gdnative.Bool) {
@@ -352,7 +352,7 @@ func (o *Node) AddChild(node NodeImplementer, legibleUniqueName gdnative.Bool) {
 }
 
 /*
-        Adds a child node. The child is placed below the given node in the list of children. If [code]legible_unique_name[/code] is [code]true[/code], the child node will have an human-readable name based on the name of the node being instanced instead of its type.
+        Adds a child node below the [code]preceding_node[/code]. If [code]legible_unique_name[/code] is [code]true[/code], the child node will have an human-readable name based on the name of the node being instanced instead of its type. Use [method add_child] instead of this method if you don't need the child node to be added below a specific node in the list of children.
 	Args: [{ false node Node} { false child_node Node} {False true legible_unique_name bool}], Returns: void
 */
 func (o *Node) AddChildBelowNode(node NodeImplementer, childNode NodeImplementer, legibleUniqueName gdnative.Bool) {
@@ -1053,7 +1053,7 @@ func (o *Node) GetPauseMode() NodePauseMode {
 }
 
 /*
-        Returns the time elapsed since the last physics-bound frame (see [method _physics_process]). This is always a constant value in physics processing unless the frames per second is changed via [member Engine.target_fps].
+        Returns the time elapsed since the last physics-bound frame (see [method _physics_process]). This is always a constant value in physics processing unless the frames per second is changed via [member Engine.iterations_per_second].
 	Args: [], Returns: float
 */
 func (o *Node) GetPhysicsProcessDeltaTime() gdnative.Real {
@@ -2258,7 +2258,7 @@ func (o *Node) SetPauseMode(mode gdnative.Int) {
 }
 
 /*
-        Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a [constant NOTIFICATION_PHYSICS_PROCESS] at a fixed (usually 60 FPS, see [member Engine.target_fps] to change) interval (and the [method _physics_process] callback will be called if exists). Enabled automatically if [method _physics_process] is overridden. Any calls to this before [method _ready] will be ignored.
+        Enables or disables physics (i.e. fixed framerate) processing. When a node is being processed, it will receive a [constant NOTIFICATION_PHYSICS_PROCESS] at a fixed (usually 60 FPS, see [member Engine.iterations_per_second] to change) interval (and the [method _physics_process] callback will be called if exists). Enabled automatically if [method _physics_process] is overridden. Any calls to this before [method _ready] will be ignored.
 	Args: [{ false enable bool}], Returns: void
 */
 func (o *Node) SetPhysicsProcess(enable gdnative.Bool) {

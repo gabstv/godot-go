@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ func newLineEditFromPointer(ptr gdnative.Pointer) LineEdit {
 }
 
 /*
-LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available: (the Ctrl here maps to Command on macOS) - Ctrl + C: Copy - Ctrl + X: Cut - Ctrl + V or Ctrl + Y: Paste/"yank" - Ctrl + Z: Undo - Ctrl + Shift + Z: Redo - Ctrl + U: Delete text from the cursor position to the beginning of the line - Ctrl + K: Delete text from the cursor position to the end of the line - Ctrl + A: Select all text - Up/Down arrow: Move the cursor to the beginning/end of the line On macOS, some extra keyboard shortcuts are available: - Ctrl + F: Like the right arrow key, move the cursor one character right - Ctrl + B: Like the left arrow key, move the cursor one character left - Ctrl + P: Like the up arrow key, move the cursor to the previous line - Ctrl + N: Like the down arrow key, move the cursor to the next line - Ctrl + D: Like the Delete key, delete the character on the right side of cursor - Ctrl + H: Like the Backspace key, delete the character on the left side of the cursor - Command + Left arrow: Like the Home key, move the cursor to the beginning of the line - Command + Right arrow: Like the End key, move the cursor to the end of the line
+LineEdit provides a single-line string editor, used for text fields. It features many built-in shortcuts which will always be available ([code]Ctrl[/code] here maps to [code]Command[/code] on macOS): - Ctrl + C: Copy - Ctrl + X: Cut - Ctrl + V or Ctrl + Y: Paste/"yank" - Ctrl + Z: Undo - Ctrl + Shift + Z: Redo - Ctrl + U: Delete text from the cursor position to the beginning of the line - Ctrl + K: Delete text from the cursor position to the end of the line - Ctrl + A: Select all text - Up/Down arrow: Move the cursor to the beginning/end of the line On macOS, some extra keyboard shortcuts are available: - Ctrl + F: Like the right arrow key, move the cursor one character right - Ctrl + B: Like the left arrow key, move the cursor one character left - Ctrl + P: Like the up arrow key, move the cursor to the previous line - Ctrl + N: Like the down arrow key, move the cursor to the next line - Ctrl + D: Like the Delete key, delete the character on the right side of cursor - Ctrl + H: Like the Backspace key, delete the character on the left side of the cursor - Ctrl + A: Like the Home key, move the cursor to the beginning of the line - Ctrl + E: Like the End key, move the cursor to the end of the line - Command + Left arrow: Like the Home key, move the cursor to the beginning of the line - Command + Right arrow: Like the End key, move the cursor to the end of the line
 */
 type LineEdit struct {
 	Control
@@ -706,7 +706,7 @@ func (o *LineEdit) MenuOption(option gdnative.Int) {
 }
 
 /*
-        Selects characters inside [LineEdit] between [code]from[/code] and [code]to[/code]. By default, [code]from[/code] is at the beginning and [code]to[/code] at the end. [codeblock] text = "Welcome" select() # Will select "Welcome" select(4) # Will select "ome" select(2, 5) # Will select "lco" [/codeblock]
+        Selects characters inside [LineEdit] between [code]from[/code] and [code]to[/code]. By default, [code]from[/code] is at the beginning and [code]to[/code] at the end. [codeblock] text = "Welcome" select() # Will select "Welcome". select(4) # Will select "ome". select(2, 5) # Will select "lco". [/codeblock]
 	Args: [{0 true from int} {-1 true to int}], Returns: void
 */
 func (o *LineEdit) Select(from gdnative.Int, to gdnative.Int) {

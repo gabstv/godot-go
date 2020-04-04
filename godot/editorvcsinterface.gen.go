@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -329,7 +329,7 @@ func (o *EditorVCSInterface) GetModifiedFilesData() gdnative.Dictionary {
 }
 
 /*
-        Return the project name of the VCS working directory
+        Returns the project name of the VCS working directory.
 	Args: [], Returns: String
 */
 func (o *EditorVCSInterface) GetProjectName() gdnative.String {
@@ -352,7 +352,7 @@ func (o *EditorVCSInterface) GetProjectName() gdnative.String {
 }
 
 /*
-        Return the name of the VCS if the VCS has been initialized, else return an empty string.
+        Returns the name of the VCS if the VCS has been initialized, else return an empty string.
 	Args: [], Returns: String
 */
 func (o *EditorVCSInterface) GetVcsName() gdnative.String {
@@ -375,7 +375,7 @@ func (o *EditorVCSInterface) GetVcsName() gdnative.String {
 }
 
 /*
-        Initialize the VCS addon if not already. Uses the argument value as the path to the working directory of the project. Creates the initial commit if required. Returns [code]true[/code] if no failure occurs, else returns [code]false[/code].
+        Initializes the VCS addon if not already. Uses the argument value as the path to the working directory of the project. Creates the initial commit if required. Returns [code]true[/code] if no failure occurs, else returns [code]false[/code].
 	Args: [{ false project_root_path String}], Returns: bool
 */
 func (o *EditorVCSInterface) Initialize(projectRootPath gdnative.String) gdnative.Bool {
@@ -468,7 +468,7 @@ func (o *EditorVCSInterface) ShutDown() gdnative.Bool {
 }
 
 /*
-        Stage the file which should be committed when [method EditorVCSInterface.commit] is called. Argument should contain the absolute path.
+        Stages the file which should be committed when [method EditorVCSInterface.commit] is called. Argument should contain the absolute path.
 	Args: [{ false file_path String}], Returns: void
 */
 func (o *EditorVCSInterface) StageFile(filePath gdnative.String) {
@@ -489,7 +489,7 @@ func (o *EditorVCSInterface) StageFile(filePath gdnative.String) {
 }
 
 /*
-        Unstage the file which was staged previously to be committed, so that it is no longer committed when [method EditorVCSInterface.commit] is called. Argument should contain the absolute path.
+        Unstages the file which was staged previously to be committed, so that it is no longer committed when [method EditorVCSInterface.commit] is called. Argument should contain the absolute path.
 	Args: [{ false file_path String}], Returns: void
 */
 func (o *EditorVCSInterface) UnstageFile(filePath gdnative.String) {

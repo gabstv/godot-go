@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVideoStreamFromPointer(ptr gdnative.Pointer) VideoStream {
 }
 
 /*
-
- */
+Base resource type for all video streams. Classes that derive from [VideoStream] can all be used as resource types to play back videos in [VideoPlayer].
+*/
 type VideoStream struct {
 	Resource
 	owner gdnative.Object

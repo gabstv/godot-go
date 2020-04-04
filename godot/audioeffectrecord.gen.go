@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ func (o *AudioEffectRecord) GetFormat() AudioStreamSampleFormat {
 }
 
 /*
-
+        Returns the recorded sample.
 	Args: [], Returns: AudioStreamSample
 */
 func (o *AudioEffectRecord) GetRecording() AudioStreamSampleImplementer {
@@ -95,7 +95,7 @@ func (o *AudioEffectRecord) GetRecording() AudioStreamSampleImplementer {
 }
 
 /*
-
+        Returns whether the recording is active or not.
 	Args: [], Returns: bool
 */
 func (o *AudioEffectRecord) IsRecordingActive() gdnative.Bool {
@@ -139,7 +139,7 @@ func (o *AudioEffectRecord) SetFormat(format gdnative.Int) {
 }
 
 /*
-
+        If [code]true[/code], the sound will be recorded. Note that restarting the recording will remove the previously recorded sample.
 	Args: [{ false record bool}], Returns: void
 */
 func (o *AudioEffectRecord) SetRecordingActive(record gdnative.Bool) {

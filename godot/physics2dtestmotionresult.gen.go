@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newPhysics2DTestMotionResultFromPointer(ptr gdnative.Pointer) Physics2DTest
 }
 
 /*
-
- */
+Undocumented
+*/
 type Physics2DTestMotionResult struct {
 	Reference
 	owner gdnative.Object

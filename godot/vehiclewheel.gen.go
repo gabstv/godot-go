@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newVehicleWheelFromPointer(ptr gdnative.Pointer) VehicleWheel {
 }
 
 /*
-This node needs to be used as a child node of [VehicleBody] and simulates the behavior of one of its wheels. This node also acts as a collider to detect if the wheel is touching a surface.
+Undocumented
 */
 type VehicleWheel struct {
 	Spatial
@@ -196,7 +196,7 @@ func (o *VehicleWheel) GetRollInfluence() gdnative.Real {
 }
 
 /*
-        Returns the rotational speed of the wheel in revolutions per minute.
+        Undocumented
 	Args: [], Returns: float
 */
 func (o *VehicleWheel) GetRpm() gdnative.Real {
@@ -219,7 +219,7 @@ func (o *VehicleWheel) GetRpm() gdnative.Real {
 }
 
 /*
-        Returns a value between 0.0 and 1.0 that indicates whether this wheel is skidding. 0.0 is skidding (the wheel has lost grip, e.g. icy terrain), 1.0 means not skidding (the wheel has full grip, e.g. dry asphalt road).
+        Undocumented
 	Args: [], Returns: float
 */
 func (o *VehicleWheel) GetSkidinfo() gdnative.Real {
@@ -357,7 +357,7 @@ func (o *VehicleWheel) GetSuspensionTravel() gdnative.Real {
 }
 
 /*
-        Returns [code]true[/code] if this wheel is in contact with a surface.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *VehicleWheel) IsInContact() gdnative.Bool {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ func newShaderFromPointer(ptr gdnative.Pointer) Shader {
 }
 
 /*
-This class allows you to define a custom shader program that can be used for various materials to render objects.
+This class allows you to define a custom shader program that can be used by a [ShaderMaterial]. Shaders allow you to write your own custom behavior for rendering objects or updating particle information. For a detailed explanation and usage, please see the tutorials linked below.
 */
 type Shader struct {
 	Resource
@@ -67,7 +67,7 @@ func (o *Shader) GetCode() gdnative.String {
 }
 
 /*
-
+        Returns the texture that is set as default for the specified parameter. [b]Note:[/b] [code]param[/code] must match the name of the uniform in the code exactly.
 	Args: [{ false param String}], Returns: Texture
 */
 func (o *Shader) GetDefaultTextureParam(param gdnative.String) TextureImplementer {
@@ -105,7 +105,7 @@ func (o *Shader) GetDefaultTextureParam(param gdnative.String) TextureImplemente
 }
 
 /*
-        Returns the shader mode for the shader, either [constant MODE_CANVAS_ITEM], [constant MODE_SPATIAL] or [constant MODE_PARTICLES]
+        Returns the shader mode for the shader, either [constant MODE_CANVAS_ITEM], [constant MODE_SPATIAL] or [constant MODE_PARTICLES].
 	Args: [], Returns: enum.Shader::Mode
 */
 func (o *Shader) GetMode() ShaderMode {
@@ -128,7 +128,7 @@ func (o *Shader) GetMode() ShaderMode {
 }
 
 /*
-
+        Returns [code]true[/code] if the shader has this param defined as a uniform in its code. [b]Note:[/b] [code]param[/code] must match the name of the uniform in the code exactly.
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Shader) HasParam(name gdnative.String) gdnative.Bool {
@@ -173,7 +173,7 @@ func (o *Shader) SetCode(code gdnative.String) {
 }
 
 /*
-
+        Sets the default texture to be used with a texture uniform. The default is used if a texture is not set in the [ShaderMaterial]. [b]Note:[/b] [code]param[/code] must match the name of the uniform in the code exactly.
 	Args: [{ false param String} { false texture Texture}], Returns: void
 */
 func (o *Shader) SetDefaultTextureParam(param gdnative.String, texture TextureImplementer) {

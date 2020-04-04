@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -48,12 +48,12 @@ func newSingletonARVRServer() *arvrServer {
 }
 
 /*
-   The AR/VR server is the heart of our AR/VR solution and handles all the processing.
+   The AR/VR server is the heart of our Advanced and Virtual Reality solution and handles all the processing.
 */
 var ARVRServer = newSingletonARVRServer()
 
 /*
-The AR/VR server is the heart of our AR/VR solution and handles all the processing.
+The AR/VR server is the heart of our Advanced and Virtual Reality solution and handles all the processing.
 */
 type arvrServer struct {
 	Object
@@ -164,7 +164,7 @@ func (o *arvrServer) GetHmdTransform() gdnative.Transform {
 }
 
 /*
-        Gets the interface registered at a given index in our list of interfaces.
+        Returns the interface registered at a given index in our list of interfaces.
 	Args: [{ false idx int}], Returns: ARVRInterface
 */
 func (o *arvrServer) GetInterface(idx gdnative.Int) ARVRInterfaceImplementer {
@@ -203,7 +203,7 @@ func (o *arvrServer) GetInterface(idx gdnative.Int) ARVRInterfaceImplementer {
 }
 
 /*
-        Gets the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns [code]true[/code].
+        Returns the number of interfaces currently registered with the AR/VR server. If your project supports multiple AR/VR platforms, you can look through the available interface, and either present the user with a selection or simply try to initialize each interface and use the first one that returns [code]true[/code].
 	Args: [], Returns: int
 */
 func (o *arvrServer) GetInterfaceCount() gdnative.Int {
@@ -251,7 +251,7 @@ func (o *arvrServer) GetInterfaces() gdnative.Array {
 }
 
 /*
-
+        Returns the absolute timestamp (in μs) of the last [ARVRServer] commit of the AR/VR eyes to [RenderingServer]. The value comes from an internal call to [method OS.get_ticks_usec].
 	Args: [], Returns: int
 */
 func (o *arvrServer) GetLastCommitUsec() gdnative.Int {
@@ -275,7 +275,7 @@ func (o *arvrServer) GetLastCommitUsec() gdnative.Int {
 }
 
 /*
-
+        Returns the duration (in μs) of the last frame. This is computed as the difference between [method get_last_commit_usec] and [method get_last_process_usec] when committing.
 	Args: [], Returns: int
 */
 func (o *arvrServer) GetLastFrameUsec() gdnative.Int {
@@ -299,7 +299,7 @@ func (o *arvrServer) GetLastFrameUsec() gdnative.Int {
 }
 
 /*
-
+        Returns the absolute timestamp (in μs) of the last [ARVRServer] process callback. The value comes from an internal call to [method OS.get_ticks_usec].
 	Args: [], Returns: int
 */
 func (o *arvrServer) GetLastProcessUsec() gdnative.Int {
@@ -361,7 +361,7 @@ func (o *arvrServer) GetPrimaryInterface() ARVRInterfaceImplementer {
 }
 
 /*
-        Gets the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
+        Returns the reference frame transform. Mostly used internally and exposed for GDNative build interfaces.
 	Args: [], Returns: Transform
 */
 func (o *arvrServer) GetReferenceFrame() gdnative.Transform {
@@ -385,7 +385,7 @@ func (o *arvrServer) GetReferenceFrame() gdnative.Transform {
 }
 
 /*
-        Gets the positional tracker at the given ID.
+        Returns the positional tracker at the given ID.
 	Args: [{ false idx int}], Returns: ARVRPositionalTracker
 */
 func (o *arvrServer) GetTracker(idx gdnative.Int) ARVRPositionalTrackerImplementer {
@@ -424,7 +424,7 @@ func (o *arvrServer) GetTracker(idx gdnative.Int) ARVRPositionalTrackerImplement
 }
 
 /*
-        Gets the number of trackers currently registered.
+        Returns the number of trackers currently registered.
 	Args: [], Returns: int
 */
 func (o *arvrServer) GetTrackerCount() gdnative.Int {

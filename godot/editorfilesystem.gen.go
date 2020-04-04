@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -241,7 +241,7 @@ func (o *EditorFileSystem) UpdateFile(path gdnative.String) {
 }
 
 /*
-
+        Scans the script files and updates the list of custom class names.
 	Args: [], Returns: void
 */
 func (o *EditorFileSystem) UpdateScriptClasses() {

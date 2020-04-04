@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -158,6 +158,27 @@ func (o *WebSocketPeer) IsConnectedToHost() gdnative.Bool {
 
 /*
         Undocumented
+	Args: [{ false enabled bool}], Returns: void
+*/
+func (o *WebSocketPeer) SetNoDelay(enabled gdnative.Bool) {
+	//log.Println("Calling WebSocketPeer.SetNoDelay()")
+
+	// Build out the method's arguments
+	ptrArguments := make([]gdnative.Pointer, 1, 1)
+	ptrArguments[0] = gdnative.NewPointerFromBool(enabled)
+
+	// Get the method bind
+	methodBind := gdnative.NewMethodBind("WebSocketPeer", "set_no_delay")
+
+	// Call the parent method.
+	// void
+	retPtr := gdnative.NewEmptyVoid()
+	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
+
+}
+
+/*
+        Undocumented
 	Args: [{ false mode int}], Returns: void
 */
 func (o *WebSocketPeer) SetWriteMode(mode gdnative.Int) {
@@ -208,6 +229,7 @@ type WebSocketPeerImplementer interface {
 	GetConnectedHost() gdnative.String
 	GetConnectedPort() gdnative.Int
 	IsConnectedToHost() gdnative.Bool
+	SetNoDelay(enabled gdnative.Bool)
 	SetWriteMode(mode gdnative.Int)
 	WasStringPacket() gdnative.Bool
 }

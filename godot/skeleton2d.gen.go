@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newSkeleton2DFromPointer(ptr gdnative.Pointer) Skeleton2D {
 }
 
 /*
-
- */
+Skeleton2D parents a hierarchy of [Bone2D] objects. It is a requirement of [Bone2D]. Skeleton2D holds a reference to the rest pose of its children and acts as a single point of access to its bones.
+*/
 type Skeleton2D struct {
 	Node2D
 	owner gdnative.Object
@@ -75,7 +75,7 @@ func (o *Skeleton2D) X_UpdateTransform() {
 }
 
 /*
-
+        Returns a [Bone2D] from the node hierarchy parented by Skeleton2D. The object to return is identified by the parameter [code]idx[/code]. Bones are indexed by descending the node hierarchy from top to bottom, adding the children of each branch before moving to the next sibling.
 	Args: [{ false idx int}], Returns: Bone2D
 */
 func (o *Skeleton2D) GetBone(idx gdnative.Int) Bone2DImplementer {
@@ -113,7 +113,7 @@ func (o *Skeleton2D) GetBone(idx gdnative.Int) Bone2DImplementer {
 }
 
 /*
-        Returns the amount of bones in the skeleton.
+        Returns the number of [Bone2D] nodes in the node hierarchy parented by Skeleton2D.
 	Args: [], Returns: int
 */
 func (o *Skeleton2D) GetBoneCount() gdnative.Int {
@@ -136,7 +136,7 @@ func (o *Skeleton2D) GetBoneCount() gdnative.Int {
 }
 
 /*
-
+        Returns the [RID] of a Skeleton2D instance.
 	Args: [], Returns: RID
 */
 func (o *Skeleton2D) GetSkeleton() gdnative.Rid {

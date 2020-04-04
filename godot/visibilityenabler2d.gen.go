@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -36,7 +36,7 @@ func newVisibilityEnabler2DFromPointer(ptr gdnative.Pointer) VisibilityEnabler2D
 }
 
 /*
-The VisibilityEnabler2D will disable [RigidBody2D], [AnimationPlayer], and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself.
+The VisibilityEnabler2D will disable [RigidBody2D], [AnimationPlayer], and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself. Note that VisibilityEnabler2D will not affect nodes added after scene initialization.
 */
 type VisibilityEnabler2D struct {
 	VisibilityNotifier2D

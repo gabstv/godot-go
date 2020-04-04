@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ func (o *CameraFeed) X_SetPosition(position gdnative.Int) {
 }
 
 /*
-        Returns the unique ID for this feed.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *CameraFeed) GetId() gdnative.Int {
@@ -208,7 +208,7 @@ func (o *CameraFeed) GetId() gdnative.Int {
 }
 
 /*
-        Returns the camera's name.
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *CameraFeed) GetName() gdnative.String {
@@ -231,7 +231,7 @@ func (o *CameraFeed) GetName() gdnative.String {
 }
 
 /*
-        Returns the position of camera on the device.
+        Undocumented
 	Args: [], Returns: enum.CameraFeed::FeedPosition
 */
 func (o *CameraFeed) GetPosition() CameraFeedFeedPosition {

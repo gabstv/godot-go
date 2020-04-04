@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPathFromPointer(ptr gdnative.Pointer) Path {
 }
 
 /*
-Can have [PathFollow] child nodes moving along the [Curve3D]. See [PathFollow] for more information on the usage. Note that the path is considered as relative to the moved nodes (children of [PathFollow]). As such, the curve should usually start with a zero vector [code](0, 0, 0)[/code].
+Undocumented
 */
 type Path struct {
 	Spatial

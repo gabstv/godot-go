@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newAnimationNodeTransitionFromPointer(ptr gdnative.Pointer) AnimationNodeTr
 }
 
 /*
-
- */
+Simple state machine for cases which don't require a more advanced [AnimationNodeStateMachine]. Animations can be connected to the inputs and transition times can be specified.
+*/
 type AnimationNodeTransition struct {
 	AnimationNode
 	owner gdnative.Object

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ func newConeTwistJointFromPointer(ptr gdnative.Pointer) ConeTwistJoint {
 }
 
 /*
-The joint can rotate the bodies across an axis defined by the local x-axes of the [Joint]. The twist axis is initiated as the X axis of the [Joint]. Once the Bodies swing, the twist axis is calculated as the middle of the x-axes of the Joint in the local space of the two Bodies.
+Undocumented
 */
 type ConeTwistJoint struct {
 	Joint
@@ -135,7 +135,7 @@ func (o *ConeTwistJoint) X_SetTwistSpan(twistSpan gdnative.Real) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int}], Returns: float
 */
 func (o *ConeTwistJoint) GetParam(param gdnative.Int) gdnative.Real {
@@ -159,7 +159,7 @@ func (o *ConeTwistJoint) GetParam(param gdnative.Int) gdnative.Real {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int} { false value float}], Returns: void
 */
 func (o *ConeTwistJoint) SetParam(param gdnative.Int, value gdnative.Real) {

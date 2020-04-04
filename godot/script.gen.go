@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ func (o *Script) GetInstanceBaseType() gdnative.String {
 }
 
 /*
-
+        Returns the default value of the specified property.
 	Args: [{ false property String}], Returns: Variant
 */
 func (o *Script) GetPropertyDefaultValue(property gdnative.String) gdnative.Variant {
@@ -142,7 +142,7 @@ func (o *Script) GetPropertyDefaultValue(property gdnative.String) gdnative.Vari
 }
 
 /*
-
+        Returns a dictionary containing constant names and their values.
 	Args: [], Returns: Dictionary
 */
 func (o *Script) GetScriptConstantMap() gdnative.Dictionary {
@@ -165,7 +165,7 @@ func (o *Script) GetScriptConstantMap() gdnative.Dictionary {
 }
 
 /*
-
+        Returns the list of methods in this [Script].
 	Args: [], Returns: Array
 */
 func (o *Script) GetScriptMethodList() gdnative.Array {
@@ -188,7 +188,7 @@ func (o *Script) GetScriptMethodList() gdnative.Array {
 }
 
 /*
-
+        Returns the list of properties in this [Script].
 	Args: [], Returns: Array
 */
 func (o *Script) GetScriptPropertyList() gdnative.Array {
@@ -211,7 +211,7 @@ func (o *Script) GetScriptPropertyList() gdnative.Array {
 }
 
 /*
-
+        Returns the list of user signals defined in this [Script].
 	Args: [], Returns: Array
 */
 func (o *Script) GetScriptSignalList() gdnative.Array {

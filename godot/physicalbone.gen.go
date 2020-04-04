@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -35,8 +35,8 @@ func newPhysicalBoneFromPointer(ptr gdnative.Pointer) PhysicalBone {
 }
 
 /*
-
- */
+Undocumented
+*/
 type PhysicalBone struct {
 	PhysicsBody
 	owner gdnative.Object
@@ -68,7 +68,7 @@ func (o *PhysicalBone) X_DirectStateChanged(arg0 ObjectImplementer) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false impulse Vector3}], Returns: void
 */
 func (o *PhysicalBone) ApplyCentralImpulse(impulse gdnative.Vector3) {
@@ -89,7 +89,7 @@ func (o *PhysicalBone) ApplyCentralImpulse(impulse gdnative.Vector3) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false position Vector3} { false impulse Vector3}], Returns: void
 */
 func (o *PhysicalBone) ApplyImpulse(position gdnative.Vector3, impulse gdnative.Vector3) {
@@ -134,7 +134,7 @@ func (o *PhysicalBone) GetBodyOffset() gdnative.Transform {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *PhysicalBone) GetBoneId() gdnative.Int {
@@ -295,7 +295,7 @@ func (o *PhysicalBone) GetMass() gdnative.Real {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *PhysicalBone) GetSimulatePhysics() gdnative.Bool {
@@ -341,7 +341,7 @@ func (o *PhysicalBone) GetWeight() gdnative.Real {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *PhysicalBone) IsSimulatingPhysics() gdnative.Bool {
@@ -364,7 +364,7 @@ func (o *PhysicalBone) IsSimulatingPhysics() gdnative.Bool {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *PhysicalBone) IsStaticBody() gdnative.Bool {

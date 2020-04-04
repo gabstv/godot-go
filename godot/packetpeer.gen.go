@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -127,7 +127,7 @@ func (o *PacketPeer) GetPacketError() gdnative.Error {
 }
 
 /*
-        Gets a Variant. If [code]allow_objects[/code] (or [member allow_object_decoding]) is [code]true[/code], decoding objects is allowed. [b]Warning:[/b] Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
+        Gets a Variant. If [code]allow_objects[/code] is [code]true[/code], decoding objects is allowed. [b]Warning:[/b] Deserialized objects can contain code which gets executed. Do not use this option if the serialized object comes from untrusted sources to avoid potential security threats such as remote code execution.
 	Args: [{False true allow_objects bool}], Returns: Variant
 */
 func (o *PacketPeer) GetVar(allowObjects gdnative.Bool) gdnative.Variant {
@@ -198,7 +198,7 @@ func (o *PacketPeer) PutPacket(buffer gdnative.PoolByteArray) gdnative.Error {
 }
 
 /*
-        Sends a [Variant] as a packet. If [code]full_objects[/code] (or [member allow_object_decoding]) is [code]true[/code], encoding objects is allowed (and can potentially include code).
+        Sends a [Variant] as a packet. If [code]full_objects[/code] is [code]true[/code], encoding objects is allowed (and can potentially include code).
 	Args: [{ false var Variant} {False true full_objects bool}], Returns: enum.Error
 */
 func (o *PacketPeer) PutVar(variable gdnative.Variant, fullObjects gdnative.Bool) gdnative.Error {

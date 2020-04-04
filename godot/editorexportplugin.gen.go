@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ func (o *EditorExportPlugin) BaseClass() string {
 }
 
 /*
-
+        Virtual method to be overridden by the user. It is called when the export starts and provides all information about the export.
 	Args: [{ false features PoolStringArray} { false is_debug bool} { false path String} { false flags int}], Returns: void
 */
 func (o *EditorExportPlugin) X_ExportBegin(features gdnative.PoolStringArray, isDebug gdnative.Bool, path gdnative.String, flags gdnative.Int) {
@@ -59,7 +59,7 @@ func (o *EditorExportPlugin) X_ExportBegin(features gdnative.PoolStringArray, is
 }
 
 /*
-
+        Virtual method to be overridden by the user. Called when the export is finished.
 	Args: [], Returns: void
 */
 func (o *EditorExportPlugin) X_ExportEnd() {

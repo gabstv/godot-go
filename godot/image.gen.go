@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -107,7 +107,7 @@ func newImageFromPointer(ptr gdnative.Pointer) Image {
 }
 
 /*
-Native image datatype. Contains image data, which can be converted to a [Texture], and several functions to interact with it. The maximum width and height for an [Image] are [constant MAX_WIDTH] and [constant MAX_HEIGHT].
+Native image datatype. Contains image data, which can be converted to a [Texture2D], and several functions to interact with it. The maximum width and height for an [Image] are [constant MAX_WIDTH] and [constant MAX_HEIGHT].
 */
 type Image struct {
 	Resource
@@ -701,7 +701,7 @@ func (o *Image) GetMipmapOffset(mipmap gdnative.Int) gdnative.Int {
 }
 
 /*
-        Returns the color of the pixel at [code](x, y)[/code] if the image is locked. If the image is unlocked, it always returns a [Color] with the value [code](0, 0, 0, 1.0)[/code]. This is the same as [method get_pixelv], but two integer arguments instead of a Vector2 argument.
+        Returns the color of the pixel at [code](x, y)[/code]. This is the same as [method get_pixelv], but with two integer arguments instead of a [Vector2] argument.
 	Args: [{ false x int} { false y int}], Returns: Color
 */
 func (o *Image) GetPixel(x gdnative.Int, y gdnative.Int) gdnative.Color {
@@ -726,7 +726,7 @@ func (o *Image) GetPixel(x gdnative.Int, y gdnative.Int) gdnative.Color {
 }
 
 /*
-        Returns the color of the pixel at [code]src[/code] if the image is locked. If the image is unlocked, it always returns a [Color] with the value [code](0, 0, 0, 1.0)[/code]. This is the same as [method get_pixel], but with a Vector2 argument instead of two integer arguments.
+        Returns the color of the pixel at [code]src[/code]. This is the same as [method get_pixel], but with a [Vector2] argument instead of two integer arguments.
 	Args: [{ false src Vector2}], Returns: Color
 */
 func (o *Image) GetPixelv(src gdnative.Vector2) gdnative.Color {
@@ -811,7 +811,7 @@ func (o *Image) GetSize() gdnative.Vector2 {
 }
 
 /*
-        Returns a [Rect2] enclosing the visible portion of the image.
+        Returns a [Rect2] enclosing the visible portion of the image, considering each pixel with a non-zero alpha channel as visible.
 	Args: [], Returns: Rect2
 */
 func (o *Image) GetUsedRect() gdnative.Rect2 {
@@ -1045,7 +1045,7 @@ func (o *Image) LoadWebpFromBuffer(buffer gdnative.PoolByteArray) gdnative.Error
 }
 
 /*
-        Locks the data for reading and writing access. Sends an error to the console if the image is not locked when reading or writing a pixel.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Image) Lock() {
@@ -1235,7 +1235,7 @@ func (o *Image) SavePng(path gdnative.String) gdnative.Error {
 }
 
 /*
-        Sets the [Color] of the pixel at [code](x, y)[/code] if the image is locked. Example: [codeblock] var img = Image.new() img.create(img_width, img_height, false, Image.FORMAT_RGBA8) img.lock() img.set_pixel(x, y, color) # Works img.unlock() img.set_pixel(x, y, color) # Does not have an effect [/codeblock]
+        Sets the [Color] of the pixel at [code](x, y)[/code]. Example: [codeblock] var img = Image.new() img.create(img_width, img_height, false, Image.FORMAT_RGBA8) img.set_pixel(x, y, color) [/codeblock]
 	Args: [{ false x int} { false y int} { false color Color}], Returns: void
 */
 func (o *Image) SetPixel(x gdnative.Int, y gdnative.Int, color gdnative.Color) {
@@ -1258,7 +1258,7 @@ func (o *Image) SetPixel(x gdnative.Int, y gdnative.Int, color gdnative.Color) {
 }
 
 /*
-        Sets the [Color] of the pixel at [code](dst.x, dst.y)[/code] if the image is locked. Note that the [code]dst[/code] values must be integers. Example: [codeblock] var img = Image.new() img.create(img_width, img_height, false, Image.FORMAT_RGBA8) img.lock() img.set_pixelv(Vector2(x, y), color) # Works img.unlock() img.set_pixelv(Vector2(x, y), color) # Does not have an effect [/codeblock]
+        Sets the [Color] of the pixel at [code](dst.x, dst.y)[/code]. Note that the [code]dst[/code] values must be integers. Example: [codeblock] var img = Image.new() img.create(img_width, img_height, false, Image.FORMAT_RGBA8) img.set_pixelv(Vector2(x, y), color) [/codeblock]
 	Args: [{ false dst Vector2} { false color Color}], Returns: void
 */
 func (o *Image) SetPixelv(dst gdnative.Vector2, color gdnative.Color) {
@@ -1320,7 +1320,7 @@ func (o *Image) SrgbToLinear() {
 }
 
 /*
-        Unlocks the data and prevents changes.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Image) Unlock() {

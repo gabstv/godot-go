@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -188,7 +188,7 @@ func (o *EditorInspectorPlugin) ParseEnd() {
 }
 
 /*
-        Called to allow adding property specific editors to the inspector. Usually these inherit [EditorProperty]
+        Called to allow adding property specific editors to the inspector. Usually these inherit [EditorProperty]. Returning [code]true[/code] removes the built-in editor for this property, otherwise allows to insert a custom editor before the built-in one.
 	Args: [{ false object Object} { false type int} { false path String} { false hint int} { false hint_text String} { false usage int}], Returns: bool
 */
 func (o *EditorInspectorPlugin) ParseProperty(object ObjectImplementer, aType gdnative.Int, path gdnative.String, hint gdnative.Int, hintText gdnative.String, usage gdnative.Int) gdnative.Bool {

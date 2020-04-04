@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ func newCubeMapFromPointer(ptr gdnative.Pointer) CubeMap {
 }
 
 /*
-A 6-sided 3D texture typically used for faking reflections. It can be used to make an object look as if it's reflecting its surroundings. This usually delivers much better performance than other reflection methods.
+Undocumented
 */
 type CubeMap struct {
 	Resource
@@ -89,7 +89,7 @@ func (o *CubeMap) GetFlags() gdnative.Int {
 }
 
 /*
-        Returns the [CubeMap]'s height.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *CubeMap) GetHeight() gdnative.Int {
@@ -135,7 +135,7 @@ func (o *CubeMap) GetLossyStorageQuality() gdnative.Real {
 }
 
 /*
-        Returns an [Image] for a side of the [CubeMap] using one of the [enum Side] constants.
+        Undocumented
 	Args: [{ false side int}], Returns: Image
 */
 func (o *CubeMap) GetSide(side gdnative.Int) ImageImplementer {
@@ -196,7 +196,7 @@ func (o *CubeMap) GetStorage() CubeMapStorage {
 }
 
 /*
-        Returns the [CubeMap]'s width.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *CubeMap) GetWidth() gdnative.Int {
@@ -261,7 +261,7 @@ func (o *CubeMap) SetLossyStorageQuality(quality gdnative.Real) {
 }
 
 /*
-        Sets an [Image] for a side of the [CubeMap] using one of the [enum Side] constants.
+        Undocumented
 	Args: [{ false side int} { false image Image}], Returns: void
 */
 func (o *CubeMap) SetSide(side gdnative.Int, image ImageImplementer) {

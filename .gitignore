@@ -34,3 +34,5 @@
 
 libgodot.h
 doc/
+
+.DS_Store

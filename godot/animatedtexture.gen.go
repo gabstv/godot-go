@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newAnimatedTextureFromPointer(ptr gdnative.Pointer) AnimatedTexture {
 }
 
 /*
-[AnimatedTexture] is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike [AnimationPlayer] or [AnimatedSprite], it isn't a [Node], but has the advantage of being usable anywhere a [Texture] resource can be used, e.g. in a [TileSet]. The playback of the animation is controlled by the [member fps] property as well as each frame's optional delay (see [method set_frame_delay]). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame. [AnimatedTexture] currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one. Also, it doesn't support [AtlasTexture]. Each frame needs to be separate image.
+[AnimatedTexture] is a resource format for frame-based animations, where multiple textures can be chained automatically with a predefined delay for each frame. Unlike [AnimationPlayer] or [AnimatedSprite2D], it isn't a [Node], but has the advantage of being usable anywhere a [Texture2D] resource can be used, e.g. in a [TileSet]. The playback of the animation is controlled by the [member fps] property as well as each frame's optional delay (see [method set_frame_delay]). The animation loops, i.e. it will restart at frame 0 automatically after playing the last frame. [AnimatedTexture] currently requires all frame textures to have the same size, otherwise the bigger ones will be cropped to match the smallest one. Also, it doesn't support [AtlasTexture]. Each frame needs to be separate image.
 */
 type AnimatedTexture struct {
 	Texture
@@ -102,7 +102,7 @@ func (o *AnimatedTexture) GetFrameDelay(frame gdnative.Int) gdnative.Real {
 }
 
 /*
-        Returns the given frame's [Texture].
+        Returns the given frame's [Texture2D].
 	Args: [{ false frame int}], Returns: Texture
 */
 func (o *AnimatedTexture) GetFrameTexture(frame gdnative.Int) TextureImplementer {
@@ -206,7 +206,7 @@ func (o *AnimatedTexture) SetFrameDelay(frame gdnative.Int, delay gdnative.Real)
 }
 
 /*
-        Assigns a [Texture] to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID [member frames] - 1. You can define any number of textures up to [constant MAX_FRAMES], but keep in mind that only frames from 0 to [member frames] - 1 will be part of the animation.
+        Assigns a [Texture2D] to the given frame. Frame IDs start at 0, so the first frame has ID 0, and the last frame of the animation has ID [member frames] - 1. You can define any number of textures up to [constant MAX_FRAMES], but keep in mind that only frames from 0 to [member frames] - 1 will be part of the animation.
 	Args: [{ false frame int} { false texture Texture}], Returns: void
 */
 func (o *AnimatedTexture) SetFrameTexture(frame gdnative.Int, texture TextureImplementer) {

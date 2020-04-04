@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ func (o *ShaderMaterial) SetShader(shader ShaderImplementer) {
 }
 
 /*
-        Changes the value set for this material of a uniform in the shader.
+        Changes the value set for this material of a uniform in the shader. [b]Note:[/b] [code]param[/code] must match the name of the uniform in the code exactly.
 	Args: [{ false param String} { false value Variant}], Returns: void
 */
 func (o *ShaderMaterial) SetShaderParam(param gdnative.String, value gdnative.Variant) {

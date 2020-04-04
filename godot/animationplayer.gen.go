@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ func newAnimationPlayerFromPointer(ptr gdnative.Pointer) AnimationPlayer {
 }
 
 /*
-An animation player is used for general-purpose playback of [Animation] resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels. Updating the target properties of animations occurs at process time.
+An animation player is used for general-purpose playback of [Animation] resources. It contains a dictionary of animations (referenced by name) and custom blend times between their transitions. Additionally, animations can be played and blended in different channels. [AnimationPlayer] is more suited than [Tween] for animations where you know the final values in advance. For example, fading a screen in and out is more easily done with an [AnimationPlayer] node thanks to the animation tools provided by the editor. That particular example can also be implemented with a [Tween] node, but it requires doing everything by code. Updating the target properties of animations occurs at process time.
 */
 type AnimationPlayer struct {
 	Node

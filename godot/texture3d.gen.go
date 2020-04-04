@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newTexture3DFromPointer(ptr gdnative.Pointer) Texture3D {
 }
 
 /*
-Texture3D is a 3-dimensional texture that has a width, height, and depth.
+Undocumented
 */
 type Texture3D struct {
 	TextureLayered

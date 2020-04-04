@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newCurve3DFromPointer(ptr gdnative.Pointer) Curve3D {
 }
 
 /*
-This class describes a Bézier curve in 3D space. It is mainly used to give a shape to a [Path], but can be manually sampled for other purposes. It keeps a cache of precalculated points along the curve, to speed up further calculations.
+This class describes a Bézier curve in 3D space. It is mainly used to give a shape to a [Path3D], but can be manually sampled for other purposes. It keeps a cache of precalculated points along the curve, to speed up further calculations.
 */
 type Curve3D struct {
 	Resource
@@ -169,7 +169,7 @@ func (o *Curve3D) GetBakedLength() gdnative.Real {
 }
 
 /*
-        Returns the cache of points as a [PoolVector3Array].
+        Returns the cache of points as a [PackedVector3Array].
 	Args: [], Returns: PoolVector3Array
 */
 func (o *Curve3D) GetBakedPoints() gdnative.PoolVector3Array {
@@ -192,7 +192,7 @@ func (o *Curve3D) GetBakedPoints() gdnative.PoolVector3Array {
 }
 
 /*
-        Returns the cache of tilts as a [PoolRealArray].
+        Returns the cache of tilts as a [PackedFloat32Array].
 	Args: [], Returns: PoolRealArray
 */
 func (o *Curve3D) GetBakedTilts() gdnative.PoolRealArray {
@@ -215,7 +215,7 @@ func (o *Curve3D) GetBakedTilts() gdnative.PoolRealArray {
 }
 
 /*
-        Returns the cache of up vectors as a [PoolVector3Array]. If [member up_vector_enabled] is [code]false[/code], the cache will be empty.
+        Returns the cache of up vectors as a [PackedVector3Array]. If [member up_vector_enabled] is [code]false[/code], the cache will be empty.
 	Args: [], Returns: PoolVector3Array
 */
 func (o *Curve3D) GetBakedUpVectors() gdnative.PoolVector3Array {
@@ -635,7 +635,7 @@ func (o *Curve3D) SetPointPosition(idx gdnative.Int, position gdnative.Vector3) 
 }
 
 /*
-        Sets the tilt angle in radians for the point [code]idx[/code]. If the index is out of bounds, the function sends an error to the console. The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a [PathFollow], this tilt is an offset over the natural tilt the [PathFollow] calculates.
+        Sets the tilt angle in radians for the point [code]idx[/code]. If the index is out of bounds, the function sends an error to the console. The tilt controls the rotation along the look-at axis an object traveling the path would have. In the case of a curve controlling a [PathFollow3D], this tilt is an offset over the natural tilt the [PathFollow3D] calculates.
 	Args: [{ false idx int} { false tilt float}], Returns: void
 */
 func (o *Curve3D) SetPointTilt(idx gdnative.Int, tilt gdnative.Real) {

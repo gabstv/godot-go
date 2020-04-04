@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newBakedLightmapDataFromPointer(ptr gdnative.Pointer) BakedLightmapData {
 }
 
 /*
-
- */
+Undocumented
+*/
 type BakedLightmapData struct {
 	Resource
 	owner gdnative.Object
@@ -79,7 +79,7 @@ func (o *BakedLightmapData) X_SetUserData(data gdnative.Array) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false path NodePath} { false lightmap Texture} { false instance int}], Returns: void
 */
 func (o *BakedLightmapData) AddUser(path gdnative.NodePath, lightmap TextureImplementer, instance gdnative.Int) {
@@ -102,7 +102,7 @@ func (o *BakedLightmapData) AddUser(path gdnative.NodePath, lightmap TextureImpl
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *BakedLightmapData) ClearUsers() {
@@ -237,7 +237,7 @@ func (o *BakedLightmapData) GetOctree() gdnative.PoolByteArray {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *BakedLightmapData) GetUserCount() gdnative.Int {
@@ -260,7 +260,7 @@ func (o *BakedLightmapData) GetUserCount() gdnative.Int {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false user_idx int}], Returns: Texture
 */
 func (o *BakedLightmapData) GetUserLightmap(userIdx gdnative.Int) TextureImplementer {
@@ -298,7 +298,7 @@ func (o *BakedLightmapData) GetUserLightmap(userIdx gdnative.Int) TextureImpleme
 }
 
 /*
-
+        Undocumented
 	Args: [{ false user_idx int}], Returns: NodePath
 */
 func (o *BakedLightmapData) GetUserPath(userIdx gdnative.Int) gdnative.NodePath {

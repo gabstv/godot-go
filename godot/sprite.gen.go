@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newSpriteFromPointer(ptr gdnative.Pointer) Sprite {
 }
 
 /*
-A node that displays a 2D texture. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
+Undocumented
 */
 type Sprite struct {
 	Node2D
@@ -184,7 +184,7 @@ func (o *Sprite) GetOffset() gdnative.Vector2 {
 }
 
 /*
-        Returns a [Rect2] representing the Sprite's boundary in local coordinates. Can be used to detect if the Sprite was clicked. Example: [codeblock] func _input(event): if event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT: if get_rect().has_point(to_local(event.position)): print("A click!") [/codeblock]
+        Undocumented
 	Args: [], Returns: Rect2
 */
 func (o *Sprite) GetRect() gdnative.Rect2 {
@@ -359,7 +359,7 @@ func (o *Sprite) IsFlippedV() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code], if the pixel at the given position is opaque and [code]false[/code] in other case. [b]Note:[/b] It also returns [code]false[/code], if the sprite's texture is [code]null[/code] or if the given position is invalid.
+        Undocumented
 	Args: [{ false pos Vector2}], Returns: bool
 */
 func (o *Sprite) IsPixelOpaque(pos gdnative.Vector2) gdnative.Bool {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -873,7 +873,7 @@ func (o *PopupMenu) IsHideOnStateItemSelection() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the popup will be hidden when the window loses focus or not.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *PopupMenu) IsHideOnWindowLoseFocus() gdnative.Bool {
@@ -1145,7 +1145,7 @@ func (o *PopupMenu) SetHideOnStateItemSelection(enable gdnative.Bool) {
 }
 
 /*
-        Hides the [PopupMenu] when the window loses focus.
+        Undocumented
 	Args: [{ false enable bool}], Returns: void
 */
 func (o *PopupMenu) SetHideOnWindowLoseFocus(enable gdnative.Bool) {
@@ -1298,7 +1298,7 @@ func (o *PopupMenu) SetItemDisabled(idx gdnative.Int, disabled gdnative.Bool) {
 }
 
 /*
-        Replaces the [Texture] icon of the specified [code]idx[/code].
+        Replaces the [Texture2D] icon of the specified [code]idx[/code].
 	Args: [{ false idx int} { false icon Texture}], Returns: void
 */
 func (o *PopupMenu) SetItemIcon(idx gdnative.Int, icon TextureImplementer) {

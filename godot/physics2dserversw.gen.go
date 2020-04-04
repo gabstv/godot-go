@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPhysics2DServerSWFromPointer(ptr gdnative.Pointer) Physics2DServerSW {
 }
 
 /*
-This class exposes no new methods or properties and should not be used, as [Physics2DServer] automatically selects the best implementation available.
+Undocumented
 */
 type Physics2DServerSW struct {
 	physics2DServer

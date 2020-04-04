@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newSprite3DFromPointer(ptr gdnative.Pointer) Sprite3D {
 }
 
 /*
-A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation.
+A node that displays a 2D texture in a 3D environment. The texture displayed can be a region from a larger atlas texture, or a frame from a sprite sheet animation. [b]Note:[/b] There are [url=https://github.com/godotengine/godot/issues/20855]known performance issues[/url] when using [Sprite3D]. Consider using a [MeshInstance3D] with a [QuadMesh] as the mesh instead. You can still have billboarding by enabling billboard properties in the QuadMesh's [StandardMaterial3D].
 */
 type Sprite3D struct {
 	SpriteBase3D

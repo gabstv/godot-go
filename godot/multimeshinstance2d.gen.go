@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newMultiMeshInstance2DFromPointer(ptr gdnative.Pointer) MultiMeshInstance2D
 }
 
 /*
-[MultiMeshInstance2D] is a specialized node to instance a [MultiMesh] resource in 2D. Usage is the same as [MultiMeshInstance].
+[MultiMeshInstance2D] is a specialized node to instance a [MultiMesh] resource in 2D. Usage is the same as [MultiMeshInstance3D].
 */
 type MultiMeshInstance2D struct {
 	Node2D

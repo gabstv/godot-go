@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newLargeTextureFromPointer(ptr gdnative.Pointer) LargeTexture {
 }
 
 /*
-A [Texture] capable of storing many smaller textures with offsets. You can dynamically add pieces ([Texture]s) to this [LargeTexture] using different offsets.
+A [Texture2D] capable of storing many smaller textures with offsets. You can dynamically add pieces ([Texture2D]s) to this [LargeTexture] using different offsets.
 */
 type LargeTexture struct {
 	Texture
@@ -171,7 +171,7 @@ func (o *LargeTexture) GetPieceOffset(idx gdnative.Int) gdnative.Vector2 {
 }
 
 /*
-        Returns the [Texture] of the piece with the index [code]idx[/code].
+        Returns the [Texture2D] of the piece with the index [code]idx[/code].
 	Args: [{ false idx int}], Returns: Texture
 */
 func (o *LargeTexture) GetPieceTexture(idx gdnative.Int) TextureImplementer {
@@ -231,7 +231,7 @@ func (o *LargeTexture) SetPieceOffset(idx gdnative.Int, ofs gdnative.Vector2) {
 }
 
 /*
-        Sets the [Texture] of the piece with index [code]idx[/code] to [code]texture[/code].
+        Sets the [Texture2D] of the piece with index [code]idx[/code] to [code]texture[/code].
 	Args: [{ false idx int} { false texture Texture}], Returns: void
 */
 func (o *LargeTexture) SetPieceTexture(idx gdnative.Int, texture TextureImplementer) {

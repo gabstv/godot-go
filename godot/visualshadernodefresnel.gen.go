@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeFresnelFromPointer(ptr gdnative.Pointer) VisualShaderNod
 }
 
 /*
-
- */
+Returns falloff based on the dot product of surface normal and view direction of camera (pass associated inputs to it).
+*/
 type VisualShaderNodeFresnel struct {
 	VisualShaderNode
 	owner gdnative.Object

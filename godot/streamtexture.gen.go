@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ func (o *StreamTexture) GetLoadPath() gdnative.String {
 }
 
 /*
-
+        Loads the texture from the given path.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *StreamTexture) Load(path gdnative.String) gdnative.Error {

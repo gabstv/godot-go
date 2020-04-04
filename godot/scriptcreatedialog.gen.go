@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newScriptCreateDialogFromPointer(ptr gdnative.Pointer) ScriptCreateDialog {
 }
 
 /*
-The [ScriptCreateDialog] creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the [method Popup.popup] methods. [codeblock] func _ready(): dialog.config("Node", "res://new_node.gd") # For in-engine types dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types dialog.popup_centered() [/codeblock]
+The [ScriptCreateDialog] creates script files according to a given template for a given scripting language. The standard use is to configure its fields prior to calling one of the [method Window.popup] methods. [codeblock] func _ready(): dialog.config("Node", "res://new_node.gd") # For in-engine types dialog.config("\"res://base_node.gd\"", "res://derived_node.gd") # For script types dialog.popup_centered() [/codeblock]
 */
 type ScriptCreateDialog struct {
 	ConfirmationDialog

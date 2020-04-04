@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPosition3DFromPointer(ptr gdnative.Pointer) Position3D {
 }
 
 /*
-Generic 3D position hint for editing. It's just like a plain [Spatial], but it displays as a cross in the 3D editor at all times.
+Generic 3D position hint for editing. It's just like a plain [Node3D], but it displays as a cross in the 3D editor at all times.
 */
 type Position3D struct {
 	Spatial

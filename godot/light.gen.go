@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ func newLightFromPointer(ptr gdnative.Pointer) Light {
 }
 
 /*
-Light is the abstract base class for light nodes, so it shouldn't be used directly (it can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
+Undocumented
 */
 type Light struct {
 	VisualInstance
@@ -135,7 +135,7 @@ func (o *Light) GetCullMask() gdnative.Int {
 }
 
 /*
-        Returns the value of the specified [enum Light.Param] parameter.
+        Undocumented
 	Args: [{ false param int}], Returns: float
 */
 func (o *Light) GetParam(param gdnative.Int) gdnative.Real {
@@ -379,7 +379,7 @@ func (o *Light) SetNegative(enabled gdnative.Bool) {
 }
 
 /*
-        Sets the value of the specified [enum Light.Param] parameter.
+        Undocumented
 	Args: [{ false param int} { false value float}], Returns: void
 */
 func (o *Light) SetParam(param gdnative.Int, value gdnative.Real) {

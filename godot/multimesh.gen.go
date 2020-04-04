@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ func newMultiMeshFromPointer(ptr gdnative.Pointer) MultiMesh {
 }
 
 /*
-MultiMesh provides low-level mesh instancing. Drawing thousands of [MeshInstance] nodes can be slow, since each object is submitted to the GPU then drawn individually. MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead. As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object). Since instances may have any behavior, the AABB used for visibility must be provided by the user.
+MultiMesh provides low-level mesh instancing. Drawing thousands of [MeshInstance3D] nodes can be slow, since each object is submitted to the GPU then drawn individually. MultiMesh is much faster as it can draw thousands of instances with a single draw call, resulting in less API overhead. As a drawback, if the instances are too far away of each other, performance may be reduced as every single instance will always rendered (they are spatially indexed as one, for the whole object). Since instances may have any behavior, the AABB used for visibility must be provided by the user.
 */
 type MultiMesh struct {
 	Resource
@@ -508,7 +508,7 @@ func (o *MultiMesh) GetVisibleInstanceCount() gdnative.Int {
 }
 
 /*
-        Sets all data related to the instances in one go. This is especially useful when loading the data from disk or preparing the data from GDNative. All data is packed in one large float array. An array may look like this: Transform for instance 1, color data for instance 1, custom data for instance 1, transform for instance 2, color data for instance 2, etc... [Transform] is stored as 12 floats, [Transform2D] is stored as 8 floats, [code]COLOR_8BIT[/code] / [code]CUSTOM_DATA_8BIT[/code] is stored as 1 float (4 bytes as is) and [code]COLOR_FLOAT[/code] / [code]CUSTOM_DATA_FLOAT[/code] is stored as 4 floats.
+        Undocumented
 	Args: [{ false array PoolRealArray}], Returns: void
 */
 func (o *MultiMesh) SetAsBulkArray(array gdnative.PoolRealArray) {
@@ -571,7 +571,7 @@ func (o *MultiMesh) SetCustomDataFormat(format gdnative.Int) {
 }
 
 /*
-        Sets the color of a specific instance. For the color to take effect, ensure that [member color_format] is non-[code]null[/code] on the [MultiMesh] and [member SpatialMaterial.vertex_color_use_as_albedo] is [code]true[/code] on the material.
+        Sets the color of a specific instance. For the color to take effect, ensure that [member use_colors] is [code]true[/code] on the [MultiMesh] and [member BaseMaterial3D.vertex_color_use_as_albedo] is [code]true[/code] on the material.
 	Args: [{ false instance int} { false color Color}], Returns: void
 */
 func (o *MultiMesh) SetInstanceColor(instance gdnative.Int, color gdnative.Color) {
@@ -614,7 +614,7 @@ func (o *MultiMesh) SetInstanceCount(count gdnative.Int) {
 }
 
 /*
-        Sets custom data for a specific instance. Although [Color] is used, it is just a container for 4 floating point numbers. The format of the number can change depending on the [enum CustomDataFormat] used.
+        Sets custom data for a specific instance. Although [Color] is used, it is just a container for 4 floating point numbers. For the custom data to be used, ensure that [member use_custom_data] is [code]true[/code].
 	Args: [{ false instance int} { false custom_data Color}], Returns: void
 */
 func (o *MultiMesh) SetInstanceCustomData(instance gdnative.Int, customData gdnative.Color) {

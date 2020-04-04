@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -751,7 +751,7 @@ func (o *SceneTree) IsDebuggingNavigationHint() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the most recent [InputEvent] was marked as handled with [method set_input_as_handled].
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *SceneTree) IsInputHandled() gdnative.Bool {
@@ -1151,7 +1151,7 @@ func (o *SceneTree) SetGroupFlags(callFlags gdnative.Int, group gdnative.String,
 }
 
 /*
-        Marks the most recent [InputEvent] as handled.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *SceneTree) SetInputAsHandled() {
@@ -1255,7 +1255,7 @@ func (o *SceneTree) SetPause(enable gdnative.Bool) {
 }
 
 /*
-        If [code]true[/code], the application quits automatically on going back (e.g. on Android). Enabled by default. To handle 'Go Back' button when this option is disabled, use [constant MainLoop.NOTIFICATION_WM_GO_BACK_REQUEST].
+        If [code]true[/code], the application quits automatically on going back (e.g. on Android). Enabled by default. To handle 'Go Back' button when this option is disabled, use [constant DisplayServer.WINDOW_EVENT_GO_BACK_REQUEST].
 	Args: [{ false enabled bool}], Returns: void
 */
 func (o *SceneTree) SetQuitOnGoBack(enabled gdnative.Bool) {
@@ -1297,7 +1297,7 @@ func (o *SceneTree) SetRefuseNewNetworkConnections(refuse gdnative.Bool) {
 }
 
 /*
-        Configures screen stretching to the given [enum StretchMode], [enum StretchAspect], minimum size and [code]shrink[/code] ratio.
+        Undocumented
 	Args: [{ false mode int} { false aspect int} { false minsize Vector2} {1 true shrink float}], Returns: void
 */
 func (o *SceneTree) SetScreenStretch(mode gdnative.Int, aspect gdnative.Int, minsize gdnative.Vector2, shrink gdnative.Real) {

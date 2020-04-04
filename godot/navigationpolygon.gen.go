@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newNavigationPolygonFromPointer(ptr gdnative.Pointer) NavigationPolygon {
 }
 
 /*
-There are two ways to create polygons. Either by using the [method add_outline] method, or using the [method add_polygon] method. Using [method add_outline]: [codeblock] var polygon = NavigationPolygon.new() var outline = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)]) polygon.add_outline(outline) polygon.make_polygons_from_outlines() $NavigationPolygonInstance.navpoly = polygon [/codeblock] Using [method add_polygon] and indices of the vertices array. [codeblock] var polygon = NavigationPolygon.new() var vertices = PoolVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)]) polygon.set_vertices(vertices) var indices = PoolIntArray(0, 3, 1) polygon.add_polygon(indices) $NavigationPolygonInstance.navpoly = polygon [/codeblock]
+There are two ways to create polygons. Either by using the [method add_outline] method, or using the [method add_polygon] method. Using [method add_outline]: [codeblock] var polygon = NavigationPolygon.new() var outline = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)]) polygon.add_outline(outline) polygon.make_polygons_from_outlines() $NavigationRegion2D.navpoly = polygon [/codeblock] Using [method add_polygon] and indices of the vertices array. [codeblock] var polygon = NavigationPolygon.new() var vertices = PackedVector2Array([Vector2(0, 0), Vector2(0, 50), Vector2(50, 50), Vector2(50, 0)]) polygon.set_vertices(vertices) var indices = PackedInt32Array(0, 3, 1) polygon.add_polygon(indices) $NavigationRegion2D.navpoly = polygon [/codeblock]
 */
 type NavigationPolygon struct {
 	Resource
@@ -123,7 +123,7 @@ func (o *NavigationPolygon) X_SetPolygons(polygons gdnative.Array) {
 }
 
 /*
-        Appends a [PoolVector2Array] that contains the vertices of an outline to the internal array that contains all the outlines. You have to call [method make_polygons_from_outlines] in order for this array to be converted to polygons that the engine will use.
+        Appends a [PackedVector2Array] that contains the vertices of an outline to the internal array that contains all the outlines. You have to call [method make_polygons_from_outlines] in order for this array to be converted to polygons that the engine will use.
 	Args: [{ false outline PoolVector2Array}], Returns: void
 */
 func (o *NavigationPolygon) AddOutline(outline gdnative.PoolVector2Array) {
@@ -144,7 +144,7 @@ func (o *NavigationPolygon) AddOutline(outline gdnative.PoolVector2Array) {
 }
 
 /*
-        Adds a [PoolVector2Array] that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position. You have to call [method make_polygons_from_outlines] in order for this array to be converted to polygons that the engine will use.
+        Adds a [PackedVector2Array] that contains the vertices of an outline to the internal array that contains all the outlines at a fixed position. You have to call [method make_polygons_from_outlines] in order for this array to be converted to polygons that the engine will use.
 	Args: [{ false outline PoolVector2Array} { false index int}], Returns: void
 */
 func (o *NavigationPolygon) AddOutlineAtIndex(outline gdnative.PoolVector2Array, index gdnative.Int) {
@@ -227,7 +227,7 @@ func (o *NavigationPolygon) ClearPolygons() {
 }
 
 /*
-        Returns a [PoolVector2Array] containing the vertices of an outline that was created in the editor or by script.
+        Returns a [PackedVector2Array] containing the vertices of an outline that was created in the editor or by script.
 	Args: [{ false idx int}], Returns: PoolVector2Array
 */
 func (o *NavigationPolygon) GetOutline(idx gdnative.Int) gdnative.PoolVector2Array {
@@ -274,7 +274,7 @@ func (o *NavigationPolygon) GetOutlineCount() gdnative.Int {
 }
 
 /*
-        Returns a [PoolIntArray] containing the indices of the vertices of a created polygon.
+        Returns a [PackedInt32Array] containing the indices of the vertices of a created polygon.
 	Args: [{ false idx int}], Returns: PoolIntArray
 */
 func (o *NavigationPolygon) GetPolygon(idx gdnative.Int) gdnative.PoolIntArray {
@@ -321,7 +321,7 @@ func (o *NavigationPolygon) GetPolygonCount() gdnative.Int {
 }
 
 /*
-        Returns a [PoolVector2Array] containing all the vertices being used to create the polygons.
+        Returns a [PackedVector2Array] containing all the vertices being used to create the polygons.
 	Args: [], Returns: PoolVector2Array
 */
 func (o *NavigationPolygon) GetVertices() gdnative.PoolVector2Array {

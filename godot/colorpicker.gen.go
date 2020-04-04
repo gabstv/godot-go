@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newColorPickerFromPointer(ptr gdnative.Pointer) ColorPicker {
 }
 
 /*
-[Control] node displaying a color picker widget. It's useful for selecting a color from an RGB/RGBA colorspace.
+Displays a color picker widget. Useful for selecting a color from an RGB/RGBA colorspace.
 */
 type ColorPicker struct {
 	BoxContainer

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -425,7 +425,7 @@ func (o *HTTPClient) IsResponseChunked() gdnative.Bool {
 }
 
 /*
-        This needs to be called in order to have any request processed. Check results with [method get_status]
+        This needs to be called in order to have any request processed. Check results with [method get_status].
 	Args: [], Returns: enum.Error
 */
 func (o *HTTPClient) Poll() gdnative.Error {

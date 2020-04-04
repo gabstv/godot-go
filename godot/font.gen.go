@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -183,7 +183,7 @@ func (o *Font) GetStringSize(string gdnative.String) gdnative.Vector2 {
 }
 
 /*
-
+        Returns the size that the string would have with word wrapping enabled with a fixed [code]width[/code].
 	Args: [{ false string String} { false width float}], Returns: Vector2
 */
 func (o *Font) GetWordwrapStringSize(string gdnative.String, width gdnative.Real) gdnative.Vector2 {

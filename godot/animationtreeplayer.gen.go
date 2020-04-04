@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -47,7 +47,7 @@ func newAnimationTreePlayerFromPointer(ptr gdnative.Pointer) AnimationTreePlayer
 }
 
 /*
-A node graph tool for blending multiple animations bound to an [AnimationPlayer]. Especially useful for animating characters or other skeleton-based rigs. It can combine several animations to form a desired pose. It takes [Animation]s from an [AnimationPlayer] node and mixes them depending on the graph.
+Undocumented
 */
 type AnimationTreePlayer struct {
 	Node
@@ -59,7 +59,7 @@ func (o *AnimationTreePlayer) BaseClass() string {
 }
 
 /*
-        Adds a [code]type[/code] node to the graph with name [code]id[/code].
+        Undocumented
 	Args: [{ false type int} { false id String}], Returns: void
 */
 func (o *AnimationTreePlayer) AddNode(aType gdnative.Int, id gdnative.String) {
@@ -81,7 +81,7 @@ func (o *AnimationTreePlayer) AddNode(aType gdnative.Int, id gdnative.String) {
 }
 
 /*
-        Shifts position in the animation timeline. Delta is the time in seconds to shift. Events between the current frame and [code]delta[/code] are handled.
+        Undocumented
 	Args: [{ false delta float}], Returns: void
 */
 func (o *AnimationTreePlayer) Advance(delta gdnative.Real) {
@@ -102,7 +102,7 @@ func (o *AnimationTreePlayer) Advance(delta gdnative.Real) {
 }
 
 /*
-        Returns the [AnimationPlayer]'s [Animation] bound to the [AnimationTreePlayer]'s animation node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String}], Returns: Animation
 */
 func (o *AnimationTreePlayer) AnimationNodeGetAnimation(id gdnative.String) AnimationImplementer {
@@ -140,7 +140,7 @@ func (o *AnimationTreePlayer) AnimationNodeGetAnimation(id gdnative.String) Anim
 }
 
 /*
-        Returns the name of the [member master_player]'s [Animation] bound to this animation node.
+        Undocumented
 	Args: [{ false id String}], Returns: String
 */
 func (o *AnimationTreePlayer) AnimationNodeGetMasterAnimation(id gdnative.String) gdnative.String {
@@ -164,7 +164,7 @@ func (o *AnimationTreePlayer) AnimationNodeGetMasterAnimation(id gdnative.String
 }
 
 /*
-
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) AnimationNodeGetPosition(id gdnative.String) gdnative.Real {
@@ -188,7 +188,7 @@ func (o *AnimationTreePlayer) AnimationNodeGetPosition(id gdnative.String) gdnat
 }
 
 /*
-        Binds a new [Animation] from the [member master_player] to the [AnimationTreePlayer]'s animation node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String} { false animation Animation}], Returns: void
 */
 func (o *AnimationTreePlayer) AnimationNodeSetAnimation(id gdnative.String, animation AnimationImplementer) {
@@ -210,7 +210,7 @@ func (o *AnimationTreePlayer) AnimationNodeSetAnimation(id gdnative.String, anim
 }
 
 /*
-        If [code]enable[/code] is [code]true[/code], the animation node with ID [code]id[/code] turns off the track modifying the property at [code]path[/code]. The modified node's children continue to animate.
+        Undocumented
 	Args: [{ false id String} { false path NodePath} { false enable bool}], Returns: void
 */
 func (o *AnimationTreePlayer) AnimationNodeSetFilterPath(id gdnative.String, path gdnative.NodePath, enable gdnative.Bool) {
@@ -233,7 +233,7 @@ func (o *AnimationTreePlayer) AnimationNodeSetFilterPath(id gdnative.String, pat
 }
 
 /*
-        Binds the [Animation] named [code]source[/code] from [member master_player] to the animation node [code]id[/code]. Recalculates caches.
+        Undocumented
 	Args: [{ false id String} { false source String}], Returns: void
 */
 func (o *AnimationTreePlayer) AnimationNodeSetMasterAnimation(id gdnative.String, source gdnative.String) {
@@ -255,7 +255,7 @@ func (o *AnimationTreePlayer) AnimationNodeSetMasterAnimation(id gdnative.String
 }
 
 /*
-        Returns whether node [code]id[/code] and [code]dst_id[/code] are connected at the specified slot.
+        Undocumented
 	Args: [{ false id String} { false dst_id String} { false dst_input_idx int}], Returns: bool
 */
 func (o *AnimationTreePlayer) AreNodesConnected(id gdnative.String, dstId gdnative.String, dstInputIdx gdnative.Int) gdnative.Bool {
@@ -281,7 +281,7 @@ func (o *AnimationTreePlayer) AreNodesConnected(id gdnative.String, dstId gdnati
 }
 
 /*
-        Returns the blend amount of a Blend2 node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) Blend2NodeGetAmount(id gdnative.String) gdnative.Real {
@@ -305,7 +305,7 @@ func (o *AnimationTreePlayer) Blend2NodeGetAmount(id gdnative.String) gdnative.R
 }
 
 /*
-        Sets the blend amount of a Blend2 node given its name and value. A Blend2 Node blends two animations with the amount between 0 and 1. At 0, Output is input a. Towards 1, the influence of a gets lessened, the influence of b gets raised. At 1, Output is input b.
+        Undocumented
 	Args: [{ false id String} { false blend float}], Returns: void
 */
 func (o *AnimationTreePlayer) Blend2NodeSetAmount(id gdnative.String, blend gdnative.Real) {
@@ -327,7 +327,7 @@ func (o *AnimationTreePlayer) Blend2NodeSetAmount(id gdnative.String, blend gdna
 }
 
 /*
-        If [code]enable[/code] is [code]true[/code], the blend2 node with ID [code]id[/code] turns off the track modifying the property at [code]path[/code]. The modified node's children continue to animate.
+        Undocumented
 	Args: [{ false id String} { false path NodePath} { false enable bool}], Returns: void
 */
 func (o *AnimationTreePlayer) Blend2NodeSetFilterPath(id gdnative.String, path gdnative.NodePath, enable gdnative.Bool) {
@@ -350,7 +350,7 @@ func (o *AnimationTreePlayer) Blend2NodeSetFilterPath(id gdnative.String, path g
 }
 
 /*
-        Returns the blend amount of a Blend3 node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) Blend3NodeGetAmount(id gdnative.String) gdnative.Real {
@@ -374,7 +374,7 @@ func (o *AnimationTreePlayer) Blend3NodeGetAmount(id gdnative.String) gdnative.R
 }
 
 /*
-        Sets the blend amount of a Blend3 node given its name and value. A Blend3 Node blends three animations with the amount between -1 and 1. At -1, Output is input b-. From -1 to 0, the influence of b- gets lessened, the influence of a gets raised and the influence of b+ is 0. At 0, Output is input a. From 0 to 1, the influence of a gets lessened, the influence of b+ gets raised and the influence of b+ is 0. At 1, Output is input b+.
+        Undocumented
 	Args: [{ false id String} { false blend float}], Returns: void
 */
 func (o *AnimationTreePlayer) Blend3NodeSetAmount(id gdnative.String, blend gdnative.Real) {
@@ -396,7 +396,7 @@ func (o *AnimationTreePlayer) Blend3NodeSetAmount(id gdnative.String, blend gdna
 }
 
 /*
-        Returns the blend amount of a Blend4 node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: Vector2
 */
 func (o *AnimationTreePlayer) Blend4NodeGetAmount(id gdnative.String) gdnative.Vector2 {
@@ -420,7 +420,7 @@ func (o *AnimationTreePlayer) Blend4NodeGetAmount(id gdnative.String) gdnative.V
 }
 
 /*
-        Sets the blend amount of a Blend4 node given its name and value. A Blend4 Node blends two pairs of animations. The two pairs are blended like blend2 and then added together.
+        Undocumented
 	Args: [{ false id String} { false blend Vector2}], Returns: void
 */
 func (o *AnimationTreePlayer) Blend4NodeSetAmount(id gdnative.String, blend gdnative.Vector2) {
@@ -442,7 +442,7 @@ func (o *AnimationTreePlayer) Blend4NodeSetAmount(id gdnative.String, blend gdna
 }
 
 /*
-        Connects node [code]id[/code] to [code]dst_id[/code] at the specified input slot.
+        Undocumented
 	Args: [{ false id String} { false dst_id String} { false dst_input_idx int}], Returns: enum.Error
 */
 func (o *AnimationTreePlayer) ConnectNodes(id gdnative.String, dstId gdnative.String, dstInputIdx gdnative.Int) gdnative.Error {
@@ -468,7 +468,7 @@ func (o *AnimationTreePlayer) ConnectNodes(id gdnative.String, dstId gdnative.St
 }
 
 /*
-        Disconnects nodes connected to [code]id[/code] at the specified input slot.
+        Undocumented
 	Args: [{ false id String} { false dst_input_idx int}], Returns: void
 */
 func (o *AnimationTreePlayer) DisconnectNodes(id gdnative.String, dstInputIdx gdnative.Int) {
@@ -559,7 +559,7 @@ func (o *AnimationTreePlayer) GetMasterPlayer() gdnative.NodePath {
 }
 
 /*
-        Returns a [PoolStringArray] containing the name of all nodes.
+        Undocumented
 	Args: [], Returns: PoolStringArray
 */
 func (o *AnimationTreePlayer) GetNodeList() gdnative.PoolStringArray {
@@ -605,7 +605,7 @@ func (o *AnimationTreePlayer) IsActive() gdnative.Bool {
 }
 
 /*
-        Returns mix amount of a Mix node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) MixNodeGetAmount(id gdnative.String) gdnative.Real {
@@ -629,7 +629,7 @@ func (o *AnimationTreePlayer) MixNodeGetAmount(id gdnative.String) gdnative.Real
 }
 
 /*
-        Sets mix amount of a Mix node given its name and value. A Mix node adds input b to input a by the amount given by ratio.
+        Undocumented
 	Args: [{ false id String} { false ratio float}], Returns: void
 */
 func (o *AnimationTreePlayer) MixNodeSetAmount(id gdnative.String, ratio gdnative.Real) {
@@ -651,7 +651,7 @@ func (o *AnimationTreePlayer) MixNodeSetAmount(id gdnative.String, ratio gdnativ
 }
 
 /*
-        Check if a node exists (by name).
+        Undocumented
 	Args: [{ false node String}], Returns: bool
 */
 func (o *AnimationTreePlayer) NodeExists(node gdnative.String) gdnative.Bool {
@@ -675,7 +675,7 @@ func (o *AnimationTreePlayer) NodeExists(node gdnative.String) gdnative.Bool {
 }
 
 /*
-        Returns the input count for a given node. Different types of nodes have different amount of inputs.
+        Undocumented
 	Args: [{ false id String}], Returns: int
 */
 func (o *AnimationTreePlayer) NodeGetInputCount(id gdnative.String) gdnative.Int {
@@ -699,7 +699,7 @@ func (o *AnimationTreePlayer) NodeGetInputCount(id gdnative.String) gdnative.Int
 }
 
 /*
-        Returns the input source for a given node input.
+        Undocumented
 	Args: [{ false id String} { false idx int}], Returns: String
 */
 func (o *AnimationTreePlayer) NodeGetInputSource(id gdnative.String, idx gdnative.Int) gdnative.String {
@@ -724,7 +724,7 @@ func (o *AnimationTreePlayer) NodeGetInputSource(id gdnative.String, idx gdnativ
 }
 
 /*
-        Returns position of a node in the graph given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: Vector2
 */
 func (o *AnimationTreePlayer) NodeGetPosition(id gdnative.String) gdnative.Vector2 {
@@ -748,7 +748,7 @@ func (o *AnimationTreePlayer) NodeGetPosition(id gdnative.String) gdnative.Vecto
 }
 
 /*
-        Gets the node type, will return from [enum NodeType] enum.
+        Undocumented
 	Args: [{ false id String}], Returns: enum.AnimationTreePlayer::NodeType
 */
 func (o *AnimationTreePlayer) NodeGetType(id gdnative.String) AnimationTreePlayerNodeType {
@@ -772,7 +772,7 @@ func (o *AnimationTreePlayer) NodeGetType(id gdnative.String) AnimationTreePlaye
 }
 
 /*
-        Rename a node in the graph.
+        Undocumented
 	Args: [{ false node String} { false new_name String}], Returns: enum.Error
 */
 func (o *AnimationTreePlayer) NodeRename(node gdnative.String, newName gdnative.String) gdnative.Error {
@@ -797,7 +797,7 @@ func (o *AnimationTreePlayer) NodeRename(node gdnative.String, newName gdnative.
 }
 
 /*
-        Sets position of a node in the graph given its name and position.
+        Undocumented
 	Args: [{ false id String} { false screen_position Vector2}], Returns: void
 */
 func (o *AnimationTreePlayer) NodeSetPosition(id gdnative.String, screenPosition gdnative.Vector2) {
@@ -819,7 +819,7 @@ func (o *AnimationTreePlayer) NodeSetPosition(id gdnative.String, screenPosition
 }
 
 /*
-        Returns autostart delay of a OneShot node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) OneshotNodeGetAutorestartDelay(id gdnative.String) gdnative.Real {
@@ -843,7 +843,7 @@ func (o *AnimationTreePlayer) OneshotNodeGetAutorestartDelay(id gdnative.String)
 }
 
 /*
-        Returns autostart random delay of a OneShot node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) OneshotNodeGetAutorestartRandomDelay(id gdnative.String) gdnative.Real {
@@ -867,7 +867,7 @@ func (o *AnimationTreePlayer) OneshotNodeGetAutorestartRandomDelay(id gdnative.S
 }
 
 /*
-        Returns fade in time of a OneShot node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) OneshotNodeGetFadeinTime(id gdnative.String) gdnative.Real {
@@ -891,7 +891,7 @@ func (o *AnimationTreePlayer) OneshotNodeGetFadeinTime(id gdnative.String) gdnat
 }
 
 /*
-        Returns fade out time of a OneShot node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) OneshotNodeGetFadeoutTime(id gdnative.String) gdnative.Real {
@@ -915,7 +915,7 @@ func (o *AnimationTreePlayer) OneshotNodeGetFadeoutTime(id gdnative.String) gdna
 }
 
 /*
-        Returns whether a OneShot node will auto restart given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: bool
 */
 func (o *AnimationTreePlayer) OneshotNodeHasAutorestart(id gdnative.String) gdnative.Bool {
@@ -939,7 +939,7 @@ func (o *AnimationTreePlayer) OneshotNodeHasAutorestart(id gdnative.String) gdna
 }
 
 /*
-        Returns whether a OneShot node is active given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: bool
 */
 func (o *AnimationTreePlayer) OneshotNodeIsActive(id gdnative.String) gdnative.Bool {
@@ -963,7 +963,7 @@ func (o *AnimationTreePlayer) OneshotNodeIsActive(id gdnative.String) gdnative.B
 }
 
 /*
-        Sets autorestart property of a OneShot node given its name and value.
+        Undocumented
 	Args: [{ false id String} { false enable bool}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeSetAutorestart(id gdnative.String, enable gdnative.Bool) {
@@ -985,7 +985,7 @@ func (o *AnimationTreePlayer) OneshotNodeSetAutorestart(id gdnative.String, enab
 }
 
 /*
-        Sets autorestart delay of a OneShot node given its name and value in seconds.
+        Undocumented
 	Args: [{ false id String} { false delay_sec float}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeSetAutorestartDelay(id gdnative.String, delaySec gdnative.Real) {
@@ -1007,7 +1007,7 @@ func (o *AnimationTreePlayer) OneshotNodeSetAutorestartDelay(id gdnative.String,
 }
 
 /*
-        Sets autorestart random delay of a OneShot node given its name and value in seconds.
+        Undocumented
 	Args: [{ false id String} { false rand_sec float}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeSetAutorestartRandomDelay(id gdnative.String, randSec gdnative.Real) {
@@ -1029,7 +1029,7 @@ func (o *AnimationTreePlayer) OneshotNodeSetAutorestartRandomDelay(id gdnative.S
 }
 
 /*
-        Sets fade in time of a OneShot node given its name and value in seconds.
+        Undocumented
 	Args: [{ false id String} { false time_sec float}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeSetFadeinTime(id gdnative.String, timeSec gdnative.Real) {
@@ -1051,7 +1051,7 @@ func (o *AnimationTreePlayer) OneshotNodeSetFadeinTime(id gdnative.String, timeS
 }
 
 /*
-        Sets fade out time of a OneShot node given its name and value in seconds.
+        Undocumented
 	Args: [{ false id String} { false time_sec float}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeSetFadeoutTime(id gdnative.String, timeSec gdnative.Real) {
@@ -1073,7 +1073,7 @@ func (o *AnimationTreePlayer) OneshotNodeSetFadeoutTime(id gdnative.String, time
 }
 
 /*
-        If [code]enable[/code] is [code]true[/code], the oneshot node with ID [code]id[/code] turns off the track modifying the property at [code]path[/code]. The modified node's children continue to animate.
+        Undocumented
 	Args: [{ false id String} { false path NodePath} { false enable bool}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeSetFilterPath(id gdnative.String, path gdnative.NodePath, enable gdnative.Bool) {
@@ -1096,7 +1096,7 @@ func (o *AnimationTreePlayer) OneshotNodeSetFilterPath(id gdnative.String, path 
 }
 
 /*
-        Starts a OneShot node given its name.
+        Undocumented
 	Args: [{ false id String}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeStart(id gdnative.String) {
@@ -1117,7 +1117,7 @@ func (o *AnimationTreePlayer) OneshotNodeStart(id gdnative.String) {
 }
 
 /*
-        Stops the OneShot node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String}], Returns: void
 */
 func (o *AnimationTreePlayer) OneshotNodeStop(id gdnative.String) {
@@ -1138,7 +1138,7 @@ func (o *AnimationTreePlayer) OneshotNodeStop(id gdnative.String) {
 }
 
 /*
-        Manually recalculates the cache of track information generated from animation nodes. Needed when external sources modify the animation nodes' state.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *AnimationTreePlayer) RecomputeCaches() {
@@ -1158,7 +1158,7 @@ func (o *AnimationTreePlayer) RecomputeCaches() {
 }
 
 /*
-        Removes the animation node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String}], Returns: void
 */
 func (o *AnimationTreePlayer) RemoveNode(id gdnative.String) {
@@ -1179,7 +1179,7 @@ func (o *AnimationTreePlayer) RemoveNode(id gdnative.String) {
 }
 
 /*
-        Resets this [AnimationTreePlayer].
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *AnimationTreePlayer) Reset() {
@@ -1283,7 +1283,7 @@ func (o *AnimationTreePlayer) SetMasterPlayer(nodepath gdnative.NodePath) {
 }
 
 /*
-        Returns time scale value of the TimeScale node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) TimescaleNodeGetScale(id gdnative.String) gdnative.Real {
@@ -1307,7 +1307,7 @@ func (o *AnimationTreePlayer) TimescaleNodeGetScale(id gdnative.String) gdnative
 }
 
 /*
-        Sets the time scale of the TimeScale node with name [code]id[/code] to [code]scale[/code]. The timescale node is used to speed [Animation]s up if the scale is above 1 or slow them down if it is below 1. If applied after a blend or mix, affects all input animations to that blend or mix.
+        Undocumented
 	Args: [{ false id String} { false scale float}], Returns: void
 */
 func (o *AnimationTreePlayer) TimescaleNodeSetScale(id gdnative.String, scale gdnative.Real) {
@@ -1329,7 +1329,7 @@ func (o *AnimationTreePlayer) TimescaleNodeSetScale(id gdnative.String, scale gd
 }
 
 /*
-        Sets the time seek value of the TimeSeek node with name [code]id[/code] to [code]seconds[/code]. This functions as a seek in the [Animation] or the blend or mix of [Animation]s input in it.
+        Undocumented
 	Args: [{ false id String} { false seconds float}], Returns: void
 */
 func (o *AnimationTreePlayer) TimeseekNodeSeek(id gdnative.String, seconds gdnative.Real) {
@@ -1351,7 +1351,7 @@ func (o *AnimationTreePlayer) TimeseekNodeSeek(id gdnative.String, seconds gdnat
 }
 
 /*
-        Deletes the input at [code]input_idx[/code] for the transition node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String} { false input_idx int}], Returns: void
 */
 func (o *AnimationTreePlayer) TransitionNodeDeleteInput(id gdnative.String, inputIdx gdnative.Int) {
@@ -1373,7 +1373,7 @@ func (o *AnimationTreePlayer) TransitionNodeDeleteInput(id gdnative.String, inpu
 }
 
 /*
-        Returns the index of the currently evaluated input for the transition node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String}], Returns: int
 */
 func (o *AnimationTreePlayer) TransitionNodeGetCurrent(id gdnative.String) gdnative.Int {
@@ -1397,7 +1397,7 @@ func (o *AnimationTreePlayer) TransitionNodeGetCurrent(id gdnative.String) gdnat
 }
 
 /*
-        Returns the number of inputs for the transition node with name [code]id[/code]. You can add inputs by rightclicking on the transition node.
+        Undocumented
 	Args: [{ false id String}], Returns: int
 */
 func (o *AnimationTreePlayer) TransitionNodeGetInputCount(id gdnative.String) gdnative.Int {
@@ -1421,7 +1421,7 @@ func (o *AnimationTreePlayer) TransitionNodeGetInputCount(id gdnative.String) gd
 }
 
 /*
-        Returns the cross fade time for the transition node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String}], Returns: float
 */
 func (o *AnimationTreePlayer) TransitionNodeGetXfadeTime(id gdnative.String) gdnative.Real {
@@ -1445,7 +1445,7 @@ func (o *AnimationTreePlayer) TransitionNodeGetXfadeTime(id gdnative.String) gdn
 }
 
 /*
-        Returns [code]true[/code] if the input at [code]input_idx[/code] on transition node with name [code]id[/code] is set to automatically advance to the next input upon completion.
+        Undocumented
 	Args: [{ false id String} { false input_idx int}], Returns: bool
 */
 func (o *AnimationTreePlayer) TransitionNodeHasInputAutoAdvance(id gdnative.String, inputIdx gdnative.Int) gdnative.Bool {
@@ -1470,7 +1470,7 @@ func (o *AnimationTreePlayer) TransitionNodeHasInputAutoAdvance(id gdnative.Stri
 }
 
 /*
-        The transition node with name [code]id[/code] sets its current input at [code]input_idx[/code].
+        Undocumented
 	Args: [{ false id String} { false input_idx int}], Returns: void
 */
 func (o *AnimationTreePlayer) TransitionNodeSetCurrent(id gdnative.String, inputIdx gdnative.Int) {
@@ -1492,7 +1492,7 @@ func (o *AnimationTreePlayer) TransitionNodeSetCurrent(id gdnative.String, input
 }
 
 /*
-        The transition node with name [code]id[/code] advances to its next input automatically when the input at [code]input_idx[/code] completes.
+        Undocumented
 	Args: [{ false id String} { false input_idx int} { false enable bool}], Returns: void
 */
 func (o *AnimationTreePlayer) TransitionNodeSetInputAutoAdvance(id gdnative.String, inputIdx gdnative.Int, enable gdnative.Bool) {
@@ -1515,7 +1515,7 @@ func (o *AnimationTreePlayer) TransitionNodeSetInputAutoAdvance(id gdnative.Stri
 }
 
 /*
-        Resizes the number of inputs available for the transition node with name [code]id[/code].
+        Undocumented
 	Args: [{ false id String} { false count int}], Returns: void
 */
 func (o *AnimationTreePlayer) TransitionNodeSetInputCount(id gdnative.String, count gdnative.Int) {
@@ -1537,7 +1537,7 @@ func (o *AnimationTreePlayer) TransitionNodeSetInputCount(id gdnative.String, co
 }
 
 /*
-        The transition node with name [code]id[/code] sets its cross fade time to [code]time_sec[/code].
+        Undocumented
 	Args: [{ false id String} { false time_sec float}], Returns: void
 */
 func (o *AnimationTreePlayer) TransitionNodeSetXfadeTime(id gdnative.String, timeSec gdnative.Real) {

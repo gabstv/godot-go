@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newSkeletonIKFromPointer(ptr gdnative.Pointer) SkeletonIK {
 }
 
 /*
-
- */
+Undocumented
+*/
 type SkeletonIK struct {
 	Node
 	owner gdnative.Object
@@ -127,7 +127,7 @@ func (o *SkeletonIK) GetMinDistance() gdnative.Real {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: Skeleton
 */
 func (o *SkeletonIK) GetParentSkeleton() SkeletonImplementer {
@@ -279,7 +279,7 @@ func (o *SkeletonIK) IsOverrideTipBasis() gdnative.Bool {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *SkeletonIK) IsRunning() gdnative.Bool {
@@ -535,7 +535,7 @@ func (o *SkeletonIK) SetUseMagnet(use gdnative.Bool) {
 }
 
 /*
-
+        Undocumented
 	Args: [{False true one_time bool}], Returns: void
 */
 func (o *SkeletonIK) Start(oneTime gdnative.Bool) {
@@ -556,7 +556,7 @@ func (o *SkeletonIK) Start(oneTime gdnative.Bool) {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *SkeletonIK) Stop() {

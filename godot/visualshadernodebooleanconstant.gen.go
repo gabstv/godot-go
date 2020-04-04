@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeBooleanConstantFromPointer(ptr gdnative.Pointer) VisualS
 }
 
 /*
-
- */
+Has only one output port and no inputs. Translated to [code]bool[/code] in the shader language.
+*/
 type VisualShaderNodeBooleanConstant struct {
 	VisualShaderNode
 	owner gdnative.Object

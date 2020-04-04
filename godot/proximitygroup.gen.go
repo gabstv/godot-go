@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -31,7 +31,7 @@ func newProximityGroupFromPointer(ptr gdnative.Pointer) ProximityGroup {
 }
 
 /*
-General-purpose proximity detection node.
+Undocumented
 */
 type ProximityGroup struct {
 	Spatial
@@ -65,7 +65,7 @@ func (o *ProximityGroup) X_ProximityGroupBroadcast(name gdnative.String, params 
 }
 
 /*
-
+        Undocumented
 	Args: [{ false name String} { false parameters Variant}], Returns: void
 */
 func (o *ProximityGroup) Broadcast(name gdnative.String, parameters gdnative.Variant) {

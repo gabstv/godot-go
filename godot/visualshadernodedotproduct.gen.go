@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeDotProductFromPointer(ptr gdnative.Pointer) VisualShader
 }
 
 /*
-
- */
+Translates to [code]dot(a, b)[/code] in the shader language.
+*/
 type VisualShaderNodeDotProduct struct {
 	VisualShaderNode
 	owner gdnative.Object

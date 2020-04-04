@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newPhysicsDirectSpaceStateFromPointer(ptr gdnative.Pointer) PhysicsDirectSp
 }
 
 /*
-Direct access object to a space in the [PhysicsServer]. It's used mainly to do queries against objects and areas residing in a given space.
+Undocumented
 */
 type PhysicsDirectSpaceState struct {
 	Object
@@ -35,7 +35,7 @@ func (o *PhysicsDirectSpaceState) BaseClass() string {
 }
 
 /*
-        Checks whether the shape can travel to a point. The method will return an array with two floats between 0 and 1, both representing a fraction of [code]motion[/code]. The first is how far the shape can move without triggering a collision, and the second is the point at which a collision will occur. If no collision is detected, the returned array will be [code][1, 1][/code]. If the shape can not move, the returned array will be [code][0, 0][/code] under Bullet, and empty under GodotPhysics.
+        Undocumented
 	Args: [{ false shape PhysicsShapeQueryParameters} { false motion Vector3}], Returns: Array
 */
 func (o *PhysicsDirectSpaceState) CastMotion(shape PhysicsShapeQueryParametersImplementer, motion gdnative.Vector3) gdnative.Array {
@@ -60,7 +60,7 @@ func (o *PhysicsDirectSpaceState) CastMotion(shape PhysicsShapeQueryParametersIm
 }
 
 /*
-        Checks the intersections of a shape, given through a [PhysicsShapeQueryParameters] object, against the space. The resulting array contains a list of points where the shape intersects another. Like with [method intersect_shape], the number of returned results can be limited to save processing time.
+        Undocumented
 	Args: [{ false shape PhysicsShapeQueryParameters} {32 true max_results int}], Returns: Array
 */
 func (o *PhysicsDirectSpaceState) CollideShape(shape PhysicsShapeQueryParametersImplementer, maxResults gdnative.Int) gdnative.Array {
@@ -85,7 +85,7 @@ func (o *PhysicsDirectSpaceState) CollideShape(shape PhysicsShapeQueryParameters
 }
 
 /*
-        Checks the intersections of a shape, given through a [PhysicsShapeQueryParameters] object, against the space. If it collides with more than one shape, the nearest one is selected. The returned object is a dictionary containing the following fields: [code]collider_id[/code]: The colliding object's ID. [code]linear_velocity[/code]: The colliding object's velocity [Vector3]. If the object is an [Area], the result is [code](0, 0, 0)[/code]. [code]normal[/code]: The object's surface normal at the intersection point. [code]point[/code]: The intersection point. [code]rid[/code]: The intersecting object's [RID]. [code]shape[/code]: The shape index of the colliding shape. If the shape did not intersect anything, then an empty dictionary is returned instead.
+        Undocumented
 	Args: [{ false shape PhysicsShapeQueryParameters}], Returns: Dictionary
 */
 func (o *PhysicsDirectSpaceState) GetRestInfo(shape PhysicsShapeQueryParametersImplementer) gdnative.Dictionary {
@@ -109,7 +109,7 @@ func (o *PhysicsDirectSpaceState) GetRestInfo(shape PhysicsShapeQueryParametersI
 }
 
 /*
-        Intersects a ray in a given space. The returned object is a dictionary with the following fields: [code]collider[/code]: The colliding object. [code]collider_id[/code]: The colliding object's ID. [code]normal[/code]: The object's surface normal at the intersection point. [code]position[/code]: The intersection point. [code]rid[/code]: The intersecting object's [RID]. [code]shape[/code]: The shape index of the colliding shape. If the ray did not intersect anything, then an empty dictionary is returned instead. Additionally, the method can take an [code]exclude[/code] array of objects or [RID]s that are to be excluded from collisions, a [code]collision_mask[/code] bitmask representing the physics layers to check in, or booleans to determine if the ray should collide with [PhysicsBody]s or [Area]s, respectively.
+        Undocumented
 	Args: [{ false from Vector3} { false to Vector3} {[] true exclude Array} {2147483647 true collision_mask int} {True true collide_with_bodies bool} {False true collide_with_areas bool}], Returns: Dictionary
 */
 func (o *PhysicsDirectSpaceState) IntersectRay(from gdnative.Vector3, to gdnative.Vector3, exclude gdnative.Array, collisionMask gdnative.Int, collideWithBodies gdnative.Bool, collideWithAreas gdnative.Bool) gdnative.Dictionary {
@@ -138,7 +138,7 @@ func (o *PhysicsDirectSpaceState) IntersectRay(from gdnative.Vector3, to gdnativ
 }
 
 /*
-        Checks the intersections of a shape, given through a [PhysicsShapeQueryParameters] object, against the space. The intersected shapes are returned in an array containing dictionaries with the following fields: [code]collider[/code]: The colliding object. [code]collider_id[/code]: The colliding object's ID. [code]rid[/code]: The intersecting object's [RID]. [code]shape[/code]: The shape index of the colliding shape. The number of intersections can be limited with the [code]max_results[/code] parameter, to reduce the processing time.
+        Undocumented
 	Args: [{ false shape PhysicsShapeQueryParameters} {32 true max_results int}], Returns: Array
 */
 func (o *PhysicsDirectSpaceState) IntersectShape(shape PhysicsShapeQueryParametersImplementer, maxResults gdnative.Int) gdnative.Array {

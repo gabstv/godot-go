@@ -3,7 +3,7 @@ package godot
 import (
 	"log"
 
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------

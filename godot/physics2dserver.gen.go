@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -169,12 +169,12 @@ func newSingletonPhysics2DServer() *physics2DServer {
 }
 
 /*
-   Physics2DServer is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
+   Undocumented
 */
 var Physics2DServer = newSingletonPhysics2DServer()
 
 /*
-Physics2DServer is the server responsible for all 2D physics. It can create many kinds of physics objects, but does not insert them on the node tree.
+Undocumented
 */
 type physics2DServer struct {
 	Object
@@ -199,7 +199,7 @@ func (o *physics2DServer) BaseClass() string {
 }
 
 /*
-        Adds a shape to the area, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
+        Undocumented
 	Args: [{ false area RID} { false shape RID} {((1, 0), (0, 1), (0, 0)) true transform Transform2D} {False true disabled bool}], Returns: void
 */
 func (o *physics2DServer) AreaAddShape(area gdnative.Rid, shape gdnative.Rid, transform gdnative.Transform2D, disabled gdnative.Bool) {
@@ -224,7 +224,7 @@ func (o *physics2DServer) AreaAddShape(area gdnative.Rid, shape gdnative.Rid, tr
 }
 
 /*
-
+        Undocumented
 	Args: [{ false area RID} { false id int}], Returns: void
 */
 func (o *physics2DServer) AreaAttachCanvasInstanceId(area gdnative.Rid, id gdnative.Int) {
@@ -247,7 +247,7 @@ func (o *physics2DServer) AreaAttachCanvasInstanceId(area gdnative.Rid, id gdnat
 }
 
 /*
-        Assigns the area to a descendant of [Object], so it can exist in the node tree.
+        Undocumented
 	Args: [{ false area RID} { false id int}], Returns: void
 */
 func (o *physics2DServer) AreaAttachObjectInstanceId(area gdnative.Rid, id gdnative.Int) {
@@ -270,7 +270,7 @@ func (o *physics2DServer) AreaAttachObjectInstanceId(area gdnative.Rid, id gdnat
 }
 
 /*
-        Removes all shapes from an area. It does not delete the shapes, so they can be reassigned later.
+        Undocumented
 	Args: [{ false area RID}], Returns: void
 */
 func (o *physics2DServer) AreaClearShapes(area gdnative.Rid) {
@@ -292,7 +292,7 @@ func (o *physics2DServer) AreaClearShapes(area gdnative.Rid) {
 }
 
 /*
-        Creates an [Area2D].
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) AreaCreate() gdnative.Rid {
@@ -316,7 +316,7 @@ func (o *physics2DServer) AreaCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false area RID}], Returns: int
 */
 func (o *physics2DServer) AreaGetCanvasInstanceId(area gdnative.Rid) gdnative.Int {
@@ -341,7 +341,7 @@ func (o *physics2DServer) AreaGetCanvasInstanceId(area gdnative.Rid) gdnative.In
 }
 
 /*
-        Gets the instance ID of the object the area is assigned to.
+        Undocumented
 	Args: [{ false area RID}], Returns: int
 */
 func (o *physics2DServer) AreaGetObjectInstanceId(area gdnative.Rid) gdnative.Int {
@@ -366,7 +366,7 @@ func (o *physics2DServer) AreaGetObjectInstanceId(area gdnative.Rid) gdnative.In
 }
 
 /*
-        Returns an area parameter value. See [enum AreaParameter] for a list of available parameters.
+        Undocumented
 	Args: [{ false area RID} { false param int}], Returns: Variant
 */
 func (o *physics2DServer) AreaGetParam(area gdnative.Rid, param gdnative.Int) gdnative.Variant {
@@ -392,7 +392,7 @@ func (o *physics2DServer) AreaGetParam(area gdnative.Rid, param gdnative.Int) gd
 }
 
 /*
-        Returns the [RID] of the nth shape of an area.
+        Undocumented
 	Args: [{ false area RID} { false shape_idx int}], Returns: RID
 */
 func (o *physics2DServer) AreaGetShape(area gdnative.Rid, shapeIdx gdnative.Int) gdnative.Rid {
@@ -418,7 +418,7 @@ func (o *physics2DServer) AreaGetShape(area gdnative.Rid, shapeIdx gdnative.Int)
 }
 
 /*
-        Returns the number of shapes assigned to an area.
+        Undocumented
 	Args: [{ false area RID}], Returns: int
 */
 func (o *physics2DServer) AreaGetShapeCount(area gdnative.Rid) gdnative.Int {
@@ -443,7 +443,7 @@ func (o *physics2DServer) AreaGetShapeCount(area gdnative.Rid) gdnative.Int {
 }
 
 /*
-        Returns the transform matrix of a shape within an area.
+        Undocumented
 	Args: [{ false area RID} { false shape_idx int}], Returns: Transform2D
 */
 func (o *physics2DServer) AreaGetShapeTransform(area gdnative.Rid, shapeIdx gdnative.Int) gdnative.Transform2D {
@@ -469,7 +469,7 @@ func (o *physics2DServer) AreaGetShapeTransform(area gdnative.Rid, shapeIdx gdna
 }
 
 /*
-        Returns the space assigned to the area.
+        Undocumented
 	Args: [{ false area RID}], Returns: RID
 */
 func (o *physics2DServer) AreaGetSpace(area gdnative.Rid) gdnative.Rid {
@@ -494,7 +494,7 @@ func (o *physics2DServer) AreaGetSpace(area gdnative.Rid) gdnative.Rid {
 }
 
 /*
-        Returns the space override mode for the area.
+        Undocumented
 	Args: [{ false area RID}], Returns: enum.Physics2DServer::AreaSpaceOverrideMode
 */
 func (o *physics2DServer) AreaGetSpaceOverrideMode(area gdnative.Rid) Physics2DServerAreaSpaceOverrideMode {
@@ -519,7 +519,7 @@ func (o *physics2DServer) AreaGetSpaceOverrideMode(area gdnative.Rid) Physics2DS
 }
 
 /*
-        Returns the transform matrix for an area.
+        Undocumented
 	Args: [{ false area RID}], Returns: Transform2D
 */
 func (o *physics2DServer) AreaGetTransform(area gdnative.Rid) gdnative.Transform2D {
@@ -544,7 +544,7 @@ func (o *physics2DServer) AreaGetTransform(area gdnative.Rid) gdnative.Transform
 }
 
 /*
-        Removes a shape from an area. It does not delete the shape, so it can be reassigned later.
+        Undocumented
 	Args: [{ false area RID} { false shape_idx int}], Returns: void
 */
 func (o *physics2DServer) AreaRemoveShape(area gdnative.Rid, shapeIdx gdnative.Int) {
@@ -567,7 +567,7 @@ func (o *physics2DServer) AreaRemoveShape(area gdnative.Rid, shapeIdx gdnative.I
 }
 
 /*
-
+        Undocumented
 	Args: [{ false area RID} { false receiver Object} { false method String}], Returns: void
 */
 func (o *physics2DServer) AreaSetAreaMonitorCallback(area gdnative.Rid, receiver ObjectImplementer, method gdnative.String) {
@@ -591,7 +591,7 @@ func (o *physics2DServer) AreaSetAreaMonitorCallback(area gdnative.Rid, receiver
 }
 
 /*
-        Assigns the area to one or many physics layers.
+        Undocumented
 	Args: [{ false area RID} { false layer int}], Returns: void
 */
 func (o *physics2DServer) AreaSetCollisionLayer(area gdnative.Rid, layer gdnative.Int) {
@@ -614,7 +614,7 @@ func (o *physics2DServer) AreaSetCollisionLayer(area gdnative.Rid, layer gdnativ
 }
 
 /*
-        Sets which physics layers the area will monitor.
+        Undocumented
 	Args: [{ false area RID} { false mask int}], Returns: void
 */
 func (o *physics2DServer) AreaSetCollisionMask(area gdnative.Rid, mask gdnative.Int) {
@@ -637,7 +637,7 @@ func (o *physics2DServer) AreaSetCollisionMask(area gdnative.Rid, mask gdnative.
 }
 
 /*
-        Sets the function to call when any body/area enters or exits the area. This callback will be called for any object interacting with the area, and takes five parameters: 1: [constant AREA_BODY_ADDED] or [constant AREA_BODY_REMOVED], depending on whether the object entered or exited the area. 2: [RID] of the object that entered/exited the area. 3: Instance ID of the object that entered/exited the area. 4: The shape index of the object that entered/exited the area. 5: The shape index of the area where the object entered/exited.
+        Undocumented
 	Args: [{ false area RID} { false receiver Object} { false method String}], Returns: void
 */
 func (o *physics2DServer) AreaSetMonitorCallback(area gdnative.Rid, receiver ObjectImplementer, method gdnative.String) {
@@ -661,7 +661,7 @@ func (o *physics2DServer) AreaSetMonitorCallback(area gdnative.Rid, receiver Obj
 }
 
 /*
-
+        Undocumented
 	Args: [{ false area RID} { false monitorable bool}], Returns: void
 */
 func (o *physics2DServer) AreaSetMonitorable(area gdnative.Rid, monitorable gdnative.Bool) {
@@ -684,7 +684,7 @@ func (o *physics2DServer) AreaSetMonitorable(area gdnative.Rid, monitorable gdna
 }
 
 /*
-        Sets the value for an area parameter. See [enum AreaParameter] for a list of available parameters.
+        Undocumented
 	Args: [{ false area RID} { false param int} { false value Variant}], Returns: void
 */
 func (o *physics2DServer) AreaSetParam(area gdnative.Rid, param gdnative.Int, value gdnative.Variant) {
@@ -708,7 +708,7 @@ func (o *physics2DServer) AreaSetParam(area gdnative.Rid, param gdnative.Int, va
 }
 
 /*
-        Substitutes a given area shape by another. The old shape is selected by its index, the new one by its [RID].
+        Undocumented
 	Args: [{ false area RID} { false shape_idx int} { false shape RID}], Returns: void
 */
 func (o *physics2DServer) AreaSetShape(area gdnative.Rid, shapeIdx gdnative.Int, shape gdnative.Rid) {
@@ -732,7 +732,7 @@ func (o *physics2DServer) AreaSetShape(area gdnative.Rid, shapeIdx gdnative.Int,
 }
 
 /*
-        Disables a given shape in an area.
+        Undocumented
 	Args: [{ false area RID} { false shape_idx int} { false disabled bool}], Returns: void
 */
 func (o *physics2DServer) AreaSetShapeDisabled(area gdnative.Rid, shapeIdx gdnative.Int, disabled gdnative.Bool) {
@@ -756,7 +756,7 @@ func (o *physics2DServer) AreaSetShapeDisabled(area gdnative.Rid, shapeIdx gdnat
 }
 
 /*
-        Sets the transform matrix for an area shape.
+        Undocumented
 	Args: [{ false area RID} { false shape_idx int} { false transform Transform2D}], Returns: void
 */
 func (o *physics2DServer) AreaSetShapeTransform(area gdnative.Rid, shapeIdx gdnative.Int, transform gdnative.Transform2D) {
@@ -780,7 +780,7 @@ func (o *physics2DServer) AreaSetShapeTransform(area gdnative.Rid, shapeIdx gdna
 }
 
 /*
-        Assigns a space to the area.
+        Undocumented
 	Args: [{ false area RID} { false space RID}], Returns: void
 */
 func (o *physics2DServer) AreaSetSpace(area gdnative.Rid, space gdnative.Rid) {
@@ -803,7 +803,7 @@ func (o *physics2DServer) AreaSetSpace(area gdnative.Rid, space gdnative.Rid) {
 }
 
 /*
-        Sets the space override mode for the area. See [enum AreaSpaceOverrideMode] for a list of available modes.
+        Undocumented
 	Args: [{ false area RID} { false mode int}], Returns: void
 */
 func (o *physics2DServer) AreaSetSpaceOverrideMode(area gdnative.Rid, mode gdnative.Int) {
@@ -826,7 +826,7 @@ func (o *physics2DServer) AreaSetSpaceOverrideMode(area gdnative.Rid, mode gdnat
 }
 
 /*
-        Sets the transform matrix for an area.
+        Undocumented
 	Args: [{ false area RID} { false transform Transform2D}], Returns: void
 */
 func (o *physics2DServer) AreaSetTransform(area gdnative.Rid, transform gdnative.Transform2D) {
@@ -849,7 +849,7 @@ func (o *physics2DServer) AreaSetTransform(area gdnative.Rid, transform gdnative
 }
 
 /*
-
+        Undocumented
 	Args: [{ false body RID} { false force Vector2}], Returns: void
 */
 func (o *physics2DServer) BodyAddCentralForce(body gdnative.Rid, force gdnative.Vector2) {
@@ -872,7 +872,7 @@ func (o *physics2DServer) BodyAddCentralForce(body gdnative.Rid, force gdnative.
 }
 
 /*
-        Adds a body to the list of bodies exempt from collisions.
+        Undocumented
 	Args: [{ false body RID} { false excepted_body RID}], Returns: void
 */
 func (o *physics2DServer) BodyAddCollisionException(body gdnative.Rid, exceptedBody gdnative.Rid) {
@@ -895,7 +895,7 @@ func (o *physics2DServer) BodyAddCollisionException(body gdnative.Rid, exceptedB
 }
 
 /*
-        Adds a positioned force to the applied force and torque. As with [method body_apply_impulse], both the force and the offset from the body origin are in global coordinates. A force differs from an impulse in that, while the two are forces, the impulse clears itself after being applied.
+        Undocumented
 	Args: [{ false body RID} { false offset Vector2} { false force Vector2}], Returns: void
 */
 func (o *physics2DServer) BodyAddForce(body gdnative.Rid, offset gdnative.Vector2, force gdnative.Vector2) {
@@ -919,7 +919,7 @@ func (o *physics2DServer) BodyAddForce(body gdnative.Rid, offset gdnative.Vector
 }
 
 /*
-        Adds a shape to the body, along with a transform matrix. Shapes are usually referenced by their index, so you should track which shape has a given index.
+        Undocumented
 	Args: [{ false body RID} { false shape RID} {((1, 0), (0, 1), (0, 0)) true transform Transform2D} {False true disabled bool}], Returns: void
 */
 func (o *physics2DServer) BodyAddShape(body gdnative.Rid, shape gdnative.Rid, transform gdnative.Transform2D, disabled gdnative.Bool) {
@@ -944,7 +944,7 @@ func (o *physics2DServer) BodyAddShape(body gdnative.Rid, shape gdnative.Rid, tr
 }
 
 /*
-
+        Undocumented
 	Args: [{ false body RID} { false torque float}], Returns: void
 */
 func (o *physics2DServer) BodyAddTorque(body gdnative.Rid, torque gdnative.Real) {
@@ -967,7 +967,7 @@ func (o *physics2DServer) BodyAddTorque(body gdnative.Rid, torque gdnative.Real)
 }
 
 /*
-
+        Undocumented
 	Args: [{ false body RID} { false impulse Vector2}], Returns: void
 */
 func (o *physics2DServer) BodyApplyCentralImpulse(body gdnative.Rid, impulse gdnative.Vector2) {
@@ -990,7 +990,7 @@ func (o *physics2DServer) BodyApplyCentralImpulse(body gdnative.Rid, impulse gdn
 }
 
 /*
-        Adds a positioned impulse to the applied force and torque. Both the force and the offset from the body origin are in global coordinates.
+        Undocumented
 	Args: [{ false body RID} { false position Vector2} { false impulse Vector2}], Returns: void
 */
 func (o *physics2DServer) BodyApplyImpulse(body gdnative.Rid, position gdnative.Vector2, impulse gdnative.Vector2) {
@@ -1014,7 +1014,7 @@ func (o *physics2DServer) BodyApplyImpulse(body gdnative.Rid, position gdnative.
 }
 
 /*
-
+        Undocumented
 	Args: [{ false body RID} { false impulse float}], Returns: void
 */
 func (o *physics2DServer) BodyApplyTorqueImpulse(body gdnative.Rid, impulse gdnative.Real) {
@@ -1037,7 +1037,7 @@ func (o *physics2DServer) BodyApplyTorqueImpulse(body gdnative.Rid, impulse gdna
 }
 
 /*
-
+        Undocumented
 	Args: [{ false body RID} { false id int}], Returns: void
 */
 func (o *physics2DServer) BodyAttachCanvasInstanceId(body gdnative.Rid, id gdnative.Int) {
@@ -1060,7 +1060,7 @@ func (o *physics2DServer) BodyAttachCanvasInstanceId(body gdnative.Rid, id gdnat
 }
 
 /*
-        Assigns the area to a descendant of [Object], so it can exist in the node tree.
+        Undocumented
 	Args: [{ false body RID} { false id int}], Returns: void
 */
 func (o *physics2DServer) BodyAttachObjectInstanceId(body gdnative.Rid, id gdnative.Int) {
@@ -1083,7 +1083,7 @@ func (o *physics2DServer) BodyAttachObjectInstanceId(body gdnative.Rid, id gdnat
 }
 
 /*
-        Removes all shapes from a body.
+        Undocumented
 	Args: [{ false body RID}], Returns: void
 */
 func (o *physics2DServer) BodyClearShapes(body gdnative.Rid) {
@@ -1105,7 +1105,7 @@ func (o *physics2DServer) BodyClearShapes(body gdnative.Rid) {
 }
 
 /*
-        Creates a physics body.
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) BodyCreate() gdnative.Rid {
@@ -1129,7 +1129,7 @@ func (o *physics2DServer) BodyCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false body RID}], Returns: int
 */
 func (o *physics2DServer) BodyGetCanvasInstanceId(body gdnative.Rid) gdnative.Int {
@@ -1154,7 +1154,7 @@ func (o *physics2DServer) BodyGetCanvasInstanceId(body gdnative.Rid) gdnative.In
 }
 
 /*
-        Returns the physics layer or layers a body belongs to.
+        Undocumented
 	Args: [{ false body RID}], Returns: int
 */
 func (o *physics2DServer) BodyGetCollisionLayer(body gdnative.Rid) gdnative.Int {
@@ -1179,7 +1179,7 @@ func (o *physics2DServer) BodyGetCollisionLayer(body gdnative.Rid) gdnative.Int 
 }
 
 /*
-        Returns the physics layer or layers a body can collide with.
+        Undocumented
 	Args: [{ false body RID}], Returns: int
 */
 func (o *physics2DServer) BodyGetCollisionMask(body gdnative.Rid) gdnative.Int {
@@ -1204,7 +1204,7 @@ func (o *physics2DServer) BodyGetCollisionMask(body gdnative.Rid) gdnative.Int {
 }
 
 /*
-        Returns the continuous collision detection mode.
+        Undocumented
 	Args: [{ false body RID}], Returns: enum.Physics2DServer::CCDMode
 */
 func (o *physics2DServer) BodyGetContinuousCollisionDetectionMode(body gdnative.Rid) Physics2DServerCCDMode {
@@ -1229,7 +1229,7 @@ func (o *physics2DServer) BodyGetContinuousCollisionDetectionMode(body gdnative.
 }
 
 /*
-        Returns the [Physics2DDirectBodyState] of the body.
+        Undocumented
 	Args: [{ false body RID}], Returns: Physics2DDirectBodyState
 */
 func (o *physics2DServer) BodyGetDirectState(body gdnative.Rid) Physics2DDirectBodyStateImplementer {
@@ -1268,7 +1268,7 @@ func (o *physics2DServer) BodyGetDirectState(body gdnative.Rid) Physics2DDirectB
 }
 
 /*
-        Returns the maximum contacts that can be reported. See [method body_set_max_contacts_reported].
+        Undocumented
 	Args: [{ false body RID}], Returns: int
 */
 func (o *physics2DServer) BodyGetMaxContactsReported(body gdnative.Rid) gdnative.Int {
@@ -1293,7 +1293,7 @@ func (o *physics2DServer) BodyGetMaxContactsReported(body gdnative.Rid) gdnative
 }
 
 /*
-        Returns the body mode.
+        Undocumented
 	Args: [{ false body RID}], Returns: enum.Physics2DServer::BodyMode
 */
 func (o *physics2DServer) BodyGetMode(body gdnative.Rid) Physics2DServerBodyMode {
@@ -1318,7 +1318,7 @@ func (o *physics2DServer) BodyGetMode(body gdnative.Rid) Physics2DServerBodyMode
 }
 
 /*
-        Gets the instance ID of the object the area is assigned to.
+        Undocumented
 	Args: [{ false body RID}], Returns: int
 */
 func (o *physics2DServer) BodyGetObjectInstanceId(body gdnative.Rid) gdnative.Int {
@@ -1343,7 +1343,7 @@ func (o *physics2DServer) BodyGetObjectInstanceId(body gdnative.Rid) gdnative.In
 }
 
 /*
-        Returns the value of a body parameter. See [enum BodyParameter] for a list of available parameters.
+        Undocumented
 	Args: [{ false body RID} { false param int}], Returns: float
 */
 func (o *physics2DServer) BodyGetParam(body gdnative.Rid, param gdnative.Int) gdnative.Real {
@@ -1369,7 +1369,7 @@ func (o *physics2DServer) BodyGetParam(body gdnative.Rid, param gdnative.Int) gd
 }
 
 /*
-        Returns the [RID] of the nth shape of a body.
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int}], Returns: RID
 */
 func (o *physics2DServer) BodyGetShape(body gdnative.Rid, shapeIdx gdnative.Int) gdnative.Rid {
@@ -1395,7 +1395,7 @@ func (o *physics2DServer) BodyGetShape(body gdnative.Rid, shapeIdx gdnative.Int)
 }
 
 /*
-        Returns the number of shapes assigned to a body.
+        Undocumented
 	Args: [{ false body RID}], Returns: int
 */
 func (o *physics2DServer) BodyGetShapeCount(body gdnative.Rid) gdnative.Int {
@@ -1420,7 +1420,7 @@ func (o *physics2DServer) BodyGetShapeCount(body gdnative.Rid) gdnative.Int {
 }
 
 /*
-        Returns the metadata of a shape of a body.
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int}], Returns: Variant
 */
 func (o *physics2DServer) BodyGetShapeMetadata(body gdnative.Rid, shapeIdx gdnative.Int) gdnative.Variant {
@@ -1446,7 +1446,7 @@ func (o *physics2DServer) BodyGetShapeMetadata(body gdnative.Rid, shapeIdx gdnat
 }
 
 /*
-        Returns the transform matrix of a body shape.
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int}], Returns: Transform2D
 */
 func (o *physics2DServer) BodyGetShapeTransform(body gdnative.Rid, shapeIdx gdnative.Int) gdnative.Transform2D {
@@ -1472,7 +1472,7 @@ func (o *physics2DServer) BodyGetShapeTransform(body gdnative.Rid, shapeIdx gdna
 }
 
 /*
-        Returns the [RID] of the space assigned to a body.
+        Undocumented
 	Args: [{ false body RID}], Returns: RID
 */
 func (o *physics2DServer) BodyGetSpace(body gdnative.Rid) gdnative.Rid {
@@ -1497,7 +1497,7 @@ func (o *physics2DServer) BodyGetSpace(body gdnative.Rid) gdnative.Rid {
 }
 
 /*
-        Returns a body state.
+        Undocumented
 	Args: [{ false body RID} { false state int}], Returns: Variant
 */
 func (o *physics2DServer) BodyGetState(body gdnative.Rid, state gdnative.Int) gdnative.Variant {
@@ -1523,7 +1523,7 @@ func (o *physics2DServer) BodyGetState(body gdnative.Rid, state gdnative.Int) gd
 }
 
 /*
-        Returns whether a body uses a callback function to calculate its own physics (see [method body_set_force_integration_callback]).
+        Undocumented
 	Args: [{ false body RID}], Returns: bool
 */
 func (o *physics2DServer) BodyIsOmittingForceIntegration(body gdnative.Rid) gdnative.Bool {
@@ -1548,7 +1548,7 @@ func (o *physics2DServer) BodyIsOmittingForceIntegration(body gdnative.Rid) gdna
 }
 
 /*
-        Removes a body from the list of bodies exempt from collisions.
+        Undocumented
 	Args: [{ false body RID} { false excepted_body RID}], Returns: void
 */
 func (o *physics2DServer) BodyRemoveCollisionException(body gdnative.Rid, exceptedBody gdnative.Rid) {
@@ -1571,7 +1571,7 @@ func (o *physics2DServer) BodyRemoveCollisionException(body gdnative.Rid, except
 }
 
 /*
-        Removes a shape from a body. The shape is not deleted, so it can be reused afterwards.
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int}], Returns: void
 */
 func (o *physics2DServer) BodyRemoveShape(body gdnative.Rid, shapeIdx gdnative.Int) {
@@ -1594,7 +1594,7 @@ func (o *physics2DServer) BodyRemoveShape(body gdnative.Rid, shapeIdx gdnative.I
 }
 
 /*
-        Sets an axis velocity. The velocity in the given vector axis will be set as the given vector length. This is useful for jumping behavior.
+        Undocumented
 	Args: [{ false body RID} { false axis_velocity Vector2}], Returns: void
 */
 func (o *physics2DServer) BodySetAxisVelocity(body gdnative.Rid, axisVelocity gdnative.Vector2) {
@@ -1617,7 +1617,7 @@ func (o *physics2DServer) BodySetAxisVelocity(body gdnative.Rid, axisVelocity gd
 }
 
 /*
-        Sets the physics layer or layers a body belongs to.
+        Undocumented
 	Args: [{ false body RID} { false layer int}], Returns: void
 */
 func (o *physics2DServer) BodySetCollisionLayer(body gdnative.Rid, layer gdnative.Int) {
@@ -1640,7 +1640,7 @@ func (o *physics2DServer) BodySetCollisionLayer(body gdnative.Rid, layer gdnativ
 }
 
 /*
-        Sets the physics layer or layers a body can collide with.
+        Undocumented
 	Args: [{ false body RID} { false mask int}], Returns: void
 */
 func (o *physics2DServer) BodySetCollisionMask(body gdnative.Rid, mask gdnative.Int) {
@@ -1663,7 +1663,7 @@ func (o *physics2DServer) BodySetCollisionMask(body gdnative.Rid, mask gdnative.
 }
 
 /*
-        Sets the continuous collision detection mode using one of the [enum CCDMode] constants. Continuous collision detection tries to predict where a moving body will collide, instead of moving it and correcting its movement if it collided.
+        Undocumented
 	Args: [{ false body RID} { false mode int}], Returns: void
 */
 func (o *physics2DServer) BodySetContinuousCollisionDetectionMode(body gdnative.Rid, mode gdnative.Int) {
@@ -1686,7 +1686,7 @@ func (o *physics2DServer) BodySetContinuousCollisionDetectionMode(body gdnative.
 }
 
 /*
-        Sets the function used to calculate physics for an object, if that object allows it (see [method body_set_omit_force_integration]).
+        Undocumented
 	Args: [{ false body RID} { false receiver Object} { false method String} {Null true userdata Variant}], Returns: void
 */
 func (o *physics2DServer) BodySetForceIntegrationCallback(body gdnative.Rid, receiver ObjectImplementer, method gdnative.String, userdata gdnative.Variant) {
@@ -1711,7 +1711,7 @@ func (o *physics2DServer) BodySetForceIntegrationCallback(body gdnative.Rid, rec
 }
 
 /*
-        Sets the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
+        Undocumented
 	Args: [{ false body RID} { false amount int}], Returns: void
 */
 func (o *physics2DServer) BodySetMaxContactsReported(body gdnative.Rid, amount gdnative.Int) {
@@ -1734,7 +1734,7 @@ func (o *physics2DServer) BodySetMaxContactsReported(body gdnative.Rid, amount g
 }
 
 /*
-        Sets the body mode using one of the [enum BodyMode] constants.
+        Undocumented
 	Args: [{ false body RID} { false mode int}], Returns: void
 */
 func (o *physics2DServer) BodySetMode(body gdnative.Rid, mode gdnative.Int) {
@@ -1757,7 +1757,7 @@ func (o *physics2DServer) BodySetMode(body gdnative.Rid, mode gdnative.Int) {
 }
 
 /*
-        Sets whether a body uses a callback function to calculate its own physics (see [method body_set_force_integration_callback]).
+        Undocumented
 	Args: [{ false body RID} { false enable bool}], Returns: void
 */
 func (o *physics2DServer) BodySetOmitForceIntegration(body gdnative.Rid, enable gdnative.Bool) {
@@ -1780,7 +1780,7 @@ func (o *physics2DServer) BodySetOmitForceIntegration(body gdnative.Rid, enable 
 }
 
 /*
-        Sets a body parameter. See [enum BodyParameter] for a list of available parameters.
+        Undocumented
 	Args: [{ false body RID} { false param int} { false value float}], Returns: void
 */
 func (o *physics2DServer) BodySetParam(body gdnative.Rid, param gdnative.Int, value gdnative.Real) {
@@ -1804,7 +1804,7 @@ func (o *physics2DServer) BodySetParam(body gdnative.Rid, param gdnative.Int, va
 }
 
 /*
-        Substitutes a given body shape by another. The old shape is selected by its index, the new one by its [RID].
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int} { false shape RID}], Returns: void
 */
 func (o *physics2DServer) BodySetShape(body gdnative.Rid, shapeIdx gdnative.Int, shape gdnative.Rid) {
@@ -1828,7 +1828,7 @@ func (o *physics2DServer) BodySetShape(body gdnative.Rid, shapeIdx gdnative.Int,
 }
 
 /*
-        Enables one way collision on body if [code]enable[/code] is [code]true[/code].
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int} { false enable bool} { false margin float}], Returns: void
 */
 func (o *physics2DServer) BodySetShapeAsOneWayCollision(body gdnative.Rid, shapeIdx gdnative.Int, enable gdnative.Bool, margin gdnative.Real) {
@@ -1853,7 +1853,7 @@ func (o *physics2DServer) BodySetShapeAsOneWayCollision(body gdnative.Rid, shape
 }
 
 /*
-        Disables shape in body if [code]disable[/code] is [code]true[/code].
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int} { false disabled bool}], Returns: void
 */
 func (o *physics2DServer) BodySetShapeDisabled(body gdnative.Rid, shapeIdx gdnative.Int, disabled gdnative.Bool) {
@@ -1877,7 +1877,7 @@ func (o *physics2DServer) BodySetShapeDisabled(body gdnative.Rid, shapeIdx gdnat
 }
 
 /*
-        Sets metadata of a shape within a body. This metadata is different from [method Object.set_meta], and can be retrieved on shape queries.
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int} { false metadata Variant}], Returns: void
 */
 func (o *physics2DServer) BodySetShapeMetadata(body gdnative.Rid, shapeIdx gdnative.Int, metadata gdnative.Variant) {
@@ -1901,7 +1901,7 @@ func (o *physics2DServer) BodySetShapeMetadata(body gdnative.Rid, shapeIdx gdnat
 }
 
 /*
-        Sets the transform matrix for a body shape.
+        Undocumented
 	Args: [{ false body RID} { false shape_idx int} { false transform Transform2D}], Returns: void
 */
 func (o *physics2DServer) BodySetShapeTransform(body gdnative.Rid, shapeIdx gdnative.Int, transform gdnative.Transform2D) {
@@ -1925,7 +1925,7 @@ func (o *physics2DServer) BodySetShapeTransform(body gdnative.Rid, shapeIdx gdna
 }
 
 /*
-        Assigns a space to the body (see [method space_create]).
+        Undocumented
 	Args: [{ false body RID} { false space RID}], Returns: void
 */
 func (o *physics2DServer) BodySetSpace(body gdnative.Rid, space gdnative.Rid) {
@@ -1948,7 +1948,7 @@ func (o *physics2DServer) BodySetSpace(body gdnative.Rid, space gdnative.Rid) {
 }
 
 /*
-        Sets a body state using one of the [enum BodyState] constants.
+        Undocumented
 	Args: [{ false body RID} { false state int} { false value Variant}], Returns: void
 */
 func (o *physics2DServer) BodySetState(body gdnative.Rid, state gdnative.Int, value gdnative.Variant) {
@@ -1972,7 +1972,7 @@ func (o *physics2DServer) BodySetState(body gdnative.Rid, state gdnative.Int, va
 }
 
 /*
-        Returns [code]true[/code] if a collision would result from moving in the given direction from a given point in space. Margin increases the size of the shapes involved in the collision detection. [Physics2DTestMotionResult] can be passed to return additional information in.
+        Undocumented
 	Args: [{ false body RID} { false from Transform2D} { false motion Vector2} { false infinite_inertia bool} {0.08 true margin float} {Null true result Physics2DTestMotionResult}], Returns: bool
 */
 func (o *physics2DServer) BodyTestMotion(body gdnative.Rid, from gdnative.Transform2D, motion gdnative.Vector2, infiniteInertia gdnative.Bool, margin gdnative.Real, result Physics2DTestMotionResultImplementer) gdnative.Bool {
@@ -2002,7 +2002,7 @@ func (o *physics2DServer) BodyTestMotion(body gdnative.Rid, from gdnative.Transf
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) CapsuleShapeCreate() gdnative.Rid {
@@ -2026,7 +2026,7 @@ func (o *physics2DServer) CapsuleShapeCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) CircleShapeCreate() gdnative.Rid {
@@ -2050,7 +2050,7 @@ func (o *physics2DServer) CircleShapeCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) ConcavePolygonShapeCreate() gdnative.Rid {
@@ -2074,7 +2074,7 @@ func (o *physics2DServer) ConcavePolygonShapeCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) ConvexPolygonShapeCreate() gdnative.Rid {
@@ -2098,7 +2098,7 @@ func (o *physics2DServer) ConvexPolygonShapeCreate() gdnative.Rid {
 }
 
 /*
-        Creates a damped spring joint between two bodies. If not specified, the second body is assumed to be the joint itself.
+        Undocumented
 	Args: [{ false anchor_a Vector2} { false anchor_b Vector2} { false body_a RID} {[RID] true body_b RID}], Returns: RID
 */
 func (o *physics2DServer) DampedSpringJointCreate(anchorA gdnative.Vector2, anchorB gdnative.Vector2, bodyA gdnative.Rid, bodyB gdnative.Rid) gdnative.Rid {
@@ -2126,7 +2126,7 @@ func (o *physics2DServer) DampedSpringJointCreate(anchorA gdnative.Vector2, anch
 }
 
 /*
-        Returns the value of a damped spring joint parameter.
+        Undocumented
 	Args: [{ false joint RID} { false param int}], Returns: float
 */
 func (o *physics2DServer) DampedStringJointGetParam(joint gdnative.Rid, param gdnative.Int) gdnative.Real {
@@ -2152,7 +2152,7 @@ func (o *physics2DServer) DampedStringJointGetParam(joint gdnative.Rid, param gd
 }
 
 /*
-        Sets a damped spring joint parameter. See [enum DampedStringParam] for a list of available parameters.
+        Undocumented
 	Args: [{ false joint RID} { false param int} { false value float}], Returns: void
 */
 func (o *physics2DServer) DampedStringJointSetParam(joint gdnative.Rid, param gdnative.Int, value gdnative.Real) {
@@ -2176,7 +2176,7 @@ func (o *physics2DServer) DampedStringJointSetParam(joint gdnative.Rid, param gd
 }
 
 /*
-        Destroys any of the objects created by Physics2DServer. If the [RID] passed is not one of the objects that can be created by Physics2DServer, an error will be sent to the console.
+        Undocumented
 	Args: [{ false rid RID}], Returns: void
 */
 func (o *physics2DServer) FreeRid(rid gdnative.Rid) {
@@ -2198,7 +2198,7 @@ func (o *physics2DServer) FreeRid(rid gdnative.Rid) {
 }
 
 /*
-        Returns information about the current state of the 2D physics engine. See [enum ProcessInfo] for a list of available states.
+        Undocumented
 	Args: [{ false process_info int}], Returns: int
 */
 func (o *physics2DServer) GetProcessInfo(processInfo gdnative.Int) gdnative.Int {
@@ -2223,7 +2223,7 @@ func (o *physics2DServer) GetProcessInfo(processInfo gdnative.Int) gdnative.Int 
 }
 
 /*
-        Creates a groove joint between two bodies. If not specified, the bodies are assumed to be the joint itself.
+        Undocumented
 	Args: [{ false groove1_a Vector2} { false groove2_a Vector2} { false anchor_b Vector2} {[RID] true body_a RID} {[RID] true body_b RID}], Returns: RID
 */
 func (o *physics2DServer) GrooveJointCreate(groove1A gdnative.Vector2, groove2A gdnative.Vector2, anchorB gdnative.Vector2, bodyA gdnative.Rid, bodyB gdnative.Rid) gdnative.Rid {
@@ -2252,7 +2252,7 @@ func (o *physics2DServer) GrooveJointCreate(groove1A gdnative.Vector2, groove2A 
 }
 
 /*
-        Returns the value of a joint parameter.
+        Undocumented
 	Args: [{ false joint RID} { false param int}], Returns: float
 */
 func (o *physics2DServer) JointGetParam(joint gdnative.Rid, param gdnative.Int) gdnative.Real {
@@ -2278,7 +2278,7 @@ func (o *physics2DServer) JointGetParam(joint gdnative.Rid, param gdnative.Int) 
 }
 
 /*
-        Returns a joint's type (see [enum JointType]).
+        Undocumented
 	Args: [{ false joint RID}], Returns: enum.Physics2DServer::JointType
 */
 func (o *physics2DServer) JointGetType(joint gdnative.Rid) Physics2DServerJointType {
@@ -2303,7 +2303,7 @@ func (o *physics2DServer) JointGetType(joint gdnative.Rid) Physics2DServerJointT
 }
 
 /*
-        Sets a joint parameter. See [enum JointParam] for a list of available parameters.
+        Undocumented
 	Args: [{ false joint RID} { false param int} { false value float}], Returns: void
 */
 func (o *physics2DServer) JointSetParam(joint gdnative.Rid, param gdnative.Int, value gdnative.Real) {
@@ -2327,7 +2327,7 @@ func (o *physics2DServer) JointSetParam(joint gdnative.Rid, param gdnative.Int, 
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) LineShapeCreate() gdnative.Rid {
@@ -2351,7 +2351,7 @@ func (o *physics2DServer) LineShapeCreate() gdnative.Rid {
 }
 
 /*
-        Creates a pin joint between two bodies. If not specified, the second body is assumed to be the joint itself.
+        Undocumented
 	Args: [{ false anchor Vector2} { false body_a RID} {[RID] true body_b RID}], Returns: RID
 */
 func (o *physics2DServer) PinJointCreate(anchor gdnative.Vector2, bodyA gdnative.Rid, bodyB gdnative.Rid) gdnative.Rid {
@@ -2378,7 +2378,7 @@ func (o *physics2DServer) PinJointCreate(anchor gdnative.Vector2, bodyA gdnative
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) RayShapeCreate() gdnative.Rid {
@@ -2402,7 +2402,7 @@ func (o *physics2DServer) RayShapeCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) RectangleShapeCreate() gdnative.Rid {
@@ -2426,7 +2426,7 @@ func (o *physics2DServer) RectangleShapeCreate() gdnative.Rid {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) SegmentShapeCreate() gdnative.Rid {
@@ -2450,7 +2450,7 @@ func (o *physics2DServer) SegmentShapeCreate() gdnative.Rid {
 }
 
 /*
-        Activates or deactivates the 2D physics engine.
+        Undocumented
 	Args: [{ false active bool}], Returns: void
 */
 func (o *physics2DServer) SetActive(active gdnative.Bool) {
@@ -2472,7 +2472,7 @@ func (o *physics2DServer) SetActive(active gdnative.Bool) {
 }
 
 /*
-        Returns the shape data.
+        Undocumented
 	Args: [{ false shape RID}], Returns: Variant
 */
 func (o *physics2DServer) ShapeGetData(shape gdnative.Rid) gdnative.Variant {
@@ -2497,7 +2497,7 @@ func (o *physics2DServer) ShapeGetData(shape gdnative.Rid) gdnative.Variant {
 }
 
 /*
-        Returns a shape's type (see [enum ShapeType]).
+        Undocumented
 	Args: [{ false shape RID}], Returns: enum.Physics2DServer::ShapeType
 */
 func (o *physics2DServer) ShapeGetType(shape gdnative.Rid) Physics2DServerShapeType {
@@ -2522,7 +2522,7 @@ func (o *physics2DServer) ShapeGetType(shape gdnative.Rid) Physics2DServerShapeT
 }
 
 /*
-        Sets the shape data that defines its shape and size. The data to be passed depends on the kind of shape created [method shape_get_type].
+        Undocumented
 	Args: [{ false shape RID} { false data Variant}], Returns: void
 */
 func (o *physics2DServer) ShapeSetData(shape gdnative.Rid, data gdnative.Variant) {
@@ -2545,7 +2545,7 @@ func (o *physics2DServer) ShapeSetData(shape gdnative.Rid, data gdnative.Variant
 }
 
 /*
-        Creates a space. A space is a collection of parameters for the physics engine that can be assigned to an area or a body. It can be assigned to an area with [method area_set_space], or to a body with [method body_set_space].
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *physics2DServer) SpaceCreate() gdnative.Rid {
@@ -2569,7 +2569,7 @@ func (o *physics2DServer) SpaceCreate() gdnative.Rid {
 }
 
 /*
-        Returns the state of a space, a [Physics2DDirectSpaceState]. This object can be used to make collision/intersection queries.
+        Undocumented
 	Args: [{ false space RID}], Returns: Physics2DDirectSpaceState
 */
 func (o *physics2DServer) SpaceGetDirectState(space gdnative.Rid) Physics2DDirectSpaceStateImplementer {
@@ -2608,7 +2608,7 @@ func (o *physics2DServer) SpaceGetDirectState(space gdnative.Rid) Physics2DDirec
 }
 
 /*
-        Returns the value of a space parameter.
+        Undocumented
 	Args: [{ false space RID} { false param int}], Returns: float
 */
 func (o *physics2DServer) SpaceGetParam(space gdnative.Rid, param gdnative.Int) gdnative.Real {
@@ -2634,7 +2634,7 @@ func (o *physics2DServer) SpaceGetParam(space gdnative.Rid, param gdnative.Int) 
 }
 
 /*
-        Returns whether the space is active.
+        Undocumented
 	Args: [{ false space RID}], Returns: bool
 */
 func (o *physics2DServer) SpaceIsActive(space gdnative.Rid) gdnative.Bool {
@@ -2659,7 +2659,7 @@ func (o *physics2DServer) SpaceIsActive(space gdnative.Rid) gdnative.Bool {
 }
 
 /*
-        Marks a space as active. It will not have an effect, unless it is assigned to an area or body.
+        Undocumented
 	Args: [{ false space RID} { false active bool}], Returns: void
 */
 func (o *physics2DServer) SpaceSetActive(space gdnative.Rid, active gdnative.Bool) {
@@ -2682,7 +2682,7 @@ func (o *physics2DServer) SpaceSetActive(space gdnative.Rid, active gdnative.Boo
 }
 
 /*
-        Sets the value for a space parameter. See [enum SpaceParameter] for a list of available parameters.
+        Undocumented
 	Args: [{ false space RID} { false param int} { false value float}], Returns: void
 */
 func (o *physics2DServer) SpaceSetParam(space gdnative.Rid, param gdnative.Int, value gdnative.Real) {

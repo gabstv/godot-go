@@ -4,15 +4,16 @@ package types
 
 import (
 	"bytes"
-	"github.com/kr/pretty"
-	"github.com/pinzolo/casee"
-	"github.com/shadowapex/godot-go/cmd/generate/methods"
 	"log"
 	"os"
 	"os/exec"
 	"sort"
 	"strings"
 	"text/template"
+
+	"github.com/gabstv/godot-go/cmd/generate/methods"
+	"github.com/kr/pretty"
+	"github.com/pinzolo/casee"
 )
 
 // View is a structure that holds the api struct, so it can be used inside

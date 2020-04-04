@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newKinematicBodyFromPointer(ptr gdnative.Pointer) KinematicBody {
 }
 
 /*
-Kinematic bodies are special types of bodies that are meant to be user-controlled. They are not affected by physics at all; to other types of bodies, such as a character or a rigid body, these are the same as a static body. However, they have two main uses: [b]Simulated motion:[/b] When these bodies are moved manually, either from code or from an [AnimationPlayer] (with [member AnimationPlayer.playback_process_mode] set to "physics"), the physics will automatically compute an estimate of their linear and angular velocity. This makes them very useful for moving platforms or other AnimationPlayer-controlled objects (like a door, a bridge that opens, etc). [b]Kinematic characters:[/b] KinematicBody also has an API for moving objects (the [method move_and_collide] and [method move_and_slide] methods) while performing collision tests. This makes them really useful to implement characters that collide against a world, but that don't require advanced physics.
+Undocumented
 */
 type KinematicBody struct {
 	PhysicsBody
@@ -35,7 +35,7 @@ func (o *KinematicBody) BaseClass() string {
 }
 
 /*
-        Returns [code]true[/code] if the specified [code]axis[/code] is locked. See also [member move_lock_x], [member move_lock_y] and [member move_lock_z].
+        Undocumented
 	Args: [{ false axis int}], Returns: bool
 */
 func (o *KinematicBody) GetAxisLock(axis gdnative.Int) gdnative.Bool {
@@ -59,7 +59,7 @@ func (o *KinematicBody) GetAxisLock(axis gdnative.Int) gdnative.Bool {
 }
 
 /*
-        Returns the surface normal of the floor at the last collision point. Only valid after calling [method move_and_slide] or [method move_and_slide_with_snap] and when [method is_on_floor] returns [code]true[/code].
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *KinematicBody) GetFloorNormal() gdnative.Vector3 {
@@ -82,7 +82,7 @@ func (o *KinematicBody) GetFloorNormal() gdnative.Vector3 {
 }
 
 /*
-        Returns the linear velocity of the floor at the last collision point. Only valid after calling [method move_and_slide] or [method move_and_slide_with_snap] and when [method is_on_floor] returns [code]true[/code].
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *KinematicBody) GetFloorVelocity() gdnative.Vector3 {
@@ -128,7 +128,7 @@ func (o *KinematicBody) GetSafeMargin() gdnative.Real {
 }
 
 /*
-        Returns a [KinematicCollision], which contains information about a collision that occurred during the last [method move_and_slide] call. Since the body can collide several times in a single call to [method move_and_slide], you must specify the index of the collision in the range 0 to ([method get_slide_count] - 1).
+        Undocumented
 	Args: [{ false slide_idx int}], Returns: KinematicCollision
 */
 func (o *KinematicBody) GetSlideCollision(slideIdx gdnative.Int) KinematicCollisionImplementer {
@@ -166,7 +166,7 @@ func (o *KinematicBody) GetSlideCollision(slideIdx gdnative.Int) KinematicCollis
 }
 
 /*
-        Returns the number of times the body collided and changed direction during the last call to [method move_and_slide].
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *KinematicBody) GetSlideCount() gdnative.Int {
@@ -189,7 +189,7 @@ func (o *KinematicBody) GetSlideCount() gdnative.Int {
 }
 
 /*
-        Returns [code]true[/code] if the body is on the ceiling. Only updates when calling [method move_and_slide].
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *KinematicBody) IsOnCeiling() gdnative.Bool {
@@ -212,7 +212,7 @@ func (o *KinematicBody) IsOnCeiling() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the body is on the floor. Only updates when calling [method move_and_slide].
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *KinematicBody) IsOnFloor() gdnative.Bool {
@@ -235,7 +235,7 @@ func (o *KinematicBody) IsOnFloor() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the body is on a wall. Only updates when calling [method move_and_slide].
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *KinematicBody) IsOnWall() gdnative.Bool {
@@ -258,7 +258,7 @@ func (o *KinematicBody) IsOnWall() gdnative.Bool {
 }
 
 /*
-        Moves the body along the vector [code]rel_vec[/code]. The body will stop if it collides. Returns a [KinematicCollision], which contains information about the collision. If [code]test_only[/code] is [code]true[/code], the body does not move but the would-be collision information is given.
+        Undocumented
 	Args: [{ false rel_vec Vector3} {True true infinite_inertia bool} {True true exclude_raycast_shapes bool} {False true test_only bool}], Returns: KinematicCollision
 */
 func (o *KinematicBody) MoveAndCollide(relVec gdnative.Vector3, infiniteInertia gdnative.Bool, excludeRaycastShapes gdnative.Bool, testOnly gdnative.Bool) KinematicCollisionImplementer {
@@ -299,7 +299,7 @@ func (o *KinematicBody) MoveAndCollide(relVec gdnative.Vector3, infiniteInertia 
 }
 
 /*
-        Moves the body along a vector. If the body collides with another, it will slide along the other body rather than stop immediately. If the other body is a [KinematicBody] or [RigidBody], it will also be affected by the motion of the other body. You can use this to make moving or rotating platforms, or to make nodes push other nodes. [code]linear_velocity[/code] is the velocity vector (typically meters per second). Unlike in [method move_and_collide], you should [i]not[/i] multiply it by [code]delta[/code] — the physics engine handles applying the velocity. [code]up_direction[/code] is the up direction, used to determine what is a wall and what is a floor or a ceiling. If set to the default value of [code]Vector3(0, 0, 0)[/code], everything is considered a wall. If [code]stop_on_slope[/code] is [code]true[/code], body will not slide on slopes if you include gravity in [code]linear_velocity[/code]. If the body collides, it will change direction a maximum of [code]max_slides[/code] times before it stops. [code]floor_max_angle[/code] is the maximum angle (in radians) where a slope is still considered a floor (or a ceiling), rather than a wall. The default value equals 45 degrees. If [code]infinite_inertia[/code] is [code]true[/code], body will be able to push [RigidBody] nodes, but it won't also detect any collisions with them. If [code]false[/code], it will interact with [RigidBody] nodes like with [StaticBody]. Returns the [code]linear_velocity[/code] vector, rotated and/or scaled if a slide collision occurred. To get detailed information about collisions that occurred, use [method get_slide_collision].
+        Undocumented
 	Args: [{ false linear_velocity Vector3} {(0, 0, 0) true up_direction Vector3} {False true stop_on_slope bool} {4 true max_slides int} {0.785398 true floor_max_angle float} {True true infinite_inertia bool}], Returns: Vector3
 */
 func (o *KinematicBody) MoveAndSlide(linearVelocity gdnative.Vector3, upDirection gdnative.Vector3, stopOnSlope gdnative.Bool, maxSlides gdnative.Int, floorMaxAngle gdnative.Real, infiniteInertia gdnative.Bool) gdnative.Vector3 {
@@ -328,7 +328,7 @@ func (o *KinematicBody) MoveAndSlide(linearVelocity gdnative.Vector3, upDirectio
 }
 
 /*
-        Moves the body while keeping it attached to slopes. Similar to [method move_and_slide]. As long as the [code]snap[/code] vector is in contact with the ground, the body will remain attached to the surface. This means you must disable snap in order to jump, for example. You can do this by setting [code]snap[/code] to [code](0, 0, 0)[/code] or by using [method move_and_slide] instead.
+        Undocumented
 	Args: [{ false linear_velocity Vector3} { false snap Vector3} {(0, 0, 0) true up_direction Vector3} {False true stop_on_slope bool} {4 true max_slides int} {0.785398 true floor_max_angle float} {True true infinite_inertia bool}], Returns: Vector3
 */
 func (o *KinematicBody) MoveAndSlideWithSnap(linearVelocity gdnative.Vector3, snap gdnative.Vector3, upDirection gdnative.Vector3, stopOnSlope gdnative.Bool, maxSlides gdnative.Int, floorMaxAngle gdnative.Real, infiniteInertia gdnative.Bool) gdnative.Vector3 {
@@ -358,7 +358,7 @@ func (o *KinematicBody) MoveAndSlideWithSnap(linearVelocity gdnative.Vector3, sn
 }
 
 /*
-        Locks or unlocks the specified [code]axis[/code] depending on the value of [code]lock[/code]. See also [member move_lock_x], [member move_lock_y] and [member move_lock_z].
+        Undocumented
 	Args: [{ false axis int} { false lock bool}], Returns: void
 */
 func (o *KinematicBody) SetAxisLock(axis gdnative.Int, lock gdnative.Bool) {
@@ -401,7 +401,7 @@ func (o *KinematicBody) SetSafeMargin(pixels gdnative.Real) {
 }
 
 /*
-        Checks for collisions without moving the body. Virtually sets the node's position, scale and rotation to that of the given [Transform], then tries to move the body along the vector [code]rel_vec[/code]. Returns [code]true[/code] if a collision would occur.
+        Undocumented
 	Args: [{ false from Transform} { false rel_vec Vector3} {True true infinite_inertia bool}], Returns: bool
 */
 func (o *KinematicBody) TestMove(from gdnative.Transform, relVec gdnative.Vector3, infiniteInertia gdnative.Bool) gdnative.Bool {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ func (o *VisualShaderNodeInput) GetInputName() gdnative.String {
 }
 
 /*
-
+        Returns a translated name of the current constant in the Godot Shader Language. eg. [code]"ALBEDO"[/code] if the [member input_name] equal to [code]"albedo"[/code].
 	Args: [], Returns: String
 */
 func (o *VisualShaderNodeInput) GetInputRealName() gdnative.String {

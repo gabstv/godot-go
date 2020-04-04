@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -37,13 +37,13 @@ func newSingletonCameraServer() *cameraServer {
 }
 
 /*
-
- */
+   The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is notably used to provide AR modules with a video feed from the camera.
+*/
 var CameraServer = newSingletonCameraServer()
 
 /*
-
- */
+The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is notably used to provide AR modules with a video feed from the camera.
+*/
 type cameraServer struct {
 	Object
 	owner       gdnative.Object

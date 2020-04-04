@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newVideoPlayerFromPointer(ptr gdnative.Pointer) VideoPlayer {
 }
 
 /*
-Control node for playing video streams. Supported formats are [url=https://www.webmproject.org/]WebM[/url] and [url=https://www.theora.org/]Ogg Theora[/url].
+Control node for playing video streams using [VideoStream] resources. Supported video formats are [url=https://www.webmproject.org/]WebM[/url] ([VideoStreamWebm]), [url=https://www.theora.org/]Ogg Theora[/url] ([VideoStreamTheora]), and any format exposed via a GDNative plugin using [VideoStreamGDNative].
 */
 type VideoPlayer struct {
 	Control
@@ -187,7 +187,7 @@ func (o *VideoPlayer) GetStreamPosition() gdnative.Real {
 }
 
 /*
-        Returns the current frame as a [Texture].
+        Returns the current frame as a [Texture2D].
 	Args: [], Returns: Texture
 */
 func (o *VideoPlayer) GetVideoTexture() TextureImplementer {

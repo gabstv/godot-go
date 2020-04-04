@@ -85,7 +85,7 @@ const (
 	PropertyHintEnum                  PropertyHint = 3 // < hint_text= "val1,val2,val3,etc"
 	PropertyHintExpEasing             PropertyHint = 4 //  exponential easing function (Math::ease)
 	PropertyHintLength                PropertyHint = 5 // < hint_text= "length" (as integer)
-	PropertyHintSpriteFrame           PropertyHint = 6
+	PropertyHintSpriteFrame           PropertyHint = 6 // FIXME: Obsolete: drop whenever we can break compat
 	PropertyHintKeyAccel              PropertyHint = 7 // < hint_text= "length" (as integer)
 	PropertyHintFlags                 PropertyHint = 8 // < hint_text= "flag1,flag2,etc" (as bit flags)
 	PropertyHintLayers2DRender        PropertyHint = 9
@@ -93,9 +93,9 @@ const (
 	PropertyHintLayers3DRender        PropertyHint = 11
 	PropertyHintLayers3DPhysics       PropertyHint = 12
 	PropertyHintFile                  PropertyHint = 13 // < a file path must be passed, hint_text (optionally) is a filter "*.png,*.wav,*.doc,"
-	PropertyHintDir                   PropertyHint = 14 // < a directort path must be passed
+	PropertyHintDir                   PropertyHint = 14 // < a directory path must be passed
 	PropertyHintGlobalFile            PropertyHint = 15 // < a file path must be passed, hint_text (optionally) is a filter "*.png,*.wav,*.doc,"
-	PropertyHintGlobalDir             PropertyHint = 16 // < a directort path must be passed
+	PropertyHintGlobalDir             PropertyHint = 16 // < a directory path must be passed
 	PropertyHintResourceType          PropertyHint = 17 // < a resource object type
 	PropertyHintMultilineText         PropertyHint = 18 // < used for string properties that can contain multiple lines
 	PropertyHintPlaceholderText       PropertyHint = 19 // < used to set a placeholder text for string properties

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -37,8 +37,8 @@ func newTextureFromPointer(ptr gdnative.Pointer) Texture {
 }
 
 /*
-A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D [Sprite] or GUI [Control]. Textures are often created by loading them from a file. See [method @GDScript.load].
-*/
+
+ */
 type Texture struct {
 	Resource
 	owner gdnative.Object
@@ -49,7 +49,7 @@ func (o *Texture) BaseClass() string {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false canvas_item RID} { false position Vector2} {1,1,1,1 true modulate Color} {False true transpose bool} {Null true normal_map Texture}], Returns: void
 */
 func (o *Texture) Draw(canvasItem gdnative.Rid, position gdnative.Vector2, modulate gdnative.Color, transpose gdnative.Bool, normalMap TextureImplementer) {
@@ -74,7 +74,7 @@ func (o *Texture) Draw(canvasItem gdnative.Rid, position gdnative.Vector2, modul
 }
 
 /*
-
+        Undocumented
 	Args: [{ false canvas_item RID} { false rect Rect2} { false tile bool} {1,1,1,1 true modulate Color} {False true transpose bool} {Null true normal_map Texture}], Returns: void
 */
 func (o *Texture) DrawRect(canvasItem gdnative.Rid, rect gdnative.Rect2, tile gdnative.Bool, modulate gdnative.Color, transpose gdnative.Bool, normalMap TextureImplementer) {
@@ -100,7 +100,7 @@ func (o *Texture) DrawRect(canvasItem gdnative.Rid, rect gdnative.Rect2, tile gd
 }
 
 /*
-
+        Undocumented
 	Args: [{ false canvas_item RID} { false rect Rect2} { false src_rect Rect2} {1,1,1,1 true modulate Color} {False true transpose bool} {Null true normal_map Texture} {True true clip_uv bool}], Returns: void
 */
 func (o *Texture) DrawRectRegion(canvasItem gdnative.Rid, rect gdnative.Rect2, srcRect gdnative.Rect2, modulate gdnative.Color, transpose gdnative.Bool, normalMap TextureImplementer, clipUv gdnative.Bool) {
@@ -127,7 +127,7 @@ func (o *Texture) DrawRectRegion(canvasItem gdnative.Rid, rect gdnative.Rect2, s
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: Image
 */
 func (o *Texture) GetData() ImageImplementer {
@@ -187,7 +187,7 @@ func (o *Texture) GetFlags() gdnative.Int {
 }
 
 /*
-        Returns the texture height.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *Texture) GetHeight() gdnative.Int {
@@ -210,7 +210,7 @@ func (o *Texture) GetHeight() gdnative.Int {
 }
 
 /*
-        Returns the texture size.
+        Undocumented
 	Args: [], Returns: Vector2
 */
 func (o *Texture) GetSize() gdnative.Vector2 {
@@ -233,7 +233,7 @@ func (o *Texture) GetSize() gdnative.Vector2 {
 }
 
 /*
-        Returns the texture width.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *Texture) GetWidth() gdnative.Int {
@@ -256,7 +256,7 @@ func (o *Texture) GetWidth() gdnative.Int {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *Texture) HasAlpha() gdnative.Bool {

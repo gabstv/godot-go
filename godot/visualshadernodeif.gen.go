@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newVisualShaderNodeIfFromPointer(ptr gdnative.Pointer) VisualShaderNodeIf {
 }
 
 /*
-
- */
+First two ports are scalar floatin-point numbers to compare, third is tolerance comparison amount and last three ports represents a vectors returned if [code]a == b[/code], [code]a > b[/code] and [code]a < b[/code] respectively.
+*/
 type VisualShaderNodeIf struct {
 	VisualShaderNode
 	owner gdnative.Object

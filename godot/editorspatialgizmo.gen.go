@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newEditorSpatialGizmoFromPointer(ptr gdnative.Pointer) EditorSpatialGizmo {
 }
 
 /*
-Custom gizmo that is used for providing custom visualization and editing (handles) for 3D Spatial objects. See [EditorSpatialGizmoPlugin] for more information.
+Undocumented
 */
 type EditorSpatialGizmo struct {
 	SpatialGizmo
@@ -35,7 +35,7 @@ func (o *EditorSpatialGizmo) BaseClass() string {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false segments PoolVector3Array}], Returns: void
 */
 func (o *EditorSpatialGizmo) AddCollisionSegments(segments gdnative.PoolVector3Array) {
@@ -56,7 +56,7 @@ func (o *EditorSpatialGizmo) AddCollisionSegments(segments gdnative.PoolVector3A
 }
 
 /*
-        Adds collision triangles to the gizmo for picking. A [TriangleMesh] can be generated from a regular [Mesh] too. Call this function during [method redraw].
+        Undocumented
 	Args: [{ false triangles TriangleMesh}], Returns: void
 */
 func (o *EditorSpatialGizmo) AddCollisionTriangles(triangles TriangleMeshImplementer) {
@@ -77,7 +77,7 @@ func (o *EditorSpatialGizmo) AddCollisionTriangles(triangles TriangleMeshImpleme
 }
 
 /*
-        Adds a list of handles (points) which can be used to deform the object being edited. There are virtual functions which will be called upon editing of these handles. Call this function during [method redraw].
+        Undocumented
 	Args: [{ false handles PoolVector3Array} { false material Material} {False true billboard bool} {False true secondary bool}], Returns: void
 */
 func (o *EditorSpatialGizmo) AddHandles(handles gdnative.PoolVector3Array, material MaterialImplementer, billboard gdnative.Bool, secondary gdnative.Bool) {
@@ -101,7 +101,7 @@ func (o *EditorSpatialGizmo) AddHandles(handles gdnative.PoolVector3Array, mater
 }
 
 /*
-        Adds lines to the gizmo (as sets of 2 points), with a given material. The lines are used for visualizing the gizmo. Call this function during [method redraw].
+        Undocumented
 	Args: [{ false lines PoolVector3Array} { false material Material} {False true billboard bool} {1,1,1,1 true modulate Color}], Returns: void
 */
 func (o *EditorSpatialGizmo) AddLines(lines gdnative.PoolVector3Array, material MaterialImplementer, billboard gdnative.Bool, modulate gdnative.Color) {
@@ -125,7 +125,7 @@ func (o *EditorSpatialGizmo) AddLines(lines gdnative.PoolVector3Array, material 
 }
 
 /*
-
+        Undocumented
 	Args: [{ false mesh ArrayMesh} {False true billboard bool} {[Object:null] true skeleton SkinReference} {Null true material Material}], Returns: void
 */
 func (o *EditorSpatialGizmo) AddMesh(mesh ArrayMeshImplementer, billboard gdnative.Bool, skeleton SkinReferenceImplementer, material MaterialImplementer) {
@@ -149,7 +149,7 @@ func (o *EditorSpatialGizmo) AddMesh(mesh ArrayMeshImplementer, billboard gdnati
 }
 
 /*
-        Adds an unscaled billboard for visualization. Call this function during [method redraw].
+        Undocumented
 	Args: [{ false material Material} {1 true default_scale float} {1,1,1,1 true modulate Color}], Returns: void
 */
 func (o *EditorSpatialGizmo) AddUnscaledBillboard(material MaterialImplementer, defaultScale gdnative.Real, modulate gdnative.Color) {
@@ -172,7 +172,7 @@ func (o *EditorSpatialGizmo) AddUnscaledBillboard(material MaterialImplementer, 
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *EditorSpatialGizmo) Clear() {
@@ -192,7 +192,7 @@ func (o *EditorSpatialGizmo) Clear() {
 }
 
 /*
-        Commit a handle being edited (handles must have been previously added by [method add_handles]). If the [code]cancel[/code] parameter is [code]true[/code], an option to restore the edited value to the original is provided.
+        Undocumented
 	Args: [{ false index int} { false restore Variant} { false cancel bool}], Returns: void
 */
 func (o *EditorSpatialGizmo) CommitHandle(index gdnative.Int, restore gdnative.Variant, cancel gdnative.Bool) {
@@ -215,7 +215,7 @@ func (o *EditorSpatialGizmo) CommitHandle(index gdnative.Int, restore gdnative.V
 }
 
 /*
-        Gets the name of an edited handle (handles must have been previously added by [method add_handles]). Handles can be named for reference to the user when editing.
+        Undocumented
 	Args: [{ false index int}], Returns: String
 */
 func (o *EditorSpatialGizmo) GetHandleName(index gdnative.Int) gdnative.String {
@@ -239,7 +239,7 @@ func (o *EditorSpatialGizmo) GetHandleName(index gdnative.Int) gdnative.String {
 }
 
 /*
-        Gets actual value of a handle. This value can be anything and used for eventually undoing the motion when calling [method commit_handle].
+        Undocumented
 	Args: [{ false index int}], Returns: Variant
 */
 func (o *EditorSpatialGizmo) GetHandleValue(index gdnative.Int) gdnative.Variant {
@@ -263,7 +263,7 @@ func (o *EditorSpatialGizmo) GetHandleValue(index gdnative.Int) gdnative.Variant
 }
 
 /*
-        Returns the [EditorSpatialGizmoPlugin] that owns this gizmo. It's useful to retrieve materials using [method EditorSpatialGizmoPlugin.get_material].
+        Undocumented
 	Args: [], Returns: EditorSpatialGizmoPlugin
 */
 func (o *EditorSpatialGizmo) GetPlugin() EditorSpatialGizmoPluginImplementer {
@@ -300,7 +300,7 @@ func (o *EditorSpatialGizmo) GetPlugin() EditorSpatialGizmoPluginImplementer {
 }
 
 /*
-        Returns the Spatial node associated with this gizmo.
+        Undocumented
 	Args: [], Returns: Spatial
 */
 func (o *EditorSpatialGizmo) GetSpatialNode() SpatialImplementer {
@@ -337,7 +337,7 @@ func (o *EditorSpatialGizmo) GetSpatialNode() SpatialImplementer {
 }
 
 /*
-        Gets whether a handle is highlighted or not.
+        Undocumented
 	Args: [{ false index int}], Returns: bool
 */
 func (o *EditorSpatialGizmo) IsHandleHighlighted(index gdnative.Int) gdnative.Bool {
@@ -361,7 +361,7 @@ func (o *EditorSpatialGizmo) IsHandleHighlighted(index gdnative.Int) gdnative.Bo
 }
 
 /*
-        This function is called when the Spatial this gizmo refers to changes (the [method Spatial.update_gizmo] is called).
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *EditorSpatialGizmo) Redraw() {
@@ -381,7 +381,7 @@ func (o *EditorSpatialGizmo) Redraw() {
 }
 
 /*
-        This function is used when the user drags a gizmo handle (previously added with [method add_handles]) in screen coordinates. The [Camera] is also provided so screen coordinates can be converted to raycasts.
+        Undocumented
 	Args: [{ false index int} { false camera Camera} { false point Vector2}], Returns: void
 */
 func (o *EditorSpatialGizmo) SetHandle(index gdnative.Int, camera CameraImplementer, point gdnative.Vector2) {
@@ -404,7 +404,7 @@ func (o *EditorSpatialGizmo) SetHandle(index gdnative.Int, camera CameraImplemen
 }
 
 /*
-
+        Undocumented
 	Args: [{ false hidden bool}], Returns: void
 */
 func (o *EditorSpatialGizmo) SetHidden(hidden gdnative.Bool) {
@@ -425,7 +425,7 @@ func (o *EditorSpatialGizmo) SetHidden(hidden gdnative.Bool) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false node Node}], Returns: void
 */
 func (o *EditorSpatialGizmo) SetSpatialNode(node NodeImplementer) {

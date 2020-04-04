@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ func newCameraFromPointer(ptr gdnative.Pointer) Camera {
 }
 
 /*
-Camera is a special node that displays what is visible from its current location. Cameras register themselves in the nearest [Viewport] node (when ascending the tree). Only one camera can be active per viewport. If no viewport is available ascending the tree, the camera will register in the global viewport. In other words, a camera just provides 3D display capabilities to a [Viewport], and, without one, a scene registered in that [Viewport] (or higher viewports) can't be displayed.
+Undocumented
 */
 type Camera struct {
 	Spatial
@@ -61,7 +61,7 @@ func (o *Camera) BaseClass() string {
 }
 
 /*
-        If this is the current camera, remove it from being current. If [code]enable_next[/code] is [code]true[/code], request to make the next camera current, if any.
+        Undocumented
 	Args: [{True true enable_next bool}], Returns: void
 */
 func (o *Camera) ClearCurrent(enableNext gdnative.Bool) {
@@ -82,7 +82,7 @@ func (o *Camera) ClearCurrent(enableNext gdnative.Bool) {
 }
 
 /*
-        Returns the camera's RID from the [VisualServer].
+        Undocumented
 	Args: [], Returns: RID
 */
 func (o *Camera) GetCameraRid() gdnative.Rid {
@@ -105,7 +105,7 @@ func (o *Camera) GetCameraRid() gdnative.Rid {
 }
 
 /*
-        Gets the camera transform. Subclassed cameras such as [InterpolatedCamera] may provide different transforms than the [Node] transform.
+        Undocumented
 	Args: [], Returns: Transform
 */
 func (o *Camera) GetCameraTransform() gdnative.Transform {
@@ -151,7 +151,7 @@ func (o *Camera) GetCullMask() gdnative.Int {
 }
 
 /*
-        Returns [code]true[/code] if the given [code]layer[/code] in the [member cull_mask] is enabled, [code]false[/code] otherwise.
+        Undocumented
 	Args: [{ false layer int}], Returns: bool
 */
 func (o *Camera) GetCullMaskBit(layer gdnative.Int) gdnative.Bool {
@@ -258,7 +258,7 @@ func (o *Camera) GetFov() gdnative.Real {
 }
 
 /*
-        Returns the camera's frustum planes in world-space units as an array of [Plane]s in the following order: near, far, left, top, right, bottom. Not to be confused with [member frustum_offset].
+        Undocumented
 	Args: [], Returns: Array
 */
 func (o *Camera) GetFrustum() gdnative.Array {
@@ -488,7 +488,7 @@ func (o *Camera) IsCurrent() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the given position is behind the camera. [b]Note:[/b] A position which returns [code]false[/code] may still be outside the camera's field of view.
+        Undocumented
 	Args: [{ false world_point Vector3}], Returns: bool
 */
 func (o *Camera) IsPositionBehind(worldPoint gdnative.Vector3) gdnative.Bool {
@@ -512,7 +512,7 @@ func (o *Camera) IsPositionBehind(worldPoint gdnative.Vector3) gdnative.Bool {
 }
 
 /*
-        Makes this camera the current camera for the [Viewport] (see class description). If the camera node is outside the scene tree, it will attempt to become current once it's added.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Camera) MakeCurrent() {
@@ -532,7 +532,7 @@ func (o *Camera) MakeCurrent() {
 }
 
 /*
-        Returns a normal vector from the screen point location directed along the camera. Orthogonal cameras are normalized. Perspective cameras account for perspective, screen width/height, etc.
+        Undocumented
 	Args: [{ false screen_point Vector2}], Returns: Vector3
 */
 func (o *Camera) ProjectLocalRayNormal(screenPoint gdnative.Vector2) gdnative.Vector3 {
@@ -556,7 +556,7 @@ func (o *Camera) ProjectLocalRayNormal(screenPoint gdnative.Vector2) gdnative.Ve
 }
 
 /*
-        Returns the 3D point in worldspace that maps to the given 2D coordinate in the [Viewport] rectangle on a plane that is the given [code]z_depth[/code] distance into the scene away from the camera.
+        Undocumented
 	Args: [{ false screen_point Vector2} { false z_depth float}], Returns: Vector3
 */
 func (o *Camera) ProjectPosition(screenPoint gdnative.Vector2, zDepth gdnative.Real) gdnative.Vector3 {
@@ -581,7 +581,7 @@ func (o *Camera) ProjectPosition(screenPoint gdnative.Vector2, zDepth gdnative.R
 }
 
 /*
-        Returns a normal vector in worldspace, that is the result of projecting a point on the [Viewport] rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+        Undocumented
 	Args: [{ false screen_point Vector2}], Returns: Vector3
 */
 func (o *Camera) ProjectRayNormal(screenPoint gdnative.Vector2) gdnative.Vector3 {
@@ -605,7 +605,7 @@ func (o *Camera) ProjectRayNormal(screenPoint gdnative.Vector2) gdnative.Vector3
 }
 
 /*
-        Returns a 3D position in worldspace, that is the result of projecting a point on the [Viewport] rectangle by the camera projection. This is useful for casting rays in the form of (origin, normal) for object intersection or picking.
+        Undocumented
 	Args: [{ false screen_point Vector2}], Returns: Vector3
 */
 func (o *Camera) ProjectRayOrigin(screenPoint gdnative.Vector2) gdnative.Vector3 {
@@ -650,7 +650,7 @@ func (o *Camera) SetCullMask(mask gdnative.Int) {
 }
 
 /*
-        Enables or disables the given [code]layer[/code] in the [member cull_mask].
+        Undocumented
 	Args: [{ false layer int} { false enable bool}], Returns: void
 */
 func (o *Camera) SetCullMaskBit(layer gdnative.Int, enable gdnative.Bool) {
@@ -756,7 +756,7 @@ func (o *Camera) SetFov(arg0 gdnative.Real) {
 }
 
 /*
-        Sets the camera projection to frustum mode (see [constant PROJECTION_FRUSTUM]), by specifying a [code]size[/code], an [code]offset[/code], and the [code]z_near[/code] and [code]z_far[/code] clip planes in world-space units.
+        Undocumented
 	Args: [{ false size float} { false offset Vector2} { false z_near float} { false z_far float}], Returns: void
 */
 func (o *Camera) SetFrustum(size gdnative.Real, offset gdnative.Vector2, zNear gdnative.Real, zFar gdnative.Real) {
@@ -843,7 +843,7 @@ func (o *Camera) SetKeepAspectMode(mode gdnative.Int) {
 }
 
 /*
-        Sets the camera projection to orthogonal mode (see [constant PROJECTION_ORTHOGONAL]), by specifying a [code]size[/code], and the [code]z_near[/code] and [code]z_far[/code] clip planes in world-space units. (As a hint, 2D games often use this projection, with values specified in pixels.)
+        Undocumented
 	Args: [{ false size float} { false z_near float} { false z_far float}], Returns: void
 */
 func (o *Camera) SetOrthogonal(size gdnative.Real, zNear gdnative.Real, zFar gdnative.Real) {
@@ -866,7 +866,7 @@ func (o *Camera) SetOrthogonal(size gdnative.Real, zNear gdnative.Real, zFar gdn
 }
 
 /*
-        Sets the camera projection to perspective mode (see [constant PROJECTION_PERSPECTIVE]), by specifying a [code]fov[/code] (field of view) angle in degrees, and the [code]z_near[/code] and [code]z_far[/code] clip planes in world-space units.
+        Undocumented
 	Args: [{ false fov float} { false z_near float} { false z_far float}], Returns: void
 */
 func (o *Camera) SetPerspective(fov gdnative.Real, zNear gdnative.Real, zFar gdnative.Real) {
@@ -994,7 +994,7 @@ func (o *Camera) SetZnear(arg0 gdnative.Real) {
 }
 
 /*
-        Returns the 2D coordinate in the [Viewport] rectangle that maps to the given 3D point in worldspace.
+        Undocumented
 	Args: [{ false world_point Vector3}], Returns: Vector2
 */
 func (o *Camera) UnprojectPosition(worldPoint gdnative.Vector3) gdnative.Vector2 {

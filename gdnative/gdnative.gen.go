@@ -47,7 +47,7 @@ func (e Error) getBase() C.godot_error {
 }
 
 const (
-	Ok                         Error = 0
+	Ok                         Error = 0 // (0)
 	Failed                     Error = 1 // < Generic fail error
 	ErrUnavailable             Error = 2 // < What is requested is unsupported/unavailable
 	ErrUnconfigured            Error = 3 // < The object being used hasn't been properly set up yet
@@ -77,12 +77,12 @@ const (
 	ErrConnectionError         Error = 27
 	ErrCantAcquireResource     Error = 28
 	ErrCantFork                Error = 29
-	ErrInvalidData             Error = 30 // < Data passed is invalid	(30)
+	ErrInvalidData             Error = 30 // < Data passed is invalid (30)
 	ErrInvalidParameter        Error = 31 // < Parameter passed is invalid
 	ErrAlreadyExists           Error = 32 // < When adding, item already exists
 	ErrDoesNotExist            Error = 33 // < When retrieving/erasing, it item does not exist
 	ErrDatabaseCantRead        Error = 34 // < database is full
-	ErrDatabaseCantWrite       Error = 35 // < database is full	(35)
+	ErrDatabaseCantWrite       Error = 35 // < database is full (35)
 	ErrCompilationFailed       Error = 36
 	ErrMethodNotFound          Error = 37
 	ErrLinkFailed              Error = 38

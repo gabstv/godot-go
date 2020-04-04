@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newListenerFromPointer(ptr gdnative.Pointer) Listener {
 }
 
 /*
-Once added to the scene tree and enabled using [method make_current], this node will override the location sounds are heard from. This can be used to listen from a location different from the [Camera]. [b]Note:[/b] There is no 2D equivalent for this node yet.
+Undocumented
 */
 type Listener struct {
 	Spatial
@@ -35,7 +35,7 @@ func (o *Listener) BaseClass() string {
 }
 
 /*
-        Disables the listener to use the current camera's listener instead.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Listener) ClearCurrent() {
@@ -55,7 +55,7 @@ func (o *Listener) ClearCurrent() {
 }
 
 /*
-        Returns the listener's global orthonormalized [Transform].
+        Undocumented
 	Args: [], Returns: Transform
 */
 func (o *Listener) GetListenerTransform() gdnative.Transform {
@@ -78,7 +78,7 @@ func (o *Listener) GetListenerTransform() gdnative.Transform {
 }
 
 /*
-        Returns [code]true[/code] if the listener was made current using [method make_current], [code]false[/code] otherwise. [b]Note:[/b] There may be more than one Listener marked as "current" in the scene tree, but only the one that was made current last will be used.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *Listener) IsCurrent() gdnative.Bool {
@@ -101,7 +101,7 @@ func (o *Listener) IsCurrent() gdnative.Bool {
 }
 
 /*
-        Enables the listener. This will override the current camera's listener.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Listener) MakeCurrent() {

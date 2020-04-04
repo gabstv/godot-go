@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -55,7 +55,7 @@ func (o *TreeItem) BaseClass() string {
 }
 
 /*
-        Adds a button with [Texture] [code]button[/code] at column [code]column[/code]. The [code]button_idx[/code] index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling [method get_button_count] immediately after this method. Optionally, the button can be [code]disabled[/code] and have a [code]tooltip[/code].
+        Adds a button with [Texture2D] [code]button[/code] at column [code]column[/code]. The [code]button_idx[/code] index is used to identify the button when calling other methods. If not specified, the next available index is used, which may be retrieved by calling [method get_button_count] immediately after this method. Optionally, the button can be [code]disabled[/code] and have a [code]tooltip[/code].
 	Args: [{ false column int} { false button Texture} {-1 true button_idx int} {False true disabled bool} { true tooltip String}], Returns: void
 */
 func (o *TreeItem) AddButton(column gdnative.Int, button TextureImplementer, buttonIdx gdnative.Int, disabled gdnative.Bool, tooltip gdnative.String) {
@@ -193,7 +193,7 @@ func (o *TreeItem) EraseButton(column gdnative.Int, buttonIdx gdnative.Int) {
 }
 
 /*
-        Returns the [Texture] of the button at index [code]button_idx[/code] in column [code]column[/code].
+        Returns the [Texture2D] of the button at index [code]button_idx[/code] in column [code]column[/code].
 	Args: [{ false column int} { false button_idx int}], Returns: Texture
 */
 func (o *TreeItem) GetButton(column gdnative.Int, buttonIdx gdnative.Int) TextureImplementer {
@@ -437,7 +437,7 @@ func (o *TreeItem) GetExpandRight(column gdnative.Int) gdnative.Bool {
 }
 
 /*
-        Returns the given column's icon [Texture]. Error if no icon is set.
+        Returns the given column's icon [Texture2D]. Error if no icon is set.
 	Args: [{ false column int}], Returns: Texture
 */
 func (o *TreeItem) GetIcon(column gdnative.Int) TextureImplementer {
@@ -523,7 +523,7 @@ func (o *TreeItem) GetIconModulate(column gdnative.Int) gdnative.Color {
 }
 
 /*
-        Returns the icon [Texture] region as [Rect2].
+        Returns the icon [Texture2D] region as [Rect2].
 	Args: [{ false column int}], Returns: Rect2
 */
 func (o *TreeItem) GetIconRegion(column gdnative.Int) gdnative.Rect2 {
@@ -1151,7 +1151,7 @@ func (o *TreeItem) Select(column gdnative.Int) {
 }
 
 /*
-        Sets the given column's button [Texture] at index [code]button_idx[/code] to [code]button[/code].
+        Sets the given column's button [Texture2D] at index [code]button_idx[/code] to [code]button[/code].
 	Args: [{ false column int} { false button_idx int} { false button Texture}], Returns: void
 */
 func (o *TreeItem) SetButton(column gdnative.Int, buttonIdx gdnative.Int, button TextureImplementer) {
@@ -1438,7 +1438,7 @@ func (o *TreeItem) SetExpandRight(column gdnative.Int, enable gdnative.Bool) {
 }
 
 /*
-        Sets the given column's icon [Texture].
+        Sets the given column's icon [Texture2D].
 	Args: [{ false column int} { false texture Texture}], Returns: void
 */
 func (o *TreeItem) SetIcon(column gdnative.Int, texture TextureImplementer) {

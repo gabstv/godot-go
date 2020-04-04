@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -73,7 +73,7 @@ func newCPUParticlesFromPointer(ptr gdnative.Pointer) CPUParticles {
 }
 
 /*
-CPU-based 3D particle node used to create a variety of particle systems and effects. See also [Particles], which provides the same functionality with hardware acceleration, but may not run on older devices.
+Undocumented
 */
 type CPUParticles struct {
 	GeometryInstance
@@ -105,7 +105,7 @@ func (o *CPUParticles) X_UpdateRenderThread() {
 }
 
 /*
-        Sets this node's properties to match a given [Particles] node with an assigned [ParticlesMaterial].
+        Undocumented
 	Args: [{ false particles Node}], Returns: void
 */
 func (o *CPUParticles) ConvertFromParticles(particles NodeImplementer) {
@@ -614,7 +614,7 @@ func (o *CPUParticles) GetOneShot() gdnative.Bool {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int}], Returns: float
 */
 func (o *CPUParticles) GetParam(param gdnative.Int) gdnative.Real {
@@ -638,7 +638,7 @@ func (o *CPUParticles) GetParam(param gdnative.Int) gdnative.Real {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int}], Returns: Curve
 */
 func (o *CPUParticles) GetParamCurve(param gdnative.Int) CurveImplementer {
@@ -676,7 +676,7 @@ func (o *CPUParticles) GetParamCurve(param gdnative.Int) CurveImplementer {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int}], Returns: float
 */
 func (o *CPUParticles) GetParamRandomness(param gdnative.Int) gdnative.Real {
@@ -700,7 +700,7 @@ func (o *CPUParticles) GetParamRandomness(param gdnative.Int) gdnative.Real {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false flag int}], Returns: bool
 */
 func (o *CPUParticles) GetParticleFlag(flag gdnative.Int) gdnative.Bool {
@@ -862,7 +862,7 @@ func (o *CPUParticles) IsEmitting() gdnative.Bool {
 }
 
 /*
-        Restarts the particle emitter.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *CPUParticles) Restart() {
@@ -1323,7 +1323,7 @@ func (o *CPUParticles) SetOneShot(enable gdnative.Bool) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int} { false value float}], Returns: void
 */
 func (o *CPUParticles) SetParam(param gdnative.Int, value gdnative.Real) {
@@ -1345,7 +1345,7 @@ func (o *CPUParticles) SetParam(param gdnative.Int, value gdnative.Real) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int} { false curve Curve}], Returns: void
 */
 func (o *CPUParticles) SetParamCurve(param gdnative.Int, curve CurveImplementer) {
@@ -1367,7 +1367,7 @@ func (o *CPUParticles) SetParamCurve(param gdnative.Int, curve CurveImplementer)
 }
 
 /*
-
+        Undocumented
 	Args: [{ false param int} { false randomness float}], Returns: void
 */
 func (o *CPUParticles) SetParamRandomness(param gdnative.Int, randomness gdnative.Real) {
@@ -1389,7 +1389,7 @@ func (o *CPUParticles) SetParamRandomness(param gdnative.Int, randomness gdnativ
 }
 
 /*
-
+        Undocumented
 	Args: [{ false flag int} { false enable bool}], Returns: void
 */
 func (o *CPUParticles) SetParticleFlag(flag gdnative.Int, enable gdnative.Bool) {

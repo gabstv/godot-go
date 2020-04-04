@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newBoxShapeFromPointer(ptr gdnative.Pointer) BoxShape {
 }
 
 /*
-3D box shape that can be a child of a [PhysicsBody] or [Area].
+Undocumented
 */
 type BoxShape struct {
 	Shape

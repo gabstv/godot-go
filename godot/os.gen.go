@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -336,7 +336,7 @@ func (o *os) DumpResourcesToFile(file gdnative.String) {
 
 /*
         Undocumented
-	Args: [{ false path String} { false arguments PoolStringArray} { false blocking bool} {[] true output Array} {False true read_stderr bool}], Returns: int
+	Args: [{ false path String} { false arguments PoolStringArray} {True true blocking bool} {[] true output Array} {False true read_stderr bool}], Returns: int
 */
 func (o *os) Execute(path gdnative.String, arguments gdnative.PoolStringArray, blocking gdnative.Bool, output gdnative.Array, readStderr gdnative.Bool) gdnative.Int {
 	o.ensureSingleton()

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newMainLoopFromPointer(ptr gdnative.Pointer) MainLoop {
 }
 
 /*
-[MainLoop] is the abstract base class for a Godot project's game loop. It is inherited by [SceneTree], which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own [MainLoop] subclass instead of the scene tree. Upon the application start, a [MainLoop] implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a [SceneTree] is created) unless a main [Script] is provided from the command line (with e.g. [code]godot -s my_loop.gd[/code], which should then be a [MainLoop] implementation. Here is an example script implementing a simple [MainLoop]: [codeblock] extends MainLoop var time_elapsed = 0 var keys_typed = [] var quit = false func _initialize(): print("Initialized:") print(" Starting time: %s" % str(time_elapsed)) func _idle(delta): time_elapsed += delta # Return true to end the main loop. return quit func _input_event(event): # Record keys. if event is InputEventKey and event.pressed and !event.echo: keys_typed.append(OS.get_scancode_string(event.scancode)) # Quit on Escape press. if event.scancode == KEY_ESCAPE: quit = true # Quit on any mouse click. if event is InputEventMouseButton: quit = true func _finalize(): print("Finalized:") print(" End time: %s" % str(time_elapsed)) print(" Keys typed: %s" % var2str(keys_typed)) [/codeblock]
+[MainLoop] is the abstract base class for a Godot project's game loop. It is inherited by [SceneTree], which is the default game loop implementation used in Godot projects, though it is also possible to write and use one's own [MainLoop] subclass instead of the scene tree. Upon the application start, a [MainLoop] implementation must be provided to the OS; otherwise, the application will exit. This happens automatically (and a [SceneTree] is created) unless a main [Script] is provided from the command line (with e.g. [code]godot -s my_loop.gd[/code], which should then be a [MainLoop] implementation. Here is an example script implementing a simple [MainLoop]: [b]FIXME:[/b] No longer valid after DisplayServer split and Input refactoring. [codeblock] extends MainLoop var time_elapsed = 0 var keys_typed = [] var quit = false func _initialize(): print("Initialized:") print(" Starting time: %s" % str(time_elapsed)) func _idle(delta): time_elapsed += delta # Return true to end the main loop. return quit func _input_event(event): # Record keys. if event is InputEventKey and event.pressed and !event.echo: keys_typed.append(OS.get_keycode_string(event.keycode)) # Quit on Escape press. if event.keycode == KEY_ESCAPE: quit = true # Quit on any mouse click. if event is InputEventMouseButton: quit = true func _finalize(): print("Finalized:") print(" End time: %s" % str(time_elapsed)) print(" Keys typed: %s" % var2str(keys_typed)) [/codeblock]
 */
 type MainLoop struct {
 	Object
@@ -35,7 +35,7 @@ func (o *MainLoop) BaseClass() string {
 }
 
 /*
-        Called when files are dragged from the OS file manager and dropped in the game window. The arguments are a list of file paths and the identifier of the screen where the drag originated.
+        Undocumented
 	Args: [{ false files PoolStringArray} { false from_screen int}], Returns: void
 */
 func (o *MainLoop) X_DropFiles(files gdnative.PoolStringArray, fromScreen gdnative.Int) {
@@ -77,7 +77,7 @@ func (o *MainLoop) X_Finalize() {
 }
 
 /*
-        Called when the user performs an action in the system global menu (e.g. the Mac OS menu bar).
+        Undocumented
 	Args: [{ false id Variant} { false meta Variant}], Returns: void
 */
 func (o *MainLoop) X_GlobalMenuAction(id gdnative.Variant, meta gdnative.Variant) {
@@ -143,7 +143,7 @@ func (o *MainLoop) X_Initialize() {
 }
 
 /*
-        Called whenever an [InputEvent] is received by the main loop.
+        Undocumented
 	Args: [{ false event InputEvent}], Returns: void
 */
 func (o *MainLoop) X_InputEvent(event InputEventImplementer) {
@@ -164,7 +164,7 @@ func (o *MainLoop) X_InputEvent(event InputEventImplementer) {
 }
 
 /*
-        Deprecated callback, does not do anything. Use [method _input_event] to parse text input. Will be removed in Godot 4.0.
+        Undocumented
 	Args: [{ false text String}], Returns: void
 */
 func (o *MainLoop) X_InputText(text gdnative.String) {
@@ -273,7 +273,7 @@ func (o *MainLoop) Init() {
 }
 
 /*
-        Should not be called manually, override [method _input_event] instead. Will be removed in Godot 4.0.
+        Undocumented
 	Args: [{ false event InputEvent}], Returns: void
 */
 func (o *MainLoop) InputEventMethod(event InputEventImplementer) {
@@ -294,7 +294,7 @@ func (o *MainLoop) InputEventMethod(event InputEventImplementer) {
 }
 
 /*
-        Should not be called manually, override [method _input_text] instead. Will be removed in Godot 4.0.
+        Undocumented
 	Args: [{ false text String}], Returns: void
 */
 func (o *MainLoop) InputText(text gdnative.String) {

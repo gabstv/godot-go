@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -504,7 +504,7 @@ func (o *EditorInterface) IsPluginEnabled(plugin gdnative.String) gdnative.Bool 
 }
 
 /*
-        Returns mesh previews rendered at the given size as an [Array] of [Texture]s.
+        Returns mesh previews rendered at the given size as an [Array] of [Texture2D]s.
 	Args: [{ false meshes Array} { false preview_size int}], Returns: Array
 */
 func (o *EditorInterface) MakeMeshPreviews(meshes gdnative.Array, previewSize gdnative.Int) gdnative.Array {

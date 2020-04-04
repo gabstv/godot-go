@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -176,7 +176,7 @@ func (o *Resource) GetPath() gdnative.String {
 }
 
 /*
-        Returns the RID of the resource (or an empty RID). Many resources (such as [Texture], [Mesh], etc) are high-level abstractions of resources stored in a server, so this function will return the original RID.
+        Returns the RID of the resource (or an empty RID). Many resources (such as [Texture2D], [Mesh], etc) are high-level abstractions of resources stored in a server, so this function will return the original RID.
 	Args: [], Returns: RID
 */
 func (o *Resource) GetRid() gdnative.Rid {

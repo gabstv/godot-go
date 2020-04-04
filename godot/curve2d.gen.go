@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -169,7 +169,7 @@ func (o *Curve2D) GetBakedLength() gdnative.Real {
 }
 
 /*
-        Returns the cache of points as a [PoolVector2Array].
+        Returns the cache of points as a [PackedVector2Array].
 	Args: [], Returns: PoolVector2Array
 */
 func (o *Curve2D) GetBakedPoints() gdnative.PoolVector2Array {

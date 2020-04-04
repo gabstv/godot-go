@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -35,7 +35,7 @@ func newCanvasItemFromPointer(ptr gdnative.Pointer) CanvasItem {
 }
 
 /*
-Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. CanvasItem is extended by [Control] for anything GUI-related, and by [Node2D] for anything related to the 2D engine. Any CanvasItem can draw. For this, [method update] must be called, then [constant NOTIFICATION_DRAW] will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see [code]draw_*[/code] functions). However, they can only be used inside the [method Object._notification], signal or [method _draw] virtual functions. Canvas items are drawn in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything. This behavior can be changed on a per-item basis. A CanvasItem can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode. Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
+Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. [CanvasItem] is extended by [Control] for anything GUI-related, and by [Node2D] for anything related to the 2D engine. Any [CanvasItem] can draw. For this, [method update] must be called, then [constant NOTIFICATION_DRAW] will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the [CanvasItem] are provided (see [code]draw_*[/code] functions). However, they can only be used inside the [method Object._notification], signal or [method _draw] virtual functions. Canvas items are drawn in tree order. By default, children are on top of their parents so a root [CanvasItem] will be drawn behind everything. This behavior can be changed on a per-item basis. A [CanvasItem] can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode. Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
 */
 type CanvasItem struct {
 	Node
@@ -47,7 +47,7 @@ func (o *CanvasItem) BaseClass() string {
 }
 
 /*
-        Called (if exists) to draw the canvas item.
+        Overridable function called by the engine (if defined) to draw the canvas item.
 	Args: [], Returns: void
 */
 func (o *CanvasItem) X_Draw() {
@@ -612,7 +612,7 @@ func (o *CanvasItem) DrawColoredPolygon(points gdnative.PoolVector2Array, color 
 }
 
 /*
-        Draws a line from a 2D point to another, with a given color and width. It can be optionally antialiased.
+        Draws a line from a 2D point to another, with a given color and width.
 	Args: [{ false from Vector2} { false to Vector2} { false color Color} {1 true width float} {False true antialiased bool}], Returns: void
 */
 func (o *CanvasItem) DrawLine(from gdnative.Vector2, to gdnative.Vector2, color gdnative.Color, width gdnative.Real, antialiased gdnative.Bool) {
@@ -637,7 +637,7 @@ func (o *CanvasItem) DrawLine(from gdnative.Vector2, to gdnative.Vector2, color 
 }
 
 /*
-
+        Draws a [Mesh] in 2D, using the provided texture. See [MeshInstance2D] for related documentation.
 	Args: [{ false mesh Mesh} { false texture Texture} {[Object:null] true normal_map Texture} {((1, 0), (0, 1), (0, 0)) true transform Transform2D} {1,1,1,1 true modulate Color}], Returns: void
 */
 func (o *CanvasItem) DrawMesh(mesh MeshImplementer, texture TextureImplementer, normalMap TextureImplementer, transform gdnative.Transform2D, modulate gdnative.Color) {
@@ -662,7 +662,7 @@ func (o *CanvasItem) DrawMesh(mesh MeshImplementer, texture TextureImplementer, 
 }
 
 /*
-        Draws multiple, parallel lines with a uniform [code]color[/code]. [code]width[/code] and [code]antialiased[/code] are currently not implemented and have no effect.
+        Draws multiple, parallel lines with a uniform [code]color[/code].
 	Args: [{ false points PoolVector2Array} { false color Color} {1 true width float} {False true antialiased bool}], Returns: void
 */
 func (o *CanvasItem) DrawMultiline(points gdnative.PoolVector2Array, color gdnative.Color, width gdnative.Real, antialiased gdnative.Bool) {
@@ -686,7 +686,7 @@ func (o *CanvasItem) DrawMultiline(points gdnative.PoolVector2Array, color gdnat
 }
 
 /*
-        Draws multiple, parallel lines with a uniform [code]width[/code], segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between [code]points[/code] and [code]colors[/code].
+        Draws multiple, parallel lines with a uniform [code]width[/code] and segment-by-segment coloring. Colors assigned to line segments match by index between [code]points[/code] and [code]colors[/code].
 	Args: [{ false points PoolVector2Array} { false colors PoolColorArray} {1 true width float} {False true antialiased bool}], Returns: void
 */
 func (o *CanvasItem) DrawMultilineColors(points gdnative.PoolVector2Array, colors gdnative.PoolColorArray, width gdnative.Real, antialiased gdnative.Bool) {
@@ -710,7 +710,7 @@ func (o *CanvasItem) DrawMultilineColors(points gdnative.PoolVector2Array, color
 }
 
 /*
-
+        Draws a [MultiMesh] in 2D with the provided texture. See [MultiMeshInstance2D] for related documentation.
 	Args: [{ false multimesh MultiMesh} { false texture Texture} {[Object:null] true normal_map Texture}], Returns: void
 */
 func (o *CanvasItem) DrawMultimesh(multimesh MultiMeshImplementer, texture TextureImplementer, normalMap TextureImplementer) {
@@ -759,7 +759,7 @@ func (o *CanvasItem) DrawPolygon(points gdnative.PoolVector2Array, colors gdnati
 }
 
 /*
-        Draws interconnected line segments with a uniform [code]color[/code] and [code]width[/code] and optional antialiasing.
+        Draws interconnected line segments with a uniform [code]color[/code] and [code]width[/code].
 	Args: [{ false points PoolVector2Array} { false color Color} {1 true width float} {False true antialiased bool}], Returns: void
 */
 func (o *CanvasItem) DrawPolyline(points gdnative.PoolVector2Array, color gdnative.Color, width gdnative.Real, antialiased gdnative.Bool) {
@@ -783,7 +783,7 @@ func (o *CanvasItem) DrawPolyline(points gdnative.PoolVector2Array, color gdnati
 }
 
 /*
-        Draws interconnected line segments with a uniform [code]width[/code], segment-by-segment coloring, and optional antialiasing. Colors assigned to line segments match by index between [code]points[/code] and [code]colors[/code].
+        Draws interconnected line segments with a uniform [code]width[/code] and segment-by-segment coloring. Colors assigned to line segments match by index between [code]points[/code] and [code]colors[/code].
 	Args: [{ false points PoolVector2Array} { false colors PoolColorArray} {1 true width float} {False true antialiased bool}], Returns: void
 */
 func (o *CanvasItem) DrawPolylineColors(points gdnative.PoolVector2Array, colors gdnative.PoolColorArray, width gdnative.Real, antialiased gdnative.Bool) {
@@ -807,7 +807,7 @@ func (o *CanvasItem) DrawPolylineColors(points gdnative.PoolVector2Array, colors
 }
 
 /*
-        Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
+        Draws a custom primitive. 1 point for a point, 2 points for a line, 3 points for a triangle, and 4 points for a quad.
 	Args: [{ false points PoolVector2Array} { false colors PoolColorArray} { false uvs PoolVector2Array} {Null true texture Texture} {1 true width float} {Null true normal_map Texture}], Returns: void
 */
 func (o *CanvasItem) DrawPrimitive(points gdnative.PoolVector2Array, colors gdnative.PoolColorArray, uvs gdnative.PoolVector2Array, texture TextureImplementer, width gdnative.Real, normalMap TextureImplementer) {
@@ -833,7 +833,7 @@ func (o *CanvasItem) DrawPrimitive(points gdnative.PoolVector2Array, colors gdna
 }
 
 /*
-        Draws a rectangle. If [code]filled[/code] is [code]true[/code], the rectangle will be filled with the [code]color[/code] specified. If [code]filled[/code] is [code]false[/code], the rectangle will be drawn as a stroke with the [code]color[/code] and [code]width[/code] specified. If [code]antialiased[/code] is [code]true[/code], the lines will be antialiased. [b]Note:[/b] [code]width[/code] and [code]antialiased[/code] are only effective if [code]filled[/code] is [code]false[/code].
+        Draws a rectangle. If [code]filled[/code] is [code]true[/code], the rectangle will be filled with the [code]color[/code] specified. If [code]filled[/code] is [code]false[/code], the rectangle will be drawn as a stroke with the [code]color[/code] and [code]width[/code] specified. [b]Note:[/b] [code]width[/code] is only effective if [code]filled[/code] is [code]false[/code].
 	Args: [{ false rect Rect2} { false color Color} {True true filled bool} {1 true width float} {False true antialiased bool}], Returns: void
 */
 func (o *CanvasItem) DrawRect(rect gdnative.Rect2, color gdnative.Color, filled gdnative.Bool, width gdnative.Real, antialiased gdnative.Bool) {
@@ -1069,7 +1069,7 @@ func (o *CanvasItem) GetCanvas() gdnative.Rid {
 }
 
 /*
-        Returns the canvas item RID used by [VisualServer] for this item.
+        Returns the canvas item RID used by [RenderingServer] for this item.
 	Args: [], Returns: RID
 */
 func (o *CanvasItem) GetCanvasItem() gdnative.Rid {
@@ -1092,7 +1092,7 @@ func (o *CanvasItem) GetCanvasItem() gdnative.Rid {
 }
 
 /*
-        Gets the transform matrix of this item's canvas.
+        Returns the transform matrix of this item's canvas.
 	Args: [], Returns: Transform2D
 */
 func (o *CanvasItem) GetCanvasTransform() gdnative.Transform2D {
@@ -1115,7 +1115,7 @@ func (o *CanvasItem) GetCanvasTransform() gdnative.Transform2D {
 }
 
 /*
-        Gets the global position of the mouse.
+        Returns the global position of the mouse.
 	Args: [], Returns: Vector2
 */
 func (o *CanvasItem) GetGlobalMousePosition() gdnative.Vector2 {
@@ -1138,7 +1138,7 @@ func (o *CanvasItem) GetGlobalMousePosition() gdnative.Vector2 {
 }
 
 /*
-        Gets the global transform matrix of this item.
+        Returns the global transform matrix of this item.
 	Args: [], Returns: Transform2D
 */
 func (o *CanvasItem) GetGlobalTransform() gdnative.Transform2D {
@@ -1161,7 +1161,7 @@ func (o *CanvasItem) GetGlobalTransform() gdnative.Transform2D {
 }
 
 /*
-        Gets the global transform matrix of this item in relation to the canvas.
+        Returns the global transform matrix of this item in relation to the canvas.
 	Args: [], Returns: Transform2D
 */
 func (o *CanvasItem) GetGlobalTransformWithCanvas() gdnative.Transform2D {
@@ -1207,7 +1207,7 @@ func (o *CanvasItem) GetLightMask() gdnative.Int {
 }
 
 /*
-        Gets the mouse position relative to this item's position.
+        Returns the mouse position relative to this item's position.
 	Args: [], Returns: Vector2
 */
 func (o *CanvasItem) GetLocalMousePosition() gdnative.Vector2 {
@@ -1313,7 +1313,7 @@ func (o *CanvasItem) GetSelfModulate() gdnative.Color {
 }
 
 /*
-        Gets the transform matrix of this item.
+        Returns the transform matrix of this item.
 	Args: [], Returns: Transform2D
 */
 func (o *CanvasItem) GetTransform() gdnative.Transform2D {
@@ -1359,7 +1359,7 @@ func (o *CanvasItem) GetUseParentMaterial() gdnative.Bool {
 }
 
 /*
-        Gets the viewport's boundaries as a [Rect2].
+        Returns the viewport's boundaries as a [Rect2].
 	Args: [], Returns: Rect2
 */
 func (o *CanvasItem) GetViewportRect() gdnative.Rect2 {
@@ -1382,7 +1382,7 @@ func (o *CanvasItem) GetViewportRect() gdnative.Rect2 {
 }
 
 /*
-        Gets this item's transform in relation to the viewport.
+        Returns this item's transform in relation to the viewport.
 	Args: [], Returns: Transform2D
 */
 func (o *CanvasItem) GetViewportTransform() gdnative.Transform2D {
@@ -1405,7 +1405,7 @@ func (o *CanvasItem) GetViewportTransform() gdnative.Transform2D {
 }
 
 /*
-        Gets the [World2D] where this item is in.
+        Returns the [World2D] where this item is in.
 	Args: [], Returns: World2D
 */
 func (o *CanvasItem) GetWorld2D() World2DImplementer {
@@ -1442,7 +1442,7 @@ func (o *CanvasItem) GetWorld2D() World2DImplementer {
 }
 
 /*
-        Hide the CanvasItem if it's currently visible.
+        Hide the [CanvasItem] if it's currently visible.
 	Args: [], Returns: void
 */
 func (o *CanvasItem) Hide() {
@@ -1872,7 +1872,7 @@ func (o *CanvasItem) SetVisible(visible gdnative.Bool) {
 }
 
 /*
-        Show the CanvasItem if it's currently hidden. For controls that inherit [Popup], the correct way to make them visible is to call one of the multiple [code]popup*()[/code] functions instead.
+        Show the [CanvasItem] if it's currently hidden. For controls that inherit [Popup], the correct way to make them visible is to call one of the multiple [code]popup*()[/code] functions instead.
 	Args: [], Returns: void
 */
 func (o *CanvasItem) Show() {
@@ -1892,7 +1892,7 @@ func (o *CanvasItem) Show() {
 }
 
 /*
-        Queue the CanvasItem for update. [constant NOTIFICATION_DRAW] will be called on idle time to request redraw.
+        Queue the [CanvasItem] for update. [constant NOTIFICATION_DRAW] will be called on idle time to request redraw.
 	Args: [], Returns: void
 */
 func (o *CanvasItem) Update() {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -54,7 +54,7 @@ func newArrayMeshFromPointer(ptr gdnative.Pointer) ArrayMesh {
 }
 
 /*
-The [ArrayMesh] is used to construct a [Mesh] by specifying the attributes as arrays. The most basic example is the creation of a single triangle [codeblock] var vertices = PoolVector3Array() vertices.push_back(Vector3(0, 1, 0)) vertices.push_back(Vector3(1, 0, 0)) vertices.push_back(Vector3(0, 0, 1)) # Initialize the ArrayMesh. var arr_mesh = ArrayMesh.new() var arrays = [] arrays.resize(ArrayMesh.ARRAY_MAX) arrays[ArrayMesh.ARRAY_VERTEX] = vertices # Create the Mesh. arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays) var m = MeshInstance.new() m.mesh = arr_mesh [/codeblock] The [code]MeshInstance[/code] is ready to be added to the SceneTree to be shown.
+The [ArrayMesh] is used to construct a [Mesh] by specifying the attributes as arrays. The most basic example is the creation of a single triangle: [codeblock] var vertices = PackedVector3Array() vertices.push_back(Vector3(0, 1, 0)) vertices.push_back(Vector3(1, 0, 0)) vertices.push_back(Vector3(0, 0, 1)) # Initialize the ArrayMesh. var arr_mesh = ArrayMesh.new() var arrays = [] arrays.resize(ArrayMesh.ARRAY_MAX) arrays[ArrayMesh.ARRAY_VERTEX] = vertices # Create the Mesh. arr_mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays) var m = MeshInstance3D.new() m.mesh = arr_mesh [/codeblock] The [MeshInstance3D] is ready to be added to the [SceneTree] to be shown.
 */
 type ArrayMesh struct {
 	Mesh
@@ -455,7 +455,7 @@ func (o *ArrayMesh) SurfaceGetPrimitiveType(surfIdx gdnative.Int) MeshPrimitiveT
 }
 
 /*
-        Removes a surface at position [code]surf_idx[/code], shifting greater surfaces one [code]surf_idx[/code] slot down.
+        Undocumented
 	Args: [{ false surf_idx int}], Returns: void
 */
 func (o *ArrayMesh) SurfaceRemove(surfIdx gdnative.Int) {

@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,7 +23,7 @@ func newInterpolatedCameraFromPointer(ptr gdnative.Pointer) InterpolatedCamera {
 }
 
 /*
-InterpolatedCamera is a [Camera] which smoothly moves to match a target node's position and rotation. If it is not [member enabled] or does not have a valid target set, InterpolatedCamera acts like a normal Camera.
+Undocumented
 */
 type InterpolatedCamera struct {
 	Camera
@@ -146,7 +146,7 @@ func (o *InterpolatedCamera) SetSpeed(speed gdnative.Real) {
 }
 
 /*
-        Sets the node to move toward and orient with.
+        Undocumented
 	Args: [{ false target Object}], Returns: void
 */
 func (o *InterpolatedCamera) SetTarget(target ObjectImplementer) {

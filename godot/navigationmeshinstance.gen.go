@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newNavigationMeshInstanceFromPointer(ptr gdnative.Pointer) NavigationMeshIn
 }
 
 /*
-
- */
+Undocumented
+*/
 type NavigationMeshInstance struct {
 	Spatial
 	owner gdnative.Object

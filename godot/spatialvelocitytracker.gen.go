@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -23,8 +23,8 @@ func newSpatialVelocityTrackerFromPointer(ptr gdnative.Pointer) SpatialVelocityT
 }
 
 /*
-
- */
+Undocumented
+*/
 type SpatialVelocityTracker struct {
 	Reference
 	owner gdnative.Object
@@ -35,7 +35,7 @@ func (o *SpatialVelocityTracker) BaseClass() string {
 }
 
 /*
-
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *SpatialVelocityTracker) GetTrackedLinearVelocity() gdnative.Vector3 {
@@ -81,7 +81,7 @@ func (o *SpatialVelocityTracker) IsTrackingPhysicsStep() gdnative.Bool {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false position Vector3}], Returns: void
 */
 func (o *SpatialVelocityTracker) Reset(position gdnative.Vector3) {
@@ -123,7 +123,7 @@ func (o *SpatialVelocityTracker) SetTrackPhysicsStep(enable gdnative.Bool) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false position Vector3}], Returns: void
 */
 func (o *SpatialVelocityTracker) UpdatePosition(position gdnative.Vector3) {

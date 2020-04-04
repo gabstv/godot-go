@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -89,7 +89,7 @@ func (o *AnimationNode) X_SetFilters(filters gdnative.Array) {
 }
 
 /*
-        Adds an input to the node. This is only useful for nodes created for use in an [AnimationNodeBlendTree]
+        Adds an input to the node. This is only useful for nodes created for use in an [AnimationNodeBlendTree].
 	Args: [{ false name String}], Returns: void
 */
 func (o *AnimationNode) AddInput(name gdnative.String) {
@@ -110,7 +110,7 @@ func (o *AnimationNode) AddInput(name gdnative.String) {
 }
 
 /*
-        Blend an animation by "blend" amount (name must be valid in the linked [AnimationPlayer]). A time and delta mas be passed, as well as whether seek happened.
+        Blend an animation by [code]blend[/code] amount (name must be valid in the linked [AnimationPlayer]). A [code]time[/code] and [code]delta[/code] may be passed, as well as whether [code]seek[/code] happened.
 	Args: [{ false animation String} { false time float} { false delta float} { false seeked bool} { false blend float}], Returns: void
 */
 func (o *AnimationNode) BlendAnimation(animation gdnative.String, time gdnative.Real, delta gdnative.Real, seeked gdnative.Bool, blend gdnative.Real) {
@@ -135,7 +135,7 @@ func (o *AnimationNode) BlendAnimation(animation gdnative.String, time gdnative.
 }
 
 /*
-        Blend an input. This is only useful for nodes created for an [AnimationNodeBlendTree]. Time is a delta, unless "seek" is [code]true[/code], in which case it is absolute. A filter mode may be optionally passed.
+        Blend an input. This is only useful for nodes created for an [AnimationNodeBlendTree]. The [code]time[/code] parameter is a relative delta, unless [code]seek[/code] is [code]true[/code], in which case it is absolute. A filter mode may be optionally passed (see [enum FilterAction] for options).
 	Args: [{ false input_index int} { false time float} { false seek bool} { false blend float} {0 true filter int} {True true optimize bool}], Returns: float
 */
 func (o *AnimationNode) BlendInput(inputIndex gdnative.Int, time gdnative.Real, seek gdnative.Bool, blend gdnative.Real, filter gdnative.Int, optimize gdnative.Bool) gdnative.Real {
@@ -466,7 +466,7 @@ func (o *AnimationNode) IsPathFiltered(path gdnative.NodePath) gdnative.Bool {
 }
 
 /*
-        Called when a custom node is processed. The argument "time" is relative, unless "seek" is [code]true[/code] (in which case it is absolute). Here, call the [method blend_input], [method blend_node] or [method blend_animation] functions. You can also use [method get_parameter] and [method set_parameter] to modify local memory. This function returns the time left for the current animation to finish (if unsure, just pass the value from the main blend being called).
+        User-defined callback called when a custom node is processed. The [code]time[/code] parameter is a relative delta, unless [code]seek[/code] is [code]true[/code], in which case it is absolute. Here, call the [method blend_input], [method blend_node] or [method blend_animation] functions. You can also use [method get_parameter] and [method set_parameter] to modify local memory. This function should return the time left for the current animation to finish (if unsure, pass the value from the main blend being called).
 	Args: [{ false time float} { false seek bool}], Returns: void
 */
 func (o *AnimationNode) Process(time gdnative.Real, seek gdnative.Bool) {

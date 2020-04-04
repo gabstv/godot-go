@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -125,7 +125,7 @@ func (o *AnimationTree) X_UpdateProperties() {
 }
 
 /*
-
+        Manually advance the animations by the specified time (in seconds).
 	Args: [{ false delta float}], Returns: void
 */
 func (o *AnimationTree) Advance(delta gdnative.Real) {

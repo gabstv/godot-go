@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -42,7 +42,7 @@ func newGeometryInstanceFromPointer(ptr gdnative.Pointer) GeometryInstance {
 }
 
 /*
-Base node for geometry-based visual instances. Shares some common functionality like visibility and custom materials.
+Undocumented
 */
 type GeometryInstance struct {
 	VisualInstance
@@ -100,7 +100,7 @@ func (o *GeometryInstance) GetExtraCullMargin() gdnative.Real {
 }
 
 /*
-        Returns the [enum GeometryInstance.Flags] that have been set for this object.
+        Undocumented
 	Args: [{ false flag int}], Returns: bool
 */
 func (o *GeometryInstance) GetFlag(flag gdnative.Int) gdnative.Bool {
@@ -274,7 +274,7 @@ func (o *GeometryInstance) SetCastShadowsSetting(shadowCastingSetting gdnative.I
 }
 
 /*
-        Overrides the bounding box of this node with a custom one. To remove it, set an [AABB] with all fields set to zero.
+        Undocumented
 	Args: [{ false aabb AABB}], Returns: void
 */
 func (o *GeometryInstance) SetCustomAabb(aabb gdnative.Aabb) {
@@ -316,7 +316,7 @@ func (o *GeometryInstance) SetExtraCullMargin(margin gdnative.Real) {
 }
 
 /*
-        Sets the [enum GeometryInstance.Flags] specified. See [enum GeometryInstance.Flags] for options.
+        Undocumented
 	Args: [{ false flag int} { false value bool}], Returns: void
 */
 func (o *GeometryInstance) SetFlag(flag gdnative.Int, value gdnative.Bool) {

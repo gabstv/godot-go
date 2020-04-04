@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ func newCPUParticles2DFromPointer(ptr gdnative.Pointer) CPUParticles2D {
 }
 
 /*
-CPU-based 2D particle node used to create a variety of particle systems and effects. See also [Particles2D], which provides the same functionality with hardware acceleration, but may not run on older devices.
+CPU-based 2D particle node used to create a variety of particle systems and effects. See also [GPUParticles2D], which provides the same functionality with hardware acceleration, but may not run on older devices.
 */
 type CPUParticles2D struct {
 	Node2D
@@ -104,7 +104,7 @@ func (o *CPUParticles2D) X_UpdateRenderThread() {
 }
 
 /*
-        Sets this node's properties to match a given [Particles2D] node with an assigned [ParticlesMaterial].
+        Sets this node's properties to match a given [GPUParticles2D] node with an assigned [ParticlesMaterial].
 	Args: [{ false particles Node}], Returns: void
 */
 func (o *CPUParticles2D) ConvertFromParticles(particles NodeImplementer) {
@@ -439,29 +439,6 @@ func (o *CPUParticles2D) GetFixedFps() gdnative.Int {
 
 /*
         Undocumented
-	Args: [], Returns: float
-*/
-func (o *CPUParticles2D) GetFlatness() gdnative.Real {
-	//log.Println("Calling CPUParticles2D.GetFlatness()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 0, 0)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("CPUParticles2D", "get_flatness")
-
-	// Call the parent method.
-	// float
-	retPtr := gdnative.NewEmptyReal()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-	// If we have a return type, convert it from a pointer into its actual object.
-	ret := gdnative.NewRealFromPointer(retPtr)
-	return ret
-}
-
-/*
-        Undocumented
 	Args: [], Returns: bool
 */
 func (o *CPUParticles2D) GetFractionalDelta() gdnative.Bool {
@@ -613,7 +590,7 @@ func (o *CPUParticles2D) GetOneShot() gdnative.Bool {
 }
 
 /*
-
+        Returns the base value of the parameter specified by [enum Parameter].
 	Args: [{ false param int}], Returns: float
 */
 func (o *CPUParticles2D) GetParam(param gdnative.Int) gdnative.Real {
@@ -637,7 +614,7 @@ func (o *CPUParticles2D) GetParam(param gdnative.Int) gdnative.Real {
 }
 
 /*
-
+        Returns the [Curve] of the parameter specified by [enum Parameter].
 	Args: [{ false param int}], Returns: Curve
 */
 func (o *CPUParticles2D) GetParamCurve(param gdnative.Int) CurveImplementer {
@@ -675,7 +652,7 @@ func (o *CPUParticles2D) GetParamCurve(param gdnative.Int) CurveImplementer {
 }
 
 /*
-
+        Returns the randomness factor of the parameter specified by [enum Parameter].
 	Args: [{ false param int}], Returns: float
 */
 func (o *CPUParticles2D) GetParamRandomness(param gdnative.Int) gdnative.Real {
@@ -699,7 +676,7 @@ func (o *CPUParticles2D) GetParamRandomness(param gdnative.Int) gdnative.Real {
 }
 
 /*
-
+        Returns the enabled state of the given flag (see [enum Flags] for options).
 	Args: [{ false flag int}], Returns: bool
 */
 func (o *CPUParticles2D) GetParticleFlag(flag gdnative.Int) gdnative.Bool {
@@ -1213,27 +1190,6 @@ func (o *CPUParticles2D) SetFixedFps(fps gdnative.Int) {
 
 /*
         Undocumented
-	Args: [{ false amount float}], Returns: void
-*/
-func (o *CPUParticles2D) SetFlatness(amount gdnative.Real) {
-	//log.Println("Calling CPUParticles2D.SetFlatness()")
-
-	// Build out the method's arguments
-	ptrArguments := make([]gdnative.Pointer, 1, 1)
-	ptrArguments[0] = gdnative.NewPointerFromReal(amount)
-
-	// Get the method bind
-	methodBind := gdnative.NewMethodBind("CPUParticles2D", "set_flatness")
-
-	// Call the parent method.
-	// void
-	retPtr := gdnative.NewEmptyVoid()
-	gdnative.MethodBindPtrCall(methodBind, o.GetBaseObject(), ptrArguments, retPtr)
-
-}
-
-/*
-        Undocumented
 	Args: [{ false enable bool}], Returns: void
 */
 func (o *CPUParticles2D) SetFractionalDelta(enable gdnative.Bool) {
@@ -1359,7 +1315,7 @@ func (o *CPUParticles2D) SetOneShot(enable gdnative.Bool) {
 }
 
 /*
-
+        Sets the base value of the parameter specified by [enum Parameter].
 	Args: [{ false param int} { false value float}], Returns: void
 */
 func (o *CPUParticles2D) SetParam(param gdnative.Int, value gdnative.Real) {
@@ -1381,7 +1337,7 @@ func (o *CPUParticles2D) SetParam(param gdnative.Int, value gdnative.Real) {
 }
 
 /*
-
+        Sets the [Curve] of the parameter specified by [enum Parameter].
 	Args: [{ false param int} { false curve Curve}], Returns: void
 */
 func (o *CPUParticles2D) SetParamCurve(param gdnative.Int, curve CurveImplementer) {
@@ -1403,7 +1359,7 @@ func (o *CPUParticles2D) SetParamCurve(param gdnative.Int, curve CurveImplemente
 }
 
 /*
-
+        Sets the randomness factor of the parameter specified by [enum Parameter].
 	Args: [{ false param int} { false randomness float}], Returns: void
 */
 func (o *CPUParticles2D) SetParamRandomness(param gdnative.Int, randomness gdnative.Real) {
@@ -1425,7 +1381,7 @@ func (o *CPUParticles2D) SetParamRandomness(param gdnative.Int, randomness gdnat
 }
 
 /*
-
+        Enables or disables the given flag (see [enum Flags] for options).
 	Args: [{ false flag int} { false enable bool}], Returns: void
 */
 func (o *CPUParticles2D) SetParticleFlag(flag gdnative.Int, enable gdnative.Bool) {
@@ -1589,7 +1545,6 @@ type CPUParticles2DImplementer interface {
 	GetEmissionSphereRadius() gdnative.Real
 	GetExplosivenessRatio() gdnative.Real
 	GetFixedFps() gdnative.Int
-	GetFlatness() gdnative.Real
 	GetFractionalDelta() gdnative.Bool
 	GetGravity() gdnative.Vector2
 	GetLifetime() gdnative.Real
@@ -1622,7 +1577,6 @@ type CPUParticles2DImplementer interface {
 	SetEmitting(emitting gdnative.Bool)
 	SetExplosivenessRatio(ratio gdnative.Real)
 	SetFixedFps(fps gdnative.Int)
-	SetFlatness(amount gdnative.Real)
 	SetFractionalDelta(enable gdnative.Bool)
 	SetGravity(accelVec gdnative.Vector2)
 	SetLifetime(secs gdnative.Real)

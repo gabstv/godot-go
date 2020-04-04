@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -58,7 +58,7 @@ func (o *GIProbeData) GetBias() gdnative.Real {
 }
 
 /*
-        Undocumented
+
 	Args: [], Returns: AABB
 */
 func (o *GIProbeData) GetBounds() gdnative.Aabb {
@@ -219,7 +219,7 @@ func (o *GIProbeData) GetPropagation() gdnative.Real {
 }
 
 /*
-        Undocumented
+
 	Args: [], Returns: Transform
 */
 func (o *GIProbeData) GetToCellXform() gdnative.Transform {

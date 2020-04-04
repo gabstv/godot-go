@@ -1,7 +1,7 @@
 package godot
 
 import (
-	"github.com/shadowapex/godot-go/gdnative"
+	"github.com/gabstv/godot-go/gdnative"
 )
 
 /*------------------------------------------------------------------------------
@@ -124,7 +124,7 @@ func newControlFromPointer(ptr gdnative.Pointer) Control {
 }
 
 /*
-Base class for all UI-related nodes. [Control] features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change. For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from [Control] and [Container] nodes. [b]User Interface nodes and input[/b] Godot sends input events to the scene's root node first, by calling [method Node._input]. [method Node._input] forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls [method MainLoop._input_event]. Call [method accept_event] so no other node receives the event. Once you accepted an input, it becomes handled so [method Node._unhandled_input] will not process it. Only one [Control] node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call [method grab_focus]. [Control] nodes lose focus when another node grabs it, or if you hide the node in focus. Sets [member mouse_filter] to [constant MOUSE_FILTER_IGNORE] to tell a [Control] node to ignore mouse or touch events. You'll need it if you place an icon on top of a button. [Theme] resources change the Control's appearance. If you change the [Theme] on a [Control] node, it affects all of its children. To override some of the theme's parameters, call one of the [code]add_*_override[/code] methods, like [method add_font_override]. You can override the theme with the inspector.
+Base class for all UI-related nodes. [Control] features a bounding rectangle that defines its extents, an anchor position relative to its parent control or the current viewport, and margins that represent an offset to the anchor. The margins update automatically when the node, any of its parents, or the screen size change. For more information on Godot's UI system, anchors, margins, and containers, see the related tutorials in the manual. To build flexible UIs, you'll need a mix of UI elements that inherit from [Control] and [Container] nodes. [b]User Interface nodes and input[/b] Godot sends input events to the scene's root node first, by calling [method Node._input]. [method Node._input] forwards the event down the node tree to the nodes under the mouse cursor, or on keyboard focus. To do so, it calls [code]MainLoop._input_event[/code]. [b]FIXME:[/b] No longer valid after DisplayServer split and Input refactoring. Call [method accept_event] so no other node receives the event. Once you accepted an input, it becomes handled so [method Node._unhandled_input] will not process it. Only one [Control] node can be in keyboard focus. Only the node in focus will receive keyboard events. To get the focus, call [method grab_focus]. [Control] nodes lose focus when another node grabs it, or if you hide the node in focus. Sets [member mouse_filter] to [constant MOUSE_FILTER_IGNORE] to tell a [Control] node to ignore mouse or touch events. You'll need it if you place an icon on top of a button. [Theme] resources change the Control's appearance. If you change the [Theme] on a [Control] node, it affects all of its children. To override some of the theme's parameters, call one of the [code]add_theme_*_override[/code] methods, like [method add_theme_font_override]. You can override the theme with the inspector.
 */
 type Control struct {
 	CanvasItem
@@ -449,7 +449,7 @@ func (o *Control) AcceptEvent() {
 }
 
 /*
-        Overrides the [Color] with given [code]name[/code] in the [member theme] resource the control uses. If the [code]color[/code] is empty or invalid, the override is cleared and the color from assigned [Theme] is used.
+        Undocumented
 	Args: [{ false name String} { false color Color}], Returns: void
 */
 func (o *Control) AddColorOverride(name gdnative.String, color gdnative.Color) {
@@ -471,7 +471,7 @@ func (o *Control) AddColorOverride(name gdnative.String, color gdnative.Color) {
 }
 
 /*
-        Overrides an integer constant with given [code]name[/code] in the [member theme] resource the control uses. If the [code]constant[/code] is empty or invalid, the override is cleared and the constant from assigned [Theme] is used.
+        Undocumented
 	Args: [{ false name String} { false constant int}], Returns: void
 */
 func (o *Control) AddConstantOverride(name gdnative.String, constant gdnative.Int) {
@@ -493,7 +493,7 @@ func (o *Control) AddConstantOverride(name gdnative.String, constant gdnative.In
 }
 
 /*
-        Overrides the font with given [code]name[/code] in the [member theme] resource the control uses. If [code]font[/code] is empty or invalid, the override is cleared and the font from assigned [Theme] is used.
+        Undocumented
 	Args: [{ false name String} { false font Font}], Returns: void
 */
 func (o *Control) AddFontOverride(name gdnative.String, font FontImplementer) {
@@ -515,7 +515,7 @@ func (o *Control) AddFontOverride(name gdnative.String, font FontImplementer) {
 }
 
 /*
-        Overrides the icon with given [code]name[/code] in the [member theme] resource the control uses. If [code]icon[/code] is empty or invalid, the override is cleared and the icon from assigned [Theme] is used.
+        Undocumented
 	Args: [{ false name String} { false texture Texture}], Returns: void
 */
 func (o *Control) AddIconOverride(name gdnative.String, texture TextureImplementer) {
@@ -537,7 +537,7 @@ func (o *Control) AddIconOverride(name gdnative.String, texture TextureImplement
 }
 
 /*
-        Overrides the [Shader] with given [code]name[/code] in the [member theme] resource the control uses. If [code]shader[/code] is empty or invalid, the override is cleared and the shader from assigned [Theme] is used.
+        Undocumented
 	Args: [{ false name String} { false shader Shader}], Returns: void
 */
 func (o *Control) AddShaderOverride(name gdnative.String, shader ShaderImplementer) {
@@ -559,7 +559,7 @@ func (o *Control) AddShaderOverride(name gdnative.String, shader ShaderImplement
 }
 
 /*
-        Overrides the [StyleBox] with given [code]name[/code] in the [member theme] resource the control uses. If [code]stylebox[/code] is empty or invalid, the override is cleared and the [StyleBox] from assigned [Theme] is used.
+        Undocumented
 	Args: [{ false name String} { false stylebox StyleBox}], Returns: void
 */
 func (o *Control) AddStyleboxOverride(name gdnative.String, stylebox StyleBoxImplementer) {
@@ -697,7 +697,7 @@ func (o *Control) GetBegin() gdnative.Vector2 {
 }
 
 /*
-        Returns a color from assigned [Theme] with given [code]name[/code] and associated with [Control] of given [code]type[/code]. [codeblock] func _ready(): modulate = get_color("font_color", "Button") #get the color defined for button fonts [/codeblock]
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: Color
 */
 func (o *Control) GetColor(name gdnative.String, aType gdnative.String) gdnative.Color {
@@ -745,7 +745,7 @@ func (o *Control) GetCombinedMinimumSize() gdnative.Vector2 {
 }
 
 /*
-        Returns a constant from assigned [Theme] with given [code]name[/code] and associated with [Control] of given [code]type[/code].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: int
 */
 func (o *Control) GetConstant(name gdnative.String, aType gdnative.String) gdnative.Int {
@@ -1017,7 +1017,7 @@ func (o *Control) GetFocusPrevious() gdnative.NodePath {
 }
 
 /*
-        Returns a font from assigned [Theme] with given [code]name[/code] and associated with [Control] of given [code]type[/code].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: Font
 */
 func (o *Control) GetFont(name gdnative.String, aType gdnative.String) FontImplementer {
@@ -1148,7 +1148,7 @@ func (o *Control) GetHSizeFlags() gdnative.Int {
 }
 
 /*
-        Returns an icon from assigned [Theme] with given [code]name[/code] and associated with [Control] of given [code]type[/code].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: Texture
 */
 func (o *Control) GetIcon(name gdnative.String, aType gdnative.String) TextureImplementer {
@@ -1501,7 +1501,7 @@ func (o *Control) GetStretchRatio() gdnative.Real {
 }
 
 /*
-        Returns a [StyleBox] from assigned [Theme] with given [code]name[/code] and associated with [Control] of given [code]type[/code].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: StyleBox
 */
 func (o *Control) GetStylebox(name gdnative.String, aType gdnative.String) StyleBoxImplementer {
@@ -1687,7 +1687,7 @@ func (o *Control) GrabFocus() {
 }
 
 /*
-        Returns [code]true[/code] if [Color] with given [code]name[/code] and associated with [Control] of given [code]type[/code] exists in assigned [Theme].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: bool
 */
 func (o *Control) HasColor(name gdnative.String, aType gdnative.String) gdnative.Bool {
@@ -1712,7 +1712,7 @@ func (o *Control) HasColor(name gdnative.String, aType gdnative.String) gdnative
 }
 
 /*
-        Returns [code]true[/code] if [Color] with given [code]name[/code] has a valid override in this [Control] node.
+        Undocumented
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Control) HasColorOverride(name gdnative.String) gdnative.Bool {
@@ -1736,7 +1736,7 @@ func (o *Control) HasColorOverride(name gdnative.String) gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if constant with given [code]name[/code] and associated with [Control] of given [code]type[/code] exists in assigned [Theme].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: bool
 */
 func (o *Control) HasConstant(name gdnative.String, aType gdnative.String) gdnative.Bool {
@@ -1761,7 +1761,7 @@ func (o *Control) HasConstant(name gdnative.String, aType gdnative.String) gdnat
 }
 
 /*
-        Returns [code]true[/code] if constant with given [code]name[/code] has a valid override in this [Control] node.
+        Undocumented
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Control) HasConstantOverride(name gdnative.String) gdnative.Bool {
@@ -1808,7 +1808,7 @@ func (o *Control) HasFocus() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if font with given [code]name[/code] and associated with [Control] of given [code]type[/code] exists in assigned [Theme].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: bool
 */
 func (o *Control) HasFont(name gdnative.String, aType gdnative.String) gdnative.Bool {
@@ -1833,7 +1833,7 @@ func (o *Control) HasFont(name gdnative.String, aType gdnative.String) gdnative.
 }
 
 /*
-        Returns [code]true[/code] if font with given [code]name[/code] has a valid override in this [Control] node.
+        Undocumented
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Control) HasFontOverride(name gdnative.String) gdnative.Bool {
@@ -1857,7 +1857,7 @@ func (o *Control) HasFontOverride(name gdnative.String) gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if icon with given [code]name[/code] and associated with [Control] of given [code]type[/code] exists in assigned [Theme].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: bool
 */
 func (o *Control) HasIcon(name gdnative.String, aType gdnative.String) gdnative.Bool {
@@ -1882,7 +1882,7 @@ func (o *Control) HasIcon(name gdnative.String, aType gdnative.String) gdnative.
 }
 
 /*
-        Returns [code]true[/code] if icon with given [code]name[/code] has a valid override in this [Control] node.
+        Undocumented
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Control) HasIconOverride(name gdnative.String) gdnative.Bool {
@@ -1930,7 +1930,7 @@ func (o *Control) HasPoint(point gdnative.Vector2) gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if [Shader] with given [code]name[/code] has a valid override in this [Control] node.
+        Undocumented
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Control) HasShaderOverride(name gdnative.String) gdnative.Bool {
@@ -1954,7 +1954,7 @@ func (o *Control) HasShaderOverride(name gdnative.String) gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if [StyleBox] with given [code]name[/code] and associated with [Control] of given [code]type[/code] exists in assigned [Theme].
+        Undocumented
 	Args: [{ false name String} { true type String}], Returns: bool
 */
 func (o *Control) HasStylebox(name gdnative.String, aType gdnative.String) gdnative.Bool {
@@ -1979,7 +1979,7 @@ func (o *Control) HasStylebox(name gdnative.String, aType gdnative.String) gdnat
 }
 
 /*
-        Returns [code]true[/code] if [StyleBox] with given [code]name[/code] has a valid override in this [Control] node.
+        Undocumented
 	Args: [{ false name String}], Returns: bool
 */
 func (o *Control) HasStyleboxOverride(name gdnative.String) gdnative.Bool {
@@ -2754,7 +2754,7 @@ func (o *Control) SetVSizeFlags(flags gdnative.Int) {
 }
 
 /*
-        Displays a control as modal. Control must be a subwindow. Modal controls capture the input signals until closed or the area outside them is accessed. When a modal control loses focus, or the ESC key is pressed, they automatically hide. Modal controls are used extensively for popup dialogs and menus. If [code]exclusive[/code] is [code]true[/code], other controls will not receive input and clicking outside this control will not close it.
+        Undocumented
 	Args: [{False true exclusive bool}], Returns: void
 */
 func (o *Control) ShowModal(exclusive gdnative.Bool) {
