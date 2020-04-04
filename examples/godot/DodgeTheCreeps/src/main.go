@@ -1,10 +1,11 @@
 package main
 
 import (
-	gd "github.com/gabstv/godot-go/gdnative"
-	"github.com/gabstv/godot-go/godot"
 	"log"
 	"math/rand"
+
+	gd "github.com/gabstv/godot-go/gdnative"
+	"github.com/gabstv/godot-go/godot"
 )
 
 // main is required to be exported as a shared library
@@ -94,13 +95,13 @@ func (m *Main) NewGame() {
 	log.Println("New Game")
 	m.score = 0
 	m.player.Start(m.startPosition.GetPosition())
-	m.startTimer.Start()
+	m.startTimer.Start(-1)
 }
 
 func (m *Main) X_OnStartTimerTimeout() {
 	log.Println("Start timer timeout")
-	m.mobTimer.Start()
-	m.scoreTimer.Start()
+	m.mobTimer.Start(-1)
+	m.scoreTimer.Start(-1)
 }
 
 func (m *Main) X_OnScoreTimerTimeout() {
