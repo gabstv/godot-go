@@ -99,7 +99,7 @@ func Generate() {
 
 func Parse(packagePath string) APIs {
 	// Open the gdnative_api.json file that defines the GDNative API.
-	body, err := ioutil.ReadFile(packagePath + "/godot_headers/gdnative_api.json")
+	body, err := ioutil.ReadFile(packagePath + "/submodule/godot_headers/gdnative_api.json")
 	if err != nil {
 		panic(err)
 	}

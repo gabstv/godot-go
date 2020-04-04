@@ -4,11 +4,12 @@ package types
 
 import (
 	"fmt"
-	"github.com/pinzolo/casee"
 	"io/ioutil"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/pinzolo/casee"
 )
 
 // Parse will parse the GDNative headers. Takes a list of headers/structs to ignore.
@@ -20,7 +21,7 @@ func Parse(excludeHeaders, excludeStructs []string) []TypeDef {
 	packagePath := "."
 
 	// Walk through all of the godot header files
-	searchDir := packagePath + "/godot_headers"
+	searchDir := packagePath + "/submodule/godot_headers"
 	fileList := []string{}
 	err := filepath.Walk(searchDir, func(path string, f os.FileInfo, err error) error {
 		if !f.IsDir() && strings.Contains(path, ".h") {

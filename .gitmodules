@@ -1,8 +1,8 @@
 [submodule "godot-cpp"]
 	path = godot-cpp
 	url = git@github.com:GodotNativeTools/godot-cpp.git
-[submodule "godot_headers"]
-	path = godot_headers
+[submodule "submodule/godot_headers"]
+	path = submodule/godot_headers
 	url = git@github.com:GodotNativeTools/godot_headers.git
 [submodule "godot_engine"]
 	path = godot_engine
