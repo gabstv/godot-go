@@ -21,7 +21,7 @@ func Parse(excludeHeaders, excludeStructs []string) []TypeDef {
 	packagePath := "."
 
 	// Walk through all of the godot header files
-	searchDir := packagePath + "/submodule/godot_headers"
+	searchDir := packagePath + "/godot_headers"
 	fileList := []string{}
 	err := filepath.Walk(searchDir, func(path string, f os.FileInfo, err error) error {
 		if !f.IsDir() && strings.Contains(path, ".h") {
