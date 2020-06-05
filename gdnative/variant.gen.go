@@ -580,6 +580,7 @@ func (gdt *Variant) Call(method String, args []Variant, argcount Int, error Vari
 	arg4 := error.getBase()
 
 	ret := C.go_godot_variant_call(GDNative.api, arg0, arg1, arg2, arg3, arg4)
+	C.go_godot_string_destroy(GDNative.api, arg1)
 
 	return Variant{base: &ret}
 
