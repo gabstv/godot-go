@@ -275,7 +275,7 @@ func (o *Viewport) X_VpUnhandledInput(arg0 InputEventImplementer) {
 }
 
 /*
-        Returns the 3D world of the viewport, or if none the world of the parent viewport.
+        Undocumented
 	Args: [], Returns: World
 */
 func (o *Viewport) FindWorld() WorldImplementer {

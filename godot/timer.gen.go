@@ -31,7 +31,7 @@ func newTimerFromPointer(ptr gdnative.Pointer) Timer {
 }
 
 /*
-Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode.
+Counts down a specified interval and emits a signal on reaching 0. Can be set to repeat or "one-shot" mode. [b]Note:[/b] To create an one-shot timer without instantiating a node, use [method SceneTree.create_timer].
 */
 type Timer struct {
 	Node

@@ -23,8 +23,8 @@ func newAudioEffectRecordFromPointer(ptr gdnative.Pointer) AudioEffectRecord {
 }
 
 /*
-
- */
+Allows the user to record sound from a microphone. It sets and gets the format in which the audio file will be recorded (8-bit, 16-bit, or compressed). It checks whether or not the recording is active, and if it is, records the sound. It then returns the recorded sample.
+*/
 type AudioEffectRecord struct {
 	AudioEffect
 	owner gdnative.Object

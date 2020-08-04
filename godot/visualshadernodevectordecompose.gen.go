@@ -23,8 +23,8 @@ func newVisualShaderNodeVectorDecomposeFromPointer(ptr gdnative.Pointer) VisualS
 }
 
 /*
-
- */
+Takes a [code]vec3[/code] and decomposes it into three scalar values that can be used as separate inputs.
+*/
 type VisualShaderNodeVectorDecompose struct {
 	VisualShaderNode
 	owner gdnative.Object

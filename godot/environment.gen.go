@@ -2865,7 +2865,7 @@ func (o *Environment) SetGlowIntensity(intensity gdnative.Real) {
 }
 
 /*
-        Enables or disables the glow level at index [code]idx[/code]. Each level relies on the previous level. This means that enabling higher glow levels will slow down the glow effect rendering, even if previous levels aren't enabled.
+        Undocumented
 	Args: [{ false idx int} { false enabled bool}], Returns: void
 */
 func (o *Environment) SetGlowLevel(idx gdnative.Int, enabled gdnative.Bool) {

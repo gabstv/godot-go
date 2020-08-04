@@ -23,8 +23,8 @@ func newVisualShaderNodeVectorDistanceFromPointer(ptr gdnative.Pointer) VisualSh
 }
 
 /*
-
- */
+Calculates distance from point represented by vector [code]p0[/code] to vector [code]p1[/code]. Translated to [code]distance(p0, p1)[/code] in the shader language.
+*/
 type VisualShaderNodeVectorDistance struct {
 	VisualShaderNode
 	owner gdnative.Object

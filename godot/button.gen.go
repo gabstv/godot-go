@@ -32,7 +32,7 @@ func newButtonFromPointer(ptr gdnative.Pointer) Button {
 }
 
 /*
-Button is the standard themed button. It can contain text and an icon, and will display them according to the current [Theme].
+Button is the standard themed button. It can contain text and an icon, and will display them according to the current [Theme]. [b]Example of creating a button and assigning an action when pressed by code:[/b] [codeblock] func _ready(): var button = Button.new() button.text = "Click me" button.connect("pressed", self, "_button_pressed") add_child(button) func _button_pressed(): print("Hello world!") [/codeblock] Buttons (like all Control nodes) can also be created in the editor, but some situations may require creating them from code.
 */
 type Button struct {
 	BaseButton

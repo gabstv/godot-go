@@ -58,7 +58,7 @@ func (o *ConvexPolygonShape2D) GetPoints() gdnative.PoolVector2Array {
 }
 
 /*
-        Based on the set of points provided, this creates and assigns the [member points] property using the convex hull algorithm. Removing all unneeded points. See [method Geometry.convex_hull_2d] for details.
+        Based on the set of points provided, this creates and assigns the [member points] property using the convex hull algorithm. Removing all unneeded points. See [method Geometry2D.convex_hull] for details.
 	Args: [{ false point_cloud PoolVector2Array}], Returns: void
 */
 func (o *ConvexPolygonShape2D) SetPointCloud(pointCloud gdnative.PoolVector2Array) {

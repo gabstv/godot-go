@@ -23,8 +23,8 @@ func newVisualShaderNodeVectorComposeFromPointer(ptr gdnative.Pointer) VisualSha
 }
 
 /*
-
- */
+Creates a [code]vec3[/code] using three scalar values that can be provided from separate inputs.
+*/
 type VisualShaderNodeVectorCompose struct {
 	VisualShaderNode
 	owner gdnative.Object

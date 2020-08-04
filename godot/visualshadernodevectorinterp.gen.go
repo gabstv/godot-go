@@ -23,8 +23,8 @@ func newVisualShaderNodeVectorInterpFromPointer(ptr gdnative.Pointer) VisualShad
 }
 
 /*
-
- */
+Translates to [code]mix(a, b, weight)[/code] in the shader language, where [code]weight[/code] is a [Vector3] with weights for each component.
+*/
 type VisualShaderNodeVectorInterp struct {
 	VisualShaderNode
 	owner gdnative.Object

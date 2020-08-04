@@ -23,7 +23,7 @@ func newInputEventWithModifiersFromPointer(ptr gdnative.Pointer) InputEventWithM
 }
 
 /*
-Contains keys events information with modifiers support like [code]Shift[/code] or [code]Alt[/code]. See [method Node._input].
+Contains keys events information with modifiers support like [kbd]Shift[/kbd] or [kbd]Alt[/kbd]. See [method Node._input].
 */
 type InputEventWithModifiers struct {
 	InputEvent

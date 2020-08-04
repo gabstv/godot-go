@@ -33,8 +33,8 @@ func newVisualShaderNodeTransformMultFromPointer(ptr gdnative.Pointer) VisualSha
 }
 
 /*
-
- */
+A multiplication operation on two transforms (4x4 matrices), with support for different multiplication operators.
+*/
 type VisualShaderNodeTransformMult struct {
 	VisualShaderNode
 	owner gdnative.Object

@@ -57,12 +57,12 @@ func newSingletonGeometry() *geometry {
 }
 
 /*
-   Geometry provides users with a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations.
+   Undocumented
 */
 var Geometry = newSingletonGeometry()
 
 /*
-Geometry provides users with a set of helper functions to create geometric shapes, compute intersections between shapes, and process various other geometric operations.
+Undocumented
 */
 type geometry struct {
 	Object

@@ -32,7 +32,7 @@ func newARVRPositionalTrackerFromPointer(ptr gdnative.Pointer) ARVRPositionalTra
 }
 
 /*
-An instance of this object represents a device that is tracked, such as a controller or anchor point. HMDs aren't represented here as they are handled internally. As controllers are turned on and the AR/VR interface detects them, instances of this object are automatically added to this list of active tracking objects accessible through the [ARVRServer]. The [ARVRController] and [ARVRAnchor] both consume objects of this type and should be used in your project. The positional trackers are just under-the-hood objects that make this all work. These are mostly exposed so that GDNative-based interfaces can interact with them.
+Undocumented
 */
 type ARVRPositionalTracker struct {
 	Object
@@ -170,7 +170,7 @@ func (o *ARVRPositionalTracker) X_SetType(aType gdnative.Int) {
 }
 
 /*
-        Returns the hand holding this tracker, if known. See [enum TrackerHand] constants.
+        Undocumented
 	Args: [], Returns: enum.ARVRPositionalTracker::TrackerHand
 */
 func (o *ARVRPositionalTracker) GetHand() ARVRPositionalTrackerTrackerHand {
@@ -193,7 +193,7 @@ func (o *ARVRPositionalTracker) GetHand() ARVRPositionalTrackerTrackerHand {
 }
 
 /*
-        If this is a controller that is being tracked, the controller will also be represented by a joystick entry with this ID.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *ARVRPositionalTracker) GetJoyId() gdnative.Int {
@@ -216,7 +216,7 @@ func (o *ARVRPositionalTracker) GetJoyId() gdnative.Int {
 }
 
 /*
-        Returns the mesh related to a controller or anchor point if one is available.
+        Undocumented
 	Args: [], Returns: Mesh
 */
 func (o *ARVRPositionalTracker) GetMesh() MeshImplementer {
@@ -253,7 +253,7 @@ func (o *ARVRPositionalTracker) GetMesh() MeshImplementer {
 }
 
 /*
-        Returns the controller or anchor point's name if available.
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *ARVRPositionalTracker) GetName() gdnative.String {
@@ -276,7 +276,7 @@ func (o *ARVRPositionalTracker) GetName() gdnative.String {
 }
 
 /*
-        Returns the controller's orientation matrix.
+        Undocumented
 	Args: [], Returns: Basis
 */
 func (o *ARVRPositionalTracker) GetOrientation() gdnative.Basis {
@@ -299,7 +299,7 @@ func (o *ARVRPositionalTracker) GetOrientation() gdnative.Basis {
 }
 
 /*
-        Returns the world-space controller position.
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *ARVRPositionalTracker) GetPosition() gdnative.Vector3 {
@@ -345,7 +345,7 @@ func (o *ARVRPositionalTracker) GetRumble() gdnative.Real {
 }
 
 /*
-        Returns [code]true[/code] if this device tracks orientation.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *ARVRPositionalTracker) GetTracksOrientation() gdnative.Bool {
@@ -368,7 +368,7 @@ func (o *ARVRPositionalTracker) GetTracksOrientation() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if this device tracks position.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *ARVRPositionalTracker) GetTracksPosition() gdnative.Bool {
@@ -391,7 +391,7 @@ func (o *ARVRPositionalTracker) GetTracksPosition() gdnative.Bool {
 }
 
 /*
-        Returns the transform combining this device's orientation and position.
+        Undocumented
 	Args: [{ false adjust_by_reference_frame bool}], Returns: Transform
 */
 func (o *ARVRPositionalTracker) GetTransform(adjustByReferenceFrame gdnative.Bool) gdnative.Transform {
@@ -415,7 +415,7 @@ func (o *ARVRPositionalTracker) GetTransform(adjustByReferenceFrame gdnative.Boo
 }
 
 /*
-        Returns the tracker's type.
+        Undocumented
 	Args: [], Returns: enum.ARVRServer::TrackerType
 */
 func (o *ARVRPositionalTracker) GetType() ARVRServerTrackerType {

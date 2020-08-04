@@ -245,7 +245,7 @@ func (o *inputMap) EventIsAction(event InputEventImplementer, action gdnative.St
 }
 
 /*
-        Returns an array of [InputEvent]s associated with a given action.
+        Undocumented
 	Args: [{ false action String}], Returns: Array
 */
 func (o *inputMap) GetActionList(action gdnative.String) gdnative.Array {

@@ -75,7 +75,7 @@ func (o *BaseButton) X_GuiInput(arg0 InputEventImplementer) {
 }
 
 /*
-        Called when the button is pressed.
+        Called when the button is pressed. If you need to know the button's pressed state (and [member toggle_mode] is active), use [method _toggled] instead.
 	Args: [], Returns: void
 */
 func (o *BaseButton) X_Pressed() {

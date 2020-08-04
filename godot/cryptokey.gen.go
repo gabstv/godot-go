@@ -35,7 +35,7 @@ func (o *CryptoKey) BaseClass() string {
 }
 
 /*
-        Loads a key from [code]path[/code] ("*.key" file).
+        Loads a key from [code]path[/code]. If [code]public_only[/code] is [code]true[/code], only the public key will be loaded. [b]Note[/b]: [code]path[/code] should should be a "*.pub" file if [code]public_only[/code] is [code]true[/code], a "*.key" file otherwise.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *CryptoKey) Load(path gdnative.String) gdnative.Error {
@@ -59,7 +59,7 @@ func (o *CryptoKey) Load(path gdnative.String) gdnative.Error {
 }
 
 /*
-        Saves a key to the given [code]path[/code] (should be a "*.key" file).
+        Saves a key to the given [code]path[/code]. If [code]public_only[/code] is [code]true[/code], only the public key will be saved. [b]Note[/b]: [code]path[/code] should should be a "*.pub" file if [code]public_only[/code] is [code]true[/code], a "*.key" file otherwise.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *CryptoKey) Save(path gdnative.String) gdnative.Error {

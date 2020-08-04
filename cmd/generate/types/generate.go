@@ -284,7 +284,7 @@ func Generate() {
 	// with the given name will not be added to the returned list of type definitions.
 	// We'll need to manually create these structures.
 	ignoreHeaders := []string{
-		"godot_headers/pluginscript/godot_pluginscript.h",
+		"cgodeps/godot-cpp/godot_headers/pluginscript/godot_pluginscript.h",
 	}
 	ignoreStructs := []string{
 		"godot_char_type",

@@ -401,7 +401,7 @@ func (o *RigidBody2D) GetBounce() gdnative.Real {
 }
 
 /*
-        Returns a list of the bodies colliding with this one. Use [member contacts_reported] to set the maximum number reported. You must also set [member contact_monitor] to [code]true[/code]. [b]Note:[/b] The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
+        Returns a list of the bodies colliding with this one. Requires [member contact_monitor] to be set to [code]true[/code] and [member contacts_reported] to be set high enough to detect all the collisions. [b]Note:[/b] The result of this test is not immediate after moving objects. For performance, list of collisions is updated once per frame and before the physics step. Consider using signals instead.
 	Args: [], Returns: Array
 */
 func (o *RigidBody2D) GetCollidingBodies() gdnative.Array {

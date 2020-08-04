@@ -23,7 +23,7 @@ func newStreamTextureFromPointer(ptr gdnative.Pointer) StreamTexture {
 }
 
 /*
-A texture that is loaded from a [code].stex[/code] file.
+Undocumented
 */
 type StreamTexture struct {
 	Texture
@@ -58,7 +58,7 @@ func (o *StreamTexture) GetLoadPath() gdnative.String {
 }
 
 /*
-        Loads the texture from the given path.
+        Undocumented
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *StreamTexture) Load(path gdnative.String) gdnative.Error {

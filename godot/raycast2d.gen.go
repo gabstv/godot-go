@@ -97,7 +97,7 @@ func (o *RayCast2D) ClearExceptions() {
 }
 
 /*
-        Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next [code]_physics_process[/code] call, for example if the ray or its parent has changed state. [b]Note:[/b] [code]enabled == true[/code] is not required for this to work.
+        Updates the collision information for the ray. Use this method to update the collision information immediately instead of waiting for the next [code]_physics_process[/code] call, for example if the ray or its parent has changed state. [b]Note:[/b] [member enabled] does not need to be [code]true[/code] for this to work.
 	Args: [], Returns: void
 */
 func (o *RayCast2D) ForceRaycastUpdate() {

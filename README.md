@@ -7,7 +7,7 @@
 
 Godot-Go
 ========
-Go language bindings for the [Godot Engine](https://godotengine.org/)'s [GDNative API](https://github.com/GodotNativeTools/godot_headers).
+Go language bindings for the [Godot Engine](https://godotengine.org/)'s [GDNative API](https://github.com/godotengine/godot_headers).
 
 **NOTE:** These bindings are currently still under development. Not all of the design,
 implementation, or documentation is final. Comments/suggestions are welcome (see GitHub issues).
@@ -194,7 +194,7 @@ MIT - <https://opensource.org/licenses/MIT>
 Links
 -----
 GitHub repository - <https://github.com/gabstv/godot-go>  
-GDNative repository - <https://github.com/GodotNativeTools/godot_headers>  
+GDNative repository - <https://github.com/godotengine/godot_headers>  
 
 Godot Engine - <https://godotengine.org>  
 Go programming language - <https://golang.org>  

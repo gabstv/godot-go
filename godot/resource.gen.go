@@ -23,7 +23,7 @@ func newResourceFromPointer(ptr gdnative.Pointer) Resource {
 }
 
 /*
-Resource is the base class for all Godot-specific resource types, serving primarily as data containers. They are reference counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a [Node], which is not reference counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a [Node] or another resource.
+Resource is the base class for all Godot-specific resource types, serving primarily as data containers. Unlike [Object]s, they are reference-counted and freed when no longer in use. They are also cached once loaded from disk, so that any further attempts to load a resource from a given path will return the same reference (all this in contrast to a [Node], which is not reference-counted and can be instanced from disk as many times as desired). Resources can be saved externally on disk or bundled into another object, such as a [Node] or another resource.
 */
 type Resource struct {
 	Reference
@@ -55,7 +55,7 @@ func (o *Resource) X_SetupLocalToScene() {
 }
 
 /*
-        Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency, this can be changed by passing [code]true[/code] to the [code]subresources[/code] argument.
+        Duplicates the resource, returning a new resource. By default, sub-resources are shared between resource copies for efficiency. This can be changed by passing [code]true[/code] to the [code]subresources[/code] argument which will copy the subresources. [b]Note:[/b] If [code]subresources[/code] is [code]true[/code], this method will only perform a shallow copy. Nested resources within subresources will not be duplicated and will still be shared.
 	Args: [{False true subresources bool}], Returns: Resource
 */
 func (o *Resource) Duplicate(subresources gdnative.Bool) ResourceImplementer {

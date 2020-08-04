@@ -23,7 +23,7 @@ func newEditorSettingsFromPointer(ptr gdnative.Pointer) EditorSettings {
 }
 
 /*
-Object that holds the project-independent editor settings. These settings are generally visible in the [b]Editor > Editor Settings[/b] menu. Accessing the settings is done by using the regular [Object] API, such as: [codeblock] settings.set(prop,value) settings.get(prop) list_of_settings = settings.get_property_list() [/codeblock]
+Object that holds the project-independent editor settings. These settings are generally visible in the [b]Editor > Editor Settings[/b] menu. Property names use slash delimiters to distinguish sections. Setting values can be of any [Variant] type. It's recommended to use [code]snake_case[/code] for editor settings to be consistent with the Godot editor itself. Accessing the settings can be done using the following methods, such as: [codeblock] # `settings.set("some/property", value)` also works as this class overrides `_set()` internally. settings.set_setting("some/property",value) # `settings.get("some/property", value)` also works as this class overrides `_get()` internally. settings.get_setting("some/property") var list_of_settings = settings.get_property_list() [/codeblock] [b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton using [method EditorInterface.get_editor_settings].
 */
 type EditorSettings struct {
 	Resource
@@ -56,7 +56,7 @@ func (o *EditorSettings) AddPropertyInfo(info gdnative.Dictionary) {
 }
 
 /*
-        Erase a given setting (pass full property path).
+        Erases the setting whose name is specified by [code]property[/code].
 	Args: [{ false property String}], Returns: void
 */
 func (o *EditorSettings) Erase(property gdnative.String) {
@@ -77,7 +77,7 @@ func (o *EditorSettings) Erase(property gdnative.String) {
 }
 
 /*
-        Gets the list of favorite files and directories for this project.
+        Returns the list of favorite files and directories for this project.
 	Args: [], Returns: PoolStringArray
 */
 func (o *EditorSettings) GetFavorites() gdnative.PoolStringArray {
@@ -100,7 +100,7 @@ func (o *EditorSettings) GetFavorites() gdnative.PoolStringArray {
 }
 
 /*
-
+        Returns project-specific metadata for the [code]section[/code] and [code]key[/code] specified. If the metadata doesn't exist, [code]default[/code] will be returned instead. See also [method set_project_metadata].
 	Args: [{ false section String} { false key String} {Null true default Variant}], Returns: Variant
 */
 func (o *EditorSettings) GetProjectMetadata(section gdnative.String, key gdnative.String, aDefault gdnative.Variant) gdnative.Variant {
@@ -126,7 +126,7 @@ func (o *EditorSettings) GetProjectMetadata(section gdnative.String, key gdnativ
 }
 
 /*
-        Gets the specific project settings path. Projects all have a unique sub-directory inside the settings path where project specific settings are saved.
+        Returns the project-specific settings path. Projects all have a unique subdirectory inside the settings path where project-specific settings are saved.
 	Args: [], Returns: String
 */
 func (o *EditorSettings) GetProjectSettingsDir() gdnative.String {
@@ -149,7 +149,7 @@ func (o *EditorSettings) GetProjectSettingsDir() gdnative.String {
 }
 
 /*
-        Gets the list of recently visited folders in the file dialog for this project.
+        Returns the list of recently visited folders in the file dialog for this project.
 	Args: [], Returns: PoolStringArray
 */
 func (o *EditorSettings) GetRecentDirs() gdnative.PoolStringArray {
@@ -172,7 +172,7 @@ func (o *EditorSettings) GetRecentDirs() gdnative.PoolStringArray {
 }
 
 /*
-
+        Returns the value of the setting specified by [code]name[/code]. This is equivalent to using [method Object.get] on the EditorSettings instance.
 	Args: [{ false name String}], Returns: Variant
 */
 func (o *EditorSettings) GetSetting(name gdnative.String) gdnative.Variant {
@@ -219,7 +219,7 @@ func (o *EditorSettings) GetSettingsDir() gdnative.String {
 }
 
 /*
-
+        Returns [code]true[/code] if the setting specified by [code]name[/code] exists, [code]false[/code] otherwise.
 	Args: [{ false name String}], Returns: bool
 */
 func (o *EditorSettings) HasSetting(name gdnative.String) gdnative.Bool {
@@ -243,7 +243,7 @@ func (o *EditorSettings) HasSetting(name gdnative.String) gdnative.Bool {
 }
 
 /*
-
+        Returns [code]true[/code] if the setting specified by [code]name[/code] can have its value reverted to the default value, [code]false[/code] otherwise. When this method returns [code]true[/code], a Revert button will display next to the setting in the Editor Settings.
 	Args: [{ false name String}], Returns: bool
 */
 func (o *EditorSettings) PropertyCanRevert(name gdnative.String) gdnative.Bool {
@@ -267,7 +267,7 @@ func (o *EditorSettings) PropertyCanRevert(name gdnative.String) gdnative.Bool {
 }
 
 /*
-
+        Returns the default value of the setting specified by [code]name[/code]. This is the value that would be applied when clicking the Revert button in the Editor Settings.
 	Args: [{ false name String}], Returns: Variant
 */
 func (o *EditorSettings) PropertyGetRevert(name gdnative.String) gdnative.Variant {
@@ -312,7 +312,7 @@ func (o *EditorSettings) SetFavorites(dirs gdnative.PoolStringArray) {
 }
 
 /*
-
+        Sets the initial value of the setting specified by [code]name[/code] to [code]value[/code]. This is used to provide a value for the Revert button in the Editor Settings. If [code]update_current[/code] is true, the current value of the setting will be set to [code]value[/code] as well.
 	Args: [{ false name String} { false value Variant} { false update_current bool}], Returns: void
 */
 func (o *EditorSettings) SetInitialValue(name gdnative.String, value gdnative.Variant, updateCurrent gdnative.Bool) {
@@ -335,7 +335,7 @@ func (o *EditorSettings) SetInitialValue(name gdnative.String, value gdnative.Va
 }
 
 /*
-
+        Sets project-specific metadata with the [code]section[/code], [code]key[/code] and [code]data[/code] specified. This metadata is stored outside the project folder and therefore won't be checked into version control. See also [method get_project_metadata].
 	Args: [{ false section String} { false key String} { false data Variant}], Returns: void
 */
 func (o *EditorSettings) SetProjectMetadata(section gdnative.String, key gdnative.String, data gdnative.Variant) {
@@ -379,7 +379,7 @@ func (o *EditorSettings) SetRecentDirs(dirs gdnative.PoolStringArray) {
 }
 
 /*
-
+        Sets the [code]value[/code] of the setting specified by [code]name[/code]. This is equivalent to using [method Object.set] on the EditorSettings instance.
 	Args: [{ false name String} { false value Variant}], Returns: void
 */
 func (o *EditorSettings) SetSetting(name gdnative.String, value gdnative.Variant) {

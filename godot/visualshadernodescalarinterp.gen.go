@@ -23,8 +23,8 @@ func newVisualShaderNodeScalarInterpFromPointer(ptr gdnative.Pointer) VisualShad
 }
 
 /*
-
- */
+Translates to [code]mix(a, b, weight)[/code] in the shader language.
+*/
 type VisualShaderNodeScalarInterp struct {
 	VisualShaderNode
 	owner gdnative.Object

@@ -23,8 +23,8 @@ func newResourceFormatLoaderCryptoFromPointer(ptr gdnative.Pointer) ResourceForm
 }
 
 /*
-
- */
+Undocumented
+*/
 type ResourceFormatLoaderCrypto struct {
 	ResourceFormatLoader
 	owner gdnative.Object

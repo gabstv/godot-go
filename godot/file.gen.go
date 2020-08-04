@@ -43,7 +43,7 @@ func new_FileFromPointer(ptr gdnative.Pointer) File {
 }
 
 /*
-File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example. Here's a sample on how to write and read from a file: [codeblock] func save(content): var file = File.new() file.open("user://save_game.dat", File.WRITE) file.store_string(content) file.close() func load(): var file = File.new() file.open("user://save_game.dat", File.READ) var content = file.get_as_text() file.close() return content [/codeblock]
+File type. This is used to permanently store data into the user device's file system and to read from it. This can be used to store game save data or player configuration files, for example. Here's a sample on how to write and read from a file: [codeblock] func save(content): var file = File.new() file.open("user://save_game.dat", File.WRITE) file.store_string(content) file.close() func load(): var file = File.new() file.open("user://save_game.dat", File.READ) var content = file.get_as_text() file.close() return content [/codeblock] In the example above, the file will be saved in the user data folder as specified in the [url=https://docs.godotengine.org/en/latest/tutorials/io/data_paths.html]Data paths[/url] documentation.
 */
 type File struct {
 	Reference

@@ -35,7 +35,7 @@ func (o *Font) BaseClass() string {
 }
 
 /*
-        Draw [code]string[/code] into a canvas item using the font at a given position, with [code]modulate[/code] color, and optionally clipping the width. [code]position[/code] specifies the baseline, not the top. To draw from the top, [i]ascent[/i] must be added to the Y axis.
+        Draw [code]string[/code] into a canvas item using the font at a given position, with [code]modulate[/code] color, and optionally clipping the width. [code]position[/code] specifies the baseline, not the top. To draw from the top, [i]ascent[/i] must be added to the Y axis. See also [method CanvasItem.draw_string].
 	Args: [{ false canvas_item RID} { false position Vector2} { false string String} {1,1,1,1 true modulate Color} {-1 true clip_w int} {1,1,1,1 true outline_modulate Color}], Returns: void
 */
 func (o *Font) Draw(canvasItem gdnative.Rid, position gdnative.Vector2, string gdnative.String, modulate gdnative.Color, clipW gdnative.Int, outlineModulate gdnative.Color) {

@@ -23,8 +23,8 @@ func newScriptEditorFromPointer(ptr gdnative.Pointer) ScriptEditor {
 }
 
 /*
-
- */
+[b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton using [method EditorInterface.get_script_editor].
+*/
 type ScriptEditor struct {
 	PanelContainer
 	owner gdnative.Object

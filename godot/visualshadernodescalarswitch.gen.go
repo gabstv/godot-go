@@ -23,8 +23,8 @@ func newVisualShaderNodeScalarSwitchFromPointer(ptr gdnative.Pointer) VisualShad
 }
 
 /*
-
- */
+Returns an associated scalar if the provided boolean value is [code]true[/code] or [code]false[/code].
+*/
 type VisualShaderNodeScalarSwitch struct {
 	VisualShaderNodeSwitch
 	owner gdnative.Object

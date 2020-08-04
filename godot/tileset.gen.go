@@ -121,7 +121,7 @@ func (o *TileSet) X_ForwardSubtileSelection(autotileId gdnative.Int, bitmask gdn
 }
 
 /*
-
+        Determines when the auto-tiler should consider two different auto-tile IDs to be bound together. [b]Note:[/b] [code]neighbor_id[/code] will be [code]-1[/code] ([constant TileMap.INVALID_CELL]) when checking a tile against an empty neighbor tile.
 	Args: [{ false drawn_id int} { false neighbor_id int}], Returns: bool
 */
 func (o *TileSet) X_IsTileBound(drawnId gdnative.Int, neighborId gdnative.Int) gdnative.Bool {
@@ -1211,7 +1211,7 @@ func (o *TileSet) TileGetShapeTransform(id gdnative.Int, shapeId gdnative.Int) g
 }
 
 /*
-        Returns an array of the tile's shapes.
+        Returns an array of dictionaries describing the tile's shapes. [b]Dictionary structure in the array returned by this method:[/b] [codeblock] { "autotile_coord": Vector2, "one_way": bool, "one_way_margin": int, "shape": CollisionShape2D, "shape_transform": Transform2D, } [/codeblock]
 	Args: [{ false id int}], Returns: Array
 */
 func (o *TileSet) TileGetShapes(id gdnative.Int) gdnative.Array {
@@ -1477,7 +1477,7 @@ func (o *TileSet) TileSetNavigationPolygonOffset(id gdnative.Int, navigationPoly
 }
 
 /*
-        Sets the tile's normal map texture.
+        Sets the tile's normal map texture. [b]Note:[/b] Godot expects the normal map to use X+, Y-, and Z+ coordinates. See [url=http://wiki.polycount.com/wiki/Normal_Map_Technical_Details#Common_Swizzle_Coordinates]this page[/url] for a comparison of normal map coordinates expected by popular engines.
 	Args: [{ false id int} { false normal_map Texture}], Returns: void
 */
 func (o *TileSet) TileSetNormalMap(id gdnative.Int, normalMap TextureImplementer) {

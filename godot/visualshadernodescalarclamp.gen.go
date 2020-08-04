@@ -23,8 +23,8 @@ func newVisualShaderNodeScalarClampFromPointer(ptr gdnative.Pointer) VisualShade
 }
 
 /*
-
- */
+Constrains a value to lie between [code]min[/code] and [code]max[/code] values.
+*/
 type VisualShaderNodeScalarClamp struct {
 	VisualShaderNode
 	owner gdnative.Object

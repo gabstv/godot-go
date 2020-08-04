@@ -121,7 +121,7 @@ func (o *RichTextLabel) X_ScrollChanged(arg0 gdnative.Real) {
 }
 
 /*
-        Adds an image's opening and closing tags to the tag stack, optionally providing a [code]width[/code] and [code]height[/code] to resize the image. If [code]width[/code] or [code]height[/code] is set to 0, the image size will be adjusted in order to keep the original aspect ratio.
+        Adds an image's opening and closing tags to the tag stack, optionally providing a [code]width[/code] and [code]height[/code] to resize the image and a [code]color[/code] to tint the image. If [code]width[/code] or [code]height[/code] is set to 0, the image size will be adjusted in order to keep the original aspect ratio.
 	Args: [{ false image Texture} {0 true width int} {0 true height int}], Returns: void
 */
 func (o *RichTextLabel) AddImage(image TextureImplementer, width gdnative.Int, height gdnative.Int) {

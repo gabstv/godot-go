@@ -23,7 +23,7 @@ func newEditorScriptFromPointer(ptr gdnative.Pointer) EditorScript {
 }
 
 /*
-Scripts extending this class and implementing its [method _run] method can be executed from the Script Editor's [b]File > Run[/b] menu option (or by pressing [code]Ctrl+Shift+X[/code]) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using [EditorPlugin]s instead. [b]Note:[/b] Extending scripts need to have [code]tool[/code] mode enabled. [b]Example script:[/b] [codeblock] tool extends EditorScript func _run(): print("Hello from the Godot Editor!") [/codeblock] [b]Note:[/b] The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot [b]Output[/b] dock.
+Scripts extending this class and implementing its [method _run] method can be executed from the Script Editor's [b]File > Run[/b] menu option (or by pressing [kbd]Ctrl + Shift + X[/kbd]) while the editor is running. This is useful for adding custom in-editor functionality to Godot. For more complex additions, consider using [EditorPlugin]s instead. [b]Note:[/b] Extending scripts need to have [code]tool[/code] mode enabled. [b]Example script:[/b] [codeblock] tool extends EditorScript func _run(): print("Hello from the Godot Editor!") [/codeblock] [b]Note:[/b] The script is run in the Editor context, which means the output is visible in the console window started with the Editor (stdout) instead of the usual Godot [b]Output[/b] dock.
 */
 type EditorScript struct {
 	Reference

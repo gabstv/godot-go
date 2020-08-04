@@ -23,8 +23,8 @@ func newVisualShaderNodeUniformFromPointer(ptr gdnative.Pointer) VisualShaderNod
 }
 
 /*
-
- */
+A uniform represents a variable in the shader which is set externally, i.e. from the [ShaderMaterial]. Uniforms are exposed as properties in the [ShaderMaterial] and can be assigned from the inspector or from a script.
+*/
 type VisualShaderNodeUniform struct {
 	VisualShaderNode
 	owner gdnative.Object

@@ -33,7 +33,7 @@ func newObjectFromPointer(ptr gdnative.Pointer) Object {
 }
 
 /*
-Every class which is not a built-in type inherits from this class. You can construct Objects from scripting languages, using [code]Object.new()[/code] in GDScript, [code]new Object[/code] in C#, or the "Construct Object" node in VisualScript. Objects do not manage memory. If a class inherits from Object, you will have to delete instances of it manually. To do so, call the [method free] method from your script or delete the instance from C++. Some classes that extend Object add memory management. This is the case of [Reference], which counts references and deletes itself automatically when no longer referenced. [Node], another fundamental type, deletes all its children when freed from memory. Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in [method _get_property_list] and handled in [method _get] and [method _set]. However, scripting languages and C++ have simpler means to export them. Property membership can be tested directly in GDScript using [code]in[/code]: [codeblock] var n = Node2D.new() print("position" in n) # Prints "True". print("other_property" in n) # Prints "False". [/codeblock] Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See [method _notification].
+Every class which is not a built-in type inherits from this class. You can construct Objects from scripting languages, using [code]Object.new()[/code] in GDScript, [code]new Object[/code] in C#, or the "Construct Object" node in VisualScript. Objects do not manage memory. If a class inherits from Object, you will have to delete instances of it manually. To do so, call the [method free] method from your script or delete the instance from C++. Some classes that extend Object add memory management. This is the case of [Reference], which counts references and deletes itself automatically when no longer referenced. [Node], another fundamental type, deletes all its children when freed from memory. Objects export properties, which are mainly useful for storage and editing, but not really so much in programming. Properties are exported in [method _get_property_list] and handled in [method _get] and [method _set]. However, scripting languages and C++ have simpler means to export them. Property membership can be tested directly in GDScript using [code]in[/code]: [codeblock] var n = Node2D.new() print("position" in n) # Prints "True". print("other_property" in n) # Prints "False". [/codeblock] The [code]in[/code] operator will evaluate to [code]true[/code] as long as the key exists, even if the value is [code]null[/code]. Objects also receive notifications. Notifications are a simple way to notify the object about different events, so they can all be handled together. See [method _notification]. [b]Note:[/b] Unlike references to a [Reference], references to an Object stored in a variable can become invalid without warning. Therefore, it's recommended to use [Reference] for data classes instead of [Object].
 */
 type Object struct {
 	owner gdnative.Object
@@ -212,7 +212,7 @@ func (o *Object) AddUserSignal(signal gdnative.String, arguments gdnative.Array)
 }
 
 /*
-        Calls the [code]method[/code] on the object and returns the result. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example: [codeblock] call("set", "position", Vector2(42.0, 0.0)) [/codeblock]
+        Calls the [code]method[/code] on the object and returns the result. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example: [codeblock] call("set", "position", Vector2(42.0, 0.0)) [/codeblock] [b]Note:[/b] In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 	Args: [{ false method String}], Returns: Variant
 */
 func (o *Object) Call(method gdnative.String, args ...gdnative.Variant) gdnative.Variant {
@@ -240,7 +240,7 @@ func (o *Object) Call(method gdnative.String, args ...gdnative.Variant) gdnative
 }
 
 /*
-        Calls the [code]method[/code] on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example: [codeblock] call_deferred("set", "position", Vector2(42.0, 0.0)) [/codeblock]
+        Calls the [code]method[/code] on the object during idle time. This method supports a variable number of arguments, so parameters are passed as a comma separated list. Example: [codeblock] call_deferred("set", "position", Vector2(42.0, 0.0)) [/codeblock] [b]Note:[/b] In C#, the method name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined methods where you should use the same convention as in the C# source (typically PascalCase).
 	Args: [{ false method String}], Returns: void
 */
 func (o *Object) CallDeferred(method gdnative.String, args ...gdnative.Variant) {
@@ -389,7 +389,7 @@ func (o *Object) EmitSignal(signal gdnative.String, args ...gdnative.Variant) {
 }
 
 /*
-        Deletes the object from memory. Any pre-existing reference to the freed object will now return [code]null[/code].
+        Deletes the object from memory. Any pre-existing reference to the freed object will become invalid, e.g. [code]is_instance_valid(object)[/code] will return [code]false[/code].
 	Args: [], Returns: void
 */
 func (o *Object) Free() {
@@ -409,7 +409,7 @@ func (o *Object) Free() {
 }
 
 /*
-        Returns the [Variant] value of the given [code]property[/code]. If the [code]property[/code] doesn't exist, this will return [code]null[/code].
+        Returns the [Variant] value of the given [code]property[/code]. If the [code]property[/code] doesn't exist, this will return [code]null[/code]. [b]Note:[/b] In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 	Args: [{ false property String}], Returns: Variant
 */
 func (o *Object) Get(property gdnative.String) gdnative.Variant {
@@ -934,7 +934,7 @@ func (o *Object) RemoveMeta(name gdnative.String) {
 }
 
 /*
-        Assigns a new value to the given property. If the [code]property[/code] does not exist, nothing will happen.
+        Assigns a new value to the given property. If the [code]property[/code] does not exist, nothing will happen. [b]Note:[/b] In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 	Args: [{ false property String} { false value Variant}], Returns: void
 */
 func (o *Object) Set(property gdnative.String, value gdnative.Variant) {
@@ -977,7 +977,7 @@ func (o *Object) SetBlockSignals(enable gdnative.Bool) {
 }
 
 /*
-        Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling [method set] via [method call_deferred], i.e. [code]call_deferred("set", property, value)[/code].
+        Assigns a new value to the given property, after the current frame's physics step. This is equivalent to calling [method set] via [method call_deferred], i.e. [code]call_deferred("set", property, value)[/code]. [b]Note:[/b] In C#, the property name must be specified as snake_case if it is defined by a built-in Godot node. This doesn't apply to user-defined properties where you should use the same convention as in the C# source (typically PascalCase).
 	Args: [{ false property String} { false value Variant}], Returns: void
 */
 func (o *Object) SetDeferred(property gdnative.String, value gdnative.Variant) {

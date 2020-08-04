@@ -2,7 +2,7 @@
 package gdnative
 
 /*
-#cgo CFLAGS: -I../godot_headers -std=c11
+#cgo CFLAGS: -I../cgodeps/godot-cpp/godot_headers -std=c11
 #cgo linux LDFLAGS: -Wl,-unresolved-symbols=ignore-all
 #cgo darwin LDFLAGS: -Wl,-undefined,dynamic_lookup
 
@@ -18,7 +18,7 @@ import (
 	"log"
 	"unsafe"
 
-	"github.com/vitaminwater/cgo.wchar"
+	wchar "github.com/vitaminwater/cgo.wchar"
 )
 
 // debug determines whether or not we should log messages

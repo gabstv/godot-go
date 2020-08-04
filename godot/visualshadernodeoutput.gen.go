@@ -23,8 +23,8 @@ func newVisualShaderNodeOutputFromPointer(ptr gdnative.Pointer) VisualShaderNode
 }
 
 /*
-
- */
+This visual shader node is present in all shader graphs in form of "Output" block with multiple output value ports.
+*/
 type VisualShaderNodeOutput struct {
 	VisualShaderNode
 	owner gdnative.Object

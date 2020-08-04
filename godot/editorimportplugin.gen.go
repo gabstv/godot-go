@@ -105,7 +105,7 @@ func (o *EditorImportPlugin) GetImporterName() gdnative.String {
 }
 
 /*
-
+        This method can be overridden to hide specific import options if conditions are met. This is mainly useful for hiding options that depend on others if one of them is disabled. For example: [codeblock] func get_option_visibility(option, options): # Only show the lossy quality setting if the compression mode is set to "Lossy". if option == "compress/lossy_quality" and options.has("compress/mode"): return int(options["compress/mode"]) == COMPRESS_LOSSY return true [/codeblock] Return [code]true[/code] to make all options always visible.
 	Args: [{ false option String} { false options Dictionary}], Returns: bool
 */
 func (o *EditorImportPlugin) GetOptionVisibility(option gdnative.String, options gdnative.Dictionary) gdnative.Bool {
@@ -292,7 +292,7 @@ func (o *EditorImportPlugin) GetVisibleName() gdnative.String {
 }
 
 /*
-
+        Imports [code]source_file[/code] into [code]save_path[/code] with the import [code]options[/code] specified. The [code]platform_variants[/code] and [code]gen_files[/code] arrays will be modified by this function. This method must be overridden to do the actual importing work. See this class' description for an example of overriding this method.
 	Args: [{ false source_file String} { false save_path String} { false options Dictionary} { false platform_variants Array} { false gen_files Array}], Returns: int
 */
 func (o *EditorImportPlugin) Import(sourceFile gdnative.String, savePath gdnative.String, options gdnative.Dictionary, platformVariants gdnative.Array, genFiles gdnative.Array) gdnative.Int {

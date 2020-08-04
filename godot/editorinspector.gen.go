@@ -23,7 +23,7 @@ func newEditorInspectorFromPointer(ptr gdnative.Pointer) EditorInspector {
 }
 
 /*
-The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as the Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow.
+The editor inspector is by default located on the right-hand side of the editor. It's used to edit the properties of the selected node. For example, you can select a node such as the Sprite2D then edit its transform through the inspector tool. The editor inspector is an essential tool in the game development workflow. [b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton using [method EditorInterface.get_inspector].
 */
 type EditorInspector struct {
 	ScrollContainer
@@ -343,7 +343,7 @@ func (o *EditorInspector) X_VscrollChanged(arg0 gdnative.Real) {
 }
 
 /*
-
+        Refreshes the inspector. [b]Note:[/b] To save on CPU resources, calling this method will do nothing if the time specified in [code]docks/property_editor/auto_refresh_interval[/code] editor setting hasn't passed yet since this method was last called. (By default, this interval is set to 0.3 seconds.)
 	Args: [], Returns: void
 */
 func (o *EditorInspector) Refresh() {

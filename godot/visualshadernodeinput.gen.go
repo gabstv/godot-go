@@ -23,8 +23,8 @@ func newVisualShaderNodeInputFromPointer(ptr gdnative.Pointer) VisualShaderNodeI
 }
 
 /*
-
- */
+Gives access to input variables (built-ins) available for the shader. See the shading reference for the list of available built-ins for each shader type (check [code]Tutorials[/code] section for link).
+*/
 type VisualShaderNodeInput struct {
 	VisualShaderNode
 	owner gdnative.Object

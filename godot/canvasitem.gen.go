@@ -35,7 +35,7 @@ func newCanvasItemFromPointer(ptr gdnative.Pointer) CanvasItem {
 }
 
 /*
-Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. [CanvasItem] is extended by [Control] for anything GUI-related, and by [Node2D] for anything related to the 2D engine. Any [CanvasItem] can draw. For this, [method update] must be called, then [constant NOTIFICATION_DRAW] will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the [CanvasItem] are provided (see [code]draw_*[/code] functions). However, they can only be used inside the [method Object._notification], signal or [method _draw] virtual functions. Canvas items are drawn in tree order. By default, children are on top of their parents so a root [CanvasItem] will be drawn behind everything. This behavior can be changed on a per-item basis. A [CanvasItem] can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode. Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
+Base class of anything 2D. Canvas items are laid out in a tree; children inherit and extend their parent's transform. [CanvasItem] is extended by [Control] for anything GUI-related, and by [Node2D] for anything related to the 2D engine. Any [CanvasItem] can draw. For this, [method update] must be called, then [constant NOTIFICATION_DRAW] will be received on idle time to request redraw. Because of this, canvas items don't need to be redrawn on every frame, improving the performance significantly. Several functions for drawing on the [CanvasItem] are provided (see [code]draw_*[/code] functions). However, they can only be used inside the [method Object._notification], signal or [method _draw] virtual functions. Canvas items are drawn in tree order. By default, children are on top of their parents so a root [CanvasItem] will be drawn behind everything. This behavior can be changed on a per-item basis. A [CanvasItem] can also be hidden, which will also hide its children. It provides many ways to change parameters such as modulation (for itself and its children) and self modulation (only for itself), as well as its blend mode. Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed. [b]Note:[/b] Unless otherwise specified, all methods that have angle parameters must have angles specified as [i]radians[/i]. To convert degrees to radians, use [method @GDScript.deg2rad].
 */
 type CanvasItem struct {
 	Node
@@ -902,7 +902,7 @@ func (o *CanvasItem) DrawSetTransformMatrix(xform gdnative.Transform2D) {
 }
 
 /*
-        Draws a string using a custom font.
+        Draws [code]text[/code] using the specified [code]font[/code] at the [code]position[/code] (top-left corner). The text will have its color multiplied by [code]modulate[/code]. If [code]clip_w[/code] is greater than or equal to 0, the text will be clipped if it exceeds the specified width. [b]Example using the default project font:[/b] [codeblock] # If using this method in a script that redraws constantly, move the # `default_font` declaration to a member variable assigned in `_ready()` # so the Control is only created once. var default_font = Control.new().get_font("font") draw_string(default_font, Vector2(64, 64), "Hello world") [/codeblock] See also [method Font.draw].
 	Args: [{ false font Font} { false position Vector2} { false text String} {1,1,1,1 true modulate Color} {-1 true clip_w int}], Returns: void
 */
 func (o *CanvasItem) DrawString(font FontImplementer, position gdnative.Vector2, text gdnative.String, modulate gdnative.Color, clipW gdnative.Int) {
@@ -1577,7 +1577,7 @@ func (o *CanvasItem) IsVisible() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the node is present in the [SceneTree], its [member visible] property is [code]true[/code] and its inherited visibility is also [code]true[/code].
+        Returns [code]true[/code] if the node is present in the [SceneTree], its [member visible] property is [code]true[/code] and all its antecedents are also visible. If any antecedent is hidden, this node will not be visible in the scene tree.
 	Args: [], Returns: bool
 */
 func (o *CanvasItem) IsVisibleInTree() gdnative.Bool {

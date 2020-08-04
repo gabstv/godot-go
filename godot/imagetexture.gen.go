@@ -32,7 +32,7 @@ func newImageTextureFromPointer(ptr gdnative.Pointer) ImageTexture {
 }
 
 /*
-A [Texture2D] based on an [Image]. Can be created from an [Image] with [method create_from_image].
+A [Texture2D] based on an [Image]. Can be created from an [Image] with [method create_from_image]. [b]Note:[/b] The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images will fail to import.
 */
 type ImageTexture struct {
 	Texture

@@ -178,7 +178,7 @@ func (o *EditorFileSystemDirectory) GetFilePath(idx gdnative.Int) gdnative.Strin
 }
 
 /*
-
+        Returns the base class of the script class defined in the file at index [code]idx[/code]. If the file doesn't define a script class using the [code]class_name[/code] syntax, this will return an empty string.
 	Args: [{ false idx int}], Returns: String
 */
 func (o *EditorFileSystemDirectory) GetFileScriptClassExtends(idx gdnative.Int) gdnative.String {
@@ -202,7 +202,7 @@ func (o *EditorFileSystemDirectory) GetFileScriptClassExtends(idx gdnative.Int) 
 }
 
 /*
-
+        Returns the name of the script class defined in the file at index [code]idx[/code]. If the file doesn't define a script class using the [code]class_name[/code] syntax, this will return an empty string.
 	Args: [{ false idx int}], Returns: String
 */
 func (o *EditorFileSystemDirectory) GetFileScriptClassName(idx gdnative.Int) gdnative.String {

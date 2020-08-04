@@ -23,7 +23,7 @@ func newARVRAnchorFromPointer(ptr gdnative.Pointer) ARVRAnchor {
 }
 
 /*
-The [ARVRAnchor] point is a spatial node that maps a real world location identified by the AR platform to a position within the game world. For example, as long as plane detection in ARKit is on, ARKit will identify and update the position of planes (tables, floors, etc) and create anchors for them. This node is mapped to one of the anchors through its unique ID. When you receive a signal that a new anchor is available, you should add this node to your scene for that anchor. You can predefine nodes and set the ID; the nodes will simply remain on 0,0,0 until a plane is recognized. Keep in mind that, as long as plane detection is enabled, the size, placing and orientation of an anchor will be updated as the detection logic learns more about the real world out there especially if only part of the surface is in view.
+Undocumented
 */
 type ARVRAnchor struct {
 	Spatial
@@ -58,7 +58,7 @@ func (o *ARVRAnchor) GetAnchorId() gdnative.Int {
 }
 
 /*
-        Returns the name given to this anchor.
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *ARVRAnchor) GetAnchorName() gdnative.String {
@@ -81,7 +81,7 @@ func (o *ARVRAnchor) GetAnchorName() gdnative.String {
 }
 
 /*
-        Returns [code]true[/code] if the anchor is being tracked and [code]false[/code] if no anchor with this ID is currently known.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *ARVRAnchor) GetIsActive() gdnative.Bool {
@@ -104,7 +104,7 @@ func (o *ARVRAnchor) GetIsActive() gdnative.Bool {
 }
 
 /*
-        If provided by the [ARVRInterface], this returns a mesh object for the anchor. For an anchor, this can be a shape related to the object being tracked or it can be a mesh that provides topology related to the anchor and can be used to create shadows/reflections on surfaces or for generating collision shapes.
+        Undocumented
 	Args: [], Returns: Mesh
 */
 func (o *ARVRAnchor) GetMesh() MeshImplementer {
@@ -141,7 +141,7 @@ func (o *ARVRAnchor) GetMesh() MeshImplementer {
 }
 
 /*
-        Returns a plane aligned with our anchor; handy for intersection testing.
+        Undocumented
 	Args: [], Returns: Plane
 */
 func (o *ARVRAnchor) GetPlane() gdnative.Plane {
@@ -164,7 +164,7 @@ func (o *ARVRAnchor) GetPlane() gdnative.Plane {
 }
 
 /*
-        Returns the estimated size of the plane that was detected. Say when the anchor relates to a table in the real world, this is the estimated size of the surface of that table.
+        Undocumented
 	Args: [], Returns: Vector3
 */
 func (o *ARVRAnchor) GetSize() gdnative.Vector3 {

@@ -194,7 +194,7 @@ func (o *EditorFeatureProfile) LoadFromFile(path gdnative.String) gdnative.Error
 }
 
 /*
-        Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's [b]Import[/b] button or the [method load_from_file] button.
+        Saves the editor feature profile to a file in JSON format. It can then be imported using the feature profile manager's [b]Import[/b] button or the [method load_from_file] button.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *EditorFeatureProfile) SaveToFile(path gdnative.String) gdnative.Error {

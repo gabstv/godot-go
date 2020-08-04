@@ -334,7 +334,7 @@ func (o *TabContainer) GetTabAlign() TabContainerTabAlign {
 }
 
 /*
-        Returns the currently visible tab's [Control] node.
+        Returns the [Control] node from the tab at index [code]tab_idx[/code].
 	Args: [{ false idx int}], Returns: Control
 */
 func (o *TabContainer) GetTabControl(idx gdnative.Int) ControlImplementer {

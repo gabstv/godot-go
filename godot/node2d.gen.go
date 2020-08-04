@@ -693,7 +693,7 @@ func (o *Node2D) SetZIndex(zIndex gdnative.Int) {
 }
 
 /*
-        Converts a local point's coordinates to global coordinates.
+        Transforms the provided local position into a position in global coordinate space. The input is expected to be local relative to the [Node2D] it is called on. e.g. Applying this method to the positions of child nodes will correctly transform their positions into the global coordinate space, but applying it to a node's own position will give an incorrect result, as it will incorporate the node's own transformation into its global position.
 	Args: [{ false local_point Vector2}], Returns: Vector2
 */
 func (o *Node2D) ToGlobal(localPoint gdnative.Vector2) gdnative.Vector2 {
@@ -717,7 +717,7 @@ func (o *Node2D) ToGlobal(localPoint gdnative.Vector2) gdnative.Vector2 {
 }
 
 /*
-        Converts a global point's coordinates to local coordinates.
+        Transforms the provided global position into a position in local coordinate space. The output will be local relative to the [Node2D] it is called on. e.g. It is appropriate for determining the positions of child nodes, but it is not appropriate for determining its own position relative to its parent.
 	Args: [{ false global_point Vector2}], Returns: Vector2
 */
 func (o *Node2D) ToLocal(globalPoint gdnative.Vector2) gdnative.Vector2 {

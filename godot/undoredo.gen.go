@@ -339,7 +339,7 @@ func (o *UndoRedo) HasUndo() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the [UndoRedo] is currently committing the action, i.e. running its "do" method or property change (see [method commit_action]).
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *UndoRedo) IsCommitingAction() gdnative.Bool {

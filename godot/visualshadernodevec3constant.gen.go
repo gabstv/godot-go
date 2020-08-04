@@ -23,8 +23,8 @@ func newVisualShaderNodeVec3ConstantFromPointer(ptr gdnative.Pointer) VisualShad
 }
 
 /*
-
- */
+A constant [Vector3], which can be used as an input node.
+*/
 type VisualShaderNodeVec3Constant struct {
 	VisualShaderNode
 	owner gdnative.Object

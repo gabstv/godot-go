@@ -32,8 +32,8 @@ func newAnimationTreeFromPointer(ptr gdnative.Pointer) AnimationTree {
 }
 
 /*
-
- */
+Note: When linked with an [AnimationPlayer], several properties and methods of the corresponding [AnimationPlayer] will not function as expected. Playback and transitions should be handled using only the [AnimationTree] and its constituent [AnimationNode](s). The [AnimationPlayer] node should be used solely for adding, deleting, and editing animations.
+*/
 type AnimationTree struct {
 	Node
 	owner gdnative.Object
@@ -215,7 +215,7 @@ func (o *AnimationTree) GetRootMotionTrack() gdnative.NodePath {
 }
 
 /*
-
+        Retrieve the motion of the [member root_motion_track] as a [Transform] that can be used elsewhere. If [member root_motion_track] is not a path to a track of type [constant Animation.TYPE_TRANSFORM], returns an identity transformation.
 	Args: [], Returns: Transform
 */
 func (o *AnimationTree) GetRootMotionTransform() gdnative.Transform {

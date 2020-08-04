@@ -43,7 +43,7 @@ func newFileDialogFromPointer(ptr gdnative.Pointer) FileDialog {
 }
 
 /*
-FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks.
+FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks. The FileDialog automatically sets its window title according to the [member file_mode]. If you want to use a custom title, disable this by setting [member mode_overrides_title] to [code]false[/code].
 */
 type FileDialog struct {
 	ConfirmationDialog

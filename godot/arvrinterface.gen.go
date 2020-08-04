@@ -54,7 +54,7 @@ func newARVRInterfaceFromPointer(ptr gdnative.Pointer) ARVRInterface {
 }
 
 /*
-This class needs to be implemented to make an AR or VR platform available to Godot and these should be implemented as C++ modules or GDNative modules (note that for GDNative the subclass ARVRScriptInterface should be used). Part of the interface is exposed to GDScript so you can detect, enable and configure an AR or VR platform. Interfaces should be written in such a way that simply enabling them will give us a working setup. You can query the available interfaces through [ARVRServer].
+Undocumented
 */
 type ARVRInterface struct {
 	Reference
@@ -89,7 +89,7 @@ func (o *ARVRInterface) GetAnchorDetectionIsEnabled() gdnative.Bool {
 }
 
 /*
-        If this is an AR interface that requires displaying a camera feed as the background, this method returns the feed ID in the [CameraServer] for this interface.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *ARVRInterface) GetCameraFeedId() gdnative.Int {
@@ -112,7 +112,7 @@ func (o *ARVRInterface) GetCameraFeedId() gdnative.Int {
 }
 
 /*
-        Returns a combination of [enum Capabilities] flags providing information about the capabilities of this interface.
+        Undocumented
 	Args: [], Returns: int
 */
 func (o *ARVRInterface) GetCapabilities() gdnative.Int {
@@ -135,7 +135,7 @@ func (o *ARVRInterface) GetCapabilities() gdnative.Int {
 }
 
 /*
-        Returns the name of this interface (OpenVR, OpenHMD, ARKit, etc).
+        Undocumented
 	Args: [], Returns: String
 */
 func (o *ARVRInterface) GetName() gdnative.String {
@@ -158,7 +158,7 @@ func (o *ARVRInterface) GetName() gdnative.String {
 }
 
 /*
-        Returns the resolution at which we should render our intermediate results before things like lens distortion are applied by the VR platform.
+        Undocumented
 	Args: [], Returns: Vector2
 */
 func (o *ARVRInterface) GetRenderTargetsize() gdnative.Vector2 {
@@ -181,7 +181,7 @@ func (o *ARVRInterface) GetRenderTargetsize() gdnative.Vector2 {
 }
 
 /*
-        If supported, returns the status of our tracking. This will allow you to provide feedback to the user whether there are issues with positional tracking.
+        Undocumented
 	Args: [], Returns: enum.ARVRInterface::Tracking_status
 */
 func (o *ARVRInterface) GetTrackingStatus() ARVRInterfaceTracking_status {
@@ -204,7 +204,7 @@ func (o *ARVRInterface) GetTrackingStatus() ARVRInterfaceTracking_status {
 }
 
 /*
-        Call this to initialize this interface. The first interface that is initialized is identified as the primary interface and it will be used for rendering output. After initializing the interface you want to use you then need to enable the AR/VR mode of a viewport and rendering should commence. [b]Note:[/b] You must enable the AR/VR mode on the main viewport for any device that uses the main output of Godot, such as for mobile VR. If you do this for a platform that handles its own output (such as OpenVR) Godot will show just one eye without distortion on screen. Alternatively, you can add a separate viewport node to your scene and enable AR/VR on that viewport. It will be used to output to the HMD, leaving you free to do anything you like in the main window, such as using a separate camera as a spectator camera or rendering something completely different. While currently not used, you can activate additional interfaces. You may wish to do this if you want to track controllers from other platforms. However, at this point in time only one interface can render to an HMD.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *ARVRInterface) Initialize() gdnative.Bool {
@@ -273,7 +273,7 @@ func (o *ARVRInterface) IsPrimary() gdnative.Bool {
 }
 
 /*
-        Returns [code]true[/code] if the current output of this interface is in stereo.
+        Undocumented
 	Args: [], Returns: bool
 */
 func (o *ARVRInterface) IsStereo() gdnative.Bool {
@@ -359,7 +359,7 @@ func (o *ARVRInterface) SetIsPrimary(enable gdnative.Bool) {
 }
 
 /*
-        Turns the interface off.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *ARVRInterface) Uninitialize() {

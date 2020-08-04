@@ -248,7 +248,7 @@ func (o *TextEdit) X_VScrollInput() {
 }
 
 /*
-        Adds color region (given the delimiters) and its colors.
+        Undocumented
 	Args: [{ false begin_key String} { false end_key String} { false color Color} {False true line_only bool}], Returns: void
 */
 func (o *TextEdit) AddColorRegion(beginKey gdnative.String, endKey gdnative.String, color gdnative.Color, lineOnly gdnative.Bool) {
@@ -272,7 +272,7 @@ func (o *TextEdit) AddColorRegion(beginKey gdnative.String, endKey gdnative.Stri
 }
 
 /*
-        Adds a [code]keyword[/code] and its [Color].
+        Undocumented
 	Args: [{ false keyword String} { false color Color}], Returns: void
 */
 func (o *TextEdit) AddKeywordColor(keyword gdnative.String, color gdnative.Color) {
@@ -318,7 +318,7 @@ func (o *TextEdit) CanFold(line gdnative.Int) gdnative.Bool {
 }
 
 /*
-
+        Centers the viewport on the line the editing cursor is at. This also resets the [member scroll_horizontal] value to [code]0[/code].
 	Args: [], Returns: void
 */
 func (o *TextEdit) CenterViewportToCursor() {
@@ -338,7 +338,7 @@ func (o *TextEdit) CenterViewportToCursor() {
 }
 
 /*
-        Clears all custom syntax coloring information previously added with [method add_color_region] or [method add_keyword_color].
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *TextEdit) ClearColors() {
@@ -770,7 +770,7 @@ func (o *TextEdit) GetHScroll() gdnative.Int {
 }
 
 /*
-        Returns the [Color] of the specified [code]keyword[/code].
+        Undocumented
 	Args: [{ false keyword String}], Returns: Color
 */
 func (o *TextEdit) GetKeywordColor(keyword gdnative.String) gdnative.Color {
@@ -1108,7 +1108,7 @@ func (o *TextEdit) GetWordUnderCursor() gdnative.String {
 }
 
 /*
-        Returns whether the specified [code]keyword[/code] has a color set to it or not.
+        Undocumented
 	Args: [{ false keyword String}], Returns: bool
 */
 func (o *TextEdit) HasKeywordColor(keyword gdnative.String) gdnative.Bool {
@@ -1719,7 +1719,7 @@ func (o *TextEdit) RemoveBreakpoints() {
 }
 
 /*
-        Perform a search inside the text. Search flags can be specified in the [enum SearchFlags] enum. Returns an empty [code]PackedInt32Array[/code] if no result was found. Otherwise, the result line and column can be accessed at indices specified in the [enum SearchResult] enum, e.g: [codeblock] var result = search(key, flags, line, column) if result.size() > 0: # Result found. var res_line = result[TextEdit.SEARCH_RESULT_LINE] var res_column = result[TextEdit.SEARCH_RESULT_COLUMN] [/codeblock]
+        Perform a search inside the text. Search flags can be specified in the [enum SearchFlags] enum. Returns an empty [code]Dictionary[/code] if no result was found. Otherwise, returns a [code]Dictionary[/code] containing [code]line[/code] and [code]column[/code] entries, e.g: [codeblock] var result = search(key, flags, line, column) if !result.empty(): # Result found. var line_number = result.line var column_number = result.column [/codeblock]
 	Args: [{ false key String} { false flags int} { false from_line int} { false from_column int}], Returns: PoolIntArray
 */
 func (o *TextEdit) Search(key gdnative.String, flags gdnative.Int, fromLine gdnative.Int, fromColumn gdnative.Int) gdnative.PoolIntArray {
@@ -1746,7 +1746,7 @@ func (o *TextEdit) Search(key gdnative.String, flags gdnative.Int, fromLine gdna
 }
 
 /*
-        Perform selection, from line/column to line/column.
+        Perform selection, from line/column to line/column. If [member selecting_enabled] is [code]false[/code], no selection will occur.
 	Args: [{ false from_line int} { false from_column int} { false to_line int} { false to_column int}], Returns: void
 */
 func (o *TextEdit) Select(fromLine gdnative.Int, fromColumn gdnative.Int, toLine gdnative.Int, toColumn gdnative.Int) {
@@ -1770,7 +1770,7 @@ func (o *TextEdit) Select(fromLine gdnative.Int, fromColumn gdnative.Int, toLine
 }
 
 /*
-        Select all the text.
+        Select all the text. If [member selecting_enabled] is [code]false[/code], no selection will occur.
 	Args: [], Returns: void
 */
 func (o *TextEdit) SelectAll() {

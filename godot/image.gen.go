@@ -107,7 +107,7 @@ func newImageFromPointer(ptr gdnative.Pointer) Image {
 }
 
 /*
-Native image datatype. Contains image data, which can be converted to a [Texture2D], and several functions to interact with it. The maximum width and height for an [Image] are [constant MAX_WIDTH] and [constant MAX_HEIGHT].
+Native image datatype. Contains image data, which can be converted to a [Texture2D], and several functions to interact with it. The maximum width and height for an [Image] are [constant MAX_WIDTH] and [constant MAX_HEIGHT]. [b]Note:[/b] The maximum image size is 16384×16384 pixels due to graphics hardware limitations. Larger images will fail to import.
 */
 type Image struct {
 	Resource
@@ -390,7 +390,7 @@ func (o *Image) Create(width gdnative.Int, height gdnative.Int, useMipmaps gdnat
 }
 
 /*
-        Creates a new image of given size and format. See [enum Format] constants. Fills the image with the given raw data. If [code]use_mipmaps[/code] is [code]true[/code] then generate mipmaps for this image. See the [method generate_mipmaps].
+        Creates a new image of given size and format. See [enum Format] constants. Fills the image with the given raw data. If [code]use_mipmaps[/code] is [code]true[/code] then loads mipmaps for this image from [code]data[/code]. See [method generate_mipmaps].
 	Args: [{ false width int} { false height int} { false use_mipmaps bool} { false format int} { false data PoolByteArray}], Returns: void
 */
 func (o *Image) CreateFromData(width gdnative.Int, height gdnative.Int, useMipmaps gdnative.Bool, format gdnative.Int, data gdnative.PoolByteArray) {
@@ -483,7 +483,7 @@ func (o *Image) DetectAlpha() ImageAlphaMode {
 }
 
 /*
-        Stretches the image and enlarges it by a factor of 2. No interpolation is done.
+        Undocumented
 	Args: [], Returns: void
 */
 func (o *Image) ExpandX2Hq2X() {
@@ -949,7 +949,7 @@ func (o *Image) IsInvisible() gdnative.Bool {
 }
 
 /*
-        Loads an image from file [code]path[/code].
+        Loads an image from file [code]path[/code]. See [url=https://docs.godotengine.org/en/latest/getting_started/workflow/assets/importing_images.html#supported-image-formats]Supported image formats[/url] for a list of supported image formats and limitations.
 	Args: [{ false path String}], Returns: enum.Error
 */
 func (o *Image) Load(path gdnative.String) gdnative.Error {

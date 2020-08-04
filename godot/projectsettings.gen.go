@@ -326,7 +326,7 @@ func (o *projectSettings) Save() gdnative.Error {
 }
 
 /*
-        Saves the configuration to a custom file.
+        Saves the configuration to a custom file. The file extension must be [code].godot[/code] (to save in text-based [ConfigFile] format) or [code].binary[/code] (to save in binary format).
 	Args: [{ false file String}], Returns: enum.Error
 */
 func (o *projectSettings) SaveCustom(file gdnative.String) gdnative.Error {

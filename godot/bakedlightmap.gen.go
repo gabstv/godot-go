@@ -51,8 +51,8 @@ func newBakedLightmapFromPointer(ptr gdnative.Pointer) BakedLightmap {
 }
 
 /*
-Undocumented
-*/
+
+ */
 type BakedLightmap struct {
 	VisualInstance
 	owner gdnative.Object

@@ -23,7 +23,7 @@ func new_DirectoryFromPointer(ptr gdnative.Pointer) Directory {
 }
 
 /*
-Directory type. It is used to manage directories and their content (not restricted to the project folder). When creating a new [Directory], its default opened directory will be [code]res://[/code]. This may change in the future, so it is advised to always use [method open] to initialize your [Directory] where you want to operate, with explicit error checking. Here is an example on how to iterate through the files of a directory: [codeblock] func dir_contents(path): var dir = Directory.new() if dir.open(path) == OK: dir.list_dir_begin() var file_name = dir.get_next() while file_name != "": if dir.current_is_dir(): print("Found directory: " + file_name) else: print("Found file: " + file_name) file_name = dir.get_next() else: print("An error occurred when trying to access the path.") [/codeblock]
+Directory type. It is used to manage directories and their content (not restricted to the project folder). When creating a new [Directory], it must be explicitly opened using [method open] before most methods can be used. However, [method file_exists] and [method dir_exists] can be used without opening a directory. If so, they use a path relative to [code]res://[/code]. Here is an example on how to iterate through the files of a directory: [codeblock] func dir_contents(path): var dir = Directory.new() if dir.open(path) == OK: dir.list_dir_begin() var file_name = dir.get_next() while file_name != "": if dir.current_is_dir(): print("Found directory: " + file_name) else: print("Found file: " + file_name) file_name = dir.get_next() else: print("An error occurred when trying to access the path.") [/codeblock]
 */
 type Directory struct {
 	Reference

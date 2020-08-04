@@ -23,7 +23,7 @@ func newEditorInterfaceFromPointer(ptr gdnative.Pointer) EditorInterface {
 }
 
 /*
-EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects, and provides access to [EditorSettings], [EditorFileSystem], [EditorResourcePreview], [ScriptEditor], the editor viewport, and information about scenes.
+EditorInterface gives you control over Godot editor's window. It allows customizing the window, saving and (re-)loading scenes, rendering mesh previews, inspecting and editing resources and objects, and provides access to [EditorSettings], [EditorFileSystem], [EditorResourcePreview], [ScriptEditor], the editor viewport, and information about scenes. [b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton using [method EditorPlugin.get_editor_interface].
 */
 type EditorInterface struct {
 	Node
@@ -56,7 +56,7 @@ func (o *EditorInterface) EditResource(resource ResourceImplementer) {
 }
 
 /*
-        Returns the main container of Godot editor's window. You can use it, for example, to retrieve the size of the container and place your controls accordingly.
+        Returns the main container of Godot editor's window. For example, you can use it to retrieve the size of the container and place your controls accordingly.
 	Args: [], Returns: Control
 */
 func (o *EditorInterface) GetBaseControl() ControlImplementer {
@@ -93,7 +93,7 @@ func (o *EditorInterface) GetBaseControl() ControlImplementer {
 }
 
 /*
-
+        Returns the current path being viewed in the [FileSystemDock].
 	Args: [], Returns: String
 */
 func (o *EditorInterface) GetCurrentPath() gdnative.String {
@@ -153,7 +153,7 @@ func (o *EditorInterface) GetEditedSceneRoot() NodeImplementer {
 }
 
 /*
-        Returns the [EditorSettings].
+        Returns the editor's [EditorSettings] instance.
 	Args: [], Returns: EditorSettings
 */
 func (o *EditorInterface) GetEditorSettings() EditorSettingsImplementer {
@@ -190,7 +190,7 @@ func (o *EditorInterface) GetEditorSettings() EditorSettingsImplementer {
 }
 
 /*
-        Returns the editor [Viewport].
+        Returns the main editor control. Use this as a parent for main screens. [b]Note:[/b] This returns the main editor control containing the whole editor, not the 2D or 3D viewports specifically.
 	Args: [], Returns: Control
 */
 func (o *EditorInterface) GetEditorViewport() ControlImplementer {
@@ -227,7 +227,7 @@ func (o *EditorInterface) GetEditorViewport() ControlImplementer {
 }
 
 /*
-
+        Returns the editor's [EditorInspector] instance.
 	Args: [], Returns: EditorInspector
 */
 func (o *EditorInterface) GetInspector() EditorInspectorImplementer {
@@ -287,7 +287,7 @@ func (o *EditorInterface) GetOpenScenes() gdnative.Array {
 }
 
 /*
-        Returns the [EditorFileSystem].
+        Returns the editor's [EditorFileSystem] instance.
 	Args: [], Returns: EditorFileSystem
 */
 func (o *EditorInterface) GetResourceFilesystem() EditorFileSystemImplementer {
@@ -324,7 +324,7 @@ func (o *EditorInterface) GetResourceFilesystem() EditorFileSystemImplementer {
 }
 
 /*
-        Returns the [EditorResourcePreview].
+        Returns the editor's [EditorResourcePreview] instance.
 	Args: [], Returns: EditorResourcePreview
 */
 func (o *EditorInterface) GetResourcePreviewer() EditorResourcePreviewImplementer {
@@ -361,7 +361,7 @@ func (o *EditorInterface) GetResourcePreviewer() EditorResourcePreviewImplemente
 }
 
 /*
-        Returns the [ScriptEditor].
+        Returns the editor's [ScriptEditor] instance.
 	Args: [], Returns: ScriptEditor
 */
 func (o *EditorInterface) GetScriptEditor() ScriptEditorImplementer {
@@ -398,7 +398,7 @@ func (o *EditorInterface) GetScriptEditor() ScriptEditorImplementer {
 }
 
 /*
-
+        Returns the path of the directory currently selected in the [FileSystemDock]. If a file is selected, its base directory will be returned using [method String.get_base_dir] instead.
 	Args: [], Returns: String
 */
 func (o *EditorInterface) GetSelectedPath() gdnative.String {
@@ -421,7 +421,7 @@ func (o *EditorInterface) GetSelectedPath() gdnative.String {
 }
 
 /*
-        Returns the [EditorSelection].
+        Returns the editor's [EditorSelection] instance.
 	Args: [], Returns: EditorSelection
 */
 func (o *EditorInterface) GetSelection() EditorSelectionImplementer {
@@ -458,7 +458,7 @@ func (o *EditorInterface) GetSelection() EditorSelectionImplementer {
 }
 
 /*
-        Shows the given property on the given [code]object[/code] in the Editor's Inspector dock.
+        Shows the given property on the given [code]object[/code] in the editor's Inspector dock.
 	Args: [{ false object Object} { true for_property String}], Returns: void
 */
 func (o *EditorInterface) InspectObject(object ObjectImplementer, forProperty gdnative.String) {
@@ -480,7 +480,7 @@ func (o *EditorInterface) InspectObject(object ObjectImplementer, forProperty gd
 }
 
 /*
-        Returns the enabled status of a plugin. The plugin name is the same as its directory name.
+        Returns [code]true[/code] if the specified [code]plugin[/code] is enabled. The plugin name is the same as its directory name.
 	Args: [{ false plugin String}], Returns: bool
 */
 func (o *EditorInterface) IsPluginEnabled(plugin gdnative.String) gdnative.Bool {
@@ -637,7 +637,7 @@ func (o *EditorInterface) SelectFile(file gdnative.String) {
 }
 
 /*
-
+        Undocumented
 	Args: [{ false enter bool}], Returns: void
 */
 func (o *EditorInterface) SetDistractionFreeMode(enter gdnative.Bool) {
@@ -658,7 +658,7 @@ func (o *EditorInterface) SetDistractionFreeMode(enter gdnative.Bool) {
 }
 
 /*
-
+        Sets the editor's current main screen to the one specified in [code]name[/code]. [code]name[/code] must match the text of the tab in question exactly ([code]2D[/code], [code]3D[/code], [code]Script[/code], [code]AssetLib[/code]).
 	Args: [{ false name String}], Returns: void
 */
 func (o *EditorInterface) SetMainScreenEditor(name gdnative.String) {

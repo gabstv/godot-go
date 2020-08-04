@@ -43,7 +43,7 @@ func newTreeItemFromPointer(ptr gdnative.Pointer) TreeItem {
 }
 
 /*
-Control for a single item inside a [Tree]. May have child [TreeItem]s and be styled as well as contain buttons.
+Control for a single item inside a [Tree]. May have child [TreeItem]s and be styled as well as contain buttons. You can remove a [TreeItem] by using [method Object.free].
 */
 type TreeItem struct {
 	Object
@@ -305,7 +305,7 @@ func (o *TreeItem) GetCellMode(column gdnative.Int) TreeItemTreeCellMode {
 }
 
 /*
-        Returns the TreeItem's child items.
+        Returns the TreeItem's first child item or a null object if there is none.
 	Args: [], Returns: TreeItem
 */
 func (o *TreeItem) GetChildren() TreeItemImplementer {
@@ -571,7 +571,7 @@ func (o *TreeItem) GetMetadata(column gdnative.Int) gdnative.Variant {
 }
 
 /*
-        Returns the next TreeItem in the tree.
+        Returns the next TreeItem in the tree or a null object if there is none.
 	Args: [], Returns: TreeItem
 */
 func (o *TreeItem) GetNext() TreeItemImplementer {
@@ -608,7 +608,7 @@ func (o *TreeItem) GetNext() TreeItemImplementer {
 }
 
 /*
-        Returns the next visible TreeItem in the tree. If [code]wrap[/code] is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns [code]null[/code].
+        Returns the next visible TreeItem in the tree or a null object if there is none. If [code]wrap[/code] is enabled, the method will wrap around to the first visible element in the tree when called on the last visible element, otherwise it returns [code]null[/code].
 	Args: [{False true wrap bool}], Returns: TreeItem
 */
 func (o *TreeItem) GetNextVisible(wrap gdnative.Bool) TreeItemImplementer {
@@ -646,7 +646,7 @@ func (o *TreeItem) GetNextVisible(wrap gdnative.Bool) TreeItemImplementer {
 }
 
 /*
-        Returns the parent TreeItem.
+        Returns the parent TreeItem or a null object if there is none.
 	Args: [], Returns: TreeItem
 */
 func (o *TreeItem) GetParent() TreeItemImplementer {
@@ -683,7 +683,7 @@ func (o *TreeItem) GetParent() TreeItemImplementer {
 }
 
 /*
-        Returns the previous TreeItem in the tree.
+        Returns the previous TreeItem in the tree or a null object if there is none.
 	Args: [], Returns: TreeItem
 */
 func (o *TreeItem) GetPrev() TreeItemImplementer {
@@ -720,7 +720,7 @@ func (o *TreeItem) GetPrev() TreeItemImplementer {
 }
 
 /*
-        Returns the previous visible TreeItem in the tree. If [code]wrap[/code] is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns [code]null[/code].
+        Returns the previous visible TreeItem in the tree or a null object if there is none. If [code]wrap[/code] is enabled, the method will wrap around to the last visible element in the tree when called on the first visible element, otherwise it returns [code]null[/code].
 	Args: [{False true wrap bool}], Returns: TreeItem
 */
 func (o *TreeItem) GetPrevVisible(wrap gdnative.Bool) TreeItemImplementer {
@@ -1109,7 +1109,7 @@ func (o *TreeItem) MoveToTop() {
 }
 
 /*
-        Removes the given child TreeItem.
+        Removes the given child [TreeItem] and all its children from the [Tree]. Note that it doesn't free the item from memory, so it can be reused later. To completely remove a [TreeItem] use [method Object.free].
 	Args: [{ false child Object}], Returns: void
 */
 func (o *TreeItem) RemoveChild(child ObjectImplementer) {

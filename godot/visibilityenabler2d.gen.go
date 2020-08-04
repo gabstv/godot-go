@@ -36,7 +36,7 @@ func newVisibilityEnabler2DFromPointer(ptr gdnative.Pointer) VisibilityEnabler2D
 }
 
 /*
-The VisibilityEnabler2D will disable [RigidBody2D], [AnimationPlayer], and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself. Note that VisibilityEnabler2D will not affect nodes added after scene initialization.
+The VisibilityEnabler2D will disable [RigidBody2D], [AnimationPlayer], and other nodes when they are not visible. It will only affect nodes with the same root node as the VisibilityEnabler2D, and the root node itself. If you just want to receive notifications, use [VisibilityNotifier2D] instead. [b]Note:[/b] For performance reasons, VisibilityEnabler2D uses an approximate heuristic with precision determined by [member ProjectSettings.world/2d/cell_size]. If you need precise visibility checking, use another method such as adding an [Area2D] node as a child of a [Camera2D] node. [b]Note:[/b] VisibilityEnabler2D will not affect nodes added after scene initialization.
 */
 type VisibilityEnabler2D struct {
 	VisibilityNotifier2D

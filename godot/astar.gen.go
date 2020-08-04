@@ -223,7 +223,7 @@ func (o *AStar) GetAvailablePointId() gdnative.Int {
 }
 
 /*
-        Returns the ID of the closest point to [code]to_position[/code], optionally taking disabled points into account. Returns -1 if there are no points in the points pool.
+        Returns the ID of the closest point to [code]to_position[/code], optionally taking disabled points into account. Returns [code]-1[/code] if there are no points in the points pool. [b]Note:[/b] If several points are the closest to [code]to_position[/code], the one with the smallest ID will be returned, ensuring a deterministic result.
 	Args: [{ false to_position Vector3} {False true include_disabled bool}], Returns: int
 */
 func (o *AStar) GetClosestPoint(toPosition gdnative.Vector3, includeDisabled gdnative.Bool) gdnative.Int {

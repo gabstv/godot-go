@@ -23,7 +23,7 @@ func newMeshDataToolFromPointer(ptr gdnative.Pointer) MeshDataTool {
 }
 
 /*
-MeshDataTool provides access to individual vertices in a [Mesh]. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges. To use MeshDataTool, load a mesh with [method create_from_surface]. When you are finished editing the data commit the data to a mesh with [method commit_to_surface]. Below is an example of how MeshDataTool may be used. [codeblock] var mdt = MeshDataTool.new() mdt.create_from_surface(mesh, 0) for i in range(mdt.get_vertex_count()): var vertex = mdt.get_vertex(i) ... mdt.set_vertex(i, vertex) mesh.surface_remove(0) mdt.commit_to_surface(mesh) [/codeblock]
+MeshDataTool provides access to individual vertices in a [Mesh]. It allows users to read and edit vertex data of meshes. It also creates an array of faces and edges. To use MeshDataTool, load a mesh with [method create_from_surface]. When you are finished editing the data commit the data to a mesh with [method commit_to_surface]. Below is an example of how MeshDataTool may be used. [codeblock] var mdt = MeshDataTool.new() mdt.create_from_surface(mesh, 0) for i in range(mdt.get_vertex_count()): var vertex = mdt.get_vertex(i) ... mdt.set_vertex(i, vertex) mesh.surface_remove(0) mdt.commit_to_surface(mesh) [/codeblock] See also [ArrayMesh], [ImmediateGeometry3D] and [SurfaceTool] for procedural geometry generation. [b]Note:[/b] Godot uses clockwise [url=https://learnopengl.com/Advanced-OpenGL/Face-culling]winding order[/url] for front faces of triangle primitive modes.
 */
 type MeshDataTool struct {
 	Reference

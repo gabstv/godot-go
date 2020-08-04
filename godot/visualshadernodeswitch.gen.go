@@ -23,8 +23,8 @@ func newVisualShaderNodeSwitchFromPointer(ptr gdnative.Pointer) VisualShaderNode
 }
 
 /*
-
- */
+Returns an associated vector if the provided boolean value is [code]true[/code] or [code]false[/code].
+*/
 type VisualShaderNodeSwitch struct {
 	VisualShaderNode
 	owner gdnative.Object

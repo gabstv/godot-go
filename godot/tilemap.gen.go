@@ -279,7 +279,7 @@ func (o *TileMap) GetCell(x gdnative.Int, y gdnative.Int) gdnative.Int {
 }
 
 /*
-        Returns the coordinate of the autotile variation in the tileset. Returns a zero vector if the cell doesn't have autotiling.
+        Returns the coordinate (subtile column and row) of the autotile variation in the tileset. Returns a zero vector if the cell doesn't have autotiling.
 	Args: [{ false x int} { false y int}], Returns: Vector2
 */
 func (o *TileMap) GetCellAutotileCoord(x gdnative.Int, y gdnative.Int) gdnative.Vector2 {
@@ -758,7 +758,7 @@ func (o *TileMap) GetUsedCells() gdnative.Array {
 }
 
 /*
-        Returns an array of all cells with the given tile [code]id[/code].
+        Undocumented
 	Args: [{ false id int}], Returns: Array
 */
 func (o *TileMap) GetUsedCellsById(id gdnative.Int) gdnative.Array {
@@ -974,7 +974,7 @@ func (o *TileMap) MapToWorld(mapPosition gdnative.Vector2, ignoreHalfOfs gdnativ
 }
 
 /*
-        Sets the tile index for the cell given by a Vector2. An index of [code]-1[/code] clears the cell. Optionally, the tile can also be flipped, transposed, or given autotile coordinates. [b]Note:[/b] Data such as navigation polygons and collision shapes are not immediately updated for performance reasons. If you need these to be immediately updated, you can call [method update_dirty_quadrants]. Overriding this method also overrides it internally, allowing custom logic to be implemented when tiles are placed/removed: [codeblock] func set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord) # Write your custom logic here. # To call the default method: .set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord) [/codeblock]
+        Sets the tile index for the cell given by a Vector2. An index of [code]-1[/code] clears the cell. Optionally, the tile can also be flipped, transposed, or given autotile coordinates. The autotile coordinate refers to the column and row of the subtile. [b]Note:[/b] Data such as navigation polygons and collision shapes are not immediately updated for performance reasons. If you need these to be immediately updated, you can call [method update_dirty_quadrants]. Overriding this method also overrides it internally, allowing custom logic to be implemented when tiles are placed/removed: [codeblock] func set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord) # Write your custom logic here. # To call the default method: .set_cell(x, y, tile, flip_x, flip_y, transpose, autotile_coord) [/codeblock]
 	Args: [{ false x int} { false y int} { false tile int} {False true flip_x bool} {False true flip_y bool} {False true transpose bool} {(0, 0) true autotile_coord Vector2}], Returns: void
 */
 func (o *TileMap) SetCell(x gdnative.Int, y gdnative.Int, tile gdnative.Int, flipX gdnative.Bool, flipY gdnative.Bool, transpose gdnative.Bool, autotileCoord gdnative.Vector2) {

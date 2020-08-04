@@ -23,7 +23,7 @@ func newEditorSelectionFromPointer(ptr gdnative.Pointer) EditorSelection {
 }
 
 /*
-This object manages the SceneTree selection in the editor.
+This object manages the SceneTree selection in the editor. [b]Note:[/b] This class shouldn't be instantiated directly. Instead, access the singleton using [method EditorInterface.get_selection].
 */
 type EditorSelection struct {
 	Object

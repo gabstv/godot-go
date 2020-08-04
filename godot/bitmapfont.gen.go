@@ -280,7 +280,7 @@ func (o *BitmapFont) CreateFromFnt(path gdnative.String) gdnative.Error {
 }
 
 /*
-        Returns the size of a character, optionally taking kerning into account if the next character is provided.
+        Undocumented
 	Args: [{ false char int} {0 true next int}], Returns: Vector2
 */
 func (o *BitmapFont) GetCharSize(char gdnative.Int, next gdnative.Int) gdnative.Vector2 {

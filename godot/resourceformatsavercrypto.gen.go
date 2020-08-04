@@ -23,8 +23,8 @@ func newResourceFormatSaverCryptoFromPointer(ptr gdnative.Pointer) ResourceForma
 }
 
 /*
-
- */
+Undocumented
+*/
 type ResourceFormatSaverCrypto struct {
 	ResourceFormatSaver
 	owner gdnative.Object

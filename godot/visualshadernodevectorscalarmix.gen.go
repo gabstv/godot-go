@@ -23,8 +23,8 @@ func newVisualShaderNodeVectorScalarMixFromPointer(ptr gdnative.Pointer) VisualS
 }
 
 /*
-
- */
+Translates to [code]mix(a, b, weight)[/code] in the shader language, where [code]a[/code] and [code]b[/code] are vectors and [code]weight[/code] is a scalar.
+*/
 type VisualShaderNodeVectorScalarMix struct {
 	VisualShaderNode
 	owner gdnative.Object

@@ -37,12 +37,12 @@ func newSingletonCameraServer() *cameraServer {
 }
 
 /*
-   The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is notably used to provide AR modules with a video feed from the camera.
+   The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is notably used to provide AR modules with a video feed from the camera. [b]Note:[/b] This class is currently only implemented on macOS and iOS. On other platforms, no [CameraFeed]s will be available.
 */
 var CameraServer = newSingletonCameraServer()
 
 /*
-The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is notably used to provide AR modules with a video feed from the camera.
+The [CameraServer] keeps track of different cameras accessible in Godot. These are external cameras such as webcams or the cameras on your phone. It is notably used to provide AR modules with a video feed from the camera. [b]Note:[/b] This class is currently only implemented on macOS and iOS. On other platforms, no [CameraFeed]s will be available.
 */
 type cameraServer struct {
 	Object
@@ -67,7 +67,7 @@ func (o *cameraServer) BaseClass() string {
 }
 
 /*
-        Adds a camera feed to the camera server.
+        Adds the camera [code]feed[/code] to the camera server.
 	Args: [{ false feed CameraFeed}], Returns: void
 */
 func (o *cameraServer) AddFeed(feed CameraFeedImplementer) {
@@ -113,7 +113,7 @@ func (o *cameraServer) Feeds() gdnative.Array {
 }
 
 /*
-        Returns the [CameraFeed] with this id.
+        Returns the [CameraFeed] corresponding to the camera with the given [code]index[/code].
 	Args: [{ false index int}], Returns: CameraFeed
 */
 func (o *cameraServer) GetFeed(index gdnative.Int) CameraFeedImplementer {
@@ -176,7 +176,7 @@ func (o *cameraServer) GetFeedCount() gdnative.Int {
 }
 
 /*
-        Removes a [CameraFeed].
+        Removes the specified camera [code]feed[/code].
 	Args: [{ false feed CameraFeed}], Returns: void
 */
 func (o *cameraServer) RemoveFeed(feed CameraFeedImplementer) {
